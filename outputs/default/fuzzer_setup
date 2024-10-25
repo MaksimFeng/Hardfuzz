@@ -1,0 +1,10 @@
+# environment variables:
+AFL_CUSTOM_INFO_PROGRAM=/bin/bash
+AFL_CUSTOM_INFO_PROGRAM_ARGV=./test.sh /home/kai/project/experimentdata/FREERTOS.bin input_file
+AFL_CUSTOM_INFO_PROGRAM_INPUT=input_file
+AFL_CUSTOM_INFO_OUT=outputs/default
+AFL_DEBUG=1
+AFL_MAP_SIZE=100000000
+AFL_SKIP_BIN_CHECK=1
+# command line:
+'afl-fuzz' '-i' 'inputs' '-o' 'outputs' '-f' 'input_file' '--' '/bin/bash' './test.sh' '/home/kai/project/experimentdata/FREERTOS.bin' 'input_file'

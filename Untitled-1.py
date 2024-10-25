@@ -4,7 +4,7 @@ import struct  # For unpacking binary data
 import monkeyhex  # For better hexadecimal representation in outputs
 
 # Path to the binary
-binary_path = '/home/kai/experimentdata/FREERTOS.bin'
+binary_path = '/home/kai/project/experimentdata/FREERTOS.bin'
 
 # Arduino Due base address for Flash memory
 base_addr = 0x00080000
