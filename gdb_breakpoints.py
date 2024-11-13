@@ -25,30 +25,32 @@ def set_watchpoint(gdbmi, expression):
 
 def continue_execution(gdbmi):
     response = gdbmi.write('-exec-continue')
+    # gdbmi.write('continue')
     print("Continuing execution.")
+    print(response)
     return response
 
 def main():
     gdbmi = connect_gdb()
 
     try:
-        set_breakpoint(gdbmi, 'main')
+        # set_breakpoint(gdbmi, 'main')
 
         continue_execution(gdbmi)
 
-        while True:
-            responses = gdbmi.get_gdb_response(timeout_sec=1)
-            for response in responses:
-                if response['message'] == 'stopped':
-                    reason = response['payload'].get('reason', '')
-                    if reason == 'breakpoint-hit':
-                        addr = response['payload'].get('frame', {}).get('addr', '')
-                        func = response['payload'].get('frame', {}).get('func', '')
-                        print(f"Breakpoint hit at {func} ({addr})")
-                        continue_execution(gdbmi)
-                    elif reason == 'watchpoint-trigger':
-                        print("Watchpoint triggered.")
-                        continue_execution(gdbmi)
+        # while True:
+        #     responses = gdbmi.get_gdb_response(timeout_sec=1)
+        #     for response in responses:
+        #         if response['message'] == 'stopped':
+        #             reason = response['payload'].get('reason', '')
+        #             if reason == 'breakpoint-hit':
+        #                 addr = response['payload'].get('frame', {}).get('addr', '')
+        #                 func = response['payload'].get('frame', {}).get('func', '')
+        #                 print(f"Breakpoint hit at {func} ({addr})")
+        #                 continue_execution(gdbmi)
+        #             elif reason == 'watchpoint-trigger':
+        #                 print("Watchpoint triggered.")
+        #                 continue_execution(gdbmi)
     except KeyboardInterrupt:
         print("Stopping GDB session.")
     finally:

@@ -4,6 +4,10 @@ import json
 import random
 import string
 import pdb
+import os
+import _py
+import _pylibfuzzer
+
 
 def generate_random_json():
     data = {}
