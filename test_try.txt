@@ -1,0 +1,54 @@
+Initial Stack Pointer: 0x20075680
+Entry Point (Reset Handler) address: 0x001006D9
+Interrupt handlers at addresses: ['0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1009d1', '0x1006d5', '0x100a31', '0x100a75', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x100555', '0x100569', '0x10057d', '0x100591', '0x1005a5', '0x1005b9', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x1006d5', '0x4c0db510', '0xb93b7823', '0xb11b4b04']
+
+Analyzing function sub_100555 at 0x100555
+Error analyzing function sub_100555 (0x100555): SimState.copy() got an unexpected keyword argument 'discard_tmpdefs'
+
+Analyzing function sub_100569 at 0x100569
+Error analyzing function sub_100569 (0x100569): SimState.copy() got an unexpected keyword argument 'discard_tmpdefs'
+
+Analyzing function sub_10057d at 0x10057d
+Error analyzing function sub_10057d (0x10057d): SimState.copy() got an unexpected keyword argument 'discard_tmpdefs'
+
+Analyzing function sub_100591 at 0x100591
+Error analyzing function sub_100591 (0x100591): SimState.copy() got an unexpected keyword argument 'discard_tmpdefs'
+
+Analyzing function sub_1005a5 at 0x1005a5
+Error analyzing function sub_1005a5 (0x1005a5): SimState.copy() got an unexpected keyword argument 'discard_tmpdefs'
+
+Analyzing function sub_1005b9 at 0x1005b9
+Error analyzing function sub_1005b9 (0x1005b9): SimState.copy() got an unexpected keyword argument 'discard_tmpdefs'
+
+Analyzing function sub_1006d5 at 0x1006d5
+Error analyzing function sub_1006d5 (0x1006d5): SimState.copy() got an unexpected keyword argument 'discard_tmpdefs'
+
+Analyzing function _start at 0x1006d9
+Error analyzing function _start (0x1006d9): SimState.copy() got an unexpected keyword argument 'discard_tmpdefs'
+
+Analyzing function sub_1009d1 at 0x1009d1
+Error analyzing function sub_1009d1 (0x1009d1): SimState.copy() got an unexpected keyword argument 'discard_tmpdefs'
+
+Analyzing function sub_100a31 at 0x100a31
+Error analyzing function sub_100a31 (0x100a31): SimState.copy() got an unexpected keyword argument 'discard_tmpdefs'
+
+Analyzing function sub_100a75 at 0x100a75
+Error analyzing function sub_100a75 (0x100a75): SimState.copy() got an unexpected keyword argument 'discard_tmpdefs'
+
+Analyzing function sub_4c0db510 at 0x4c0db510
+Error analyzing function sub_4c0db510 (0x4c0db510): No bytes in memory for block starting at 0x4c0db510.
+
+Analyzing function sub_b11b4b04 at 0xb11b4b04
+Error analyzing function sub_b11b4b04 (0xb11b4b04): No bytes in memory for block starting at 0xb11b4b04.
+
+Analyzing function sub_b93b7823 at 0xb93b7823
+Error analyzing function sub_b93b7823 (0xb93b7823): No bytes in memory for block starting at 0xb93b7822.
+
+Definitions not included in the CFG:
+Total number of definitions not in CFG: 0
+
+Def-use chains not included in the CFG or without control flow path:
+Total number of def-use chains not in CFG: 0
+
+External definitions involved in def-use chains not included in CFG:
+Total number of external definitions not in CFG: 0

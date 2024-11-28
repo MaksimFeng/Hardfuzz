@@ -1,0 +1,4251 @@
+Initial Stack Pointer: 0x20075680
+Entry Point (Reset Handler) address: 0x000806D9
+
+Analyzing function sub_80019 at 0x80019
+
+Analyzing function sub_80119 at 0x80119
+
+Analyzing function sub_8014b at 0x8014b
+
+Analyzing function sub_80161 at 0x80161
+
+Analyzing function sub_801c5 at 0x801c5
+
+Analyzing function sub_801f7 at 0x801f7
+
+Analyzing function sub_80201 at 0x80201
+
+Analyzing function sub_80247 at 0x80247
+
+Analyzing function sub_80251 at 0x80251
+
+Analyzing function sub_802d9 at 0x802d9
+
+Analyzing function sub_802dd at 0x802dd
+
+Analyzing function sub_802e1 at 0x802e1
+
+Analyzing function sub_8031f at 0x8031f
+
+Analyzing function sub_80351 at 0x80351
+
+Analyzing function sub_80377 at 0x80377
+
+Analyzing function sub_8037b at 0x8037b
+
+Analyzing function sub_8037f at 0x8037f
+
+Analyzing function sub_80399 at 0x80399
+
+Analyzing function sub_8045b at 0x8045b
+
+Analyzing function sub_80469 at 0x80469
+
+Analyzing function sub_80505 at 0x80505
+
+Analyzing function sub_80555 at 0x80555
+
+Analyzing function sub_80569 at 0x80569
+
+Analyzing function sub_8057d at 0x8057d
+
+Analyzing function sub_80591 at 0x80591
+
+Analyzing function sub_805a5 at 0x805a5
+
+Analyzing function sub_805b9 at 0x805b9
+
+Analyzing function sub_805cd at 0x805cd
+
+Analyzing function sub_8062b at 0x8062b
+
+Analyzing function sub_80631 at 0x80631
+
+Analyzing function sub_80677 at 0x80677
+
+Analyzing function sub_80685 at 0x80685
+
+Analyzing function sub_8068f at 0x8068f
+
+Analyzing function sub_80695 at 0x80695
+
+Analyzing function sub_8069f at 0x8069f
+
+Analyzing function sub_806a5 at 0x806a5
+
+Analyzing function sub_806af at 0x806af
+
+Analyzing function sub_806b5 at 0x806b5
+
+Analyzing function sub_806cf at 0x806cf
+
+Analyzing function sub_806d5 at 0x806d5
+
+Analyzing function _start at 0x806d9
+
+Analyzing function sub_80771 at 0x80771
+
+Analyzing function sub_80867 at 0x80867
+
+Analyzing function sub_80889 at 0x80889
+
+Analyzing function sub_808b3 at 0x808b3
+
+Analyzing function sub_808c1 at 0x808c1
+
+Analyzing function sub_808c7 at 0x808c7
+
+Analyzing function sub_808d1 at 0x808d1
+
+Analyzing function sub_808d5 at 0x808d5
+
+Analyzing function sub_808d9 at 0x808d9
+
+Analyzing function sub_808ef at 0x808ef
+
+Analyzing function sub_808f5 at 0x808f5
+
+Analyzing function sub_8090d at 0x8090d
+
+Analyzing function sub_80941 at 0x80941
+
+Analyzing function sub_80967 at 0x80967
+
+Analyzing function sub_80989 at 0x80989
+
+Analyzing function sub_80997 at 0x80997
+
+Analyzing function sub_809a9 at 0x809a9
+
+Analyzing function sub_809c7 at 0x809c7
+
+Analyzing function sub_809d1 at 0x809d1
+
+Analyzing function sub_809f5 at 0x809f5
+
+Analyzing function sub_80a0f at 0x80a0f
+
+Analyzing function sub_80a15 at 0x80a15
+
+Analyzing function sub_80a31 at 0x80a31
+
+Analyzing function sub_80a75 at 0x80a75
+
+Analyzing function sub_80a9d at 0x80a9d
+
+Analyzing function sub_80aa5 at 0x80aa5
+
+Analyzing function sub_80abb at 0x80abb
+
+Analyzing function sub_80acd at 0x80acd
+
+Analyzing function sub_80aef at 0x80aef
+
+Analyzing function sub_80afb at 0x80afb
+
+Analyzing function sub_80b15 at 0x80b15
+
+Analyzing function sub_80b67 at 0x80b67
+
+Analyzing function sub_80b7d at 0x80b7d
+
+Analyzing function sub_80b81 at 0x80b81
+
+Analyzing function sub_80b97 at 0x80b97
+
+Analyzing function sub_80ba1 at 0x80ba1
+
+Analyzing function sub_80c17 at 0x80c17
+
+Analyzing function sub_80c21 at 0x80c21
+
+Analyzing function sub_80ca7 at 0x80ca7
+
+Analyzing function sub_80cb9 at 0x80cb9
+
+Analyzing function sub_80d0f at 0x80d0f
+
+Analyzing function sub_80d21 at 0x80d21
+
+Analyzing function sub_80d57 at 0x80d57
+
+Analyzing function sub_80d61 at 0x80d61
+
+Analyzing function sub_80e89 at 0x80e89
+
+Analyzing function sub_80eb5 at 0x80eb5
+
+Analyzing function sub_80ff3 at 0x80ff3
+
+Analyzing function sub_8102d at 0x8102d
+
+Analyzing function sub_8104f at 0x8104f
+
+Analyzing function sub_81059 at 0x81059
+
+Analyzing function sub_810d3 at 0x810d3
+
+Analyzing function sub_810fd at 0x810fd
+
+Analyzing function sub_8111d at 0x8111d
+
+Analyzing function sub_812e5 at 0x812e5
+
+Analyzing function sub_8133d at 0x8133d
+
+Analyzing function sub_8134d at 0x8134d
+
+Analyzing function sub_81357 at 0x81357
+
+Analyzing function sub_8135d at 0x8135d
+
+Analyzing function sub_81437 at 0x81437
+
+Analyzing function sub_8146d at 0x8146d
+
+Analyzing function sub_8150f at 0x8150f
+
+Analyzing function sub_81549 at 0x81549
+
+Analyzing function sub_81577 at 0x81577
+
+Analyzing function sub_81589 at 0x81589
+
+Analyzing function sub_8161f at 0x8161f
+
+Analyzing function sub_81639 at 0x81639
+
+Analyzing function sub_8165d at 0x8165d
+
+Analyzing function sub_816d9 at 0x816d9
+
+Analyzing function sub_816e7 at 0x816e7
+
+Analyzing function sub_816f1 at 0x816f1
+
+Analyzing function sub_81755 at 0x81755
+
+Analyzing function sub_81761 at 0x81761
+
+Analyzing function sub_8180b at 0x8180b
+
+Analyzing function sub_81821 at 0x81821
+
+Analyzing function sub_818a9 at 0x818a9
+
+Analyzing function sub_8192f at 0x8192f
+
+Analyzing function sub_81941 at 0x81941
+
+Analyzing function sub_81957 at 0x81957
+
+Analyzing function sub_8195d at 0x8195d
+
+Analyzing function sub_819bb at 0x819bb
+
+Analyzing function sub_819dd at 0x819dd
+
+Analyzing function sub_81a3b at 0x81a3b
+
+Analyzing function sub_81a5d at 0x81a5d
+
+Analyzing function sub_81a73 at 0x81a73
+
+Analyzing function sub_81a81 at 0x81a81
+
+Analyzing function sub_81a8f at 0x81a8f
+
+Analyzing function sub_81a99 at 0x81a99
+
+Analyzing function sub_81a9b at 0x81a9b
+
+Analyzing function sub_81a9d at 0x81a9d
+
+Analyzing function sub_81ad1 at 0x81ad1
+
+Analyzing function sub_81b27 at 0x81b27
+
+Analyzing function sub_81b59 at 0x81b59
+
+Analyzing function sub_81b97 at 0x81b97
+
+Analyzing function sub_81ba9 at 0x81ba9
+
+Analyzing function sub_81bd1 at 0x81bd1
+
+Analyzing function sub_81c6f at 0x81c6f
+
+Analyzing function sub_81cbd at 0x81cbd
+
+Analyzing function sub_81d57 at 0x81d57
+
+Analyzing function sub_81d59 at 0x81d59
+
+Analyzing function sub_81db5 at 0x81db5
+
+Analyzing function sub_81e33 at 0x81e33
+
+Analyzing function sub_81e35 at 0x81e35
+
+Analyzing function sub_8286b at 0x8286b
+
+Analyzing function sub_82abd at 0x82abd
+
+Analyzing function sub_82b45 at 0x82b45
+
+Analyzing function sub_82c07 at 0x82c07
+
+Analyzing function sub_82c0d at 0x82c0d
+
+Analyzing function sub_82c2d at 0x82c2d
+
+Analyzing function sub_82d5f at 0x82d5f
+
+Analyzing function sub_82d65 at 0x82d65
+
+Analyzing function sub_82db9 at 0x82db9
+
+Analyzing function sub_82dbf at 0x82dbf
+
+Analyzing function sub_82dc5 at 0x82dc5
+
+Analyzing function sub_82e15 at 0x82e15
+
+Analyzing function sub_82e75 at 0x82e75
+
+Analyzing function sub_82e7b at 0x82e7b
+
+Analyzing function sub_82e81 at 0x82e81
+
+Analyzing function sub_82e87 at 0x82e87
+
+Analyzing function sub_82e8d at 0x82e8d
+
+Analyzing function sub_82eb7 at 0x82eb7
+
+Analyzing function sub_82ec1 at 0x82ec1
+
+Analyzing function sub_82f59 at 0x82f59
+
+Analyzing function sub_82fbf at 0x82fbf
+
+Analyzing function sub_82fc1 at 0x82fc1
+
+Analyzing function sub_83053 at 0x83053
+
+Analyzing function sub_83061 at 0x83061
+
+Analyzing function sub_8322d at 0x8322d
+
+Analyzing function sub_8351b at 0x8351b
+
+Analyzing function sub_83521 at 0x83521
+
+Analyzing function sub_83571 at 0x83571
+
+Analyzing function sub_8358d at 0x8358d
+
+Analyzing function sub_8358f at 0x8358f
+
+Analyzing function sub_83591 at 0x83591
+
+Analyzing function sub_83593 at 0x83593
+
+Analyzing function sub_83595 at 0x83595
+
+Analyzing function sub_83597 at 0x83597
+
+Analyzing function sub_83599 at 0x83599
+
+Analyzing function sub_8359b at 0x8359b
+
+Analyzing function sub_8359d at 0x8359d
+
+Analyzing function sub_835f9 at 0x835f9
+
+Analyzing function sub_8368d at 0x8368d
+
+Analyzing function sub_83bcb at 0x83bcb
+
+Analyzing function sub_83bd1 at 0x83bd1
+
+Analyzing function sub_83bfb at 0x83bfb
+
+Analyzing function sub_83bfd at 0x83bfd
+
+Analyzing function sub_83c89 at 0x83c89
+
+Analyzing function sub_83d4f at 0x83d4f
+
+Analyzing function sub_83d51 at 0x83d51
+
+Analyzing function sub_83d57 at 0x83d57
+
+Analyzing function sub_83d5d at 0x83d5d
+
+Analyzing function sub_83d63 at 0x83d63
+
+Analyzing function sub_83d69 at 0x83d69
+
+Analyzing function sub_840d3 at 0x840d3
+
+Analyzing function sub_840d5 at 0x840d5
+
+Analyzing function sub_840f9 at 0x840f9
+
+Analyzing function sub_8411b at 0x8411b
+
+Analyzing function sub_8411d at 0x8411d
+
+Analyzing function sub_84159 at 0x84159
+
+Analyzing function sub_84179 at 0x84179
+
+Analyzing function sub_84181 at 0x84181
+
+Analyzing function sub_8422f at 0x8422f
+
+Analyzing function sub_84231 at 0x84231
+
+Analyzing function sub_8427b at 0x8427b
+
+Analyzing function sub_84285 at 0x84285
+
+Analyzing function sub_842c3 at 0x842c3
+
+Analyzing function sub_842c9 at 0x842c9
+
+Analyzing function sub_8437f at 0x8437f
+
+Analyzing function sub_843b1 at 0x843b1
+
+Analyzing function sub_84473 at 0x84473
+
+Analyzing function sub_84475 at 0x84475
+
+Analyzing function sub_8449d at 0x8449d
+
+Analyzing function sub_844c1 at 0x844c1
+
+Analyzing function sub_844e7 at 0x844e7
+
+Analyzing function sub_844ed at 0x844ed
+
+Analyzing function sub_84513 at 0x84513
+
+Analyzing function sub_84519 at 0x84519
+
+Analyzing function sub_84549 at 0x84549
+
+Analyzing function sub_84827 at 0x84827
+
+Analyzing function sub_848ad at 0x848ad
+
+Analyzing function sub_849e1 at 0x849e1
+
+Analyzing function sub_849ed at 0x849ed
+
+Analyzing function sub_84a00 at 0x84a00
+
+Analyzing function sub_84a10 at 0x84a10
+
+Analyzing function sub_84a25 at 0x84a25
+
+Analyzing function sub_84a93 at 0x84a93
+
+Analyzing function sub_84ab1 at 0x84ab1
+
+Analyzing function sub_84b39 at 0x84b39
+
+Analyzing function sub_84bfd at 0x84bfd
+
+Analyzing function sub_84bff at 0x84bff
+
+Analyzing function sub_85099 at 0x85099
+
+Analyzing function sub_851b1 at 0x851b1
+
+Analyzing function sub_851d4 at 0x851d4
+
+Analyzing function sub_851f4 at 0x851f4
+
+Analyzing function sub_85214 at 0x85214
+
+Analyzing function sub_852d2 at 0x852d2
+
+Analyzing function sub_85314 at 0x85314
+
+Analyzing function sub_853d2 at 0x853d2
+
+Analyzing function sub_85414 at 0x85414
+
+Analyzing function sub_854eb at 0x854eb
+
+Analyzing function UnresolvableJumpTarget at 0x100014
+
+Analyzing function UnresolvableCallTarget at 0x100018
+
+Def-use chains not included in the CFG or without control flow path:
+Definition at instruction address: 0x84d87
+  Use at instruction address: 0x84d88 - Reason: Use instruction not in CFG
+Total number of def-use chains not in CFG: 1
+
+External definitions involved in def-use chains not included in CFG:
+External Register: r3
+  Used at instruction address: 0x8035b
+External MemoryLocation at address: 0x81538
+  Used at instruction address: 0x814fd
+  Used at instruction address: 0x814df
+External MemoryLocation at address: 0x80158
+  Used at instruction address: 0x80127
+  Used at instruction address: 0x8012f
+External Register: r0
+  Used at instruction address: 0x84b39
+External Register: cc_dep2
+  Used at instruction address: 0x81a0b
+External Register: r8
+  Used at instruction address: 0x83233
+External MemoryLocation at address: 0x80d5c
+  Used at instruction address: 0x80d47
+External MemoryLocation at address: 0x80678
+  Used at instruction address: 0x80667
+  Used at instruction address: 0x80657
+  Used at instruction address: 0x80633
+External Register: cc_ndep
+  Used at instruction address: 0x80557
+External MemoryLocation at address: 0x83588
+  Used at instruction address: 0x83573
+External Register: r0
+  Used at instruction address: 0x80cbb
+  Used at instruction address: 0x80cc1
+External Register: cc_ndep
+  Used at instruction address: 0x851d4
+External Register: cc_dep2
+  Used at instruction address: 0x80019
+External Register: r1
+  Used at instruction address: 0x82ac1
+  Used at instruction address: 0x82ad5
+External Register: r0
+  Used at instruction address: 0x80893
+External Register: r4
+  Used at instruction address: 0x840f9
+External Register: r0
+  Used at instruction address: 0x803f5
+  Used at instruction address: 0x8039f
+  Used at instruction address: 0x80433
+  Used at instruction address: 0x803c3
+  Used at instruction address: 0x80419
+External Register: r3
+  Used at instruction address: 0x82fc9
+  Used at instruction address: 0x82fc1
+External MemoryLocation at address: 0x810e8
+  Used at instruction address: 0x810cd
+  Used at instruction address: 0x8109f
+External Register: r6
+  Used at instruction address: 0x84bf9
+  Used at instruction address: 0x84b51
+External Register: cc_dep2
+  Used at instruction address: 0x8112d
+External MemoryLocation at address: 0x8189c
+  Used at instruction address: 0x8184f
+  Used at instruction address: 0x81883
+External Register: r7
+  Used at instruction address: 0x844c1
+External Register: lr
+  Used at instruction address: 0x80a75
+External Register: r5
+  Used at instruction address: 0x8090d
+External Register: r0
+  Used at instruction address: 0x840db
+External MemoryLocation at address: 0x8101c
+  Used at instruction address: 0x80f87
+External MemoryLocation at address: 0x81014
+  Used at instruction address: 0x80f91
+  Used at instruction address: 0x80f35
+External MemoryLocation at address: 0x840f4
+  Used at instruction address: 0x840d9
+External MemoryLocation at address: 0x80548
+  Used at instruction address: 0x8050d
+External MemoryLocation at address: 0x80a24
+  Used at instruction address: 0x80a15
+External Register: cc_ndep
+  Used at instruction address: 0x844c5
+External Register: r0
+  Used at instruction address: 0x84bff
+  Used at instruction address: 0x84c03
+External Register: lr
+  Used at instruction address: 0x81a81
+External MemoryLocation at address: 0x82444
+  Used at instruction address: 0x8212d
+External Register: r1
+  Used at instruction address: 0x804b3
+  Used at instruction address: 0x8048b
+  Used at instruction address: 0x804cf
+  Used at instruction address: 0x8046f
+External MemoryLocation at address: 0x851cc
+  Used at instruction address: 0x850bd
+External Register: r1
+  Used at instruction address: 0x80e07
+  Used at instruction address: 0x80d69
+  Used at instruction address: 0x80dab
+  Used at instruction address: 0x80da3
+  Used at instruction address: 0x80ddd
+  Used at instruction address: 0x80dbd
+  Used at instruction address: 0x80dd9
+  Used at instruction address: 0x80ddf
+External Register: lr
+  Used at instruction address: 0x849e1
+External Register: r1
+  Used at instruction address: 0x80d31
+  Used at instruction address: 0x80d25
+  Used at instruction address: 0x80d29
+External Register: r4
+  Used at instruction address: 0x81a5d
+External Register: r0
+  Used at instruction address: 0x84521
+  Used at instruction address: 0x84529
+External Register: r11
+  Used at instruction address: 0x80d61
+External Register: r5
+  Used at instruction address: 0x801c5
+External MemoryLocation at address: 0x81a48
+  Used at instruction address: 0x81a15
+External Register: lr
+  Used at instruction address: 0x80161
+External Register: lr
+  Used at instruction address: 0x81a99
+External Register: r7
+  Used at instruction address: 0x82fc1
+External Register: r4
+  Used at instruction address: 0x85139
+  Used at instruction address: 0x850f5
+  Used at instruction address: 0x85175
+  Used at instruction address: 0x85135
+  Used at instruction address: 0x850f9
+  Used at instruction address: 0x85179
+External Register: cc_ndep
+  Used at instruction address: 0x84a2f
+External Register: r5
+  Used at instruction address: 0x82abd
+External Register: cc_ndep
+  Used at instruction address: 0x82d79
+External Register: lr
+  Used at instruction address: 0x84535
+  Used at instruction address: 0x84825
+External Register: r7
+  Used at instruction address: 0x84f6c
+External Register: cc_dep1
+  Used at instruction address: 0x84bff
+External MemoryLocation at address: 0x808b8
+  Used at instruction address: 0x80895
+External Register: r1
+  Used at instruction address: 0x816f9
+  Used at instruction address: 0x81725
+  Used at instruction address: 0x816f5
+External MemoryLocation at address: 0x80e84
+  Used at instruction address: 0x80d77
+External MemoryLocation at address: 0x81444
+  Used at instruction address: 0x813f5
+  Used at instruction address: 0x81383
+  Used at instruction address: 0x8137b
+  Used at instruction address: 0x813ff
+  Used at instruction address: 0x8139f
+External Register: r9
+  Used at instruction address: 0x80eb5
+External Register: cc_dep2
+  Used at instruction address: 0x851d4
+External Register: r3
+  Used at instruction address: 0x80d6d
+  Used at instruction address: 0x80dbd
+External Register: r1
+  Used at instruction address: 0x816af
+External Register: r1
+  Used at instruction address: 0x8323b
+  Used at instruction address: 0x83237
+External Register: r0
+  Used at instruction address: 0x842cf
+External Register: r1
+  Used at instruction address: 0x802d9
+External Register: cc_ndep
+  Used at instruction address: 0x854eb
+External MemoryLocation at address: 0x801a4
+  Used at instruction address: 0x8016d
+External Register: lr
+  Used at instruction address: 0x844ed
+External Register: lr
+  Used at instruction address: 0x8359d
+External Register: cc_ndep
+  Used at instruction address: 0x80baf
+External MemoryLocation at address: 0x849f8
+  Used at instruction address: 0x82ea5
+External Register: r6
+  Used at instruction address: 0x8135d
+External Register: r7
+  Used at instruction address: 0x801c5
+External Register: r1
+  Used at instruction address: 0x84123
+  Used at instruction address: 0x84121
+External MemoryLocation at address: 0x8014c
+  Used at instruction address: 0x80119
+External MemoryLocation at address: 0x80b78
+  Used at instruction address: 0x80b53
+External Register: cc_dep1
+  Used at instruction address: 0x84129
+External Register: cc_ndep
+  Used at instruction address: 0x80593
+External Register: lr
+  Used at instruction address: 0x805f5
+  Used at instruction address: 0x80629
+  Used at instruction address: 0x80625
+  Used at instruction address: 0x80621
+External Register: r5
+  Used at instruction address: 0x82d65
+External Register: cc_ndep
+  Used at instruction address: 0x851b1
+External MemoryLocation at address: 0x80ca8
+  Used at instruction address: 0x80c65
+  Used at instruction address: 0x80c27
+External Register: cc_dep1
+  Used at instruction address: 0x805a7
+External Register: r6
+  Used at instruction address: 0x8146d
+External Register: lr
+  Used at instruction address: 0x809eb
+External Register: r0
+  Used at instruction address: 0x81e47
+  Used at instruction address: 0x81e45
+  Used at instruction address: 0x81e43
+  Used at instruction address: 0x82035
+External MemoryLocation at address: 0x8019c
+  Used at instruction address: 0x80195
+  Used at instruction address: 0x80163
+External MemoryLocation at address: 0x82e04
+  Used at instruction address: 0x82de7
+External MemoryLocation at address: 0x812b8
+  Used at instruction address: 0x8121d
+External Register: lr
+  Used at instruction address: 0x816f1
+External MemoryLocation at address: 0x839b4
+  Used at instruction address: 0x837e9
+  Used at instruction address: 0x836d1
+External Register: lr
+  Used at instruction address: 0x80e89
+External MemoryLocation at address: 0x806d0
+  Used at instruction address: 0x806b9
+External Register: r5
+  Used at instruction address: 0x81db5
+External Register: cc_dep1
+  Used at instruction address: 0x80321
+External Register: r0
+  Used at instruction address: 0x82b49
+External MemoryLocation at address: 0x80460
+  Used at instruction address: 0x80427
+External Register: r6
+  Used at instruction address: 0x80d61
+External MemoryLocation at address: 0x840b8
+  Used at instruction address: 0x83d9f
+External Register: r1
+  Used at instruction address: 0x843b3
+  Used at instruction address: 0x843b7
+  Used at instruction address: 0x8443b
+External Register: r8
+  Used at instruction address: 0x80eb5
+External Register: r3
+  Used at instruction address: 0x81825
+External MemoryLocation at address: 0x80eac
+  Used at instruction address: 0x80e91
+External Register: r5
+  Used at instruction address: 0x80207
+External Register: r7
+  Used at instruction address: 0x85454
+  Used at instruction address: 0x85478
+  Used at instruction address: 0x85484
+  Used at instruction address: 0x8548c
+  Used at instruction address: 0x85440
+  Used at instruction address: 0x85460
+  Used at instruction address: 0x85428
+  Used at instruction address: 0x854a0
+  Used at instruction address: 0x8544c
+  Used at instruction address: 0x85420
+  Used at instruction address: 0x85450
+  Used at instruction address: 0x85474
+  Used at instruction address: 0x8543c
+  Used at instruction address: 0x8549c
+  Used at instruction address: 0x8541c
+  Used at instruction address: 0x8547c
+  Used at instruction address: 0x85464
+  Used at instruction address: 0x85434
+  Used at instruction address: 0x85444
+  Used at instruction address: 0x85458
+  Used at instruction address: 0x85494
+  Used at instruction address: 0x85468
+  Used at instruction address: 0x85470
+  Used at instruction address: 0x85488
+  Used at instruction address: 0x8546c
+  Used at instruction address: 0x85418
+  Used at instruction address: 0x85424
+  Used at instruction address: 0x85430
+  Used at instruction address: 0x85480
+  Used at instruction address: 0x85438
+  Used at instruction address: 0x8545c
+  Used at instruction address: 0x85414
+  Used at instruction address: 0x85490
+  Used at instruction address: 0x85448
+  Used at instruction address: 0x854a4
+  Used at instruction address: 0x8542c
+  Used at instruction address: 0x85498
+External Register: r5
+  Used at instruction address: 0x82f59
+External Register: r1
+  Used at instruction address: 0x844ef
+External Register: cc_dep2
+  Used at instruction address: 0x80baf
+External Register: r3
+  Used at instruction address: 0x851b1
+External MemoryLocation at address: 0x82ab8
+  Used at instruction address: 0x82a43
+External Register: cc_op
+  Used at instruction address: 0x844f1
+External Register: cc_op
+  Used at instruction address: 0x81dbd
+External Register: lr
+  Used at instruction address: 0x80a0d
+External Register: r1
+  Used at instruction address: 0x84477
+External Register: r6
+  Used at instruction address: 0x83bff
+External Register: cc_dep2
+  Used at instruction address: 0x80593
+External Register: r7
+  Used at instruction address: 0x82ec1
+External Register: cc_op
+  Used at instruction address: 0x84479
+External Register: r4
+  Used at instruction address: 0x82abd
+External Register: r0
+  Used at instruction address: 0x8037f
+  Used at instruction address: 0x8038b
+External Register: r7
+  Used at instruction address: 0x81db5
+External Register: r5
+  Used at instruction address: 0x81059
+External Register: lr
+  Used at instruction address: 0x80379
+External Register: r1
+  Used at instruction address: 0x81bf9
+  Used at instruction address: 0x81c19
+  Used at instruction address: 0x81be1
+  Used at instruction address: 0x81c75
+  Used at instruction address: 0x81c5d
+  Used at instruction address: 0x81be9
+  Used at instruction address: 0x81c3f
+  Used at instruction address: 0x81c39
+  Used at instruction address: 0x81c49
+  Used at instruction address: 0x81bd3
+  Used at instruction address: 0x81c11
+  Used at instruction address: 0x81bf5
+  Used at instruction address: 0x81c89
+  Used at instruction address: 0x81c09
+  Used at instruction address: 0x81ca3
+  Used at instruction address: 0x81c35
+  Used at instruction address: 0x81c01
+  Used at instruction address: 0x81c0d
+  Used at instruction address: 0x81c23
+  Used at instruction address: 0x81be5
+  Used at instruction address: 0x81bf1
+  Used at instruction address: 0x81bed
+  Used at instruction address: 0x81bfd
+  Used at instruction address: 0x81c1d
+  Used at instruction address: 0x81c05
+  Used at instruction address: 0x81c15
+  Used at instruction address: 0x81c2d
+  Used at instruction address: 0x81c31
+External Register: r1
+  Used at instruction address: 0x8451d
+  Used at instruction address: 0x84525
+External Register: cc_ndep
+  Used at instruction address: 0x80aa7
+External MemoryLocation at address: 0x81584
+  Used at instruction address: 0x8156d
+External MemoryLocation at address: 0x81b54
+  Used at instruction address: 0x81b1d
+External Register: cc_dep2
+  Used at instruction address: 0x82e23
+External Register: cc_ndep
+  Used at instruction address: 0x805d5
+External Register: r5
+  Used at instruction address: 0x80a3d
+External MemoryLocation at address: 0x81298
+  Used at instruction address: 0x811bf
+External Register: cc_ndep
+  Used at instruction address: 0x85414
+External Register: r7
+  Used at instruction address: 0x80207
+External Register: r4
+  Used at instruction address: 0x80b81
+External Register: lr
+  Used at instruction address: 0x830ef
+  Used at instruction address: 0x83065
+External Register: cc_dep2
+  Used at instruction address: 0x812ed
+External Register: r5
+  Used at instruction address: 0x83d6f
+External Register: cc_op
+  Used at instruction address: 0x81a0b
+External MemoryLocation at address: 0x80b00
+  Used at instruction address: 0x80ae1
+External Register: r5
+  Used at instruction address: 0x8360f
+External Register: lr
+  Used at instruction address: 0x83c51
+External Register: r7
+  Used at instruction address: 0x8514d
+  Used at instruction address: 0x85111
+  Used at instruction address: 0x85151
+  Used at instruction address: 0x8518d
+  Used at instruction address: 0x8510d
+  Used at instruction address: 0x85191
+External MemoryLocation at address: 0x81514
+  Used at instruction address: 0x81475
+External MemoryLocation at address: 0x849f0
+  Used at instruction address: 0x81b89
+  Used at instruction address: 0x81b79
+  Used at instruction address: 0x81b6b
+External Register: lr
+  Used at instruction address: 0x82b45
+External Register: r5
+  Used at instruction address: 0x81a9d
+External Register: cc_op
+  Used at instruction address: 0x80019
+External Register: lr
+  Used at instruction address: 0x80555
+External Register: r5
+  Used at instruction address: 0x8133d
+External MemoryLocation at address: 0x84a14
+  Used at instruction address: 0x80745
+  Used at instruction address: 0x806f9
+External Register: cc_dep2
+  Used at instruction address: 0x851f4
+External Register: r8
+  Used at instruction address: 0x852ee
+  Used at instruction address: 0x852ea
+  Used at instruction address: 0x8530a
+External Register: lr
+  Used at instruction address: 0x80399
+External Register: r7
+  Used at instruction address: 0x8111d
+External Register: r4
+  Used at instruction address: 0x8438d
+External Register: r6
+  Used at instruction address: 0x84843
+  Used at instruction address: 0x84851
+  Used at instruction address: 0x84835
+  Used at instruction address: 0x8484f
+  Used at instruction address: 0x84861
+External Register: r2
+  Used at instruction address: 0x83bdd
+  Used at instruction address: 0x83beb
+  Used at instruction address: 0x83bd5
+  Used at instruction address: 0x83bd9
+  Used at instruction address: 0x83bef
+External Register: r4
+  Used at instruction address: 0x84a10
+External MemoryLocation at address: 0x80e80
+  Used at instruction address: 0x80e2b
+External Register: r0
+  Used at instruction address: 0x82ec7
+  Used at instruction address: 0x82ecd
+External Register: cc_op
+  Used at instruction address: 0x8112d
+External MemoryLocation at address: 0x8427c
+  Used at instruction address: 0x8423b
+  Used at instruction address: 0x84261
+External MemoryLocation at address: 0x81810
+  Used at instruction address: 0x8178b
+  Used at instruction address: 0x817e7
+  Used at instruction address: 0x817b5
+External Register: cc_dep2
+  Used at instruction address: 0x83bfd
+External Register: r5
+  Used at instruction address: 0x80ba1
+External Register: r1
+  Used at instruction address: 0x84c01
+External Register: r3
+  Used at instruction address: 0x80591
+External Register: lr
+  Used at instruction address: 0x844c1
+External Register: r5
+  Used at instruction address: 0x83521
+External MemoryLocation at address: 0x81294
+  Used at instruction address: 0x81151
+External Register: r4
+  Used at instruction address: 0x80d21
+External Register: r4
+  Used at instruction address: 0x8449d
+External MemoryLocation at address: 0x81348
+  Used at instruction address: 0x81327
+External Register: r11
+  Used at instruction address: 0x819dd
+External Register: r7
+  Used at instruction address: 0x83d6f
+External Register: cc_dep2
+  Used at instruction address: 0x840d7
+External MemoryLocation at address: 0x81024
+  Used at instruction address: 0x80fe1
+External MemoryLocation at address: 0x801a0
+  Used at instruction address: 0x80165
+  Used at instruction address: 0x80197
+External Register: r2
+  Used at instruction address: 0x83295
+  Used at instruction address: 0x8322d
+  Used at instruction address: 0x83241
+External Register: cc_dep1
+  Used at instruction address: 0x80a11
+External Register: cc_ndep
+  Used at instruction address: 0x805bb
+External MemoryLocation at address: 0x82e88
+  Used at instruction address: 0x82e81
+External Register: cc_dep1
+  Used at instruction address: 0x80b19
+External Register: r4
+  Used at instruction address: 0x81e35
+External Register: cc_dep2
+  Used at instruction address: 0x80aa7
+External Register: r4
+  Used at instruction address: 0x81591
+External Register: r2
+  Used at instruction address: 0x82f5b
+  Used at instruction address: 0x82f5d
+  Used at instruction address: 0x82f63
+External Register: cc_dep2
+  Used at instruction address: 0x80519
+External MemoryLocation at address: 0x81050
+  Used at instruction address: 0x8102d
+  Used at instruction address: 0x81035
+External Register: r8
+  Used at instruction address: 0x851dc
+  Used at instruction address: 0x851e0
+External MemoryLocation at address: 0x81b2c
+  Used at instruction address: 0x81ad9
+External Register: cc_ndep
+  Used at instruction address: 0x8057f
+External Register: r0
+  Used at instruction address: 0x8418b
+  Used at instruction address: 0x84229
+  Used at instruction address: 0x84189
+  Used at instruction address: 0x84187
+External MemoryLocation at address: 0x81450
+  Used at instruction address: 0x813a3
+External Register: r4
+  Used at instruction address: 0x8165d
+External MemoryLocation at address: 0x80e74
+  Used at instruction address: 0x80e35
+  Used at instruction address: 0x80db5
+  Used at instruction address: 0x80e55
+External Register: cc_ndep
+  Used at instruction address: 0x80a95
+External Register: r4
+  Used at instruction address: 0x81765
+External Register: lr
+  Used at instruction address: 0x82fc1
+External MemoryLocation at address: 0x81540
+  Used at instruction address: 0x81505
+External MemoryLocation at address: 0x81004
+  Used at instruction address: 0x80ef7
+External Register: r7
+  Used at instruction address: 0x80505
+External Register: r1
+  Used at instruction address: 0x80ebd
+  Used at instruction address: 0x80f3f
+  Used at instruction address: 0x80f09
+  Used at instruction address: 0x80ef9
+  Used at instruction address: 0x80eff
+  Used at instruction address: 0x80f59
+  Used at instruction address: 0x80eed
+  Used at instruction address: 0x80f57
+  Used at instruction address: 0x80edd
+  Used at instruction address: 0x80f81
+  Used at instruction address: 0x80f53
+External MemoryLocation at address: 0x82c1c
+  Used at instruction address: 0x82c11
+External MemoryLocation at address: 0x81458
+  Used at instruction address: 0x813b3
+External Register: cc_op
+  Used at instruction address: 0x851d4
+External MemoryLocation at address: 0x819d0
+  Used at instruction address: 0x81961
+External MemoryLocation at address: 0x80ac0
+  Used at instruction address: 0x80aab
+External Register: r7
+  Used at instruction address: 0x83521
+External Register: lr
+  Used at instruction address: 0x840d5
+External Register: r4
+  Used at instruction address: 0x80af7
+External Register: r0
+  Used at instruction address: 0x83619
+  Used at instruction address: 0x8361b
+External Register: r8
+  Used at instruction address: 0x83065
+External MemoryLocation at address: 0x801bc
+  Used at instruction address: 0x8018d
+External Register: r5
+  Used at instruction address: 0x8368d
+External Register: cc_dep1
+  Used at instruction address: 0x84a00
+  Used at instruction address: 0x84a08
+External Register: r4
+  Used at instruction address: 0x84231
+External Register: cc_dep1
+  Used at instruction address: 0x835fd
+External MemoryLocation at address: 0x84aa0
+  Used at instruction address: 0x84a35
+External MemoryLocation at address: 0x80eb0
+  Used at instruction address: 0x80ea5
+External Register: cc_dep2
+  Used at instruction address: 0x80b93
+External Register: lr
+  Used at instruction address: 0x801c5
+External MemoryLocation at address: 0x801c0
+  Used at instruction address: 0x80191
+External MemoryLocation at address: 0x80e64
+  Used at instruction address: 0x80d83
+External Register: cc_dep1
+  Used at instruction address: 0x8025b
+External Register: cc_dep2
+  Used at instruction address: 0x808d1
+External Register: r4
+  Used at instruction address: 0x842c9
+External Register: r4
+  Used at instruction address: 0x849ed
+External Register: cc_dep2
+  Used at instruction address: 0x8057f
+External MemoryLocation at address: 0x804f8
+  Used at instruction address: 0x80491
+  Used at instruction address: 0x804b9
+External Register: r4
+  Used at instruction address: 0x851b5
+  Used at instruction address: 0x851b9
+External Register: cc_dep1
+  Used at instruction address: 0x81bd7
+External Register: r3
+  Used at instruction address: 0x8483f
+External Register: cc_op
+  Used at instruction address: 0x85099
+External Register: cc_dep1
+  Used at instruction address: 0x808cd
+External MemoryLocation at address: 0x84514
+  Used at instruction address: 0x844f3
+External Register: r4
+  Used at instruction address: 0x82c31
+External MemoryLocation at address: 0x8193c
+  Used at instruction address: 0x81927
+External Register: r0
+  Used at instruction address: 0x80d29
+  Used at instruction address: 0x80d23
+External Register: r0
+  Used at instruction address: 0x84a08
+  Used at instruction address: 0x84a00
+External Register: lr
+  Used at instruction address: 0x8090b
+External Register: cc_dep1
+  Used at instruction address: 0x808d5
+External Register: r0
+  Used at instruction address: 0x8155f
+  Used at instruction address: 0x8154b
+  Used at instruction address: 0x81563
+External Register: lr
+  Used at instruction address: 0x83591
+External Register: lr
+  Used at instruction address: 0x808cf
+External MemoryLocation at address: 0x81a74
+  Used at instruction address: 0x81a61
+External Register: cc_ndep
+  Used at instruction address: 0x84bff
+External MemoryLocation at address: 0x84b2c
+  Used at instruction address: 0x84ac3
+External MemoryLocation at address: 0x81340
+  Used at instruction address: 0x8131d
+External Register: r4
+  Used at instruction address: 0x81cbd
+External Register: cc_dep1
+  Used at instruction address: 0x80ae5
+External Register: r0
+  Used at instruction address: 0x8482d
+External Register: r5
+  Used at instruction address: 0x8146d
+External Register: lr
+  Used at instruction address: 0x82ec1
+External Register: r8
+  Used at instruction address: 0x84549
+External Register: r3
+  Used at instruction address: 0x81127
+External Register: r5
+  Used at instruction address: 0x80469
+External MemoryLocation at address: 0x8045c
+  Used at instruction address: 0x80405
+  Used at instruction address: 0x803d3
+External MemoryLocation at address: 0x81a4c
+  Used at instruction address: 0x81a19
+External Register: cc_op
+  Used at instruction address: 0x82e23
+External MemoryLocation at address: 0x81a7c
+  Used at instruction address: 0x81a6d
+External MemoryLocation at address: 0x839bc
+  Used at instruction address: 0x838af
+External Register: r3
+  Used at instruction address: 0x8057d
+External MemoryLocation at address: 0x80b6c
+  Used at instruction address: 0x80b29
+  Used at instruction address: 0x80b41
+  Used at instruction address: 0x80b59
+External Register: lr
+  Used at instruction address: 0x8069d
+External MemoryLocation at address: 0x80550
+  Used at instruction address: 0x8051d
+External Register: lr
+  Used at instruction address: 0x806d9
+External Register: cc_ndep
+  Used at instruction address: 0x84129
+External Register: r4
+  Used at instruction address: 0x83233
+External Register: lr
+  Used at instruction address: 0x816e5
+External Register: cc_op
+  Used at instruction address: 0x812ed
+External MemoryLocation at address: 0x81658
+  Used at instruction address: 0x8164b
+External Register: r7
+  Used at instruction address: 0x8135d
+External Register: r4
+  Used at instruction address: 0x8368d
+External Register: r5
+  Used at instruction address: 0x80d61
+External MemoryLocation at address: 0x81a90
+  Used at instruction address: 0x81a87
+External Register: cc_dep1
+  Used at instruction address: 0x808ef
+External Register: r10
+  Used at instruction address: 0x81db5
+External Register: lr
+  Used at instruction address: 0x82f59
+External Register: r0
+  Used at instruction address: 0x8165f
+External Register: cc_ndep
+  Used at instruction address: 0x805a7
+External Register: r2
+  Used at instruction address: 0x804cf
+  Used at instruction address: 0x80471
+  Used at instruction address: 0x80473
+External MemoryLocation at address: 0x83d58
+  Used at instruction address: 0x83d51
+External Register: cc_op
+  Used at instruction address: 0x851f4
+External MemoryLocation at address: 0x81460
+  Used at instruction address: 0x813f1
+External Register: r0
+  Used at instruction address: 0x85314
+External MemoryLocation at address: 0x844bc
+  Used at instruction address: 0x844a1
+External Register: lr
+  Used at instruction address: 0x8111d
+External Register: cc_dep1
+  Used at instruction address: 0x8198b
+External Register: r0
+  Used at instruction address: 0x8447d
+External Register: r0
+  Used at instruction address: 0x808d9
+  Used at instruction address: 0x808eb
+  Used at instruction address: 0x808dd
+  Used at instruction address: 0x808e3
+  Used at instruction address: 0x808e5
+  Used at instruction address: 0x808e7
+External Register: cc_dep1
+  Used at instruction address: 0x81d5d
+External Register: cc_op
+  Used at instruction address: 0x83bfd
+External Register: cc_ndep
+  Used at instruction address: 0x80321
+External Register: r5
+  Used at instruction address: 0x83bff
+External MemoryLocation at address: 0x82c18
+  Used at instruction address: 0x82c0d
+External Register: r2
+  Used at instruction address: 0x809bf
+External MemoryLocation at address: 0x804fc
+  Used at instruction address: 0x804cd
+External MemoryLocation at address: 0x82e08
+  Used at instruction address: 0x82de9
+External MemoryLocation at address: 0x84b28
+  Used at instruction address: 0x84abd
+External MemoryLocation at address: 0x812c0
+  Used at instruction address: 0x8123b
+External Register: r5
+  Used at instruction address: 0x81825
+External Register: r0
+  Used at instruction address: 0x8352d
+  Used at instruction address: 0x83525
+External Register: cc_dep1
+  Used at instruction address: 0x8066d
+  Used at instruction address: 0x80637
+External Register: lr
+  Used at instruction address: 0x81ad1
+External Register: cc_op
+  Used at instruction address: 0x840d7
+External MemoryLocation at address: 0x8054c
+  Used at instruction address: 0x80515
+External Register: r7
+  Used at instruction address: 0x80d61
+External Register: lr
+  Used at instruction address: 0x809c5
+External MemoryLocation at address: 0x80b68
+  Used at instruction address: 0x80b25
+External MemoryLocation at address: 0x82c08
+  Used at instruction address: 0x82b47
+External Register: r0
+  Used at instruction address: 0x808f5
+  Used at instruction address: 0x80909
+  Used at instruction address: 0x80905
+  Used at instruction address: 0x80903
+External Register: lr
+  Used at instruction address: 0x80acd
+External Register: cc_op
+  Used at instruction address: 0x80aa7
+External Register: cc_op
+  Used at instruction address: 0x80519
+External MemoryLocation at address: 0x812cc
+  Used at instruction address: 0x81275
+External Register: r11
+  Used at instruction address: 0x81e35
+External MemoryLocation at address: 0x80d1c
+  Used at instruction address: 0x80d03
+External Register: r10
+  Used at instruction address: 0x80a3d
+External Register: r9
+  Used at instruction address: 0x82ec1
+External Register: r6
+  Used at instruction address: 0x82abd
+External Register: r1
+  Used at instruction address: 0x83c89
+  Used at instruction address: 0x83d01
+  Used at instruction address: 0x83d33
+  Used at instruction address: 0x83c8f
+  Used at instruction address: 0x83d31
+  Used at instruction address: 0x83ca1
+  Used at instruction address: 0x83cbd
+  Used at instruction address: 0x83caf
+External Register: r10
+  Used at instruction address: 0x83d6f
+External MemoryLocation at address: 0x82e70
+  Used at instruction address: 0x82e25
+External Register: r9
+  Used at instruction address: 0x81db5
+External Register: r0
+  Used at instruction address: 0x80377
+External Register: r2
+  Used at instruction address: 0x842d9
+  Used at instruction address: 0x842d7
+External Register: lr
+  Used at instruction address: 0x80505
+External Register: r2
+  Used at instruction address: 0x8205f
+  Used at instruction address: 0x8201b
+  Used at instruction address: 0x81e3f
+  Used at instruction address: 0x81fed
+  Used at instruction address: 0x82035
+External Register: lr
+  Used at instruction address: 0x808d7
+External Register: r3
+  Used at instruction address: 0x8438d
+External Register: lr
+  Used at instruction address: 0x83521
+External Register: r8
+  Used at instruction address: 0x84a00
+External Register: r3
+  Used at instruction address: 0x84a10
+External MemoryLocation at address: 0x8086c
+  Used at instruction address: 0x80785
+External Register: cc_dep2
+  Used at instruction address: 0x82c21
+External MemoryLocation at address: 0x80d18
+  Used at instruction address: 0x80cf9
+External Register: r4
+  Used at instruction address: 0x80469
+External MemoryLocation at address: 0x805b4
+  Used at instruction address: 0x805ab
+External Register: cc_op
+  Used at instruction address: 0x80b93
+External Register: lr
+  Used at instruction address: 0x82e8d
+External Register: r3
+  Used at instruction address: 0x80d21
+External Register: cc_dep2
+  Used at instruction address: 0x84a10
+External MemoryLocation at address: 0x816ec
+  Used at instruction address: 0x816df
+External Register: r3
+  Used at instruction address: 0x8449d
+External Register: lr
+  Used at instruction address: 0x82e15
+External Register: r8
+  Used at instruction address: 0x80c21
+External Register: r9
+  Used at instruction address: 0x8111d
+External Register: r0
+  Used at instruction address: 0x80201
+External Register: r7
+  Used at instruction address: 0x84181
+External Register: cc_op
+  Used at instruction address: 0x808d1
+External Register: r0
+  Used at instruction address: 0x816f9
+  Used at instruction address: 0x816f3
+External Register: lr
+  Used at instruction address: 0x802db
+External MemoryLocation at address: 0x839c4
+  Used at instruction address: 0x83957
+External Register: lr
+  Used at instruction address: 0x81639
+External MemoryLocation at address: 0x802d0
+  Used at instruction address: 0x802b1
+External Register: r3
+  Used at instruction address: 0x8165d
+External Register: r3
+  Used at instruction address: 0x81765
+External MemoryLocation at address: 0x80768
+  Used at instruction address: 0x80743
+External Register: r6
+  Used at instruction address: 0x80d21
+External Register: r8
+  Used at instruction address: 0x82ec1
+External Register: r1
+  Used at instruction address: 0x8020b
+  Used at instruction address: 0x80211
+External Register: r0
+  Used at instruction address: 0x81d5d
+  Used at instruction address: 0x81d59
+External Register: r9
+  Used at instruction address: 0x83d6f
+External Register: r1
+  Used at instruction address: 0x8039d
+  Used at instruction address: 0x803ab
+External Register: r4
+  Used at instruction address: 0x80eb5
+External Register: r0
+  Used at instruction address: 0x80341
+  Used at instruction address: 0x8034b
+  Used at instruction address: 0x80331
+  Used at instruction address: 0x80345
+  Used at instruction address: 0x80347
+  Used at instruction address: 0x80329
+  Used at instruction address: 0x80333
+  Used at instruction address: 0x80327
+  Used at instruction address: 0x8031f
+External Register: lr
+  Used at instruction address: 0x80207
+  Used at instruction address: 0x80237
+External MemoryLocation at address: 0x81620
+  Used at instruction address: 0x81589
+External Register: cc_dep1
+  Used at instruction address: 0x81aa1
+External Register: cc_ndep
+  Used at instruction address: 0x80a11
+External Register: cc_ndep
+  Used at instruction address: 0x80b19
+External Register: r6
+  Used at instruction address: 0x81e35
+External Register: r3
+  Used at instruction address: 0x83bd7
+External Register: cc_dep1
+  Used at instruction address: 0x806cb
+External MemoryLocation at address: 0x81654
+  Used at instruction address: 0x81643
+External Register: r4
+  Used at instruction address: 0x81825
+External Register: cc_dep1
+  Used at instruction address: 0x81a5f
+External Register: r0
+  Used at instruction address: 0x81c1b
+  Used at instruction address: 0x81c13
+  Used at instruction address: 0x81bf3
+  Used at instruction address: 0x81c2f
+  Used at instruction address: 0x81bfb
+  Used at instruction address: 0x81bd1
+  Used at instruction address: 0x81be7
+  Used at instruction address: 0x81c33
+  Used at instruction address: 0x81c79
+  Used at instruction address: 0x81c4d
+  Used at instruction address: 0x81c0b
+  Used at instruction address: 0x81c0f
+  Used at instruction address: 0x81c61
+  Used at instruction address: 0x81c07
+  Used at instruction address: 0x81c3d
+  Used at instruction address: 0x81bef
+  Used at instruction address: 0x81bd3
+  Used at instruction address: 0x81ca7
+  Used at instruction address: 0x81be3
+  Used at instruction address: 0x81c37
+  Used at instruction address: 0x81c1f
+  Used at instruction address: 0x81c21
+  Used at instruction address: 0x81bff
+  Used at instruction address: 0x81c17
+  Used at instruction address: 0x81bf7
+  Used at instruction address: 0x81beb
+  Used at instruction address: 0x81c3b
+  Used at instruction address: 0x81c8d
+  Used at instruction address: 0x81c03
+External MemoryLocation at address: 0x81740
+  Used at instruction address: 0x816f7
+External Register: r1
+  Used at instruction address: 0x83d69
+  Used at instruction address: 0x83d7f
+  Used at instruction address: 0x83d73
+External MemoryLocation at address: 0x81a94
+  Used at instruction address: 0x81a89
+External Register: r10
+  Used at instruction address: 0x8368d
+External Register: r6
+  Used at instruction address: 0x84a97
+External Register: r1
+  Used at instruction address: 0x81e3d
+  Used at instruction address: 0x82035
+External Register: lr
+  Used at instruction address: 0x8411d
+External Register: cc_dep1
+  Used at instruction address: 0x82dc5
+External MemoryLocation at address: 0x81b34
+  Used at instruction address: 0x81ae1
+External Register: lr
+  Used at instruction address: 0x84159
+External Register: r9
+  Used at instruction address: 0x83521
+External MemoryLocation at address: 0x80868
+  Used at instruction address: 0x80771
+  Used at instruction address: 0x8079b
+  Used at instruction address: 0x8081b
+  Used at instruction address: 0x80801
+  Used at instruction address: 0x8083b
+  Used at instruction address: 0x807b9
+  Used at instruction address: 0x807a7
+  Used at instruction address: 0x807d1
+  Used at instruction address: 0x807f1
+External Register: r4
+  Used at instruction address: 0x84831
+  Used at instruction address: 0x84833
+External Register: r2
+  Used at instruction address: 0x84919
+  Used at instruction address: 0x8493b
+  Used at instruction address: 0x8491d
+  Used at instruction address: 0x84903
+  Used at instruction address: 0x8490d
+  Used at instruction address: 0x8491b
+  Used at instruction address: 0x84901
+  Used at instruction address: 0x84905
+  Used at instruction address: 0x848ff
+  Used at instruction address: 0x8493d
+  Used at instruction address: 0x84909
+  Used at instruction address: 0x84907
+  Used at instruction address: 0x84939
+  Used at instruction address: 0x8490b
+External Register: cc_dep2
+  Used at instruction address: 0x8056b
+External MemoryLocation at address: 0x802cc
+  Used at instruction address: 0x802a3
+External Register: r8
+  Used at instruction address: 0x8111d
+External MemoryLocation at address: 0x816c4
+  Used at instruction address: 0x8168f
+External MemoryLocation at address: 0x802d4
+  Used at instruction address: 0x802b3
+External Register: r1
+  Used at instruction address: 0x82ec9
+  Used at instruction address: 0x82ecd
+External Register: r2
+  Used at instruction address: 0x84485
+  Used at instruction address: 0x8447f
+External Register: lr
+  Used at instruction address: 0x82dc7
+External MemoryLocation at address: 0x80c18
+  Used at instruction address: 0x80bbb
+External MemoryLocation at address: 0x81958
+  Used at instruction address: 0x81947
+  Used at instruction address: 0x81941
+  Used at instruction address: 0x81951
+External Register: cc_ndep
+  Used at instruction address: 0x84a00
+  Used at instruction address: 0x84a08
+External Register: r6
+  Used at instruction address: 0x84231
+External Register: cc_ndep
+  Used at instruction address: 0x835fd
+External Register: r1
+  Used at instruction address: 0x8163b
+External Register: r4
+  Used at instruction address: 0x849e1
+External Register: r3
+  Used at instruction address: 0x84625
+  Used at instruction address: 0x845fb
+  Used at instruction address: 0x84555
+  Used at instruction address: 0x84619
+  Used at instruction address: 0x8460f
+  Used at instruction address: 0x8473f
+External MemoryLocation at address: 0x81634
+  Used at instruction address: 0x815df
+  Used at instruction address: 0x81615
+  Used at instruction address: 0x815c1
+External MemoryLocation at address: 0x81544
+  Used at instruction address: 0x8148f
+External Register: cc_ndep
+  Used at instruction address: 0x80e8d
+External MemoryLocation at address: 0x8144c
+  Used at instruction address: 0x81397
+External MemoryLocation at address: 0x82450
+  Used at instruction address: 0x823e7
+External Register: lr
+  Used at instruction address: 0x8135d
+External Register: r11
+  Used at instruction address: 0x8368d
+External Register: lr
+  Used at instruction address: 0x80ab9
+External MemoryLocation at address: 0x808bc
+  Used at instruction address: 0x808a5
+External MemoryLocation at address: 0x81054
+  Used at instruction address: 0x81049
+  Used at instruction address: 0x8103f
+External Register: r1
+  Used at instruction address: 0x83bdb
+  Used at instruction address: 0x83bd3
+External Register: cc_ndep
+  Used at instruction address: 0x8025b
+External MemoryLocation at address: 0x81814
+  Used at instruction address: 0x817a7
+External Register: lr
+  Used at instruction address: 0x812e5
+External Register: r1
+  Used at instruction address: 0x82d67
+  Used at instruction address: 0x82da1
+External Register: r6
+  Used at instruction address: 0x842c9
+External MemoryLocation at address: 0x80a70
+  Used at instruction address: 0x80a39
+External Register: cc_dep1
+  Used at instruction address: 0x8438f
+External Register: r0
+  Used at instruction address: 0x80b83
+  Used at instruction address: 0x80b87
+External MemoryLocation at address: 0x80680
+  Used at instruction address: 0x8066f
+External MemoryLocation at address: 0x84a18
+  Used at instruction address: 0x80745
+  Used at instruction address: 0x806f9
+External MemoryLocation at address: 0x82d60
+  Used at instruction address: 0x82d05
+External Register: lr
+  Used at instruction address: 0x80569
+External Register: r4
+  Used at instruction address: 0x81549
+External Register: r0
+  Used at instruction address: 0x808f1
+External Register: cc_ndep
+  Used at instruction address: 0x81bd7
+External MemoryLocation at address: 0x844e8
+  Used at instruction address: 0x844c7
+External Register: r8
+  Used at instruction address: 0x80505
+External Register: r3
+  Used at instruction address: 0x842d9
+  Used at instruction address: 0x842c9
+  Used at instruction address: 0x842d3
+External Register: cc_ndep
+  Used at instruction address: 0x808cd
+External Register: r9
+  Used at instruction address: 0x84829
+External Register: r6
+  Used at instruction address: 0x81345
+External Register: r7
+  Used at instruction address: 0x819dd
+External Register: r6
+  Used at instruction address: 0x82c31
+External MemoryLocation at address: 0x816d0
+  Used at instruction address: 0x816a7
+External Register: r3
+  Used at instruction address: 0x80cb9
+External Register: r1
+  Used at instruction address: 0x844a5
+  Used at instruction address: 0x844a9
+External Register: r4
+  Used at instruction address: 0x844ed
+External Register: lr
+  Used at instruction address: 0x83319
+  Used at instruction address: 0x83233
+External Register: lr
+  Used at instruction address: 0x818ad
+  Used at instruction address: 0x8192d
+External Register: lr
+  Used at instruction address: 0x80d61
+External Register: r4
+  Used at instruction address: 0x84475
+External Register: cc_op
+  Used at instruction address: 0x80969
+External Register: r8
+  Used at instruction address: 0x853ee
+  Used at instruction address: 0x8540a
+  Used at instruction address: 0x853ea
+External MemoryLocation at address: 0x80110
+  Used at instruction address: 0x800fd
+External Register: lr
+  Used at instruction address: 0x81043
+  Used at instruction address: 0x8104d
+External Register: cc_dep2
+  Used at instruction address: 0x84a00
+  Used at instruction address: 0x84a08
+External Register: lr
+  Used at instruction address: 0x807b7
+  Used at instruction address: 0x80865
+External Register: cc_dep1
+  Used at instruction address: 0x80a9d
+External MemoryLocation at address: 0x8058c
+  Used at instruction address: 0x80583
+External Register: cc_dep2
+  Used at instruction address: 0x835fd
+External MemoryLocation at address: 0x80248
+  Used at instruction address: 0x80217
+External Register: lr
+  Used at instruction address: 0x81bab
+External Register: r6
+  Used at instruction address: 0x81cbd
+External Register: lr
+  Used at instruction address: 0x806cd
+External Register: r1
+  Used at instruction address: 0x81a83
+External Register: cc_dep2
+  Used at instruction address: 0x80e8d
+External MemoryLocation at address: 0x816e8
+  Used at instruction address: 0x816d9
+External Register: cc_ndep
+  Used at instruction address: 0x80ae5
+External MemoryLocation at address: 0x8132c
+  Used at instruction address: 0x812e9
+External Register: r0
+  Used at instruction address: 0x84ac5
+  Used at instruction address: 0x84abf
+  Used at instruction address: 0x84ab3
+  Used at instruction address: 0x84acb
+  Used at instruction address: 0x84ab9
+External Register: r10
+  Used at instruction address: 0x80d61
+External Register: r1
+  Used at instruction address: 0x835a1
+  Used at instruction address: 0x8359f
+External Register: cc_dep1
+  Used at instruction address: 0x85314
+External Register: r4
+  Used at instruction address: 0x83065
+External Register: cc_ndep
+  Used at instruction address: 0x80637
+  Used at instruction address: 0x8066d
+External MemoryLocation at address: 0x81454
+  Used at instruction address: 0x813ab
+External Register: cc_op
+  Used at instruction address: 0x82c21
+External Register: r6
+  Used at instruction address: 0x83233
+External Register: r1
+  Used at instruction address: 0x84829
+External Register: r9
+  Used at instruction address: 0x8135d
+External Register: r6
+  Used at instruction address: 0x8368d
+External MemoryLocation at address: 0x80870
+  Used at instruction address: 0x80857
+  Used at instruction address: 0x807eb
+  Used at instruction address: 0x80797
+  Used at instruction address: 0x807c5
+  Used at instruction address: 0x807e3
+  Used at instruction address: 0x80817
+  Used at instruction address: 0x8082d
+  Used at instruction address: 0x80835
+  Used at instruction address: 0x807ab
+  Used at instruction address: 0x80841
+  Used at instruction address: 0x8080f
+  Used at instruction address: 0x807cd
+  Used at instruction address: 0x807fd
+External Register: cc_ndep
+  Used at instruction address: 0x808ef
+External MemoryLocation at address: 0x81578
+  Used at instruction address: 0x81551
+External Register: r0
+  Used at instruction address: 0x82d6b
+  Used at instruction address: 0x82d6d
+  Used at instruction address: 0x82d69
+  Used at instruction address: 0x82da1
+External MemoryLocation at address: 0x83bcc
+  Used at instruction address: 0x83b49
+External Register: cc_op
+  Used at instruction address: 0x84a10
+External Register: cc_dep2
+  Used at instruction address: 0x808cd
+External MemoryLocation at address: 0x810f0
+  Used at instruction address: 0x810bb
+External Register: r0
+  Used at instruction address: 0x809a3
+External Register: lr
+  Used at instruction address: 0x80251
+External MemoryLocation at address: 0x81750
+  Used at instruction address: 0x81731
+External Register: lr
+  Used at instruction address: 0x83583
+External MemoryLocation at address: 0x81290
+  Used at instruction address: 0x81131
+  Used at instruction address: 0x8113f
+External MemoryLocation at address: 0x81b38
+  Used at instruction address: 0x81aef
+External Register: r4
+  Used at instruction address: 0x81b65
+  Used at instruction address: 0x81b59
+External MemoryLocation at address: 0x810ec
+  Used at instruction address: 0x810ab
+  Used at instruction address: 0x810a3
+External Register: cc_ndep
+  Used at instruction address: 0x8198b
+External MemoryLocation at address: 0x8351c
+  Used at instruction address: 0x83259
+External Register: lr
+  Used at instruction address: 0x84181
+External Register: cc_ndep
+  Used at instruction address: 0x81d5d
+External MemoryLocation at address: 0x8129c
+  Used at instruction address: 0x811cf
+External Register: r8
+  Used at instruction address: 0x8411d
+External MemoryLocation at address: 0x812d4
+  Used at instruction address: 0x8127f
+External Register: r6
+  Used at instruction address: 0x849f5
+External Register: r0
+  Used at instruction address: 0x81123
+External MemoryLocation at address: 0x80ff4
+  Used at instruction address: 0x80ec5
+  Used at instruction address: 0x80fcf
+External Register: cc_dep2
+  Used at instruction address: 0x80557
+External MemoryLocation at address: 0x84a0c
+  Used at instruction address: 0x80129
+  Used at instruction address: 0x80131
+External Register: r9
+  Used at instruction address: 0x80d61
+External Register: lr
+  Used at instruction address: 0x80b15
+External MemoryLocation at address: 0x81468
+  Used at instruction address: 0x81399
+External Register: r6
+  Used at instruction address: 0x80039
+  Used at instruction address: 0x8003d
+External MemoryLocation at address: 0x83d64
+  Used at instruction address: 0x83d5d
+External Register: cc_dep1
+  Used at instruction address: 0x8449f
+External Register: cc_dep1
+  Used at instruction address: 0x81755
+External MemoryLocation at address: 0x805b0
+  Used at instruction address: 0x805a9
+External Register: cc_dep1
+  Used at instruction address: 0x8037f
+External Register: r0
+  Used at instruction address: 0x801f3
+  Used at instruction address: 0x801c9
+External Register: r7
+  Used at instruction address: 0x851d4
+  Used at instruction address: 0x851d8
+  Used at instruction address: 0x851dc
+  Used at instruction address: 0x851e0
+External Register: cc_dep2
+  Used at instruction address: 0x80637
+  Used at instruction address: 0x8066d
+External MemoryLocation at address: 0x83224
+  Used at instruction address: 0x83161
+External MemoryLocation at address: 0x80b04
+  Used at instruction address: 0x80ae7
+External MemoryLocation at address: 0x816c8
+  Used at instruction address: 0x81695
+  Used at instruction address: 0x816b3
+External Register: lr
+  Used at instruction address: 0x80135
+  Used at instruction address: 0x8011f
+External MemoryLocation at address: 0x816b8
+  Used at instruction address: 0x81669
+  Used at instruction address: 0x81677
+External MemoryLocation at address: 0x82e0c
+  Used at instruction address: 0x82deb
+External MemoryLocation at address: 0x805c4
+  Used at instruction address: 0x805bd
+External MemoryLocation at address: 0x80ac8
+  Used at instruction address: 0x80ab1
+External MemoryLocation at address: 0x849fc
+  Used at instruction address: 0x81b89
+  Used at instruction address: 0x81b6b
+External Register: cc_dep2
+  Used at instruction address: 0x808ef
+External Register: r1
+  Used at instruction address: 0x83617
+  Used at instruction address: 0x8361b
+  Used at instruction address: 0x835f9
+  Used at instruction address: 0x835fb
+External MemoryLocation at address: 0x818a4
+  Used at instruction address: 0x81889
+External Register: cc_dep1
+  Used at instruction address: 0x81cbf
+External Register: cc_dep2
+  Used at instruction address: 0x844c5
+External Register: cc_dep1
+  Used at instruction address: 0x808e9
+External Register: r7
+  Used at instruction address: 0x82abd
+External Register: r3
+  Used at instruction address: 0x84539
+  Used at instruction address: 0x84519
+External Register: r4
+  Used at instruction address: 0x84549
+External Register: lr
+  Used at instruction address: 0x80591
+External Register: r5
+  Used at instruction address: 0x8438d
+External Register: cc_op
+  Used at instruction address: 0x8056b
+External Register: r1
+  Used at instruction address: 0x8306d
+  Used at instruction address: 0x83061
+  Used at instruction address: 0x83069
+External Register: r6
+  Used at instruction address: 0x80469
+External Register: cc_dep2
+  Used at instruction address: 0x8198b
+External Register: r0
+  Used at instruction address: 0x80f3f
+  Used at instruction address: 0x80ebb
+External MemoryLocation at address: 0x84388
+  Used at instruction address: 0x84329
+External MemoryLocation at address: 0x8305c
+  Used at instruction address: 0x83041
+External Register: r5
+  Used at instruction address: 0x80d21
+External Register: cc_dep2
+  Used at instruction address: 0x84a2f
+External Register: r5
+  Used at instruction address: 0x8449d
+External MemoryLocation at address: 0x81a50
+  Used at instruction address: 0x819e1
+External Register: cc_dep2
+  Used at instruction address: 0x82d79
+External MemoryLocation at address: 0x81000
+  Used at instruction address: 0x80eeb
+External MemoryLocation at address: 0x80588
+  Used at instruction address: 0x80581
+External MemoryLocation at address: 0x812d8
+  Used at instruction address: 0x81283
+External MemoryLocation at address: 0x81018
+  Used at instruction address: 0x80f55
+External MemoryLocation at address: 0x81930
+  Used at instruction address: 0x81921
+  Used at instruction address: 0x818f7
+  Used at instruction address: 0x818d9
+External MemoryLocation at address: 0x83688
+  Used at instruction address: 0x83633
+External Register: r5
+  Used at instruction address: 0x81e35
+External MemoryLocation at address: 0x80874
+  Used at instruction address: 0x807c3
+  Used at instruction address: 0x807e1
+  Used at instruction address: 0x8082b
+  Used at instruction address: 0x807fb
+External MemoryLocation at address: 0x8162c
+  Used at instruction address: 0x815af
+External Register: r0
+  Used at instruction address: 0x84a95
+External Register: r0
+  Used at instruction address: 0x802d9
+External Register: r1
+  Used at instruction address: 0x80a9f
+External MemoryLocation at address: 0x80e78
+  Used at instruction address: 0x80ddb
+External Register: cc_dep2
+  Used at instruction address: 0x854eb
+External MemoryLocation at address: 0x82e10
+  Used at instruction address: 0x82ded
+External Register: r4
+  Used at instruction address: 0x82fc1
+External MemoryLocation at address: 0x81518
+  Used at instruction address: 0x81483
+External Register: r5
+  Used at instruction address: 0x8165d
+External Register: r5
+  Used at instruction address: 0x81765
+External Register: lr
+  Used at instruction address: 0x840f9
+External MemoryLocation at address: 0x849f4
+  Used at instruction address: 0x82ea5
+External Register: r6
+  Used at instruction address: 0x80eb5
+External MemoryLocation at address: 0x80e60
+  Used at instruction address: 0x80d75
+External Register: lr
+  Used at instruction address: 0x84aff
+  Used at instruction address: 0x84aef
+  Used at instruction address: 0x84b0f
+  Used at instruction address: 0x84ae1
+  Used at instruction address: 0x84b1f
+External Register: cc_ndep
+  Used at instruction address: 0x81aa1
+External Register: r4
+  Used at instruction address: 0x83c8b
+External Register: r7
+  Used at instruction address: 0x80d21
+External Register: cc_ndep
+  Used at instruction address: 0x806cb
+External Register: r3
+  Used at instruction address: 0x80a75
+External Register: lr
+  Used at instruction address: 0x819dd
+External Register: cc_dep2
+  Used at instruction address: 0x851b1
+External Register: cc_ndep
+  Used at instruction address: 0x81a5f
+External Register: r1
+  Used at instruction address: 0x809b1
+External MemoryLocation at address: 0x805a0
+  Used at instruction address: 0x80597
+External Register: lr
+  Used at instruction address: 0x84291
+External Register: r5
+  Used at instruction address: 0x84231
+External Register: r7
+  Used at instruction address: 0x81e35
+External Register: lr
+  Used at instruction address: 0x810fd
+External Register: lr
+  Used at instruction address: 0x81825
+  Used at instruction address: 0x81893
+External Register: r1
+  Used at instruction address: 0x837df
+  Used at instruction address: 0x83691
+  Used at instruction address: 0x836a7
+  Used at instruction address: 0x83851
+  Used at instruction address: 0x83991
+  Used at instruction address: 0x836ad
+  Used at instruction address: 0x837db
+External Register: cc_op
+  Used at instruction address: 0x835fd
+External Register: r4
+  Used at instruction address: 0x843b1
+External Register: r3
+  Used at instruction address: 0x849e1
+External Register: r1
+  Used at instruction address: 0x844c3
+External Register: r2
+  Used at instruction address: 0x83d7f
+  Used at instruction address: 0x83d75
+  Used at instruction address: 0x83e97
+  Used at instruction address: 0x83e99
+External Register: cc_ndep
+  Used at instruction address: 0x82dc5
+External Register: cc_op
+  Used at instruction address: 0x80e8d
+External Register: r8
+  Used at instruction address: 0x85360
+  Used at instruction address: 0x85340
+  Used at instruction address: 0x853a0
+  Used at instruction address: 0x853c0
+  Used at instruction address: 0x8535c
+  Used at instruction address: 0x853bc
+  Used at instruction address: 0x85370
+  Used at instruction address: 0x8531c
+  Used at instruction address: 0x8537c
+  Used at instruction address: 0x8539c
+  Used at instruction address: 0x853b0
+  Used at instruction address: 0x85330
+  Used at instruction address: 0x853ac
+  Used at instruction address: 0x8533c
+  Used at instruction address: 0x8538c
+  Used at instruction address: 0x8536c
+  Used at instruction address: 0x85350
+  Used at instruction address: 0x85380
+  Used at instruction address: 0x85320
+  Used at instruction address: 0x8534c
+  Used at instruction address: 0x8532c
+  Used at instruction address: 0x85390
+External Register: r1
+  Used at instruction address: 0x81d41
+  Used at instruction address: 0x81ce1
+  Used at instruction address: 0x81cc9
+External MemoryLocation at address: 0x81020
+  Used at instruction address: 0x80fa5
+External Register: r5
+  Used at instruction address: 0x842c9
+External Register: r0
+  Used at instruction address: 0x83c37
+  Used at instruction address: 0x83bfd
+  Used at instruction address: 0x83c5f
+  Used at instruction address: 0x83c6f
+  Used at instruction address: 0x83c09
+  Used at instruction address: 0x83c31
+  Used at instruction address: 0x83c39
+  Used at instruction address: 0x83c5d
+  Used at instruction address: 0x83c0f
+External Register: lr
+  Used at instruction address: 0x81cbb
+  Used at instruction address: 0x81c6d
+External Register: r2
+  Used at instruction address: 0x80095
+  Used at instruction address: 0x80089
+  Used at instruction address: 0x800e5
+  Used at instruction address: 0x8009d
+  Used at instruction address: 0x80091
+  Used at instruction address: 0x80061
+  Used at instruction address: 0x8002d
+  Used at instruction address: 0x80041
+  Used at instruction address: 0x80099
+  Used at instruction address: 0x80051
+  Used at instruction address: 0x800ad
+  Used at instruction address: 0x800b1
+  Used at instruction address: 0x800d9
+  Used at instruction address: 0x800c5
+  Used at instruction address: 0x80055
+  Used at instruction address: 0x800e9
+  Used at instruction address: 0x80069
+  Used at instruction address: 0x80059
+  Used at instruction address: 0x800ed
+  Used at instruction address: 0x800dd
+  Used at instruction address: 0x80065
+  Used at instruction address: 0x80031
+  Used at instruction address: 0x8008d
+  Used at instruction address: 0x8006d
+  Used at instruction address: 0x800f1
+  Used at instruction address: 0x800a5
+  Used at instruction address: 0x800cd
+  Used at instruction address: 0x800a9
+  Used at instruction address: 0x80079
+  Used at instruction address: 0x800a1
+  Used at instruction address: 0x800b9
+  Used at instruction address: 0x80019
+  Used at instruction address: 0x800b5
+  Used at instruction address: 0x80049
+  Used at instruction address: 0x800c1
+  Used at instruction address: 0x800bd
+  Used at instruction address: 0x800d1
+  Used at instruction address: 0x80045
+  Used at instruction address: 0x800c9
+  Used at instruction address: 0x800d5
+  Used at instruction address: 0x8005d
+  Used at instruction address: 0x80085
+  Used at instruction address: 0x800e1
+  Used at instruction address: 0x8004d
+External Register: r6
+  Used at instruction address: 0x849e1
+External Register: r7
+  Used at instruction address: 0x84231
+External Register: r1
+  Used at instruction address: 0x808cb
+External Register: r7
+  Used at instruction address: 0x80a3d
+External Register: r5
+  Used at instruction address: 0x82c31
+External Register: cc_op
+  Used at instruction address: 0x808cd
+External MemoryLocation at address: 0x802bc
+  Used at instruction address: 0x8025d
+External MemoryLocation at address: 0x8075c
+  Used at instruction address: 0x80707
+External MemoryLocation at address: 0x80150
+  Used at instruction address: 0x8011d
+External MemoryLocation at address: 0x80b9c
+  Used at instruction address: 0x80b8b
+External Register: r4
+  Used at instruction address: 0x80c21
+External Register: r3
+  Used at instruction address: 0x81977
+  Used at instruction address: 0x81981
+  Used at instruction address: 0x8195d
+  Used at instruction address: 0x81989
+External Register: r0
+  Used at instruction address: 0x844f7
+External Register: cc_ndep
+  Used at instruction address: 0x8438f
+External Register: cc_dep2
+  Used at instruction address: 0x81a5f
+External Register: r7
+  Used at instruction address: 0x8360f
+External Register: r0
+  Used at instruction address: 0x853e2
+External MemoryLocation at address: 0x80500
+  Used at instruction address: 0x804f1
+External Register: r0
+  Used at instruction address: 0x80be3
+  Used at instruction address: 0x80ba9
+  Used at instruction address: 0x80bad
+  Used at instruction address: 0x80ba7
+  Used at instruction address: 0x80bc7
+  Used at instruction address: 0x80ba3
+External Register: cc_dep2
+  Used at instruction address: 0x805d5
+External MemoryLocation at address: 0x839cc
+  Used at instruction address: 0x83873
+External MemoryLocation at address: 0x81b98
+  Used at instruction address: 0x81b5b
+External Register: cc_dep2
+  Used at instruction address: 0x85414
+External Register: r5
+  Used at instruction address: 0x81cbd
+External MemoryLocation at address: 0x812bc
+  Used at instruction address: 0x81221
+External Register: r1
+  Used at instruction address: 0x84285
+  Used at instruction address: 0x8428b
+  Used at instruction address: 0x8428f
+External Register: r5
+  Used at instruction address: 0x80cb9
+External Register: lr
+  Used at instruction address: 0x8057d
+External Register: cc_op
+  Used at instruction address: 0x80557
+External Register: r6
+  Used at instruction address: 0x844ed
+External Register: r2
+  Used at instruction address: 0x8020f
+  Used at instruction address: 0x80223
+  Used at instruction address: 0x80239
+  Used at instruction address: 0x8020d
+External Register: r1
+  Used at instruction address: 0x80cc1
+  Used at instruction address: 0x80cbd
+External MemoryLocation at address: 0x849ec
+  Used at instruction address: 0x81b89
+  Used at instruction address: 0x81b79
+  Used at instruction address: 0x81b6b
+External Register: cc_dep1
+  Used at instruction address: 0x82c39
+External Register: r6
+  Used at instruction address: 0x84475
+External Register: cc_ndep
+  Used at instruction address: 0x80a9d
+External Register: r8
+  Used at instruction address: 0x851fc
+  Used at instruction address: 0x85200
+External Register: r5
+  Used at instruction address: 0x83233
+External Register: r2
+  Used at instruction address: 0x8078f
+External MemoryLocation at address: 0x81a54
+  Used at instruction address: 0x819e9
+External MemoryLocation at address: 0x81534
+  Used at instruction address: 0x814db
+External Register: r7
+  Used at instruction address: 0x80081
+  Used at instruction address: 0x80075
+External Register: r8
+  Used at instruction address: 0x852b0
+  Used at instruction address: 0x8528c
+  Used at instruction address: 0x85230
+  Used at instruction address: 0x852ac
+  Used at instruction address: 0x85248
+  Used at instruction address: 0x8526c
+  Used at instruction address: 0x85270
+  Used at instruction address: 0x852a0
+  Used at instruction address: 0x85280
+  Used at instruction address: 0x85290
+  Used at instruction address: 0x852bc
+  Used at instruction address: 0x85224
+  Used at instruction address: 0x85220
+  Used at instruction address: 0x8527c
+  Used at instruction address: 0x85268
+  Used at instruction address: 0x85264
+  Used at instruction address: 0x852a4
+  Used at instruction address: 0x85288
+  Used at instruction address: 0x8521c
+  Used at instruction address: 0x852a8
+  Used at instruction address: 0x85260
+  Used at instruction address: 0x8529c
+  Used at instruction address: 0x8523c
+  Used at instruction address: 0x852c0
+  Used at instruction address: 0x85228
+  Used at instruction address: 0x85250
+  Used at instruction address: 0x8522c
+  Used at instruction address: 0x85244
+  Used at instruction address: 0x85284
+  Used at instruction address: 0x85240
+  Used at instruction address: 0x8524c
+  Used at instruction address: 0x8525c
+External Register: r4
+  Used at instruction address: 0x800f5
+  Used at instruction address: 0x8007d
+External Register: cc_dep1
+  Used at instruction address: 0x809a3
+External MemoryLocation at address: 0x8062c
+  Used at instruction address: 0x805f7
+  Used at instruction address: 0x80611
+  Used at instruction address: 0x805e5
+  Used at instruction address: 0x805cd
+External Register: r0
+  Used at instruction address: 0x851f4
+External Register: cc_dep1
+  Used at instruction address: 0x81565
+External Register: cc_op
+  Used at instruction address: 0x808ef
+External Register: cc_ndep
+  Used at instruction address: 0x85314
+External MemoryLocation at address: 0x84b24
+  Used at instruction address: 0x84ab7
+External Register: cc_dep1
+  Used at instruction address: 0x84479
+External Register: cc_op
+  Used at instruction address: 0x844c5
+External Register: r2
+  Used at instruction address: 0x80d27
+  Used at instruction address: 0x80d31
+  Used at instruction address: 0x80d49
+External Register: r6
+  Used at instruction address: 0x83065
+External Register: r4
+  Used at instruction address: 0x8111d
+External Register: r2
+  Used at instruction address: 0x84185
+  Used at instruction address: 0x84229
+External MemoryLocation at address: 0x80a9c
+  Used at instruction address: 0x80a87
+External MemoryLocation at address: 0x810d8
+  Used at instruction address: 0x810c7
+  Used at instruction address: 0x8108b
+  Used at instruction address: 0x810b5
+  Used at instruction address: 0x81099
+  Used at instruction address: 0x81063
+  Used at instruction address: 0x8106f
+External Register: cc_dep2
+  Used at instruction address: 0x8438f
+External Register: lr
+  Used at instruction address: 0x82abd
+External MemoryLocation at address: 0x8244c
+  Used at instruction address: 0x8235b
+  Used at instruction address: 0x8239d
+External MemoryLocation at address: 0x80e68
+  Used at instruction address: 0x80e05
+  Used at instruction address: 0x80da1
+  Used at instruction address: 0x80d8b
+  Used at instruction address: 0x80e1d
+  Used at instruction address: 0x80dd7
+External Register: cc_dep2
+  Used at instruction address: 0x805bb
+External Register: lr
+  Used at instruction address: 0x84a91
+External Register: cc_op
+  Used at instruction address: 0x8198b
+External MemoryLocation at address: 0x80114
+  Used at instruction address: 0x80101
+External MemoryLocation at address: 0x84380
+  Used at instruction address: 0x842cd
+External MemoryLocation at address: 0x80a10
+  Used at instruction address: 0x80a05
+External Register: cc_op
+  Used at instruction address: 0x84a2f
+External Register: cc_dep1
+  Used at instruction address: 0x81a0b
+External Register: r3
+  Used at instruction address: 0x81ba9
+External Register: cc_dep2
+  Used at instruction address: 0x80a95
+External MemoryLocation at address: 0x8151c
+  Used at instruction address: 0x8148d
+External Register: cc_op
+  Used at instruction address: 0x82d79
+External MemoryLocation at address: 0x80afc
+  Used at instruction address: 0x80acf
+External Register: r3
+  Used at instruction address: 0x80a9d
+External Register: r7
+  Used at instruction address: 0x8368d
+External Register: lr
+  Used at instruction address: 0x80b81
+External Register: lr
+  Used at instruction address: 0x808f3
+External Register: r3
+  Used at instruction address: 0x81e41
+  Used at instruction address: 0x81e3b
+External Register: r2
+  Used at instruction address: 0x82ecd
+  Used at instruction address: 0x82ecb
+External Register: cc_dep1
+  Used at instruction address: 0x80019
+External MemoryLocation at address: 0x8174c
+  Used at instruction address: 0x81723
+External MemoryLocation at address: 0x82dc0
+  Used at instruction address: 0x82db9
+External MemoryLocation at address: 0x8067c
+  Used at instruction address: 0x8066b
+External Register: cc_dep2
+  Used at instruction address: 0x80a9d
+External Register: r0
+  Used at instruction address: 0x802e1
+  Used at instruction address: 0x802f3
+  Used at instruction address: 0x80317
+  Used at instruction address: 0x802f5
+  Used at instruction address: 0x8031b
+  Used at instruction address: 0x802fd
+  Used at instruction address: 0x802ff
+External Register: cc_op
+  Used at instruction address: 0x854eb
+External MemoryLocation at address: 0x82ab4
+  Used at instruction address: 0x82a4b
+  Used at instruction address: 0x82a31
+External Register: r0
+  Used at instruction address: 0x80b1f
+  Used at instruction address: 0x80b17
+  Used at instruction address: 0x80b27
+  Used at instruction address: 0x80b19
+External MemoryLocation at address: 0x84b30
+  Used at instruction address: 0x84ac9
+External Register: lr
+  Used at instruction address: 0x82d65
+External Register: r0
+  Used at instruction address: 0x852e2
+External MemoryLocation at address: 0x80d14
+  Used at instruction address: 0x80ced
+External Register: cc_op
+  Used at instruction address: 0x80baf
+External MemoryLocation at address: 0x81010
+  Used at instruction address: 0x80f2f
+  Used at instruction address: 0x80faf
+  Used at instruction address: 0x80f23
+External Register: lr
+  Used at instruction address: 0x8438d
+External Register: r4
+  Used at instruction address: 0x80505
+External Register: r11
+  Used at instruction address: 0x8195d
+External Register: lr
+  Used at instruction address: 0x805b9
+External Register: cc_op
+  Used at instruction address: 0x80593
+External Register: r1
+  Used at instruction address: 0x80931
+  Used at instruction address: 0x8092f
+  Used at instruction address: 0x80933
+  Used at instruction address: 0x8092d
+  Used at instruction address: 0x80935
+  Used at instruction address: 0x8090f
+External Register: r1
+  Used at instruction address: 0x8105d
+  Used at instruction address: 0x8106b
+External MemoryLocation at address: 0x8180c
+  Used at instruction address: 0x817f5
+  Used at instruction address: 0x8176b
+  Used at instruction address: 0x8177b
+  Used at instruction address: 0x81797
+  Used at instruction address: 0x817cb
+External Register: cc_dep2
+  Used at instruction address: 0x85314
+External MemoryLocation at address: 0x810dc
+  Used at instruction address: 0x81069
+External Register: cc_ndep
+  Used at instruction address: 0x8449f
+External Register: cc_ndep
+  Used at instruction address: 0x81755
+External Register: cc_ndep
+  Used at instruction address: 0x8037f
+External Register: r4
+  Used at instruction address: 0x80cb9
+External MemoryLocation at address: 0x809c8
+  Used at instruction address: 0x809b9
+External Register: cc_op
+  Used at instruction address: 0x851b1
+External Register: lr
+  Used at instruction address: 0x80d21
+External Register: lr
+  Used at instruction address: 0x83599
+External Register: lr
+  Used at instruction address: 0x81db5
+External MemoryLocation at address: 0x83054
+  Used at instruction address: 0x82fc5
+External MemoryLocation at address: 0x80758
+  Used at instruction address: 0x80705
+External MemoryLocation at address: 0x80754
+  Used at instruction address: 0x806e3
+External Register: r1
+  Used at instruction address: 0x8036b
+  Used at instruction address: 0x80363
+  Used at instruction address: 0x80359
+  Used at instruction address: 0x8036f
+  Used at instruction address: 0x80365
+  Used at instruction address: 0x8035d
+  Used at instruction address: 0x80355
+  Used at instruction address: 0x80373
+  Used at instruction address: 0x80361
+External MemoryLocation at address: 0x8015c
+  Used at instruction address: 0x80143
+  Used at instruction address: 0x80137
+External Register: lr
+  Used at instruction address: 0x81e35
+External Register: r0
+  Used at instruction address: 0x80d67
+  Used at instruction address: 0x80dbd
+External Register: r4
+  Used at instruction address: 0x82e15
+External Register: lr
+  Used at instruction address: 0x80a23
+External MemoryLocation at address: 0x84a20
+  Used at instruction address: 0x848d3
+External MemoryLocation at address: 0x812a0
+  Used at instruction address: 0x811d3
+External Register: cc_ndep
+  Used at instruction address: 0x81cbf
+External MemoryLocation at address: 0x8145c
+  Used at instruction address: 0x813c1
+  Used at instruction address: 0x81429
+External Register: r6
+  Used at instruction address: 0x85149
+  Used at instruction address: 0x85185
+  Used at instruction address: 0x85109
+  Used at instruction address: 0x85105
+  Used at instruction address: 0x85189
+  Used at instruction address: 0x85145
+External Register: r2
+  Used at instruction address: 0x81ba9
+External Register: cc_dep1
+  Used at instruction address: 0x816af
+External Register: cc_ndep
+  Used at instruction address: 0x808e9
+External Register: cc_dep1
+  Used at instruction address: 0x84a95
+External Register: r6
+  Used at instruction address: 0x84549
+External Register: r2
+  Used at instruction address: 0x81133
+  Used at instruction address: 0x8112d
+  Used at instruction address: 0x8123d
+  Used at instruction address: 0x81141
+External Register: lr
+  Used at instruction address: 0x8165d
+External Register: r0
+  Used at instruction address: 0x8443b
+  Used at instruction address: 0x843b9
+  Used at instruction address: 0x843b5
+  Used at instruction address: 0x843bb
+External Register: cc_dep1
+  Used at instruction address: 0x82f5f
+External Register: r2
+  Used at instruction address: 0x83cf7
+  Used at instruction address: 0x83cb7
+  Used at instruction address: 0x83d31
+  Used at instruction address: 0x83cab
+  Used at instruction address: 0x83c95
+  Used at instruction address: 0x83c97
+  Used at instruction address: 0x83d2d
+  Used at instruction address: 0x83cef
+  Used at instruction address: 0x83d29
+  Used at instruction address: 0x83c8f
+External MemoryLocation at address: 0x80b74
+  Used at instruction address: 0x80b4b
+External Register: r0
+  Used at instruction address: 0x82fc9
+  Used at instruction address: 0x82fc7
+External MemoryLocation at address: 0x81650
+  Used at instruction address: 0x8163d
+External Register: r10
+  Used at instruction address: 0x81e35
+External MemoryLocation at address: 0x80b10
+  Used at instruction address: 0x80af3
+External Register: r7
+  Used at instruction address: 0x8146d
+External MemoryLocation at address: 0x801a8
+  Used at instruction address: 0x80171
+External MemoryLocation at address: 0x849f0
+  Used at instruction address: 0x82ea5
+External Register: r0
+  Used at instruction address: 0x85214
+External MemoryLocation at address: 0x819bc
+  Used at instruction address: 0x8197d
+External Register: r3
+  Used at instruction address: 0x840d5
+External Register: r5
+  Used at instruction address: 0x80eb5
+External Register: lr
+  Used at instruction address: 0x81059
+External Register: cc_dep2
+  Used at instruction address: 0x84bff
+External Register: lr
+  Used at instruction address: 0x84231
+External MemoryLocation at address: 0x812b0
+  Used at instruction address: 0x81205
+External Register: r0
+  Used at instruction address: 0x81dc9
+External MemoryLocation at address: 0x80e6c
+  Used at instruction address: 0x80d9b
+External Register: cc_dep2
+  Used at instruction address: 0x8449f
+External MemoryLocation at address: 0x839c8
+  Used at instruction address: 0x836fb
+External MemoryLocation at address: 0x82eb8
+  Used at instruction address: 0x82e8f
+External MemoryLocation at address: 0x802c8
+  Used at instruction address: 0x8029d
+External MemoryLocation at address: 0x8100c
+  Used at instruction address: 0x80f2b
+  Used at instruction address: 0x80fab
+  Used at instruction address: 0x80f1f
+External Register: cc_op
+  Used at instruction address: 0x81a5f
+External Register: r6
+  Used at instruction address: 0x82fc1
+External Register: lr
+  Used at instruction address: 0x83d6f
+External Register: r5
+  Used at instruction address: 0x851c1
+  Used at instruction address: 0x851bd
+External Register: lr
+  Used at instruction address: 0x808c5
+External Register: r0
+  Used at instruction address: 0x80937
+  Used at instruction address: 0x8091d
+  Used at instruction address: 0x80935
+  Used at instruction address: 0x80917
+  Used at instruction address: 0x8093b
+External MemoryLocation at address: 0x849fc
+  Used at instruction address: 0x82ea5
+External Register: cc_op
+  Used at instruction address: 0x805d5
+External MemoryLocation at address: 0x810d4
+  Used at instruction address: 0x8105f
+External Register: r8
+  Used at instruction address: 0x801c5
+External Register: r4
+  Used at instruction address: 0x8411d
+External MemoryLocation at address: 0x80cac
+  Used at instruction address: 0x80c3d
+  Used at instruction address: 0x80c7b
+External Register: cc_op
+  Used at instruction address: 0x85414
+External Register: r4
+  Used at instruction address: 0x84159
+External Register: r1
+  Used at instruction address: 0x818b7
+  Used at instruction address: 0x818b3
+External Register: lr
+  Used at instruction address: 0x81a9d
+External MemoryLocation at address: 0x81440
+  Used at instruction address: 0x81373
+  Used at instruction address: 0x813cd
+  Used at instruction address: 0x813bd
+External Register: cc_dep2
+  Used at instruction address: 0x84129
+External Register: r0
+  Used at instruction address: 0x85099
+  Used at instruction address: 0x8509b
+  Used at instruction address: 0x850a1
+External MemoryLocation at address: 0x83220
+  Used at instruction address: 0x83133
+External Register: r6
+  Used at instruction address: 0x83c8b
+External Register: r7
+  Used at instruction address: 0x853a0
+  Used at instruction address: 0x85314
+  Used at instruction address: 0x85390
+  Used at instruction address: 0x8537c
+  Used at instruction address: 0x85334
+  Used at instruction address: 0x85398
+  Used at instruction address: 0x8533c
+  Used at instruction address: 0x8532c
+  Used at instruction address: 0x85328
+  Used at instruction address: 0x85340
+  Used at instruction address: 0x853a4
+  Used at instruction address: 0x85324
+  Used at instruction address: 0x8535c
+  Used at instruction address: 0x85388
+  Used at instruction address: 0x85320
+  Used at instruction address: 0x85354
+  Used at instruction address: 0x85350
+  Used at instruction address: 0x85378
+  Used at instruction address: 0x85358
+  Used at instruction address: 0x85374
+  Used at instruction address: 0x85348
+  Used at instruction address: 0x8538c
+  Used at instruction address: 0x8531c
+  Used at instruction address: 0x8534c
+  Used at instruction address: 0x85384
+  Used at instruction address: 0x85364
+  Used at instruction address: 0x85380
+  Used at instruction address: 0x85394
+  Used at instruction address: 0x85330
+  Used at instruction address: 0x85368
+  Used at instruction address: 0x85344
+  Used at instruction address: 0x85370
+  Used at instruction address: 0x8536c
+  Used at instruction address: 0x8539c
+  Used at instruction address: 0x85360
+  Used at instruction address: 0x85338
+  Used at instruction address: 0x85318
+External Register: r8
+  Used at instruction address: 0x82abd
+External Register: cc_dep1
+  Used at instruction address: 0x85099
+External Register: cc_dep2
+  Used at instruction address: 0x805a7
+External Register: lr
+  Used at instruction address: 0x80ba1
+External Register: r4
+  Used at instruction address: 0x80351
+External MemoryLocation at address: 0x81630
+  Used at instruction address: 0x815b3
+External Register: r9
+  Used at instruction address: 0x81e35
+External MemoryLocation at address: 0x801ac
+  Used at instruction address: 0x80179
+External Register: r1
+  Used at instruction address: 0x802dd
+External MemoryLocation at address: 0x819c8
+  Used at instruction address: 0x81995
+External Register: r6
+  Used at instruction address: 0x843b1
+External MemoryLocation at address: 0x808b4
+  Used at instruction address: 0x80889
+  Used at instruction address: 0x8088f
+  Used at instruction address: 0x8089d
+  Used at instruction address: 0x808a7
+External MemoryLocation at address: 0x80574
+  Used at instruction address: 0x8056d
+External Register: r5
+  Used at instruction address: 0x849e1
+External MemoryLocation at address: 0x81ba0
+  Used at instruction address: 0x81b75
+External Register: cc_dep2
+  Used at instruction address: 0x80321
+External MemoryLocation at address: 0x81118
+  Used at instruction address: 0x81105
+External Register: r4
+  Used at instruction address: 0x812e5
+External Register: r7
+  Used at instruction address: 0x84b3b
+  Used at instruction address: 0x84b41
+External Register: cc_op
+  Used at instruction address: 0x84a08
+  Used at instruction address: 0x84a00
+External Register: r1
+  Used at instruction address: 0x8001b
+External Register: r0
+  Used at instruction address: 0x82c3b
+External MemoryLocation at address: 0x81a78
+  Used at instruction address: 0x81a65
+External Register: cc_op
+  Used at instruction address: 0x8438f
+External Register: r0
+  Used at instruction address: 0x81d53
+  Used at instruction address: 0x81cbf
+  Used at instruction address: 0x81ccb
+External Register: r11
+  Used at instruction address: 0x8111d
+External Register: cc_op
+  Used at instruction address: 0x805bb
+External Register: r4
+  Used at instruction address: 0x8011f
+External Register: cc_dep1
+  Used at instruction address: 0x82e23
+External Register: r6
+  Used at instruction address: 0x81b59
+External Register: r2
+  Used at instruction address: 0x802f9
+  Used at instruction address: 0x802e1
+  Used at instruction address: 0x80319
+  Used at instruction address: 0x802ff
+External MemoryLocation at address: 0x812c4
+  Used at instruction address: 0x81253
+External Register: lr
+  Used at instruction address: 0x805a5
+External Register: lr
+  Used at instruction address: 0x806ad
+External Register: cc_op
+  Used at instruction address: 0x8057f
+External Register: r9
+  Used at instruction address: 0x80a3d
+External Register: cc_dep1
+  Used at instruction address: 0x812ed
+External MemoryLocation at address: 0x81530
+  Used at instruction address: 0x81501
+  Used at instruction address: 0x814e7
+  Used at instruction address: 0x814d3
+External MemoryLocation at address: 0x8286c
+  Used at instruction address: 0x825a1
+External Register: r0
+  Used at instruction address: 0x8046d
+  Used at instruction address: 0x804cf
+  Used at instruction address: 0x804bb
+  Used at instruction address: 0x80493
+External Register: cc_op
+  Used at instruction address: 0x80a95
+External Register: r1
+  Used at instruction address: 0x840e1
+  Used at instruction address: 0x840dd
+External Register: lr
+  Used at instruction address: 0x808b1
+  Used at instruction address: 0x808a3
+External Register: r5
+  Used at instruction address: 0x844ed
+External Register: lr
+  Used at instruction address: 0x80a43
+External Register: r0
+  Used at instruction address: 0x82e17
+External Register: r6
+  Used at instruction address: 0x80c21
+External Register: r8
+  Used at instruction address: 0x81db5
+External Register: r2
+  Used at instruction address: 0x82acd
+External MemoryLocation at address: 0x802c4
+  Used at instruction address: 0x80281
+External Register: lr
+  Used at instruction address: 0x8368d
+External Register: r5
+  Used at instruction address: 0x84475
+External Register: r1
+  Used at instruction address: 0x801d3
+  Used at instruction address: 0x801cb
+External Register: r1
+  Used at instruction address: 0x82c37
+  Used at instruction address: 0x82c2d
+External Register: r3
+  Used at instruction address: 0x806d9
+External MemoryLocation at address: 0x80e70
+  Used at instruction address: 0x80db1
+  Used at instruction address: 0x80e31
+  Used at instruction address: 0x80e51
+External Register: cc_dep1
+  Used at instruction address: 0x851f4
+External Register: r4
+  Used at instruction address: 0x81bab
+External MemoryLocation at address: 0x816bc
+  Used at instruction address: 0x8166d
+External Register: lr
+  Used at instruction address: 0x80675
+  Used at instruction address: 0x80665
+External Register: r8
+  Used at instruction address: 0x80207
+External Register: r0
+  Used at instruction address: 0x8050f
+  Used at instruction address: 0x80509
+External Register: r10
+  Used at instruction address: 0x83233
+External Register: cc_dep1
+  Used at instruction address: 0x83bfd
+External Register: r1
+  Used at instruction address: 0x84a97
+External Register: r1
+  Used at instruction address: 0x840fd
+  Used at instruction address: 0x840fb
+External Register: r0
+  Used at instruction address: 0x8105b
+External Register: r5
+  Used at instruction address: 0x816f1
+External MemoryLocation at address: 0x84878
+  Used at instruction address: 0x842df
+External Register: cc_op
+  Used at instruction address: 0x85314
+External Register: r0
+  Used at instruction address: 0x82dd9
+  Used at instruction address: 0x82dcb
+  Used at instruction address: 0x82ddb
+  Used at instruction address: 0x82dd7
+  Used at instruction address: 0x82dc9
+  Used at instruction address: 0x82de1
+  Used at instruction address: 0x82dcd
+  Used at instruction address: 0x82dd5
+  Used at instruction address: 0x82dd1
+  Used at instruction address: 0x82dd3
+  Used at instruction address: 0x82dcf
+External Register: r5
+  Used at instruction address: 0x83065
+External Register: cc_ndep
+  Used at instruction address: 0x82c39
+External MemoryLocation at address: 0x81b3c
+  Used at instruction address: 0x81af1
+External Register: r1
+  Used at instruction address: 0x8454d
+  Used at instruction address: 0x84559
+  Used at instruction address: 0x8454f
+  Used at instruction address: 0x8456d
+  Used at instruction address: 0x845fb
+External Register: cc_dep1
+  Used at instruction address: 0x840d7
+External MemoryLocation at address: 0x806a0
+  Used at instruction address: 0x80699
+External MemoryLocation at address: 0x81008
+  Used at instruction address: 0x80f11
+External Register: r4
+  Used at instruction address: 0x818ad
+External Register: r7
+  Used at instruction address: 0x844ed
+External Register: r0
+  Used at instruction address: 0x84a10
+External Register: r5
+  Used at instruction address: 0x848d9
+External Register: r1
+  Used at instruction address: 0x808ff
+  Used at instruction address: 0x808f7
+  Used at instruction address: 0x80901
+  Used at instruction address: 0x80903
+  Used at instruction address: 0x808fb
+External Register: cc_dep1
+  Used at instruction address: 0x80519
+External Register: cc_ndep
+  Used at instruction address: 0x809a3
+External MemoryLocation at address: 0x84aa4
+  Used at instruction address: 0x84a5b
+External Register: cc_ndep
+  Used at instruction address: 0x81565
+External MemoryLocation at address: 0x851ac
+  Used at instruction address: 0x8509d
+External Register: r8
+  Used at instruction address: 0x80a3d
+External Register: lr
+  Used at instruction address: 0x815f5
+  Used at instruction address: 0x81591
+External MemoryLocation at address: 0x84aa8
+  Used at instruction address: 0x84a8b
+External Register: r1
+  Used at instruction address: 0x80637
+External Register: r11
+  Used at instruction address: 0x83233
+External Register: r8
+  Used at instruction address: 0x83d6f
+External Register: r6
+  Used at instruction address: 0x8111d
+External MemoryLocation at address: 0x81b40
+  Used at instruction address: 0x81af3
+  Used at instruction address: 0x81b0f
+External Register: r4
+  Used at instruction address: 0x80161
+External Register: r4
+  Used at instruction address: 0x84181
+External MemoryLocation at address: 0x80d58
+  Used at instruction address: 0x80d2f
+External Register: cc_dep2
+  Used at instruction address: 0x80a11
+External Register: r1
+  Used at instruction address: 0x8050f
+  Used at instruction address: 0x8050b
+  Used at instruction address: 0x80517
+External Register: cc_dep2
+  Used at instruction address: 0x80b19
+External MemoryLocation at address: 0x81b28
+  Used at instruction address: 0x81ad5
+External Register: r7
+  Used at instruction address: 0x83065
+External MemoryLocation at address: 0x83228
+  Used at instruction address: 0x83171
+External Register: cc_ndep
+  Used at instruction address: 0x81a0b
+External Register: r4
+  Used at instruction address: 0x80b15
+External Register: lr
+  Used at instruction address: 0x8146d
+External Register: r6
+  Used at instruction address: 0x80a11
+External Register: cc_dep1
+  Used at instruction address: 0x80b93
+External Register: r9
+  Used at instruction address: 0x8368d
+External Register: lr
+  Used at instruction address: 0x80469
+External Register: cc_op
+  Used at instruction address: 0x84bff
+External Register: r1
+  Used at instruction address: 0x82fc9
+  Used at instruction address: 0x82fc3
+External Register: cc_dep1
+  Used at instruction address: 0x80169
+External Register: cc_ndep
+  Used at instruction address: 0x80019
+External Register: cc_op
+  Used at instruction address: 0x8449f
+External Register: cc_dep2
+  Used at instruction address: 0x82c39
+External Register: r8
+  Used at instruction address: 0x83521
+External Register: r4
+  Used at instruction address: 0x8359d
+External MemoryLocation at address: 0x84a10
+  Used at instruction address: 0x80745
+  Used at instruction address: 0x806f9
+External MemoryLocation at address: 0x80884
+  Used at instruction address: 0x8085b
+External MemoryLocation at address: 0x81524
+  Used at instruction address: 0x814bb
+External Register: cc_dep1
+  Used at instruction address: 0x808d1
+External Register: r3
+  Used at instruction address: 0x82e8d
+External Register: lr
+  Used at instruction address: 0x8358d
+External Register: r0
+  Used at instruction address: 0x80a3d
+External Register: cc_dep2
+  Used at instruction address: 0x809a3
+External Register: cc_ndep
+  Used at instruction address: 0x808d5
+External Register: r0
+  Used at instruction address: 0x81a85
+External MemoryLocation at address: 0x81520
+  Used at instruction address: 0x81493
+External Register: r6
+  Used at instruction address: 0x80505
+External MemoryLocation at address: 0x8157c
+  Used at instruction address: 0x81561
+External Register: cc_dep1
+  Used at instruction address: 0x81ae5
+External Register: r1
+  Used at instruction address: 0x82fb1
+  Used at instruction address: 0x82faf
+External MemoryLocation at address: 0x8153c
+  Used at instruction address: 0x814e5
+External MemoryLocation at address: 0x81510
+  Used at instruction address: 0x81471
+External Register: cc_dep2
+  Used at instruction address: 0x81565
+External Register: cc_op
+  Used at instruction address: 0x84129
+External Register: r5
+  Used at instruction address: 0x84549
+External Register: lr
+  Used at instruction address: 0x80301
+  Used at instruction address: 0x80315
+External MemoryLocation at address: 0x8076c
+  Used at instruction address: 0x80747
+External MemoryLocation at address: 0x82ebc
+  Used at instruction address: 0x82e91
+External Register: cc_op
+  Used at instruction address: 0x805a7
+External Register: cc_dep2
+  Used at instruction address: 0x8025b
+External Register: r4
+  Used at instruction address: 0x816f1
+External Register: cc_dep1
+  Used at instruction address: 0x85214
+External Register: r4
+  Used at instruction address: 0x80e89
+External Register: lr
+  Used at instruction address: 0x800f5
+External Register: r0
+  Used at instruction address: 0x8424d
+  Used at instruction address: 0x84233
+  Used at instruction address: 0x84277
+External MemoryLocation at address: 0x8024c
+  Used at instruction address: 0x80213
+External MemoryLocation at address: 0x81344
+  Used at instruction address: 0x81323
+External MemoryLocation at address: 0x80750
+  Used at instruction address: 0x806dd
+  Used at instruction address: 0x806f7
+External Register: cc_ndep
+  Used at instruction address: 0x816af
+External Register: cc_op
+  Used at instruction address: 0x80321
+External Register: cc_ndep
+  Used at instruction address: 0x84a95
+External Register: r8
+  Used at instruction address: 0x8368d
+External Register: cc_dep2
+  Used at instruction address: 0x81bd7
+External Register: lr
+  Used at instruction address: 0x80965
+External Register: cc_ndep
+  Used at instruction address: 0x82f5f
+External MemoryLocation at address: 0x81b50
+  Used at instruction address: 0x81b0d
+External MemoryLocation at address: 0x8087c
+  Used at instruction address: 0x807e9
+  Used at instruction address: 0x80833
+External MemoryLocation at address: 0x80578
+  Used at instruction address: 0x8056f
+External Register: lr
+  Used at instruction address: 0x808ed
+External Register: r1
+  Used at instruction address: 0x842d9
+  Used at instruction address: 0x842d5
+  Used at instruction address: 0x8431f
+  Used at instruction address: 0x84373
+External Register: r5
+  Used at instruction address: 0x82fc1
+External Register: r7
+  Used at instruction address: 0x84549
+External Register: cc_dep2
+  Used at instruction address: 0x808d5
+External Register: r5
+  Used at instruction address: 0x840d5
+External Register: r5
+  Used at instruction address: 0x83c8b
+External MemoryLocation at address: 0x81a44
+  Used at instruction address: 0x81a07
+External Register: lr
+  Used at instruction address: 0x80985
+External MemoryLocation at address: 0x80560
+  Used at instruction address: 0x80559
+External Register: cc_dep2
+  Used at instruction address: 0x80ae5
+External MemoryLocation at address: 0x81628
+  Used at instruction address: 0x81599
+  Used at instruction address: 0x815e9
+  Used at instruction address: 0x815a7
+External MemoryLocation at address: 0x81028
+  Used at instruction address: 0x80ec9
+External Register: r0
+  Used at instruction address: 0x82acb
+External MemoryLocation at address: 0x81580
+  Used at instruction address: 0x81569
+External MemoryLocation at address: 0x82e6c
+  Used at instruction address: 0x82e19
+  Used at instruction address: 0x82e63
+  Used at instruction address: 0x82e57
+External Register: lr
+  Used at instruction address: 0x80369
+External MemoryLocation at address: 0x801b8
+  Used at instruction address: 0x80183
+External Register: r5
+  Used at instruction address: 0x843b1
+External Register: r0
+  Used at instruction address: 0x82f69
+External MemoryLocation at address: 0x816cc
+  Used at instruction address: 0x81699
+External Register: r6
+  Used at instruction address: 0x8411d
+External MemoryLocation at address: 0x839c0
+  Used at instruction address: 0x8394b
+External Register: r1
+  Used at instruction address: 0x8134b
+  Used at instruction address: 0x8134b
+  Used at instruction address: 0x81349
+External Register: r3
+  Used at instruction address: 0x8135d
+External Register: r0
+  Used at instruction address: 0x806b5
+External Register: r7
+  Used at instruction address: 0x8195d
+External Register: cc_dep2
+  Used at instruction address: 0x816af
+External MemoryLocation at address: 0x84a00
+  Used at instruction address: 0x82ea5
+External Register: r4
+  Used at instruction address: 0x82b45
+External Register: r8
+  Used at instruction address: 0x8135d
+External Register: cc_dep2
+  Used at instruction address: 0x84a95
+External Register: cc_ndep
+  Used at instruction address: 0x85099
+External Register: r0
+  Used at instruction address: 0x84393
+External Register: lr
+  Used at instruction address: 0x83595
+External Register: lr
+  Used at instruction address: 0x808d3
+External Register: lr
+  Used at instruction address: 0x81549
+External Register: r4
+  Used at instruction address: 0x80399
+External Register: cc_dep2
+  Used at instruction address: 0x82f5f
+External Register: r5
+  Used at instruction address: 0x84a00
+External Register: r7
+  Used at instruction address: 0x83c8b
+External Register: r9
+  Used at instruction address: 0x85348
+  Used at instruction address: 0x8536c
+  Used at instruction address: 0x85388
+  Used at instruction address: 0x85330
+  Used at instruction address: 0x85384
+  Used at instruction address: 0x85370
+  Used at instruction address: 0x853a8
+  Used at instruction address: 0x85350
+  Used at instruction address: 0x853ac
+  Used at instruction address: 0x85328
+  Used at instruction address: 0x8532c
+  Used at instruction address: 0x853a4
+  Used at instruction address: 0x85390
+  Used at instruction address: 0x85324
+  Used at instruction address: 0x8534c
+  Used at instruction address: 0x85344
+  Used at instruction address: 0x85368
+  Used at instruction address: 0x8538c
+  Used at instruction address: 0x853b0
+  Used at instruction address: 0x85364
+External MemoryLocation at address: 0x81ac4
+  Used at instruction address: 0x81aad
+External MemoryLocation at address: 0x806b0
+  Used at instruction address: 0x806a5
+External Register: r3
+  Used at instruction address: 0x80569
+External Register: r8
+  Used at instruction address: 0x8146d
+External Register: r0
+  Used at instruction address: 0x8037b
+External Register: cc_dep1
+  Used at instruction address: 0x80969
+External Register: r5
+  Used at instruction address: 0x81b59
+External Register: r4
+  Used at instruction address: 0x844c1
+External MemoryLocation at address: 0x80154
+  Used at instruction address: 0x80121
+External Register: r0
+  Used at instruction address: 0x844a3
+External MemoryLocation at address: 0x812c8
+  Used at instruction address: 0x8126f
+External MemoryLocation at address: 0x81acc
+  Used at instruction address: 0x81abd
+External Register: r5
+  Used at instruction address: 0x8517d
+  Used at instruction address: 0x8509b
+  Used at instruction address: 0x8513d
+  Used at instruction address: 0x850bb
+  Used at instruction address: 0x850fd
+  Used at instruction address: 0x85101
+  Used at instruction address: 0x85181
+  Used at instruction address: 0x85141
+External MemoryLocation at address: 0x8133c
+  Used at instruction address: 0x81317
+External Register: cc_dep2
+  Used at instruction address: 0x81d5d
+External MemoryLocation at address: 0x80564
+  Used at instruction address: 0x8055b
+External MemoryLocation at address: 0x818a0
+  Used at instruction address: 0x81855
+  Used at instruction address: 0x8186f
+External Register: lr
+  Used at instruction address: 0x84475
+External Register: r7
+  Used at instruction address: 0x8529c
+  Used at instruction address: 0x8528c
+  Used at instruction address: 0x852a4
+  Used at instruction address: 0x85248
+  Used at instruction address: 0x85218
+  Used at instruction address: 0x85254
+  Used at instruction address: 0x85280
+  Used at instruction address: 0x85240
+  Used at instruction address: 0x8521c
+  Used at instruction address: 0x85234
+  Used at instruction address: 0x85228
+  Used at instruction address: 0x85298
+  Used at instruction address: 0x85284
+  Used at instruction address: 0x85230
+  Used at instruction address: 0x85224
+  Used at instruction address: 0x85250
+  Used at instruction address: 0x85278
+  Used at instruction address: 0x85268
+  Used at instruction address: 0x8523c
+  Used at instruction address: 0x8524c
+  Used at instruction address: 0x85244
+  Used at instruction address: 0x85238
+  Used at instruction address: 0x8525c
+  Used at instruction address: 0x85270
+  Used at instruction address: 0x8527c
+  Used at instruction address: 0x85274
+  Used at instruction address: 0x85294
+  Used at instruction address: 0x85290
+  Used at instruction address: 0x85214
+  Used at instruction address: 0x8526c
+  Used at instruction address: 0x85288
+  Used at instruction address: 0x852a0
+  Used at instruction address: 0x8522c
+  Used at instruction address: 0x85258
+  Used at instruction address: 0x85264
+  Used at instruction address: 0x85220
+  Used at instruction address: 0x85260
+External MemoryLocation at address: 0x81438
+  Used at instruction address: 0x81361
+External MemoryLocation at address: 0x8175c
+  Used at instruction address: 0x81757
+External Register: r5
+  Used at instruction address: 0x80c21
+External MemoryLocation at address: 0x809f0
+  Used at instruction address: 0x809d1
+External Register: r8
+  Used at instruction address: 0x80d61
+External Register: cc_op
+  Used at instruction address: 0x80a11
+External MemoryLocation at address: 0x80b70
+  Used at instruction address: 0x80b47
+  Used at instruction address: 0x80b2f
+External Register: cc_op
+  Used at instruction address: 0x80b19
+External Register: cc_ndep
+  Used at instruction address: 0x82e23
+External MemoryLocation at address: 0x84a9c
+  Used at instruction address: 0x84a25
+External MemoryLocation at address: 0x80b0c
+  Used at instruction address: 0x80aef
+External MemoryLocation at address: 0x81ba4
+  Used at instruction address: 0x81b77
+External Register: r0
+  Used at instruction address: 0x851d4
+External MemoryLocation at address: 0x801b0
+  Used at instruction address: 0x8017d
+External Register: cc_dep1
+  Used at instruction address: 0x82c21
+External MemoryLocation at address: 0x819cc
+  Used at instruction address: 0x81999
+External Register: r5
+  Used at instruction address: 0x82ec1
+External MemoryLocation at address: 0x82870
+  Used at instruction address: 0x82633
+External Register: r0
+  Used at instruction address: 0x80e8b
+External MemoryLocation at address: 0x801fc
+  Used at instruction address: 0x801d7
+External Register: cc_ndep
+  Used at instruction address: 0x812ed
+External Register: r2
+  Used at instruction address: 0x8485b
+External Register: r0
+  Used at instruction address: 0x83c95
+  Used at instruction address: 0x83c89
+  Used at instruction address: 0x83c91
+  Used at instruction address: 0x83d41
+  Used at instruction address: 0x83cb9
+  Used at instruction address: 0x83d45
+  Used at instruction address: 0x83caf
+  Used at instruction address: 0x83d03
+External MemoryLocation at address: 0x81a58
+  Used at instruction address: 0x819f3
+External Register: r4
+  Used at instruction address: 0x8090d
+External Register: cc_dep2
+  Used at instruction address: 0x85099
+External Register: r4
+  Used at instruction address: 0x840d5
+External Register: cc_dep1
+  Used at instruction address: 0x84a10
+External MemoryLocation at address: 0x84280
+  Used at instruction address: 0x8423d
+  Used at instruction address: 0x84263
+External Register: cc_op
+  Used at instruction address: 0x82c39
+External Register: r3
+  Used at instruction address: 0x818ad
+External Register: cc_ndep
+  Used at instruction address: 0x851f4
+External Register: r7
+  Used at instruction address: 0x80c21
+External MemoryLocation at address: 0x84b20
+  Used at instruction address: 0x84ab1
+External Register: r1
+  Used at instruction address: 0x8415d
+  Used at instruction address: 0x8415b
+External Register: r4
+  Used at instruction address: 0x801c5
+External Register: lr
+  Used at instruction address: 0x81955
+External Register: cc_op
+  Used at instruction address: 0x809a3
+External Register: lr
+  Used at instruction address: 0x81a5d
+External Register: r3
+  Used at instruction address: 0x81a81
+External Register: cc_ndep
+  Used at instruction address: 0x83bfd
+External Register: r0
+  Used at instruction address: 0x83d79
+  Used at instruction address: 0x83d7f
+External MemoryLocation at address: 0x84384
+  Used at instruction address: 0x842dd
+External Register: cc_op
+  Used at instruction address: 0x81565
+External MemoryLocation at address: 0x81bcc
+  Used at instruction address: 0x81bad
+External MemoryLocation at address: 0x819d8
+  Used at instruction address: 0x81973
+External Register: r5
+  Used at instruction address: 0x8111d
+External Register: cc_ndep
+  Used at instruction address: 0x840d7
+External MemoryLocation at address: 0x81358
+  Used at instruction address: 0x8134d
+External Register: r3
+  Used at instruction address: 0x84181
+External Register: r0
+  Used at instruction address: 0x80941
+  Used at instruction address: 0x80943
+  Used at instruction address: 0x80945
+  Used at instruction address: 0x80955
+  Used at instruction address: 0x80949
+  Used at instruction address: 0x8095b
+  Used at instruction address: 0x8094b
+  Used at instruction address: 0x80951
+External Register: cc_op
+  Used at instruction address: 0x8025b
+External MemoryLocation at address: 0x842c4
+  Used at instruction address: 0x842a3
+External MemoryLocation at address: 0x816d4
+  Used at instruction address: 0x816b1
+External MemoryLocation at address: 0x83058
+  Used at instruction address: 0x83043
+  Used at instruction address: 0x83015
+External Register: cc_ndep
+  Used at instruction address: 0x80519
+External MemoryLocation at address: 0x81a3c
+  Used at instruction address: 0x819fd
+External MemoryLocation at address: 0x8010c
+  Used at instruction address: 0x800f7
+External Register: r3
+  Used at instruction address: 0x80b15
+External Register: r8
+  Used at instruction address: 0x8548c
+  Used at instruction address: 0x8544c
+  Used at instruction address: 0x854b0
+  Used at instruction address: 0x85480
+  Used at instruction address: 0x85460
+  Used at instruction address: 0x8549c
+  Used at instruction address: 0x8542c
+  Used at instruction address: 0x8546c
+  Used at instruction address: 0x854bc
+  Used at instruction address: 0x8543c
+  Used at instruction address: 0x85490
+  Used at instruction address: 0x85440
+  Used at instruction address: 0x85420
+  Used at instruction address: 0x854c0
+  Used at instruction address: 0x8547c
+  Used at instruction address: 0x85470
+  Used at instruction address: 0x85430
+  Used at instruction address: 0x854a0
+  Used at instruction address: 0x8545c
+  Used at instruction address: 0x854ac
+  Used at instruction address: 0x8541c
+  Used at instruction address: 0x85450
+External Register: r3
+  Used at instruction address: 0x844f9
+  Used at instruction address: 0x844ed
+  Used at instruction address: 0x844ff
+External Register: r0
+  Used at instruction address: 0x854eb
+External MemoryLocation at address: 0x812e0
+  Used at instruction address: 0x8119d
+External Register: cc_op
+  Used at instruction address: 0x81bd7
+External MemoryLocation at address: 0x810e4
+  Used at instruction address: 0x81095
+External Register: r6
+  Used at instruction address: 0x84181
+External Register: cc_dep2
+  Used at instruction address: 0x81aa1
+External Register: r0
+  Used at instruction address: 0x80c29
+  Used at instruction address: 0x80c25
+External Register: r1
+  Used at instruction address: 0x80309
+  Used at instruction address: 0x802eb
+  Used at instruction address: 0x80303
+  Used at instruction address: 0x802e3
+  Used at instruction address: 0x8030f
+  Used at instruction address: 0x802ed
+External MemoryLocation at address: 0x84a0c
+  Used at instruction address: 0x80745
+  Used at instruction address: 0x806f9
+External Register: r4
+  Used at instruction address: 0x82d65
+External Register: cc_dep2
+  Used at instruction address: 0x806cb
+External Register: cc_dep1
+  Used at instruction address: 0x8056b
+External Register: r3
+  Used at instruction address: 0x810fd
+  Used at instruction address: 0x81111
+External MemoryLocation at address: 0x8181c
+  Used at instruction address: 0x817ed
+External Register: lr
+  Used at instruction address: 0x84549
+External Register: r5
+  Used at instruction address: 0x80505
+External Register: cc_op
+  Used at instruction address: 0x808d5
+External Register: r7
+  Used at instruction address: 0x842c9
+External MemoryLocation at address: 0x81934
+  Used at instruction address: 0x818e9
+External Register: cc_ndep
+  Used at instruction address: 0x80b93
+External Register: lr
+  Used at instruction address: 0x802df
+External MemoryLocation at address: 0x81114
+  Used at instruction address: 0x810ff
+External Register: r4
+  Used at instruction address: 0x82ec1
+External Register: cc_ndep
+  Used at instruction address: 0x80169
+External MemoryLocation at address: 0x812a4
+  Used at instruction address: 0x81245
+  Used at instruction address: 0x811e9
+  Used at instruction address: 0x811f5
+  Used at instruction address: 0x8122d
+  Used at instruction address: 0x811db
+External Register: r2
+  Used at instruction address: 0x84287
+  Used at instruction address: 0x8428b
+External Register: r4
+  Used at instruction address: 0x81db5
+External Register: cc_dep2
+  Used at instruction address: 0x82dc5
+External Register: cc_op
+  Used at instruction address: 0x80ae5
+External Register: r3
+  Used at instruction address: 0x835b1
+  Used at instruction address: 0x835ab
+External Register: r6
+  Used at instruction address: 0x8359d
+External Register: r10
+  Used at instruction address: 0x84549
+External MemoryLocation at address: 0x84a98
+  Used at instruction address: 0x84a37
+  Used at instruction address: 0x84a27
+  Used at instruction address: 0x84a5d
+  Used at instruction address: 0x84a6d
+  Used at instruction address: 0x84a45
+  Used at instruction address: 0x84a7d
+External Register: r3
+  Used at instruction address: 0x80e89
+External Register: cc_ndep
+  Used at instruction address: 0x808d1
+External Register: r5
+  Used at instruction address: 0x82e8d
+External Register: r7
+  Used at instruction address: 0x82c31
+External Register: r3
+  Used at instruction address: 0x844d3
+  Used at instruction address: 0x844c1
+  Used at instruction address: 0x844cd
+External Register: r4
+  Used at instruction address: 0x80207
+External Register: r1
+  Used at instruction address: 0x8425f
+  Used at instruction address: 0x8424d
+  Used at instruction address: 0x84239
+External MemoryLocation at address: 0x83584
+  Used at instruction address: 0x83571
+External Register: cc_ndep
+  Used at instruction address: 0x81ae5
+External Register: r3
+  Used at instruction address: 0x82acf
+External Register: lr
+  Used at instruction address: 0x8068d
+External MemoryLocation at address: 0x81b4c
+  Used at instruction address: 0x81b0b
+External Register: r4
+  Used at instruction address: 0x82f59
+External MemoryLocation at address: 0x839b8
+  Used at instruction address: 0x83877
+External Register: cc_op
+  Used at instruction address: 0x816af
+External Register: cc_dep1
+  Used at instruction address: 0x844f1
+External Register: cc_op
+  Used at instruction address: 0x84a95
+External Register: cc_dep1
+  Used at instruction address: 0x81dbd
+External Register: lr
+  Used at instruction address: 0x8195d
+External MemoryLocation at address: 0x812b4
+  Used at instruction address: 0x8124f
+  Used at instruction address: 0x81217
+External MemoryLocation at address: 0x801f8
+  Used at instruction address: 0x801d5
+External Register: cc_op
+  Used at instruction address: 0x82f5f
+External Register: r6
+  Used at instruction address: 0x816f1
+External Register: r2
+  Used at instruction address: 0x83c05
+  Used at instruction address: 0x83c81
+  Used at instruction address: 0x83c07
+External Register: r0
+  Used at instruction address: 0x84299
+External Register: cc_ndep
+  Used at instruction address: 0x85214
+External Register: r0
+  Used at instruction address: 0x84623
+  Used at instruction address: 0x846d7
+  Used at instruction address: 0x846e9
+  Used at instruction address: 0x8457d
+  Used at instruction address: 0x84775
+  Used at instruction address: 0x8461d
+  Used at instruction address: 0x8475b
+  Used at instruction address: 0x84605
+  Used at instruction address: 0x84551
+  Used at instruction address: 0x84571
+External Register: r1
+  Used at instruction address: 0x84a08
+  Used at instruction address: 0x84a00
+External Register: lr
+  Used at instruction address: 0x83c8b
+External Register: r1
+  Used at instruction address: 0x84179
+External MemoryLocation at address: 0x805c8
+  Used at instruction address: 0x805bf
+External Register: r4
+  Used at instruction address: 0x81059
+External Register: r0
+  Used at instruction address: 0x80363
+  Used at instruction address: 0x8036b
+  Used at instruction address: 0x80361
+  Used at instruction address: 0x80359
+  Used at instruction address: 0x80355
+  Used at instruction address: 0x8035d
+  Used at instruction address: 0x8036f
+  Used at instruction address: 0x80365
+  Used at instruction address: 0x80373
+External MemoryLocation at address: 0x81624
+  Used at instruction address: 0x815f1
+  Used at instruction address: 0x81595
+External Register: cc_op
+  Used at instruction address: 0x81d5d
+External MemoryLocation at address: 0x80880
+  Used at instruction address: 0x8080d
+External Register: r4
+  Used at instruction address: 0x80a3d
+External Register: r2
+  Used at instruction address: 0x844f5
+External Register: r3
+  Used at instruction address: 0x849f1
+External MemoryLocation at address: 0x80b08
+  Used at instruction address: 0x80aeb
+External Register: r4
+  Used at instruction address: 0x81ad1
+External Register: cc_dep2
+  Used at instruction address: 0x80169
+External Register: r7
+  Used at instruction address: 0x83233
+External MemoryLocation at address: 0x81744
+  Used at instruction address: 0x816fb
+External Register: r0
+  Used at instruction address: 0x805d5
+External Register: cc_dep1
+  Used at instruction address: 0x80e8d
+External Register: r4
+  Used at instruction address: 0x83d6f
+External Register: lr
+  Used at instruction address: 0x843b1
+External Register: r4
+  Used at instruction address: 0x80acd
+External Register: r0
+  Used at instruction address: 0x85414
+External Register: r2
+  Used at instruction address: 0x851a9
+  Used at instruction address: 0x85125
+  Used at instruction address: 0x851a5
+  Used at instruction address: 0x85129
+  Used at instruction address: 0x850e9
+  Used at instruction address: 0x850e5
+  Used at instruction address: 0x85165
+  Used at instruction address: 0x85169
+External Register: r4
+  Used at instruction address: 0x8360f
+External Register: cc_op
+  Used at instruction address: 0x8066d
+  Used at instruction address: 0x80637
+External Register: r2
+  Used at instruction address: 0x81dc1
+  Used at instruction address: 0x81dbb
+  Used at instruction address: 0x81dc3
+  Used at instruction address: 0x81e21
+External Register: r9
+  Used at instruction address: 0x84549
+External MemoryLocation at address: 0x81448
+  Used at instruction address: 0x81395
+External Register: r4
+  Used at instruction address: 0x81a9d
+External Register: lr
+  Used at instruction address: 0x83be7
+  Used at instruction address: 0x83bf3
+External MemoryLocation at address: 0x81330
+  Used at instruction address: 0x812f3
+External MemoryLocation at address: 0x84aac
+  Used at instruction address: 0x84a8d
+External Register: r1
+  Used at instruction address: 0x83c01
+  Used at instruction address: 0x83c53
+External Register: r5
+  Used at instruction address: 0x8411d
+External Register: cc_dep2
+  Used at instruction address: 0x81ae5
+External Register: r1
+  Used at instruction address: 0x81ba9
+External MemoryLocation at address: 0x810f4
+  Used at instruction address: 0x810bd
+External Register: cc_dep1
+  Used at instruction address: 0x8112d
+External MemoryLocation at address: 0x81b30
+  Used at instruction address: 0x81add
+External Register: r3
+  Used at instruction address: 0x82b45
+External Register: r1
+  Used at instruction address: 0x82b4d
+  Used at instruction address: 0x82bc9
+External Register: r3
+  Used at instruction address: 0x80555
+External Register: r4
+  Used at instruction address: 0x80ba1
+External Register: lr
+  Used at instruction address: 0x81b59
+External Register: lr
+  Used at instruction address: 0x8093f
+External Register: r4
+  Used at instruction address: 0x83521
+External Register: r0
+  Used at instruction address: 0x80631
+External Register: r1
+  Used at instruction address: 0x84b4d
+External Register: r4
+  Used at instruction address: 0x84b49
+External Register: r7
+  Used at instruction address: 0x849f5
+External Register: r0
+  Used at instruction address: 0x844cb
+External Register: cc_dep2
+  Used at instruction address: 0x85214
+External Register: lr
+  Used at instruction address: 0x8449d
+External Register: r5
+  Used at instruction address: 0x8135d
+External Register: lr
+  Used at instruction address: 0x80c21
+External Register: r4
+  Used at instruction address: 0x82e8d
+External MemoryLocation at address: 0x80cb0
+  Used at instruction address: 0x80c9f
+  Used at instruction address: 0x80c61
+External MemoryLocation at address: 0x81b48
+  Used at instruction address: 0x81b19
+  Used at instruction address: 0x81afd
+External Register: r7
+  Used at instruction address: 0x8411d
+External Register: r2
+  Used at instruction address: 0x81d51
+  Used at instruction address: 0x81cc5
+  Used at instruction address: 0x81cc3
+External MemoryLocation at address: 0x80760
+  Used at instruction address: 0x80723
+External Register: r4
+  Used at instruction address: 0x85050
+  Used at instruction address: 0x84f6c
+External Register: r6
+  Used at instruction address: 0x80399
+External MemoryLocation at address: 0x81334
+  Used at instruction address: 0x812f5
+External Register: cc_dep1
+  Used at instruction address: 0x80557
+External Register: r0
+  Used at instruction address: 0x8412d
+  Used at instruction address: 0x84139
+External Register: r2
+  Used at instruction address: 0x80ba5
+External Register: cc_dep1
+  Used at instruction address: 0x851d4
+External Register: cc_ndep
+  Used at instruction address: 0x80969
+External Register: r4
+  Used at instruction address: 0x81639
+External MemoryLocation at address: 0x80c1c
+  Used at instruction address: 0x80bc9
+  Used at instruction address: 0x80be5
+External Register: r6
+  Used at instruction address: 0x844c1
+External MemoryLocation at address: 0x802c0
+  Used at instruction address: 0x8027b
+External Register: r0
+  Used at instruction address: 0x81ba9
+External Register: r1
+  Used at instruction address: 0x849ef
+External Register: lr
+  Used at instruction address: 0x80397
+External Register: r2
+  Used at instruction address: 0x82dcd
+External MemoryLocation at address: 0x80d10
+  Used at instruction address: 0x80cbf
+External Register: r2
+  Used at instruction address: 0x8412b
+External Register: cc_dep1
+  Used at instruction address: 0x844c5
+External Register: cc_op
+  Used at instruction address: 0x81aa1
+External Register: cc_dep2
+  Used at instruction address: 0x81755
+External Register: cc_op
+  Used at instruction address: 0x806cb
+External Register: lr
+  Used at instruction address: 0x81d4f
+External Register: cc_dep2
+  Used at instruction address: 0x8037f
+External Register: r7
+  Used at instruction address: 0x84867
+  Used at instruction address: 0x8486d
+External Register: cc_ndep
+  Used at instruction address: 0x82c21
+External Register: r2
+  Used at instruction address: 0x81bdd
+  Used at instruction address: 0x81c71
+  Used at instruction address: 0x81c83
+  Used at instruction address: 0x81c9d
+External Register: r6
+  Used at instruction address: 0x84f6c
+External MemoryLocation at address: 0x8152c
+  Used at instruction address: 0x814c5
+External Register: r2
+  Used at instruction address: 0x80dbd
+  Used at instruction address: 0x80d6b
+External Register: r2
+  Used at instruction address: 0x8035f
+External Register: cc_ndep
+  Used at instruction address: 0x84a10
+External Register: cc_dep1
+  Used at instruction address: 0x84a2f
+External Register: lr
+  Used at instruction address: 0x842c9
+External Register: lr
+  Used at instruction address: 0x8360f
+  Used at instruction address: 0x8360d
+External Register: r4
+  Used at instruction address: 0x848fd
+External Register: cc_dep2
+  Used at instruction address: 0x81cbf
+External Register: r1
+  Used at instruction address: 0x8352b
+External Register: cc_dep1
+  Used at instruction address: 0x82d79
+External Register: cc_op
+  Used at instruction address: 0x82dc5
+External Register: cc_dep2
+  Used at instruction address: 0x808e9
+External MemoryLocation at address: 0x812ac
+  Used at instruction address: 0x811f9
+External Register: r1
+  Used at instruction address: 0x82dcb
+External Register: r5
+  Used at instruction address: 0x818ad
+External Register: r4
+  Used at instruction address: 0x82dc7
+External MemoryLocation at address: 0x80cb4
+  Used at instruction address: 0x80c3f
+  Used at instruction address: 0x80c7d
+External Register: r10
+  Used at instruction address: 0x8111d
+External Register: r11
+  Used at instruction address: 0x81db5
+External MemoryLocation at address: 0x812dc
+  Used at instruction address: 0x81287
+External Register: r7
+  Used at instruction address: 0x80eb5
+External MemoryLocation at address: 0x80ffc
+  Used at instruction address: 0x80fe5
+  Used at instruction address: 0x80f17
+  Used at instruction address: 0x80edb
+  Used at instruction address: 0x80f51
+  Used at instruction address: 0x80f7f
+  Used at instruction address: 0x80efd
+External MemoryLocation at address: 0x81748
+  Used at instruction address: 0x81709
+External MemoryLocation at address: 0x81b9c
+  Used at instruction address: 0x81b5d
+External MemoryLocation at address: 0x801b4
+  Used at instruction address: 0x8017f
+External Register: cc_dep2
+  Used at instruction address: 0x80969
+External Register: r0
+  Used at instruction address: 0x8323f
+External Register: r0
+  Used at instruction address: 0x81829
+  Used at instruction address: 0x81827
+  Used at instruction address: 0x8182d
+  Used at instruction address: 0x8182f
+  Used at instruction address: 0x81821
+External Register: r6
+  Used at instruction address: 0x801c5
+External Register: cc_dep1
+  Used at instruction address: 0x854eb
+External Register: r1
+  Used at instruction address: 0x80345
+  Used at instruction address: 0x80333
+  Used at instruction address: 0x8031f
+  Used at instruction address: 0x80331
+  Used at instruction address: 0x80329
+  Used at instruction address: 0x80341
+  Used at instruction address: 0x80327
+  Used at instruction address: 0x80347
+  Used at instruction address: 0x8034b
+External Register: lr
+  Used at instruction address: 0x82c31
+External Register: r8
+  Used at instruction address: 0x85050
+External Register: r0
+  Used at instruction address: 0x809c3
+  Used at instruction address: 0x809ad
+  Used at instruction address: 0x809bf
+  Used at instruction address: 0x809bb
+  Used at instruction address: 0x809b5
+External MemoryLocation at address: 0x80464
+  Used at instruction address: 0x80453
+External Register: r3
+  Used at instruction address: 0x819f7
+  Used at instruction address: 0x81a01
+  Used at instruction address: 0x819dd
+  Used at instruction address: 0x81a09
+External Register: cc_dep1
+  Used at instruction address: 0x80baf
+External Register: lr
+  Used at instruction address: 0x8037d
+External Register: r4
+  Used at instruction address: 0x8135d
+External Register: r5
+  Used at instruction address: 0x84181
+External Register: cc_dep1
+  Used at instruction address: 0x80593
+External MemoryLocation at address: 0x81818
+  Used at instruction address: 0x817bb
+  Used at instruction address: 0x817d3
+External MemoryLocation at address: 0x8074c
+  Used at instruction address: 0x806db
+  Used at instruction address: 0x806e5
+External Register: r3
+  Used at instruction address: 0x82d65
+External Register: r3
+  Used at instruction address: 0x84bf5
+External Register: lr
+  Used at instruction address: 0x80349
+External Register: r1
+  Used at instruction address: 0x84183
+  Used at instruction address: 0x84229
+External Register: cc_dep1
+  Used at instruction address: 0x851b1
+External MemoryLocation at address: 0x816c0
+  Used at instruction address: 0x8167d
+External Register: r4
+  Used at instruction address: 0x8146d
+External Register: r3
+  Used at instruction address: 0x805b9
+External MemoryLocation at address: 0x81938
+  Used at instruction address: 0x8190f
+  Used at instruction address: 0x818fd
+External Register: r5
+  Used at instruction address: 0x80b15
+External MemoryLocation at address: 0x812d0
+  Used at instruction address: 0x8127b
+External Register: lr
+  Used at instruction address: 0x80cb9
+External MemoryLocation at address: 0x82ab0
+  Used at instruction address: 0x829dd
+  Used at instruction address: 0x82a53
+External MemoryLocation at address: 0x84498
+  Used at instruction address: 0x8447b
+External Register: cc_op
+  Used at instruction address: 0x80169
+External Register: r3
+  Used at instruction address: 0x81db5
+External Register: r11
+  Used at instruction address: 0x80a3d
+External Register: r7
+  Used at instruction address: 0x849e1
+External Register: r5
+  Used at instruction address: 0x8359d
+External Register: r4
+  Used at instruction address: 0x80d61
+External Register: r11
+  Used at instruction address: 0x83d6f
+External Register: cc_ndep
+  Used at instruction address: 0x8056b
+External MemoryLocation at address: 0x81a40
+  Used at instruction address: 0x819ff
+External Register: r0
+  Used at instruction address: 0x818b1
+  Used at instruction address: 0x818a9
+  Used at instruction address: 0x818b9
+  Used at instruction address: 0x818bf
+  Used at instruction address: 0x818af
+External Register: lr
+  Used at instruction address: 0x82c17
+External MemoryLocation at address: 0x809a4
+  Used at instruction address: 0x80989
+External Register: r8
+  Used at instruction address: 0x81e35
+External Register: cc_op
+  Used at instruction address: 0x80a9d
+External MemoryLocation at address: 0x8143c
+  Used at instruction address: 0x81369
+External Register: r9
+  Used at instruction address: 0x842c9
+External Register: r0
+  Used at instruction address: 0x802dd
+External Register: r3
+  Used at instruction address: 0x85131
+  Used at instruction address: 0x85171
+  Used at instruction address: 0x8516d
+  Used at instruction address: 0x850f1
+  Used at instruction address: 0x8512d
+  Used at instruction address: 0x850ed
+External Register: cc_op
+  Used at instruction address: 0x81ae5
+External MemoryLocation at address: 0x843ac
+  Used at instruction address: 0x84391
+External Register: r6
+  Used at instruction address: 0x82ec1
+External Register: r2
+  Used at instruction address: 0x844c9
+External MemoryLocation at address: 0x802b8
+  Used at instruction address: 0x80257
+External Register: r6
+  Used at instruction address: 0x81db5
+External Register: r10
+  Used at instruction address: 0x8544c
+  Used at instruction address: 0x85444
+  Used at instruction address: 0x8542c
+  Used at instruction address: 0x85424
+  Used at instruction address: 0x8546c
+  Used at instruction address: 0x85450
+  Used at instruction address: 0x85464
+  Used at instruction address: 0x8548c
+  Used at instruction address: 0x85468
+  Used at instruction address: 0x85430
+  Used at instruction address: 0x854ac
+  Used at instruction address: 0x854a8
+  Used at instruction address: 0x85488
+  Used at instruction address: 0x85470
+  Used at instruction address: 0x85448
+  Used at instruction address: 0x85428
+  Used at instruction address: 0x854b0
+  Used at instruction address: 0x85490
+  Used at instruction address: 0x854a4
+  Used at instruction address: 0x85484
+External Register: r4
+  Used at instruction address: 0x83bff
+External MemoryLocation at address: 0x80b98
+  Used at instruction address: 0x80b85
+External MemoryLocation at address: 0x81898
+  Used at instruction address: 0x81841
+External Register: r5
+  Used at instruction address: 0x80e89
+External MemoryLocation at address: 0x849f8
+  Used at instruction address: 0x81b89
+  Used at instruction address: 0x81b79
+  Used at instruction address: 0x81b6b
+External MemoryLocation at address: 0x80764
+  Used at instruction address: 0x8072d
+External MemoryLocation at address: 0x80ac4
+  Used at instruction address: 0x80aaf
+External Register: r0
+  Used at instruction address: 0x8306d
+  Used at instruction address: 0x8306b
+External Register: cc_op
+  Used at instruction address: 0x85214
+External Register: r2
+  Used at instruction address: 0x801d3
+  Used at instruction address: 0x801cd
+  Used at instruction address: 0x801df
+  Used at instruction address: 0x801cf
+External MemoryLocation at address: 0x812a8
+  Used at instruction address: 0x811e3
+  Used at instruction address: 0x81225
+External MemoryLocation at address: 0x80e5c
+  Used at instruction address: 0x80d73
+External Register: r6
+  Used at instruction address: 0x80207
+External Register: cc_dep1
+  Used at instruction address: 0x80aa7
+External Register: cc_dep1
+  Used at instruction address: 0x805d5
+External Register: cc_dep1
+  Used at instruction address: 0x85414
+External Register: cc_ndep
+  Used at instruction address: 0x844f1
+External Register: r4
+  Used at instruction address: 0x80251
+External Register: cc_ndep
+  Used at instruction address: 0x81dbd
+External Register: lr
+  Used at instruction address: 0x81db3
+External MemoryLocation at address: 0x84a14
+  Used at instruction address: 0x848d1
+External Register: r0
+  Used at instruction address: 0x81767
+  Used at instruction address: 0x81807
+  Used at instruction address: 0x81769
+  Used at instruction address: 0x81785
+  Used at instruction address: 0x81761
+  Used at instruction address: 0x817f9
+  Used at instruction address: 0x81775
+External Register: r2
+  Used at instruction address: 0x835a9
+External Register: cc_ndep
+  Used at instruction address: 0x84479
+External Register: lr
+  Used at instruction address: 0x8175b
+External MemoryLocation at address: 0x819c4
+  Used at instruction address: 0x81987
+External MemoryLocation at address: 0x810e0
+  Used at instruction address: 0x81073
+External MemoryLocation at address: 0x80878
+  Used at instruction address: 0x807cb
+  Used at instruction address: 0x80815
+External Register: r6
+  Used at instruction address: 0x81059
+External MemoryLocation at address: 0x82e7c
+  Used at instruction address: 0x82e75
+External Register: r0
+  Used at instruction address: 0x837df
+  Used at instruction address: 0x836ad
+  Used at instruction address: 0x83699
+External Register: lr
+  Used at instruction address: 0x81355
+External Register: r8
+  Used at instruction address: 0x842c9
+External MemoryLocation at address: 0x81338
+  Used at instruction address: 0x812f7
+External Register: r6
+  Used at instruction address: 0x80a3d
+External MemoryLocation at address: 0x8321c
+  Used at instruction address: 0x83075
+External MemoryLocation at address: 0x80690
+  Used at instruction address: 0x80685
+External Register: r6
+  Used at instruction address: 0x851c5
+  Used at instruction address: 0x851c9
+External Register: r9
+  Used at instruction address: 0x83233
+External Register: lr
+  Used at instruction address: 0x80b7d
+External Register: r6
+  Used at instruction address: 0x83d6f
+External Register: r3
+  Used at instruction address: 0x83521
+External Register: r6
+  Used at instruction address: 0x8360f
+External MemoryLocation at address: 0x82448
+  Used at instruction address: 0x821df
+External MemoryLocation at address: 0x80abc
+  Used at instruction address: 0x80aa5
+External MemoryLocation at address: 0x81528
+  Used at instruction address: 0x814c1
+External MemoryLocation at address: 0x84b34
+  Used at instruction address: 0x84b05
+  Used at instruction address: 0x84b15
+  Used at instruction address: 0x84af5
+  Used at instruction address: 0x84ae5
+  Used at instruction address: 0x84ad7
+External Register: cc_op
+  Used at instruction address: 0x81755
+External Register: r3
+  Used at instruction address: 0x8424d
+  Used at instruction address: 0x84237
+  Used at instruction address: 0x84277
+External MemoryLocation at address: 0x849f4
+  Used at instruction address: 0x81b89
+  Used at instruction address: 0x81b79
+  Used at instruction address: 0x81b6b
+External Register: r8
+  Used at instruction address: 0x82c31
+External Register: cc_op
+  Used at instruction address: 0x8037f
+External MemoryLocation at address: 0x80e7c
+  Used at instruction address: 0x80e0d
+External MemoryLocation at address: 0x81ac8
+  Used at instruction address: 0x81aaf
+External MemoryLocation at address: 0x8059c
+  Used at instruction address: 0x80595
+External Register: cc_dep1
+  Used at instruction address: 0x805bb
+External Register: cc_ndep
+  Used at instruction address: 0x8112d
+External Register: r5
+  Used at instruction address: 0x8484b
+  Used at instruction address: 0x84841
+  Used at instruction address: 0x84839
+  Used at instruction address: 0x84847
+  Used at instruction address: 0x84837
+External Register: r1
+  Used at instruction address: 0x81db9
+  Used at instruction address: 0x81dc7
+  Used at instruction address: 0x81e21
+External MemoryLocation at address: 0x80aa0
+  Used at instruction address: 0x80a91
+External Register: r5
+  Used at instruction address: 0x82b45
+External MemoryLocation at address: 0x819c0
+  Used at instruction address: 0x8197f
+External Register: r7
+  Used at instruction address: 0x85200
+  Used at instruction address: 0x851f8
+  Used at instruction address: 0x851fc
+  Used at instruction address: 0x851f4
+External MemoryLocation at address: 0x819d4
+  Used at instruction address: 0x81969
+External Register: cc_dep1
+  Used at instruction address: 0x8057f
+External Register: cc_dep2
+  Used at instruction address: 0x844f1
+External Register: r2
+  Used at instruction address: 0x84539
+  Used at instruction address: 0x8451b
+External Register: cc_dep2
+  Used at instruction address: 0x81dbd
+External Register: r6
+  Used at instruction address: 0x80ba1
+External MemoryLocation at address: 0x810f8
+  Used at instruction address: 0x810c3
+External Register: r3
+  Used at instruction address: 0x84127
+External Register: r5
+  Used at instruction address: 0x80399
+External Register: cc_op
+  Used at instruction address: 0x81cbf
+External Register: cc_dep1
+  Used at instruction address: 0x80a95
+External Register: r6
+  Used at instruction address: 0x83521
+External Register: cc_dep2
+  Used at instruction address: 0x84479
+External Register: cc_op
+  Used at instruction address: 0x808e9
+External Register: r2
+  Used at instruction address: 0x80321
+  Used at instruction address: 0x8033b
+  Used at instruction address: 0x80335
+  Used at instruction address: 0x8032b
+External MemoryLocation at address: 0x80ff8
+  Used at instruction address: 0x80ec7
+External MemoryLocation at address: 0x84a1c
+  Used at instruction address: 0x806f9
+External Register: lr
+  Used at instruction address: 0x81809
+  Used at instruction address: 0x81765
+External Register: lr
+  Used at instruction address: 0x81a9b
+External Register: r2
+  Used at instruction address: 0x8463d
+  Used at instruction address: 0x84559
+  Used at instruction address: 0x8461d
+  Used at instruction address: 0x84623
+  Used at instruction address: 0x84771
+  Used at instruction address: 0x8473b
+  Used at instruction address: 0x84575
+  Used at instruction address: 0x8455b
+  Used at instruction address: 0x84639
+  Used at instruction address: 0x8455f
+External Register: r3
+  Used at instruction address: 0x805a5
+External Register: r0
+  Used at instruction address: 0x816dd
+  Used at instruction address: 0x816e3
+External MemoryLocation at address: 0x81b44
+  Used at instruction address: 0x81b17
+  Used at instruction address: 0x81afb
+External Register: r5
+  Used at instruction address: 0x844c1
+External Register: r1
+  Used at instruction address: 0x81133
+  Used at instruction address: 0x81125
+  Used at instruction address: 0x8123d
+  Used at instruction address: 0x81141
+External MemoryLocation at address: 0x81464
+  Used at instruction address: 0x81423
+  Used at instruction address: 0x81431
+External Register: lr
+  Used at instruction address: 0x80eb5
+Total number of external definitions not in CFG: 1402

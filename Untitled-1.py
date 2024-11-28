@@ -22,7 +22,7 @@ with open(binary_path, 'rb') as f:
     print(f"Initial Stack Pointer: 0x{initial_sp:08X}")
     print(f"Entry Point (Reset Handler) address: 0x{entry_point:08X}")
 
-# Step 2: Load the binary with correct base address and entry point
+#  Load the binary with correct base address and entry point
 p = angr.Project(
     binary_path,
     main_opts={

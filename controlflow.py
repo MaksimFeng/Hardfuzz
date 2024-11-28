@@ -7,13 +7,11 @@ import monkeyhex
 from angr.code_location import ExternalCodeLocation
 from angr.knowledge_plugins.key_definitions.atoms import Register, MemoryLocation
 
-# Path to the binary
 binary_path = '/home/kai/project/experimentdata/FREERTOS.bin'
 
 # Arduino Due base address for Flash memory
 base_addr = 0x00080000
 
-# Step 1: Extract the entry point from the vector table
 with open(binary_path, 'rb') as f:
     # Read the first 8 bytes (Initial Stack Pointer and Reset Handler)
     vector_table = f.read(8)
@@ -26,7 +24,6 @@ with open(binary_path, 'rb') as f:
     print(f"Initial Stack Pointer: 0x{initial_sp:08X}")
     print(f"Entry Point (Reset Handler) address: 0x{entry_point:08X}")
 
-# Step 2: Load the binary with correct base address and entry point
 p = angr.Project(
     binary_path,
     main_opts={
@@ -35,11 +32,17 @@ p = angr.Project(
         'base_addr': base_addr,
         'entry_point': entry_point,
     },
-    auto_load_libs=False
+    auto_load_libs=True
+)
+cfg = p.analyses.CFGEmulated(
+    normalize=True,
+    context_sensitivity_level=3,  # Increase context sensitivity if needed
+    # starts=[entry_point],
+    keep_state=True,
+    enable_function_hints=True
 )
 
-# Step 3: Generate the CFG
-cfg = p.analyses.CFGFast(normalize=True, data_references=True)
+# cfg = p.analyses.CFGFast(normalize=True, data_references=True)
 
 # Define critical registers and memory ranges
 critical_registers = ['pc', 'sp', 'lr', 'cpsr']
@@ -68,8 +71,16 @@ def is_critical_memory(addr):
 definitions_not_in_cfg = set()
 def_use_chains_not_in_cfg = set()
 external_defs_not_in_cfg = set()
-
-# Step 4: Iterate over all functions in the CFG
+# def get_block_containing_insn(cfg, ins_addr):
+#     node = cfg.get_any_node(ins_addr, anyaddr=True)
+#     if node:
+#         return node
+#     else:
+#         # Try to find a node whose bslock contains the instruction
+#         for n in cfg.graph.nodes():
+#             if n.block and n.block.addr <= ins_addr < n.block.addr + n.block.size:
+#                 return n
+#     return None
 for function_addr, function in cfg.kb.functions.items():
     try:
         print(f"\nAnalyzing function {function.name} at 0x{function_addr:x}")
@@ -83,9 +94,11 @@ for function_addr, function in cfg.kb.functions.items():
         )
 
         # Iterate over all definitions
+        #get all the definations
         for _def in rd_analysis.all_definitions:
             def_ins_addr = _def.codeloc.ins_addr
             uses = rd_analysis.all_uses.get_uses(_def)
+            #get uses
 
             # Check if the definition is external
             if isinstance(_def.codeloc, ExternalCodeLocation):
@@ -103,7 +116,12 @@ for function_addr, function in cfg.kb.functions.items():
                 continue  # Continue processing if needed
 
             # Get the CFG node containing the definition instruction address
-            def_node = cfg.get_any_node(def_ins_addr)
+            def_node = cfg.model.get_any_node(def_ins_addr, anyaddr=True)
+            print("@@@@@@@@@@@@@@@@@@@@@@new def")
+            print(def_node)
+            # def_node = get_block_containing_insn(cfg, def_ins_addr)
+            # print(def_node)
+            #I think this part can be skipped. 
             if def_node is None:
                 # Record the definition not in CFG
                 definitions_not_in_cfg.add((def_ins_addr, 'Def instruction not in CFG'))
@@ -113,17 +131,38 @@ for function_addr, function in cfg.kb.functions.items():
             if uses:
                 for use in uses:
                     use_ins_addr = use.ins_addr
-                    use_node = cfg.get_any_node(use_ins_addr)
+                    use_node = cfg.get_any_node(use_ins_addr, anyaddr=True)
+                    print(use_node)
+                    # use_node = get_block_containing_insn(cfg, use_ins_addr)
+                    # print("**********")
+                    # print(use_node1)
+                    # print("----------------")
+
+                    # print(use_node)
+                    # print(use_node)
+                    #this part can also be skipped  
+                    # if def_node == use_node:
+                    # #     # They are in the same basic block, skip
+                    #     continue
                     if use_node is None:
                         # Record the def-use chain not in CFG
                         def_use_chains_not_in_cfg.add((def_ins_addr, use_ins_addr, 'Use instruction not in CFG'))
+                        
                         continue  # Continue to next use
 
-                    # Check if there is a path from def_node to use_node
+                    # # Check if there is a path from def_node to use_node
+                    # if def_ins_addr == use_ins_addr:
+                    #     continue 
+                    # if def_node == use_node:
+                    #     # They are in the same basic block, skip
+                    #     continue
+                    # if def_node != use_node and def_ins_addr != use_ins_addr:
                     if def_node != use_node:
+                        # if not nx.has_path(cfg.graph, def_node, use_node):
                         if not nx.has_path(cfg.graph, def_node, use_node):
                             # Record the def-use chain with no path in CFG
                             def_use_chains_not_in_cfg.add((def_ins_addr, use_ins_addr, 'No path from def to use in CFG'))
+                            # print(def_use_chains_not_in_cfg)
                             continue  # Continue to next use
             else:
                 # No uses recorded
@@ -132,7 +171,6 @@ for function_addr, function in cfg.kb.functions.items():
     except Exception as e:
         print(f"Error analyzing function {function.name} (0x{function_addr:x}): {e}")
 
-# Step 5: Print definitions not included in the CFG
 # print("\nDefinitions not included in the CFG:")
 # for def_ins_addr, reason in definitions_not_in_cfg:
 #     if def_ins_addr is not None:
@@ -142,9 +180,8 @@ for function_addr, function in cfg.kb.functions.items():
 
 #     print(f"Definition at instruction address: {def_ins_addr_str} - Reason: {reason}")
 
-print(f"Total number of definitions not in CFG: {len(definitions_not_in_cfg)}")
+# print(f"Total number of definitions not in CFG: {len(definitions_not_in_cfg)}")
 
-# Step 6: Print def-use chains not included in the CFG
 print("\nDef-use chains not included in the CFG or without control flow path:")
 for def_ins_addr, use_ins_addr, reason in def_use_chains_not_in_cfg:
     if def_ins_addr is not None:
@@ -161,7 +198,6 @@ for def_ins_addr, use_ins_addr, reason in def_use_chains_not_in_cfg:
 
 print(f"Total number of def-use chains not in CFG: {len(def_use_chains_not_in_cfg)}")
 
-# Step 7: Print external definitions in def-use chains not included in CFG
 print("\nExternal definitions involved in def-use chains not included in CFG:")
 for atom_id, uses_ins_addrs in external_defs_not_in_cfg:
     atom_type, atom_value = atom_id

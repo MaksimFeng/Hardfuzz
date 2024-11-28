@@ -14,7 +14,7 @@ def generate_random_json():
     for _ in range(random.randint(1, 10)):
         key = ''.join(random.choices(string.ascii_letters, k=5))
         value = random.choice([
-            random.randint(-1000, 1000),
+            random.rantdint(-1000, 1000),
             random.uniform(-1000, 1000),
             ''.join(random.choices(string.ascii_letters + string.digits, k=10)),
             None,
