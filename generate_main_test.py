@@ -260,7 +260,7 @@ def process_response(response):
 
 def main():
     # Adjust the serial port and baud rate as per your configuration
-    ser = serial.Serial('/dev/ttyACM1', 38400, timeout=1)
+    ser = serial.Serial('/dev/ttyACM0', 38400, timeout=1)
     time.sleep(2)  # Wait for the serial connection to initialize
 
     output_directory = 'output'

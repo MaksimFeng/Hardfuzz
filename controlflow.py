@@ -117,8 +117,8 @@ for function_addr, function in cfg.kb.functions.items():
 
             # Get the CFG node containing the definition instruction address
             def_node = cfg.model.get_any_node(def_ins_addr, anyaddr=True)
-            print("@@@@@@@@@@@@@@@@@@@@@@new def")
-            print(def_node)
+            # print("@@@@@@@@@@@@@@@@@@@@@@new def")
+            # print(def_node)
             # def_node = get_block_containing_insn(cfg, def_ins_addr)
             # print(def_node)
             #I think this part can be skipped. 
@@ -221,3 +221,44 @@ for atom_id, uses_ins_addrs in external_defs_not_in_cfg:
         print("  No uses recorded.")
 
 print(f"Total number of external definitions not in CFG: {len(external_defs_not_in_cfg)}")
+
+
+# with open('def_use.txt', 'w') as f:
+#     for def_ins_addr, use_ins_addr, reason in def_use_chains_not_in_cfg:
+#         f.write(f"Definition: 0x{def_ins_addr:x}")
+#         f.write(f"Use: 0x{use_ins_addr:x}\n")
+# with open('external.txt', 'w') as f:
+#     for atom_id, uses_ins_addrs in external_defs_not_in_cfg:
+#         f.write(f"External: {atom_id}")
+#         f.write("Uses: " + ", ".join(f"0x{addr:x}" for addr in uses_ins_addrs) + "\n\n")
+
+
+with open('def_use.txt', 'w') as f:
+    for def_ins_addr, use_ins_addr, reason in def_use_chains_not_in_cfg:
+        def_ins_addr_str = f"0x{def_ins_addr:x}"
+        use_ins_addr_str = f"0x{use_ins_addr:x}"
+        f.write(f"Definition: {def_ins_addr_str}\n")
+        f.write(f"Use: {use_ins_addr_str}\n")
+        # f.write(f"Reason: {reason}\n")
+        # f.write("\n")  # Add a newline between entries
+
+with open('external.txt', 'w') as f:
+    for atom_id, uses_ins_addrs in external_defs_not_in_cfg:
+        atom_type, atom_value = atom_id
+        if atom_type == 'mem':
+            atom_str = f"0x{atom_value:x}"
+        elif atom_type == 'reg':
+            reg_name = p.arch.register_names.get(atom_value, f"Unknown({atom_value})")
+            atom_str = f"{reg_name}"
+        else:
+            atom_str = f"{atom_value}"
+
+        f.write(f"{atom_str}\n")
+        f.write("Uses:")
+        for use_ins_addr in uses_ins_addrs:
+            if use_ins_addr is not None:
+                use_ins_addr_str = f"0x{use_ins_addr:x}"
+            else:
+                use_ins_addr_str = "Unknown"
+            f.write(f"  {use_ins_addr_str}\n")
+        # f.write("\n")  # Add a newline between entries
