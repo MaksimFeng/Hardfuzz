@@ -7,8 +7,8 @@ import monkeyhex
 from angr.code_location import ExternalCodeLocation
 from angr.knowledge_plugins.key_definitions.atoms import Register, MemoryLocation
 
-binary_path = '/home/kai/project/experimentdata/FREERTOS.bin'
-
+binary_path = '/home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.bin'
+#Total number of external definitions not in CFG: 1833
 # Arduino Due base address for Flash memory
 base_addr = 0x00080000
 
@@ -34,6 +34,7 @@ p = angr.Project(
     },
     auto_load_libs=True
 )
+#using emulated model
 cfg = p.analyses.CFGEmulated(
     normalize=True,
     context_sensitivity_level=3,  # Increase context sensitivity if needed
@@ -41,7 +42,8 @@ cfg = p.analyses.CFGEmulated(
     keep_state=True,
     enable_function_hints=True
 )
-
+#using fast model
+#how to find out the order of defs. 
 # cfg = p.analyses.CFGFast(normalize=True, data_references=True)
 
 # Define critical registers and memory ranges
@@ -81,6 +83,31 @@ external_defs_not_in_cfg = set()
 #             if n.block and n.block.addr <= ins_addr < n.block.addr + n.block.size:
 #                 return n
 #     return None
+
+
+# Try to locate the entry node from the CFG's nodes
+entry_node = None
+for n in cfg.graph.nodes():
+    if n.addr == entry_point:
+        entry_node = n
+        break
+
+if entry_node is None:
+    print("Warning: Entry node not found in CFG. Distances computation may fail.")
+    distances = {}
+else:
+    # Compute shortest paths from the entry node
+    distances = dict(nx.shortest_path_length(cfg.graph, source=entry_node))
+
+
+
+# entry_node = cfg.get_any_node(entry_point)
+# if entry_node is not None:
+#     distances = dict(nx.shortest_path_length(cfg.graph, source=entry_node))
+# else:
+#     distances = {}
+# print(distances)
+
 for function_addr, function in cfg.kb.functions.items():
     try:
         print(f"\nAnalyzing function {function.name} at 0x{function_addr:x}")
@@ -127,6 +154,15 @@ for function_addr, function in cfg.kb.functions.items():
                 definitions_not_in_cfg.add((def_ins_addr, 'Def instruction not in CFG'))
                 continue  # Skip further processing for this definition
 
+            def_distance = distances.get(def_node, 'Unknown')
+
+            #calculate the path length(def layers)
+            # entry_node = cfg.model.get_any_node(entry_point, anyaddr=True)
+            # if entry_node and nx.has_path(cfg.graph, entry_node, def_node):
+            #     path_length = nx.shortest_path_length(cfg.graph, entry_node, def_node)
+            # else:
+            #     path_length = -1
+            ##########################
             # Handle uses
             if uses:
                 for use in uses:
@@ -195,6 +231,7 @@ for def_ins_addr, use_ins_addr, reason in def_use_chains_not_in_cfg:
 
     print(f"Definition at instruction address: {def_ins_addr_str}")
     print(f"  Use at instruction address: {use_ins_addr_str} - Reason: {reason}")
+    # print(f"  Distance: {defdiss}")
 
 print(f"Total number of def-use chains not in CFG: {len(def_use_chains_not_in_cfg)}")
 
@@ -233,16 +270,18 @@ print(f"Total number of external definitions not in CFG: {len(external_defs_not_
 #         f.write("Uses: " + ", ".join(f"0x{addr:x}" for addr in uses_ins_addrs) + "\n\n")
 
 
-with open('def_use.txt', 'w') as f:
+with open('def_use1.txt', 'w') as f:
     for def_ins_addr, use_ins_addr, reason in def_use_chains_not_in_cfg:
         def_ins_addr_str = f"0x{def_ins_addr:x}"
         use_ins_addr_str = f"0x{use_ins_addr:x}"
         f.write(f"Definition: {def_ins_addr_str}\n")
         f.write(f"Use: {use_ins_addr_str}\n")
+        # f.write(f"Distance: {distances}\n")
+        # f.write(f"Path: {path}\n")
         # f.write(f"Reason: {reason}\n")
         # f.write("\n")  # Add a newline between entries
 
-with open('external.txt', 'w') as f:
+with open('external1.txt', 'w') as f:
     for atom_id, uses_ins_addrs in external_defs_not_in_cfg:
         atom_type, atom_value = atom_id
         if atom_type == 'mem':

@@ -52,14 +52,14 @@ fi
 # Create a GDB command file
 GDB_COMMANDS_FILE=$(mktemp)
 #break *0x0008415b
-# continue
+# continue  restore $BIN_FILE binary $FLASH_BASE_ADDRESS
+
 # Write the GDB commands to the file
 cat << EOF > "$GDB_COMMANDS_FILE"
 set architecture arm
 target remote localhost:$GDB_PORT
 set arm force-mode thumb
 monitor reset halt
-restore $BIN_FILE binary $FLASH_BASE_ADDRESS
 monitor reset halt
 
 EOF
