@@ -6,6 +6,13 @@ import multiprocessing as mp
 from typing import Any, NoReturn, Tuple, Dict
 
 from pygdbmi.gdbcontroller import GdbController
+logger = log.getLogger(__name__)
+#optional import the config setting
+from config.settings import (
+    LOG_LEVEL, LOG_FORMAT, SERIAL_PORT, BAUD_RATE, SERIAL_TIMEOUT,
+    OUTPUT_DIRECTORY, SEEDS_DIRECTORY, ELF_PATH, DEF_USE_FILE,
+    NO_TRIGGER_THRESHOLD
+)
 
 class GDBCommunicator(mp.Process):
     def __init__(
@@ -215,10 +222,12 @@ class GDB:
             return ('timed out', None)
         return msg
 
-    def connect(self) -> None:
+    def connect(self, path) -> None:
         log.debug("Connecting to GDB server...")
         self.send('-gdb-set mi-async on')
         self.send('set architecture arm')
+        elf_path = ELF_PATH
+        self.send(f'file {path}')
         self.send(f'-target-select extended-remote {self.gdb_server_address}')
 
     def disconnect(self) -> None:
@@ -230,7 +239,7 @@ class GDB:
         gdb_response = self.send('-exec-continue --all')
         if gdb_response['message'] == 'error' and retries > 0:
             log.warning(
-                f"continue_execution() error: {gdb_response['payload'].get('msg', '')}, retrying..."
+                f"continue_execution() error: {gdb_response['payload'].get('msg', '')}, Trying continue_execution() again in 0.5 seconds"
             )
             time.sleep(0.5)
             self.continue_execution(retries - 1)
@@ -238,6 +247,7 @@ class GDB:
     def interrupt(self) -> None:
         log.debug("Interrupting execution...")
         self.send('-exec-interrupt --all')
+        # mayber there are some bugs here
         # After interrupt, wait for a stop event
         reason, payload = self.wait_for_stop(timeout=5)
         if reason.startswith('timed out'):
@@ -247,14 +257,14 @@ class GDB:
 
     def set_breakpoint(self, address_hex_str: str) -> str:
         address = int(address_hex_str, 16)
-        log.debug(f"Setting breakpoint at {hex(address)}")
+        log.info(f"Setting breakpoint at {hex(address)}")
         gdb_response = self.send(f'-break-insert *{hex(address)}')
         if gdb_response['message'] != 'done':
             raise Exception(
                 f'Failed to set breakpoint at address {hex(address)}: {gdb_response}'
             )
         bp_id: str = gdb_response['payload']['bkpt']['number']
-        log.debug(f"Breakpoint set at {hex(address)}, bkptno={bp_id}")
+        log.info(f"Breakpoint set at {hex(address)}, bkptno={bp_id}")
         return bp_id
 
     def remove_breakpoint(self, breakpoint_id: str) -> None:
@@ -266,6 +276,43 @@ class GDB:
         response = self.send('-exec-step-instruction')
         if response['message'] == 'error':
             raise Exception(str(response))
+        
+    def restart_program(self, elf_path: str) -> None:
+        """
+        Restart the program from scratch:
+        1. monitor reset halt
+        2. -file-exec-and-symbols elf_path
+        3. -break-insert main
+        4. -exec-run
+        5. Wait for stop at main
+        """
+        logger.debug("Restarting program from scratch...")
+        # Reset and halt
+        resp = self.send('monitor reset halt')
+        if resp['message'] == 'error':
+            raise Exception(f"Failed to reset halt the target: {resp['payload'].get('msg','')}")
+
+        # Load symbols
+        resp = self.send(f'-file-exec-and-symbols {elf_path}')
+        if resp['message'] == 'error':
+            raise Exception(f"Failed to load symbols: {resp['payload'].get('msg','')}")
+
+        # Insert breakpoint at main
+        resp = self.send('-break-insert main')
+        if resp['message'] == 'error':
+            raise Exception(f"Failed to set breakpoint at main: {resp['payload'].get('msg','')}")
+
+        # Run the program
+        run_resp = self.send('-exec-run')
+        if run_resp['message'] == 'error':
+            logger.warning("Could not run the program. Attempting to continue instead...")
+            self.continue_execution()
+
+        # Wait for stop at main
+        reason, payload = self.wait_for_stop(timeout=10)
+        if reason == 'timed out':
+            raise Exception("Program did not halt at main after restart.")
+        logger.debug(f"Program restarted and halted at main or known stop. Reason: {reason}")
 
     def generate_message_id(self) -> int:
         self.message_id += 1

@@ -31,6 +31,7 @@ sleep 2
 GDB_COMMANDS_FILE=$(mktemp)
 # quit
 # Write the GDB commands to the file
+#if the target is halted, execute monitor reset and monitor go
 cat << EOF > "$GDB_COMMANDS_FILE"
 set architecture arm
 symbol-file
