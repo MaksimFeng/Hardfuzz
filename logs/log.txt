@@ -5802,3 +5802,143 @@
 2024-12-18 20:31:42 - root - DEBUG - Received GDB response: {'type': 'console', 'message': None, 'payload': 'Ignoring packet error, continuing...\n', 'stream': 'stdout'}
 2024-12-18 20:31:42 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'stopped', 'payload': {'reason': 'signal-received', 'signal-name': 'SIGTRAP', 'signal-meaning': 'Trace/breakpoint trap', 'thread-id': '2', 'stopped-threads': 'all'}, 'token': None, 'stream': 'stdout'}
 2024-12-18 20:31:50 - root - DEBUG - Stopping GDB...
+2024-12-20 11:08:48 - pygdbmi.gdbcontroller - DEBUG - Launching gdb: gdb-multiarch --nx --quiet --interpreter=mi3
+2024-12-20 11:08:48 - root - DEBUG - Starting GDB setup...
+2024-12-20 11:08:48 - root - DEBUG - Connecting to GDB server...
+2024-12-20 11:08:48 - root - DEBUG - Queueing GDB command: -gdb-set mi-async on with token 1
+2024-12-20 11:08:48 - root - DEBUG - Sending GDB command: 1-gdb-set mi-async on
+2024-12-20 11:08:48 - pygdbmi.IoManager - DEBUG - writing: 1-gdb-set mi-async on
+2024-12-20 11:08:48 - pygdbmi.IoManager - DEBUG - {'message': 'thread-group-added',
+ 'payload': {'id': 'i1'},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2024-12-20 11:08:48 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'thread-group-added', 'payload': {'id': 'i1'}, 'token': None, 'stream': 'stdout'}
+2024-12-20 11:08:48 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': None,
+ 'stream': 'stdout',
+ 'token': 1,
+ 'type': 'result'}
+2024-12-20 11:08:48 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': None, 'token': 1, 'stream': 'stdout'}
+2024-12-20 11:08:48 - root - DEBUG - Received matched response for token 1: {'type': 'result', 'message': 'done', 'payload': None, 'token': 1, 'stream': 'stdout', 'console_data': []}
+2024-12-20 11:08:48 - root - DEBUG - Queueing GDB command: set architecture arm with token 2
+2024-12-20 11:08:48 - root - DEBUG - Sending GDB command: 2set architecture arm
+2024-12-20 11:08:48 - pygdbmi.IoManager - DEBUG - writing: 2set architecture arm
+2024-12-20 11:08:48 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'set architecture arm\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2024-12-20 11:08:48 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'set architecture arm\n', 'stream': 'stdout'}
+2024-12-20 11:08:48 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'The target architecture is set to "arm".\n',
+ 'stream': 'stdout',
+ 'type': 'console'}
+2024-12-20 11:08:48 - pygdbmi.IoManager - DEBUG - {'message': 'cmd-param-changed',
+ 'payload': {'param': 'architecture', 'value': 'arm'},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2024-12-20 11:08:48 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': None,
+ 'stream': 'stdout',
+ 'token': 2,
+ 'type': 'result'}
+2024-12-20 11:08:48 - root - DEBUG - Received GDB response: {'type': 'console', 'message': None, 'payload': 'The target architecture is set to "arm".\n', 'stream': 'stdout'}
+2024-12-20 11:08:48 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'cmd-param-changed', 'payload': {'param': 'architecture', 'value': 'arm'}, 'token': None, 'stream': 'stdout'}
+2024-12-20 11:08:48 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': None, 'token': 2, 'stream': 'stdout'}
+2024-12-20 11:08:48 - root - DEBUG - Received matched response for token 2: {'type': 'result', 'message': 'done', 'payload': None, 'token': 2, 'stream': 'stdout', 'console_data': [{'type': 'console', 'message': None, 'payload': 'The target architecture is set to "arm".\n', 'stream': 'stdout'}]}
+2024-12-20 11:08:48 - root - DEBUG - Queueing GDB command: file /home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.elf with token 3
+2024-12-20 11:08:48 - root - DEBUG - Sending GDB command: 3file /home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.elf
+2024-12-20 11:08:48 - pygdbmi.IoManager - DEBUG - writing: 3file /home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.elf
+2024-12-20 11:08:48 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'file '
+            '/home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.elf\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2024-12-20 11:08:48 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'file /home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.elf\n', 'stream': 'stdout'}
+2024-12-20 11:08:48 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Reading symbols from '
+            '/home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.elf...\n',
+ 'stream': 'stdout',
+ 'type': 'console'}
+2024-12-20 11:08:48 - root - DEBUG - Received GDB response: {'type': 'console', 'message': None, 'payload': 'Reading symbols from /home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.elf...\n', 'stream': 'stdout'}
+2024-12-20 11:08:48 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': None,
+ 'stream': 'stdout',
+ 'token': 3,
+ 'type': 'result'}
+2024-12-20 11:08:48 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': None, 'token': 3, 'stream': 'stdout'}
+2024-12-20 11:08:48 - root - DEBUG - Received matched response for token 3: {'type': 'result', 'message': 'done', 'payload': None, 'token': 3, 'stream': 'stdout', 'console_data': [{'type': 'console', 'message': None, 'payload': 'Reading symbols from /home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.elf...\n', 'stream': 'stdout'}]}
+2024-12-20 11:08:48 - root - DEBUG - Queueing GDB command: -target-select extended-remote localhost:2331 with token 4
+2024-12-20 11:08:48 - root - DEBUG - Sending GDB command: 4-target-select extended-remote localhost:2331
+2024-12-20 11:08:48 - pygdbmi.IoManager - DEBUG - writing: 4-target-select extended-remote localhost:2331
+2025-01-07 11:35:04 - pygdbmi.gdbcontroller - DEBUG - Launching gdb: gdb-multiarch --nx --quiet --interpreter=mi3
+2025-01-07 11:35:04 - root - DEBUG - Starting GDB setup...
+2025-01-07 11:35:04 - root - DEBUG - Connecting to GDB server...
+2025-01-07 11:35:04 - root - DEBUG - Queueing GDB command: -gdb-set mi-async on with token 1
+2025-01-07 11:35:04 - root - DEBUG - Sending GDB command: 1-gdb-set mi-async on
+2025-01-07 11:35:04 - pygdbmi.IoManager - DEBUG - writing: 1-gdb-set mi-async on
+2025-01-07 11:35:05 - pygdbmi.IoManager - DEBUG - {'message': 'thread-group-added',
+ 'payload': {'id': 'i1'},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2025-01-07 11:35:05 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'thread-group-added', 'payload': {'id': 'i1'}, 'token': None, 'stream': 'stdout'}
+2025-01-07 11:35:05 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': None,
+ 'stream': 'stdout',
+ 'token': 1,
+ 'type': 'result'}
+2025-01-07 11:35:05 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': None, 'token': 1, 'stream': 'stdout'}
+2025-01-07 11:35:05 - root - DEBUG - Received matched response for token 1: {'type': 'result', 'message': 'done', 'payload': None, 'token': 1, 'stream': 'stdout', 'console_data': []}
+2025-01-07 11:35:05 - root - DEBUG - Queueing GDB command: set architecture arm with token 2
+2025-01-07 11:35:05 - root - DEBUG - Sending GDB command: 2set architecture arm
+2025-01-07 11:35:05 - pygdbmi.IoManager - DEBUG - writing: 2set architecture arm
+2025-01-07 11:35:05 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'set architecture arm\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-01-07 11:35:05 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'set architecture arm\n', 'stream': 'stdout'}
+2025-01-07 11:35:05 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'The target architecture is set to "arm".\n',
+ 'stream': 'stdout',
+ 'type': 'console'}
+2025-01-07 11:35:05 - pygdbmi.IoManager - DEBUG - {'message': 'cmd-param-changed',
+ 'payload': {'param': 'architecture', 'value': 'arm'},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2025-01-07 11:35:05 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': None,
+ 'stream': 'stdout',
+ 'token': 2,
+ 'type': 'result'}
+2025-01-07 11:35:05 - root - DEBUG - Received GDB response: {'type': 'console', 'message': None, 'payload': 'The target architecture is set to "arm".\n', 'stream': 'stdout'}
+2025-01-07 11:35:05 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'cmd-param-changed', 'payload': {'param': 'architecture', 'value': 'arm'}, 'token': None, 'stream': 'stdout'}
+2025-01-07 11:35:05 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': None, 'token': 2, 'stream': 'stdout'}
+2025-01-07 11:35:05 - root - DEBUG - Received matched response for token 2: {'type': 'result', 'message': 'done', 'payload': None, 'token': 2, 'stream': 'stdout', 'console_data': [{'type': 'console', 'message': None, 'payload': 'The target architecture is set to "arm".\n', 'stream': 'stdout'}]}
+2025-01-07 11:35:05 - root - DEBUG - Queueing GDB command: file /home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.elf with token 3
+2025-01-07 11:35:05 - root - DEBUG - Sending GDB command: 3file /home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.elf
+2025-01-07 11:35:05 - pygdbmi.IoManager - DEBUG - writing: 3file /home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.elf
+2025-01-07 11:35:05 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'file '
+            '/home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.elf\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-01-07 11:35:05 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'file /home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.elf\n', 'stream': 'stdout'}
+2025-01-07 11:35:05 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Reading symbols from '
+            '/home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.elf...\n',
+ 'stream': 'stdout',
+ 'type': 'console'}
+2025-01-07 11:35:05 - root - DEBUG - Received GDB response: {'type': 'console', 'message': None, 'payload': 'Reading symbols from /home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.elf...\n', 'stream': 'stdout'}
+2025-01-07 11:35:05 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': None,
+ 'stream': 'stdout',
+ 'token': 3,
+ 'type': 'result'}
+2025-01-07 11:35:05 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': None, 'token': 3, 'stream': 'stdout'}
+2025-01-07 11:35:05 - root - DEBUG - Received matched response for token 3: {'type': 'result', 'message': 'done', 'payload': None, 'token': 3, 'stream': 'stdout', 'console_data': [{'type': 'console', 'message': None, 'payload': 'Reading symbols from /home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.elf...\n', 'stream': 'stdout'}]}
+2025-01-07 11:35:05 - root - DEBUG - Queueing GDB command: -target-select extended-remote localhost:2331 with token 4
+2025-01-07 11:35:05 - root - DEBUG - Sending GDB command: 4-target-select extended-remote localhost:2331
+2025-01-07 11:35:05 - pygdbmi.IoManager - DEBUG - writing: 4-target-select extended-remote localhost:2331

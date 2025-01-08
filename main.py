@@ -40,29 +40,22 @@ def setup_logging():
 logger = setup_logging()
 
 def target_is_accessible(gdb: GDB, timeout: int = 5) -> bool:
-    """
-    Attempt to check if the target is accessible (and presumably halted)
-    by reading register values. If successful, we assume the target is halted.
 
-    Returns True if accessible/halted, False otherwise.
-    """
     try:
         # '-data-list-register-values x' returns register values in hex.
-        # If the target is halted and responsive, we should get a "done" response
+        # If the target is halted and responsive, it should get a "done" response
         # with register values. If it's running or inaccessible, we may get an error or timeout.
         resp = gdb.send('-data-list-register-values x', timeout=timeout)
         if resp['message'] == 'done' and 'payload' in resp:
             registers = resp['payload'].get('register-values', [])
-            # If we have some register values, assume target is accessible/halted
+            # If have some register values, assume target is accessible/halted
             if len(registers) > 0:
                 return True
-        # If message is 'error' or no registers found, consider it not accessible
         return False
     except TimeoutError:
-        # If we timed out, target not accessible.
+        # If timed out, target not accessible.
         return False
     except Exception as e:
-        # Any unexpected exception consider not accessible
         return False
 
 
@@ -127,6 +120,7 @@ def set_breakpoints_for_uses(gdb: GDB, uses):
     delete_all_breakpoints(gdb)
     uses_map = {}
     # Limit to first 3 uses
+    #change to random 3
     for use_addr in uses[:3]:
         bkptno = gdb.set_breakpoint(use_addr)
         if bkptno is not None:
@@ -242,6 +236,9 @@ def main():
                 else:
                     # Hit some other breakpoint (e.g., uses)
                     logger.info(f"Breakpoint hit at {hex(payload)}")
+                    #keep one testcase
+                    #how many execution needed for hit defs
+                    #and hit the uses
                     gdb.continue_execution()
 
             elif reason == 'timed out':
