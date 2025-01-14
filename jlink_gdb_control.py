@@ -1,6 +1,6 @@
 import subprocess
 import time
-
+# connect to the JLink GDB Server and start a GDB session with the target device.
 def start_jlink_gdb_server():
     jlink_command = [
         'JLinkGDBServer',       

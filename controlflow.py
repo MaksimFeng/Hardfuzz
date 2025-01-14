@@ -6,7 +6,7 @@ import networkx as nx
 import monkeyhex
 from angr.code_location import ExternalCodeLocation
 from angr.knowledge_plugins.key_definitions.atoms import Register, MemoryLocation
-
+#this is the one I used to collect the def use chain
 binary_path = '/home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.bin'
 #Total number of external definitions not in CFG: 1833
 # Arduino Due base address for Flash memory

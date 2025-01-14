@@ -32,12 +32,12 @@ GDB_COMMANDS_FILE=$(mktemp)
 # quit
 # Write the GDB commands to the file
 #if the target is halted, execute monitor reset and monitor go
+#restore $BIN_FILE binary $FLASH_BASE_ADDRESS
 cat << EOF > "$GDB_COMMANDS_FILE"
 set architecture arm
 symbol-file
 target remote localhost:$GDB_PORT
 monitor reset halt
-restore $BIN_FILE binary $FLASH_BASE_ADDRESS
 monitor reset
 monitor go
 
