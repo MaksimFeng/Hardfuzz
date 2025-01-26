@@ -288,7 +288,9 @@ class GDB:
         """
         logger.debug("Restarting program from scratch...")
         # Reset and halt
-        resp = self.send('monitor reset halt')
+        # resp = self.send('monitor reset halt')
+        resp = self.send('monitor reset')
+        resp = self.send('monitor halt')
         if resp['message'] == 'error':
             raise Exception(f"Failed to reset halt the target: {resp['payload'].get('msg','')}")
 

@@ -1,8 +1,8 @@
 import os
 
 # Logging Configuration
-LOG_LEVEL = os.getenv('LOG_LEVEL', 'INFO')
-# LOG_LEVEL = os.getenv('LOG_LEVEL', 'DEBUG')
+# LOG_LEVEL = os.getenv('LOG_LEVEL', 'INFO')
+LOG_LEVEL = os.getenv('LOG_LEVEL', 'DEBUG')
 # Change to 'INFO' or 'WARNING' 
 LOG_FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 LOG_DATEFMT = '%Y-%m-%d %H:%M:%S'
