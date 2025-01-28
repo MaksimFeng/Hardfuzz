@@ -31,25 +31,39 @@ def delete_all_breakpoints(gdb: GDB):
     else:
         log.info("Deleted all breakpoints.")
 
-def force_halt_if_running(gdb: GDB, timeout=5):
+def force_halt_if_running(gdb: GDB, max_attempts=3, wait_timeout=5):
     """
-    If CPU is running, interrupt. If halted, skip. Then wait up to 'timeout' for a stop event.
+    Safely ensure the CPU is fully halted.
+    Repeatedly:
+      1) Try reading registers with `-data-list-register-values`.
+      2) If 'error' => do gdb.interrupt() => read events => check again.
+      3) If 'done' => CPU is halted => return.
     """
-    resp = gdb.send('-data-list-register-values x', timeout=3)
-    if resp['message'] == 'done':
-        log.debug("CPU already halted; skipping re-halt.")
-        return
-    if resp['message'] == 'error':
-        log.debug("Sending interrupt to force halt (CPU likely running).")
-        gdb.interrupt()
-        reason, payload = gdb.wait_for_stop(timeout=timeout)
-        if reason in ('breakpoint hit','interrupt','exited','crashed','stopped, no reason given'):
-            log.debug(f"CPU halted (reason='{reason}').")
+    for attempt in range(max_attempts):
+        resp = gdb.send('-data-list-register-values x', timeout=3)
+        if resp['message'] == 'done':
+            log.debug("CPU is halted (data-list-register-values => done).")
+            return  # success
         else:
-            # Check again if halted
+            log.debug("CPU not halted => sending interrupt.")
+            gdb.interrupt()
+            # Drain all stop events until we see one that indicates total halt.
+            while True:
+                reason, payload = gdb.wait_for_stop(timeout=wait_timeout)
+                if reason == 'timed out':
+                    log.debug("No further stop events => break loop & recheck registers.")
+                    break
+                if reason in ('breakpoint hit','interrupt','exited','crashed','stopped, no reason given'):
+                    log.debug(f"Got a stop reason={reason}, CPU likely halted now. Recheck registers.")
+                    break
             resp2 = gdb.send('-data-list-register-values x', timeout=3)
-            if resp2['message'] != 'done':
-                raise Exception(f"Could not force halt (got reason='{reason}')")
+            if resp2['message'] == 'done':
+                log.debug("CPU is halted on second try.")
+                return
+    # If we exit the loop => still not 'done'? 
+    # Raise an error to avoid infinite loops
+    raise Exception("Could not force CPU to a fully halted state after multiple attempts.")
+
 
 
 def set_breakpoints_for_defs_randomly(gdb: GDB, all_defs, hw_breakpoints=6):
@@ -71,6 +85,62 @@ def set_breakpoints_for_defs_randomly(gdb: GDB, all_defs, hw_breakpoints=6):
     # Let the CPU run again
     gdb.continue_execution()
     return defs_map
+
+
+def set_breakpoints_for_defs_weighted(gdb: GDB, all_defs, hw_breakpoints=6):
+    """
+    Pick definitions based on how many uses they have (i.e. the largest
+    number of uses first). Then set breakpoints for those definitions.
+    Return {bkptno: (def_addr_str, uses_list)} as before.
+    """
+    # 1) Ensure CPU halted before manipulating breakpoints
+    force_halt_if_running(gdb)
+    delete_all_breakpoints(gdb)
+
+    # 2) Sort definitions by number of uses descending
+    # all_defs is presumably [(def_addr_str, [use_addr1, use_addr2, ...]), ...]
+    sorted_by_uses = sorted(all_defs, key=lambda x: len(x[1]), reverse=True)
+
+    # 3) Pick top 'hw_breakpoints' from the sorted list
+    chosen_defs = sorted_by_uses[:hw_breakpoints]
+
+    defs_map = {}
+    for def_addr_str, uses_list in chosen_defs:
+        bkptno = gdb.set_breakpoint(def_addr_str)
+        if bkptno is not None:
+            defs_map[bkptno] = (def_addr_str, uses_list)
+
+    log.info(f"Weighted: set {len(defs_map)} definition breakpoints based on largest # of uses.")
+    gdb.continue_execution()
+    return defs_map
+
+def set_breakpoints_for_closest_uses(gdb: GDB, def_addr_str, uses_list, hw_breakpoints=6):
+    """
+    Sort 'uses_list' by absolute difference from 'def_addr_str'.
+    Pick up to hw_breakpoints that are the 'closest' in address range.
+    """
+    force_halt_if_running(gdb)
+    delete_all_breakpoints(gdb)
+
+    def_addr = int(def_addr_str, 16)
+
+    # Sort uses by how close they are in numeric address
+    sorted_uses = sorted(
+        uses_list,
+        key=lambda use_str: abs(int(use_str, 16) - def_addr)
+    )
+
+    chosen_uses = sorted_uses[:hw_breakpoints]
+
+    uses_map = {}
+    for use_addr_str in chosen_uses:
+        bkptno = gdb.set_breakpoint(use_addr_str)
+        if bkptno is not None:
+            uses_map[bkptno] = use_addr_str
+
+    log.info(f"Set {len(uses_map)} use breakpoints near def={def_addr_str}")
+    gdb.continue_execution()
+    return uses_map
 
 
 def set_breakpoints_for_uses_randomly(gdb: GDB, uses_list, hw_breakpoints=6):
@@ -104,9 +174,9 @@ def restart_program(gdb: GDB, elf_path: str):
     log.debug("Restarting program from scratch...")
 
     # If J-Link requires a digit, do: gdb.send('monitor reset 0')
-    resp = gdb.send('monitor reset')
+    resp = gdb.send('monitor reset halt')
     log.debug(f"monitor reset => {resp}")
-    resp = gdb.send('monitor halt')
+    # resp = gdb.send('monitor halt')
     log.debug(f"monitor halt => {resp}")
 
     resp = gdb.send(f'-file-exec-and-symbols {elf_path}')
@@ -152,6 +222,25 @@ def setup_logging():
 
 logger = setup_logging()
 
+##########################
+# testing
+##########################
+
+def set_named_breakpoint(gdb:GDB, func_name: str) -> str:
+    """
+    Insert a breakpoint at a named function or symbol (e.g. 'parser', 'loop', 'main').
+    Returns the breakpoint number string (e.g. '1', '2', etc.).
+    Raises Exception if unsuccessful.
+    """
+    force_halt_if_running(gdb)
+    delete_all_breakpoints(gdb)
+    logger.info(f"Inserting breakpoint at function: {func_name}")
+    resp = gdb.send(f'-break-insert {func_name}')
+    if resp['message'] != 'done':
+        raise Exception(f"Failed to insert breakpoint at function: {func_name}")
+    bp_id = resp['payload']['bkpt']['number']
+    logger.info(f"Breakpoint inserted at function: {func_name}, id: {bp_id}")
+    return bp_id
 
 ##########################
 # MAIN FUNCTION
@@ -164,7 +253,7 @@ def main():
 
     # 2) Initialize GDB
     gdb = GDB(
-        gdb_path='gdb-multiarch',           # or your path to GDB
+        gdb_path='gdb-multiarch',           
         gdb_server_address='localhost:2331',  # J-Link server
         software_breakpoint_addresses=[],
         consider_sw_breakpoint_as_error=False
@@ -176,10 +265,10 @@ def main():
 
     # 3) One-time reset & halt
     logger.debug("Resetting & halting once at startup...")
-    # For J-Link, if 'monitor reset' complains, do:
+    # For J-Link maybe also could try do:
     # gdb.send('monitor reset 0')
-    gdb.send('monitor reset')
-    gdb.send('monitor halt')
+    gdb.send('monitor reset halt')
+    # gdb.send('monitor halt')
 
     logger.debug(f"Loading ELF: {elf_path}")
     gdb.send(f'-file-exec-and-symbols {elf_path}')
@@ -192,12 +281,28 @@ def main():
         gdb.continue_execution()
 
     reason, payload = gdb.wait_for_stop(timeout=10)
+    logger.info(f"Initial stop reason: {reason}, payload: {payload}")
     if reason in ("breakpoint hit", "stopped, no reason given"):
-        logger.debug("Stopped at main => continuing so tasks start up.")
+        logger.debug(f"Stopped at main => continuing so tasks start up.{reason}")
         gdb.continue_execution()
     else:
         logger.warning(f"Unexpected reason for initial stop: {reason}")
 
+    #### for testing
+  
+    # parser_bkptno = set_named_breakpoint(gdb, 'parser')
+    # reason2, payload2 = gdb.wait_for_stop(timeout=10)
+    # logger.info(f"Second parser reason: {reason2}, payload: {payload2}")
+    # if reason2 in ("breakpoint hit", "stopped, no reason given"):
+    #     logger.debug(f"{payload2}Stopped at parser => continuing so tasks start up. {reason2}")
+    #     gdb.continue_execution()
+    # else:
+    #     logger.warning(f"Unexpected reason for second stop: {reason2}")
+    # gdb.continue_execution()
+    #######################
+
+
+    # temporary comment the def-use file parsing for testing
     # 4) Parse definitions
     sorted_defs = parse_def_use_file(DEF_USE_FILE)
     if not sorted_defs:
@@ -205,8 +310,8 @@ def main():
         return
 
     # 5) Place random definition breakpoints
-    defs_map = set_breakpoints_for_defs_randomly(gdb, sorted_defs, hw_breakpoints=6)
-
+    # defs_map = set_breakpoints_for_defs_randomly(gdb, sorted_defs, hw_breakpoints=6)
+    defs_map = set_breakpoints_for_defs_weighted(gdb, sorted_defs, hw_breakpoints=6)
     # 6) Setup serial
     ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=SERIAL_TIMEOUT)
     time.sleep(2)  # small stabilization
@@ -221,8 +326,12 @@ def main():
     # Let the CPU run after setting def breakpoints
     gdb.continue_execution()
 
+    ####testing test case
+    test_case_bytes = b'{"test":123}'
+
     try:
         # Generate the first test
+        ############################for testing comment this two line
         input_gen.choose_new_baseline_input()
         test_case_bytes = input_gen.generate_input()
 
@@ -240,10 +349,20 @@ def main():
             reason, payload = gdb.wait_for_stop(timeout=4)
             logger.info(f"Received event: {reason}, payload: {payload}")
 
-            if reason == 'breakpoint hit':
+            # if reason == 'breakpoint hit':
+            if reason in ("breakpoint hit", "stopped, no reason given"):
                 bkptno = payload
                 logger.info(f"Breakpoint hit => {bkptno}")
                 test_case_count_since_last_trigger = 0
+
+                ##### for testing
+                # if payload == parser_bkptno:
+                #     logger.info("parser() breakpoint was hit! GDB is working.")
+                #     logger.info("_______________________________")
+                # else:
+                #     logger.info(f"Hit some other BP: {payload}")
+                # gdb.continue_execution()
+
 
                 if bkptno in defs_map:
                     # We have a definition BP
@@ -252,8 +371,11 @@ def main():
                     logger.info(f"Definition coverage updated => {def_addr_str}")
 
                     # Set uses
-                    uses_map = set_breakpoints_for_uses_randomly(
-                        gdb, uses_list, hw_breakpoints=6
+                    # uses_map = set_breakpoints_for_uses_randomly(
+                        # gdb, uses_list, hw_breakpoints=6
+                    # )
+                    uses_map = set_breakpoints_for_closest_uses(
+                        gdb, def_addr_str, uses_list, hw_breakpoints=6
                     )
                     # Wait for use event
                     reason2, payload2 = gdb.wait_for_stop(timeout=5)
@@ -265,7 +387,10 @@ def main():
                             logger.info(f"Def-use coverage updated => {def_addr_str},{use_addr_str}")
 
                     # Revert to definitions again
-                    defs_map = set_breakpoints_for_defs_randomly(
+                    # defs_map = set_breakpoints_for_defs_randomly(
+                    #     gdb, sorted_defs, hw_breakpoints=6
+                    # )
+                    defs_map = set_breakpoints_for_defs_weighted(
                         gdb, sorted_defs, hw_breakpoints=6
                     )
                     gdb.continue_execution()
@@ -282,7 +407,10 @@ def main():
                 test_case_count_since_last_trigger += 1
                 if test_case_count_since_last_trigger > NO_TRIGGER_THRESHOLD:
                     logger.info("No triggers for too long => re-random definitions.")
-                    defs_map = set_breakpoints_for_defs_randomly(gdb, sorted_defs, hw_breakpoints=6)
+
+                    ############testing comment this line
+                    # defs_map = set_breakpoints_for_defs_randomly(gdb, sorted_defs, hw_breakpoints=6)
+                    defs_map = set_breakpoints_for_defs_weighted(gdb, sorted_defs, hw_breakpoints=6)
                     test_case_count_since_last_trigger = 0
 
             elif reason in ('exited','crashed'):
@@ -296,7 +424,8 @@ def main():
 
                 # Restart program
                 restart_program(gdb, elf_path)
-                defs_map = set_breakpoints_for_defs_randomly(gdb, sorted_defs, hw_breakpoints=6)
+                # defs_map = set_breakpoints_for_defs_randomly(gdb, sorted_defs, hw_breakpoints=6)
+                defs_map = set_breakpoints_for_defs_weighted(gdb, sorted_defs, hw_breakpoints=6)
                 gdb.continue_execution()
 
             # Coverage check (dummy example at address=0)

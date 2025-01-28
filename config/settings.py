@@ -12,10 +12,10 @@ os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
 # GDB Configuration
 GDB_PATH = 'gdb-multiarch'
 GDB_SERVER_ADDRESS = 'localhost:2331'
-ELF_PATH = '/home/kai/project/Hardfuzz/example/consule/sketch_nov5a.ino.elf'
+ELF_PATH = '/home/kai/project/Hardfuzz/example/sketch_nov5a.ino.elf'
 
 # Serial Configuration
-SERIAL_PORT = '/dev/ttyACM1'
+SERIAL_PORT = '/dev/ttyACM0'
 BAUD_RATE = 38400
 SERIAL_TIMEOUT = 1
 

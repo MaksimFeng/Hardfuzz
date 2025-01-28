@@ -116,6 +116,20 @@ def set_breakpoints_for_defs(gdb: GDB, defs_group):
     logger.info(f"Defs map is: {defs_map}")
     return defs_map
 
+def set_named_breakpoint(gdb:GDB, func_name: str) -> str:
+    """
+    Insert a breakpoint at a named function or symbol (e.g. 'parser', 'loop', 'main').
+    Returns the breakpoint number string (e.g. '1', '2', etc.).
+    Raises Exception if unsuccessful.
+    """
+    logger.info(f"Inserting breakpoint at function: {func_name}")
+    resp = gdb.send(f'-break-insert {func_name}')
+    if resp['message'] == 'done':
+        raise Exception(f"Failed to insert breakpoint at function: {func_name}")
+    bp_id = resp['payload']['bkpt']['number']
+    logger.info(f"Breakpoint inserted at function: {func_name}, id: {bp_id}")
+    return bp_id
+
 def set_breakpoints_for_uses(gdb: GDB, uses):
     """Set breakpoints at use addresses for a given definition."""
     halt_target(gdb)

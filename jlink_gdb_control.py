@@ -33,19 +33,28 @@ def start_jlink_gdb_server():
 
 if __name__ == '__main__':
     jlink_process = start_jlink_gdb_server()
+    log_file_path = 'jlink_gdb_server.log'  # Define your log file path
+
     try:
-        # Continuously read & print the JLink server output
-        while True:
-            output_line = jlink_process.stdout.readline()
-            if not output_line:
-                # The process ended or no more output
-                break
-            sys.stdout.write(output_line)
-            sys.stdout.flush()
+        with open(log_file_path, 'w') as log_file:
+            # Continuously read & print the JLink server output
+            while True:
+                output_line = jlink_process.stdout.readline()
+                if not output_line:
+                    # The process ended or no more output
+                    break
+                # Write to console
+                sys.stdout.write(output_line)
+                sys.stdout.flush()
+                # Write to log file
+                log_file.write(output_line)
+                log_file.flush()  # Ensure it's written to disk
 
     except KeyboardInterrupt:
-        print("Stopping JLink GDB Server (Ctrl + C).")
+        print("\nStopping JLink GDB Server (Ctrl + C).")
 
     finally:
         # Terminate JLink GDB Server
         jlink_process.terminate()
+        jlink_process.wait()  # Wait for the process to terminate
+        print("JLink GDB Server stopped.")
