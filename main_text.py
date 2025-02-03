@@ -89,56 +89,106 @@ def set_breakpoints_for_defs_randomly(gdb: GDB, all_defs, hw_breakpoints=6):
 
 def set_breakpoints_for_defs_weighted(gdb: GDB, all_defs, hw_breakpoints=6):
     """
-    Pick definitions based on how many uses they have (i.e. the largest
-    number of uses first). Then set breakpoints for those definitions.
-    Return {bkptno: (def_addr_str, uses_list)} as before.
+        Definitions with more uses are more likely to be chosen, but not guaranteed every time.
     """
     # 1) Ensure CPU halted before manipulating breakpoints
     force_halt_if_running(gdb)
     delete_all_breakpoints(gdb)
 
-    # 2) Sort definitions by number of uses descending
-    # all_defs is presumably [(def_addr_str, [use_addr1, use_addr2, ...]), ...]
+    # Sort by number of uses, descending
     sorted_by_uses = sorted(all_defs, key=lambda x: len(x[1]), reverse=True)
 
-    # 3) Pick top 'hw_breakpoints' from the sorted list
-    chosen_defs = sorted_by_uses[:hw_breakpoints]
+    # Build a list of (def_addr_str, uses_list, weight), where weight = len(uses_list)
+    weighted_defs = []
+    for def_addr_str, uses_list in sorted_by_uses:
+        w = float(len(uses_list))
+        weighted_defs.append((def_addr_str, uses_list, w))
 
+    # If everything has 0 uses, just randomly sample from all_defs
+    total_weight = sum(w for _, _, w in weighted_defs)
+    if total_weight == 0:
+        chosen = random.sample(sorted_by_uses, k=min(hw_breakpoints, len(sorted_by_uses)))
+    else:
+        chosen = []
+        # Make a copy we can remove from so we pick without replacement
+        temp_list = weighted_defs[:]
+
+        # We select up to hw_breakpoints using a custom weighted approach (no replacement)
+        for _ in range(hw_breakpoints):
+            if not temp_list:
+                break
+            # Pick a random float up to total_weight
+            r = random.random() * total_weight
+            cumulative = 0.0
+            for idx, (def_str, uses_list, w) in enumerate(temp_list):
+                cumulative += w
+                if cumulative >= r:
+                    # We've chosen this definition
+                    chosen.append((def_str, uses_list))
+                    # Remove it so we don't pick it again
+                    total_weight -= w
+                    del temp_list[idx]
+                    break
+
+    # Actually set the breakpoints
     defs_map = {}
-    for def_addr_str, uses_list in chosen_defs:
+    for def_addr_str, uses_list in chosen:
         bkptno = gdb.set_breakpoint(def_addr_str)
         if bkptno is not None:
             defs_map[bkptno] = (def_addr_str, uses_list)
 
-    log.info(f"Weighted: set {len(defs_map)} definition breakpoints based on largest # of uses.")
+    log.info(f"Weighted random (defs): set {len(defs_map)} definition breakpoints.")
     gdb.continue_execution()
     return defs_map
 
 def set_breakpoints_for_closest_uses(gdb: GDB, def_addr_str, uses_list, hw_breakpoints=6):
     """
-    Sort 'uses_list' by absolute difference from 'def_addr_str'.
-    Pick up to hw_breakpoints that are the 'closest' in address range.
+    hardware breakpoints on the *uses* that are closer to `def_addr_str`.
+    Closer uses have higher weight, but there's still randomness.
     """
     force_halt_if_running(gdb)
     delete_all_breakpoints(gdb)
 
     def_addr = int(def_addr_str, 16)
 
-    # Sort uses by how close they are in numeric address
-    sorted_uses = sorted(
-        uses_list,
-        key=lambda use_str: abs(int(use_str, 16) - def_addr)
-    )
+    # Build (use_addr_str, distance, weight)
+    weighted_uses = []
+    for use_addr_str in uses_list:
+        dist = abs(int(use_addr_str, 16) - def_addr)
+        # The +1 avoids division by zero and ensures a non-infinite weight
+        weight = 1.0 / (dist + 1.0)
+        weighted_uses.append((use_addr_str, dist, weight))
 
-    chosen_uses = sorted_uses[:hw_breakpoints]
+    total_weight = sum(w for _, _, w in weighted_uses)
+    if total_weight == 0:
+        # If something is off (e.g. no uses, or all dist=0?), just random sample
+        chosen_uses = random.sample(uses_list, k=min(hw_breakpoints, len(uses_list)))
+    else:
+        chosen_uses = []
+        temp_list = weighted_uses[:]
 
+        # No-replacement weighted picking up to hw_breakpoints
+        for _ in range(hw_breakpoints):
+            if not temp_list:
+                break
+            r = random.random() * total_weight
+            cumulative = 0.0
+            for idx, (use_addr, dist, w) in enumerate(temp_list):
+                cumulative += w
+                if cumulative >= r:
+                    chosen_uses.append(use_addr)
+                    total_weight -= w
+                    del temp_list[idx]
+                    break
+
+    # Actually set the breakpoints for the chosen uses
     uses_map = {}
     for use_addr_str in chosen_uses:
         bkptno = gdb.set_breakpoint(use_addr_str)
         if bkptno is not None:
             uses_map[bkptno] = use_addr_str
 
-    log.info(f"Set {len(uses_map)} use breakpoints near def={def_addr_str}")
+    log.info(f"Set {len(uses_map)} use breakpoints near def={def_addr_str} (weighted random by distance).")
     gdb.continue_execution()
     return uses_map
 
@@ -437,8 +487,8 @@ def main():
                 input_gen.add_corpus_entry(test_case_bytes, address=0, timestamp=timestamp)
 
             # Generate next input
-            # input_gen.choose_new_baseline_input()
-            # test_case_bytes = input_gen.generate_input()
+            input_gen.choose_new_baseline_input()
+            test_case_bytes = input_gen.generate_input()
 
             time.sleep(0.1)
 

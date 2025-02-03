@@ -225,7 +225,7 @@ class GDB:
     def connect(self, path) -> None:
         log.debug("Connecting to GDB server...")
         self.send('-gdb-set mi-async on')
-        self.send('set architecture arm')
+        self.send('set architecture thumb')
         elf_path = ELF_PATH
         self.send(f'file {path}')
         self.send(f'-target-select extended-remote {self.gdb_server_address}')
