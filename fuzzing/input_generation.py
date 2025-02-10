@@ -1,3 +1,4 @@
+# input_generation.py
 import os
 import random
 import logging as log
@@ -66,6 +67,10 @@ class InputGeneration:
             self.corpus[self.current_base_input_index].num_childs += 1
 
         entry = CorpusEntry(input, filepath, self.current_base_input_index, depth)
+        # [NEW LOGIC] => If coverage is new, let's set burn_in=5 or 10
+        # so that next call to choose_new_baseline_input() might pick it soon.
+        entry.burn_in = 5
+        
         self.corpus.append(entry)
         return entry
 
@@ -76,6 +81,7 @@ class InputGeneration:
             i.compute_weight(self.total_hit_blocks, len(self.corpus))
             energy_sum += i.weight
             cum_energy.append(energy_sum)
+        # Weighted pick from corpus
         self.current_base_input_index = random.choices(range(len(cum_energy)), cum_weights=cum_energy).pop()
         chosen_entry = self.corpus[self.current_base_input_index]
         chosen_entry.num_fuzzed += 1

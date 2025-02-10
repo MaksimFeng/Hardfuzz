@@ -1,135 +1,124 @@
 import logging
 import numpy as np
+# import bitvector
 from multiprocessing import shared_memory
 
+logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
-
+#4k maybe 
+# 64K total coverage size for each map
 MAP_SIZE = 65536
 
 class CoverageManager:
-    """
-    Manages two coverage bitmaps as saturating counters:
-      1) trace_bits_defs   (uint8) coverage for definitions
-      2) trace_bits_pairs  (uint8) coverage for def–use pairs
-
-    Each entry can be [0..255], incremented each time we see a hit
-    (capped at 255). "Virgin" arrays track if an index was never hit
-    before (0xFF) or has been discovered (0x00).
-
-    Also, we keep pairs_debug_map to store the actual def_addr/use_addr
-    pairs that mapped to each coverage index for debugging.
-    """
 
     def __init__(self, map_size=MAP_SIZE):
         self.map_size = map_size
-        self.total_shm_size = 2 * map_size
+        self.total_shm_size = 2 * map_size  # defs + pairs
+        # self.trace_bits_defs = BitVector(size=self.map_size)   
+        # self.trace_bits_pairs = BitVector(size=self.map_size)  
 
-        logger.debug(f"Allocating shared memory => size={self.total_shm_size} bytes.")
+        # self.virgin_defs = BitVector(size=self.map_size)
+        # self.virgin_defs.set_bits_from_string('1' * self.map_size)  # all 1
+        # self.virgin_pairs = BitVector(size=self.map_size)
+        # self.virgin_pairs.set_bits_from_string('1' * self.map_size) # all 1
+        # Allocate a single SHM region of size 2*MAP_SIZE
+        logger.debug(f"Allocating shared memory of size: {self.total_shm_size} bytes.")
         self.shm = shared_memory.SharedMemory(create=True, size=self.total_shm_size)
 
         buffer = self.shm.buf
-        self.trace_bits_defs = np.ndarray(
-            (map_size,), dtype=np.uint8, buffer=buffer, offset=0
-        )
-        self.trace_bits_pairs = np.ndarray(
-            (map_size,), dtype=np.uint8, buffer=buffer, offset=map_size
-        )
+        self.trace_bits_defs = np.ndarray((map_size,), dtype=np.uint8, buffer=buffer, offset=0)
+        self.trace_bits_pairs = np.ndarray((map_size,), dtype=np.uint8, buffer=buffer, offset=map_size)
 
-        # initialize counters to 0
         self.trace_bits_defs.fill(0)
         self.trace_bits_pairs.fill(0)
+        logger.debug("Coverage arrays (trace_bits_defs, trace_bits_pairs) initialized to zero.")
 
-        # virgin arrays => 0xFF means "never hit"
+        # 0xFF means "never hit"
         self.virgin_defs = np.full((map_size,), 0xFF, dtype=np.uint8)
         self.virgin_pairs = np.full((map_size,), 0xFF, dtype=np.uint8)
+        logger.debug("Virgin arrays (virgin_defs, virgin_pairs) initialized to 0xFF.")
 
-        # For debugging/investigation => index => set of (def, use) pairs
-        self.pairs_debug_map = {}
-        # You might also store def_debug_set = {} if you want def-based logs.
-
-        logger.info("CoverageManager (saturating counters) init done.")
+        logger.info("CoverageManager initialized with MAP_SIZE=%d x 2 coverage arrays.", self.map_size)
 
     def close(self):
-        logger.debug("Closing SHM in CoverageManager.")
+        """
+        Clean up 
+        """
+        logger.debug("Closing shared memory.")
         self.shm.close()
         try:
             self.shm.unlink()
+            logger.debug("Shared memory unlinked successfully.")
         except FileNotFoundError:
-            pass
-        logger.info("SharedMemory unlinked. CoverageManager closed.")
+            logger.warning("Shared memory unlink failed: FileNotFoundError.")
+        logger.info("CoverageManager SHM removed.")
 
     def reset_coverage(self):
         """
-        Reset the saturating counters to 0 for a new test,
-        but keep the 'virgin' arrays so we know what's new vs. old.
+        Clear coverage arrays (defs + pairs) between test cases.
         """
-        logger.debug("Reset coverage arrays to 0.")
+        logger.debug("Resetting coverage arrays to 0.")
         self.trace_bits_defs.fill(0)
+        # self.trace_bits_defs.reset(0)
         self.trace_bits_pairs.fill(0)
+        # self.trace_bits_pairs.reset(0)
+        logger.info("Coverage arrays reset to zero.")
 
     def update_coverage_for_def(self, def_addr_str: str):
         """
-        def coverage => index = def_addr & 0xFFFF
-        saturating increment => min(current+1, 255)
+        For 'definition' coverage, we do:
+          idx = (def_addr & 0xFFFF)
+        Then set trace_bits_defs[idx] = 1.
         """
         def_addr = int(def_addr_str, 16)
         idx = def_addr & 0xFFFF
-        old_val = self.trace_bits_defs[idx]
-        if old_val < 255:
-            self.trace_bits_defs[idx] = old_val + 1
-
-        # if you want to store debugging info for defs, you can do so here
-        # e.g. def_debug_map[idx].add(def_addr) or something similar
+        logger.debug(f"Updating def coverage for def_addr=0x{def_addr:08X}, idx={idx}")
+        self.trace_bits_defs[idx] = 1
 
     def update_coverage_for_defuse(self, def_addr_str: str, use_addr_str: str):
         """
-        def–use coverage => index = (def_addr ^ use_addr) & 0xFFFF
-        saturating increment => min(current+1, 255)
-        also store the pair in pairs_debug_map for later reference
+        For def-use coverage, we do:
+          xorVal = def_addr ^ use_addr
+          idx = (xorVal & 0xFFFF)
+        Then set trace_bits_pairs[idx] = 1.
         """
         def_addr = int(def_addr_str, 16)
         use_addr = int(use_addr_str, 16)
         xorVal = def_addr ^ use_addr
         idx = xorVal & 0xFFFF
-
-        # saturating increment
-        old_val = self.trace_bits_pairs[idx]
-        if old_val < 255:
-            self.trace_bits_pairs[idx] = old_val + 1
-
-        # debug map => store the actual addresses future use
-        if idx not in self.pairs_debug_map:
-            self.pairs_debug_map[idx] = set()
-        self.pairs_debug_map[idx].add((def_addr, use_addr))
+        logger.info(f"Updating def-use coverage => def=0x{def_addr:08X}, use=0x{use_addr:08X}, idx={idx}")
+        self.trace_bits_pairs[idx] = 1
 
     def check_new_coverage(self) -> bool:
-        """
-        For saturating counters:
-          If trace_bits_[i] > 0 and virgin_[i] == 0xFF => new coverage
-          set virgin_[i] = 0x00
-        Return True if any new coverage was found.
-        """
+        # for i in range(self.map_size):
+        #     if self.trace_bits_defs[i] == 1 and self.virgin_defs[i] == 1:
+        #         self.virgin_defs[i] = 0
+        #         new_bits_found = True
+        #         logger.debug(f"New def coverage => index={i}")
         new_bits_found = False
+        logger.debug("Checking for new coverage in def coverage...")
 
-        # check defs coverage
-        hit_indices = np.where(self.trace_bits_defs > 0)[0]
-        for i in hit_indices:
+        # Check def coverage
+        hits_defs = np.where(self.trace_bits_defs != 0)[0]
+        for i in hits_defs:
             if self.virgin_defs[i] == 0xFF:
                 self.virgin_defs[i] = 0x00
-                logger.debug(f"New def coverage => index={i}, value={self.trace_bits_defs[i]}")
+                logger.debug(f"New def coverage found => index {i}")
                 new_bits_found = True
 
-        # check pairs coverage
-        hit_indices = np.where(self.trace_bits_pairs > 0)[0]
-        for i in hit_indices:
+        # Check def-use coverage
+        logger.debug("Checking for new coverage in def-use coverage...")
+        hits_pairs = np.where(self.trace_bits_pairs != 0)[0]
+        for i in hits_pairs:
             if self.virgin_pairs[i] == 0xFF:
                 self.virgin_pairs[i] = 0x00
-                logger.debug(f"New def-use coverage => index={i}, value={self.trace_bits_pairs[i]}")
+                logger.debug(f"New def-use coverage found => index {i}")
                 new_bits_found = True
 
         if new_bits_found:
-            logger.info("New coverage discovered!")
+            logger.info("New coverage detected.")
         else:
-            logger.info("No new coverage found this test.")
+            logger.info("No new coverage found.")
 
         return new_bits_found
+    
