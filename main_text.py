@@ -87,6 +87,9 @@ def force_halt_if_running(gdb: GDB, max_attempts=3, wait_timeout=5):
     raise Exception("Could not force CPU to halt after multiple attempts.")
 
 def delete_all_breakpoints(gdb: GDB):
+    """
+    Removes all breakpoints from GDB.
+    """
     logger.debug("Deleting all existing breakpoints.")
     resp = gdb.send('-break-delete')
     if resp['message'] == 'error':
@@ -95,6 +98,18 @@ def delete_all_breakpoints(gdb: GDB):
             raise Exception(f"Failed to delete breakpoints: {err}")
     else:
         logger.info("Deleted all breakpoints.")
+
+# [ADDED]
+def remove_breakpoints(gdb: GDB, bp_ids):
+    """
+    Removes only the specified list of breakpoint IDs from GDB.
+    """
+    for bp_id in bp_ids:
+        try:
+            gdb.remove_breakpoint(bp_id)
+            logger.info(f"Removed breakpoint id={bp_id}")
+        except Exception as e:
+            logger.warning(f"Could not remove breakpoint id={bp_id}: {e}")
 
 def restart_program(gdb: GDB, elf_path: str):
     logger.info("Restarting program from scratch...")
@@ -185,19 +200,23 @@ def main():
                     logger.info("Exhausted all defs in this pass => new test next round.")
                     break
 
+                # [MODIFIED] Instead of deleting all breakpoints each time, we only
+                # do it once before setting a new chunk. This helps keep GDB clean
                 force_halt_if_running(gdb)
                 delete_all_breakpoints(gdb)
-
+                
+                # Create a mapping from breakpoint_id -> (def_addr, uses_list)
                 def_bp_map = {}
                 for def_addr, uses_list in chunk:
                     bp_id = gdb.set_breakpoint(def_addr)
                     def_bp_map[bp_id] = (def_addr, uses_list)
 
                 gdb.continue_execution()
-
-                def_triggered = None
-                for attempt in range(MAX_DEF_TRIES_PER_CHUNK):
-                    logger.info(f"[def Attempt #{attempt+1}] => sending {test_data!r}")
+                no_trigger_count = 0
+                # We'll attempt to trigger these chunk breakpoints for up to MAX_DEF_TRIES_PER_CHUNK times
+                # but we won't remove them all if only some triggers occur.
+                while def_bp_map and no_trigger_count < MAX_DEF_TRIES_PER_CHUNK:
+                    logger.info(f"[DEF chunk attempt] => sending {test_data!r}")
                     resp = send_test_case(ser, test_data)
                     process_response(resp)
 
@@ -210,110 +229,76 @@ def main():
                             logger.info(f"Def triggered => {def_addr_str}")
                             coverage_mgr.update_coverage_for_def(def_addr_str)
 
-                            gdb.remove_breakpoint(payload)
+                            # remove only this triggered breakpoint
+                            remove_breakpoints(gdb, [payload])
                             del def_bp_map[payload]
 
-                            def_triggered = (def_addr_str, uses_list)
-                            break
+                            # Because something triggered, reset the no-trigger count
+                            no_trigger_count = 0
+
+                            # Immediately handle uses for this def
+                            force_halt_if_running(gdb)
+                            if uses_list:
+                                _handle_uses_for_def(
+                                    gdb, ser, test_data,
+                                    def_addr_str, uses_list,
+                                    coverage_mgr, input_gen
+                                )
+
+                            # Continue execution so we can see if any other def triggers
+                            if def_bp_map:  # If there are still more def BPs left
+                                gdb.continue_execution()
+
                         else:
                             logger.debug(f"Unknown breakpoint => {payload}, continuing.")
                             gdb.continue_execution()
+                            # Possibly this means a leftover or invalid ID
+
                     elif reason == 'timed out':
                         logger.debug("No def triggered this attempt.")
+                        no_trigger_count += 1  # increment because we got no triggers
                     elif reason in ('exited','crashed'):
                         logger.warning("Target crashed => restart.")
                         restart_program(gdb, ELF_PATH)
+                        # Possibly record crash input
+                        logger.warning(f"Target {reason}. Logging input and restarting.")
+                        # Save the crashing input
+                        crash_dir = os.path.join(OUTPUT_DIRECTORY, 'crashes')
+                        os.makedirs(crash_dir, exist_ok=True)
+                        crash_file = os.path.join(crash_dir, str(int(time.time())))
+                        with open(crash_file, 'wb') as f:
+                            f.write(test_data)
+                        break
+                    else:
+                        logger.info(f"Unknown reason => {reason}, continuing.")
+                        gdb.continue_execution()
+
+                    # If we have no breakpoints left in def_bp_map => chunk is done
+                    if not def_bp_map:
                         break
 
-                # [NEW LOGIC FOR COVERAGE]
+                # [NEW LOGIC FOR COVERAGE AFTER DEFS]
                 timestamp = int(time.time())
-                # 'report_address_reached' => might add new corpus entry if not in corpus
                 input_gen.report_address_reached(test_data, address=0, timestamp=timestamp)
 
                 if coverage_mgr.check_new_coverage():
                     logger.info("New coverage found => add input to corpus.")
                     input_gen.add_corpus_entry(test_data, address=0, timestamp=timestamp)
-                    
+                    input_gen.choose_new_baseline_input()
 
-                    # logger.info("Choosing new baseline because coverage changed.")
-                    # input_gen.choose_new_baseline_input()
-
+                # Cleanup at chunk completion. If some defs never triggered, we discard them
+                # or keep them. For now let's remove them:
                 force_halt_if_running(gdb)
-                delete_all_breakpoints(gdb)
+                remaining_bp_ids = list(def_bp_map.keys())
+                if remaining_bp_ids:
+                    remove_breakpoints(gdb, remaining_bp_ids)
+                    def_bp_map.clear()
+
                 gdb.continue_execution()
 
-                if def_triggered is not None:
-                    def_addr_str, uses_list = def_triggered
-                    if uses_list:
-                        uses_sorted = get_closest_uses(def_addr_str, uses_list)
-                        uses_idx = 0
-                        use_triggered = False
-                        while uses_idx < len(uses_sorted):
-                            uses_chunk = uses_sorted[uses_idx : uses_idx+HW_BREAKPOINT_LIMIT]
-                            uses_idx += HW_BREAKPOINT_LIMIT
-
-                            force_halt_if_running(gdb)
-                            delete_all_breakpoints(gdb)
-
-                            uses_bp_map = {}
-                            for use_addr_str in uses_chunk:
-                                ubp_id = gdb.set_breakpoint(use_addr_str)
-                                uses_bp_map[ubp_id] = use_addr_str
-
-                            gdb.continue_execution()
-
-                            for attempt_u in range(MAX_USE_TRIES):
-                                logger.info(f"[Use Attempt #{attempt_u+1}] => sending {test_data!r}")
-                                r2 = send_test_case(ser, test_data)
-                                process_response(r2)
-
-                                reason2, payload2 = gdb.wait_for_stop(timeout=3)
-                                if reason2 in ("breakpoint hit", "stopped, no reason given"):
-                                    if payload2 in uses_bp_map:
-                                        use_addr = uses_bp_map[payload2]
-                                        logger.info(f"Use triggered => {use_addr}")
-                                        coverage_mgr.update_coverage_for_defuse(def_addr_str, use_addr)
-
-                                        gdb.remove_breakpoint(payload2)
-                                        del uses_bp_map[payload2]
-                                        gdb.continue_execution()
-                                        use_triggered = True
-                                    else:
-                                        gdb.continue_execution()
-                                elif reason2 == 'timed out':
-                                    logger.debug("No use triggered this attempt.")
-                                elif reason2 in ('exited','crashed'):
-                                    logger.warning("Target crashed => restart.")
-                                    restart_program(gdb, ELF_PATH)
-                                    break
-
-                            # [COVERAGE AFTER USES]
-                            timestamp = int(time.time())
-                            input_gen.report_address_reached(test_data, address=0, timestamp=timestamp)
-                            # if coverage_mgr.check_new_coverage():
-                            #     logger.info("New coverage from uses => add input to corpus.")
-                            #     input_gen.add_corpus_entry(test_data, address=0, timestamp=timestamp)
-                                
-
-                            #     logger.info("Choosing new baseline because coverage changed in uses.")
-                            #     input_gen.choose_new_baseline_input()
-
-                            force_halt_if_running(gdb)
-                            delete_all_breakpoints(gdb)
-                            gdb.continue_execution()
-
-                        if coverage_mgr.check_new_coverage():
-                            logger.info("New coverage from uses => add input to corpus.")
-                            input_gen.add_corpus_entry(test_data, address=0, timestamp=timestamp)
-                            input_gen.retry_corpus_input_index = len(input_gen.corpus)
-                            logger.info("Choosing new baseline because coverage changed in uses.")
-                            #force to change the testcase rightaway
-                            # input_gen.current_base_input_index = len(input_gen.corpus) - 1
-
-                            input_gen.choose_new_baseline_input()
-                        logger.info(f"Done checking uses for def={def_addr_str}, use_triggered={use_triggered}")
-
-                    done_with_round = True
+                # If we had a triggered def or we exhausted tries, we've completed this chunk
+                # => Move to next chunk or next round
+                done_with_round = True
 
             coverage_mgr.reset_coverage()
             logger.info(f"End of round #{round_count}, coverage reset. Next pass.\n")
@@ -325,6 +310,86 @@ def main():
         coverage_mgr.close()
         gdb.stop()
         logger.info("Clean exit from main().")
+
+
+# [ADDED]
+def _handle_uses_for_def(gdb, ser, test_data, def_addr_str, uses_list,
+                         coverage_mgr, input_gen):
+    logger.info(f"Handling uses for def={def_addr_str}. Found {len(uses_list)} uses.")
+    uses_sorted = get_closest_uses(def_addr_str, uses_list)
+    uses_idx = 0
+    any_use_triggered = False
+
+    while uses_idx < len(uses_sorted):
+        uses_chunk = uses_sorted[uses_idx : uses_idx + HW_BREAKPOINT_LIMIT]
+        uses_idx += HW_BREAKPOINT_LIMIT
+
+        force_halt_if_running(gdb)
+        # delete_all_breakpoints(gdb)
+        #for now, there're 5 breakpoints set at defs, so we need to delete all the breakpoints after the def is triggered. and keep track back to the def after iterate all the uses. 
+
+        uses_bp_map = {}
+        for use_addr_str in uses_chunk:
+            ubp_id = gdb.set_breakpoint(use_addr_str)
+            uses_bp_map[ubp_id] = use_addr_str
+
+        gdb.continue_execution()
+
+        # We'll try until we run out of BPs or no triggers in a row
+        no_trigger_count = 0
+        while uses_bp_map and no_trigger_count < MAX_USE_TRIES:
+            logger.info(f"[Use Attempt] => sending {test_data!r}")
+            resp = send_test_case(ser, test_data)
+            process_response(resp)
+
+            reason2, payload2 = gdb.wait_for_stop(timeout=3)
+            if reason2 in ("breakpoint hit", "stopped, no reason given"):
+                if payload2 in uses_bp_map:
+                    use_addr = uses_bp_map[payload2]
+                    logger.info(f"Use triggered => {use_addr}")
+                    coverage_mgr.update_coverage_for_defuse(def_addr_str, use_addr)
+
+                    remove_breakpoints(gdb, [payload2])
+                    del uses_bp_map[payload2]
+                    gdb.continue_execution()
+
+                    any_use_triggered = True
+                    no_trigger_count = 0  # reset since something triggered
+                else:
+                    logger.info(f"Unknown breakpoint => continuing.",payload2)
+                    gdb.continue_execution()
+
+            elif reason2 == 'timed out':
+                logger.info("No use triggered this attempt.")
+                no_trigger_count += 1
+            elif reason2 in ('exited','crashed'):
+                logger.warning("Target crashed => restart.")
+                restart_program(gdb, ELF_PATH)
+                break
+            else:
+                logger.info(f"Unknown reason => {reason2}, continuing.")
+                gdb.continue_execution()
+
+        # coverage after finishing a chunk
+        timestamp = int(time.time())
+        input_gen.report_address_reached(test_data, address=0, timestamp=timestamp)
+
+        if coverage_mgr.check_new_coverage():
+            logger.info("New coverage from uses => add input to corpus.")
+            input_gen.add_corpus_entry(test_data, address=0, timestamp=timestamp)
+            input_gen.choose_new_baseline_input()
+
+        force_halt_if_running(gdb)
+        if uses_bp_map:
+            remove_breakpoints(gdb, list(uses_bp_map.keys()))
+            uses_bp_map.clear()
+        logger.info("start continue")
+        gdb.continue_execution()
+        logger.info(f"End of use chunk, continuing to next chunk.")
+
+    return any_use_triggered
+
+
 
 if __name__ == '__main__':
     main()

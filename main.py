@@ -280,7 +280,8 @@ def main():
                 # else:
                 #     gdb.continue_execution()
 
-            elif reason == 'exited' or reason == 'crashed':
+            # elif reason == 'exited' or reason == 'crashed' or reason ==f'Unexpected {reason}':
+            elif reason == 'exited' or reason == 'crashed' :
                 # Handle crashes similar to the GDBFuzzer approach
                 logger.warning(f"Target {reason}. Logging input and restarting.")
                 # Save the crashing input
