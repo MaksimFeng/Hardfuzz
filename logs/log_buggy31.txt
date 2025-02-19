@@ -1,0 +1,381 @@
+2025-02-14 13:56:37 - root - INFO - === Starting main with 'one testcase until def/use triggers' ===
+2025-02-14 13:56:37 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-02-14 13:56:37 - root - INFO - Initial stop => reason=stopped, no reason given, payload={'type': 'notify', 'message': 'stopped', 'payload': {'frame': {'addr': '0x00080d04', 'func': 'delay', 'args': [{'name': 'ms', 'value': '500'}], 'file': '/home/kai/.arduino15/packages/arduino/hardware/sam/1.6.12/cores/arduino/wiring.c', 'fullname': '/home/kai/.arduino15/packages/arduino/hardware/sam/1.6.12/cores/arduino/wiring.c', 'line': '82', 'arch': 'armv7'}, 'thread-id': '1', 'stopped-threads': 'all'}, 'token': None, 'stream': 'stdout'}
+2025-02-14 13:56:37 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-14 13:56:40 - root - INFO - === Starting Round #1 ===
+2025-02-14 13:56:40 - root - INFO - Round #1 => test_data=b'1E 00 00 00 62 75\n'
+2025-02-14 13:56:45 - root - INFO - Deleted all breakpoints.
+2025-02-14 13:56:45 - root - INFO - Setting breakpoint at 0x80641
+2025-02-14 13:56:45 - root - INFO - Breakpoint set at 0x80641, bkptno=2
+2025-02-14 13:56:45 - root - INFO - Setting breakpoint at 0x8066b
+2025-02-14 13:56:45 - root - INFO - Breakpoint set at 0x8066b, bkptno=3
+2025-02-14 13:56:45 - root - INFO - Setting breakpoint at 0x80e69
+2025-02-14 13:56:45 - root - INFO - Breakpoint set at 0x80e69, bkptno=4
+2025-02-14 13:56:45 - root - INFO - Setting breakpoint at 0x805c5
+2025-02-14 13:56:45 - root - INFO - Breakpoint set at 0x805c5, bkptno=5
+2025-02-14 13:56:45 - root - INFO - Setting breakpoint at 0x81c6d
+2025-02-14 13:56:45 - root - INFO - Breakpoint set at 0x81c6d, bkptno=6
+2025-02-14 13:56:45 - root - INFO - Setting breakpoint at 0x82373
+2025-02-14 13:56:45 - root - INFO - Breakpoint set at 0x82373, bkptno=7
+2025-02-14 13:56:45 - root - INFO - [DEF chunk attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-14 13:56:45 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:56:50 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:56:50 - root - INFO - Sending test case to the board.
+2025-02-14 13:56:50 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-14 13:56:52 - root - WARNING - No response from the board.
+2025-02-14 13:56:55 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-14 13:57:00 - root - INFO - Removed breakpoint id=2
+2025-02-14 13:57:00 - root - INFO - Removed breakpoint id=3
+2025-02-14 13:57:00 - root - INFO - Removed breakpoint id=4
+2025-02-14 13:57:00 - root - INFO - Removed breakpoint id=5
+2025-02-14 13:57:00 - root - INFO - Removed breakpoint id=6
+2025-02-14 13:57:00 - root - INFO - Removed breakpoint id=7
+2025-02-14 13:57:00 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-14 13:57:00 - root - INFO - End of round #1, coverage reset.
+
+2025-02-14 13:57:00 - root - INFO - === Starting Round #2 ===
+2025-02-14 13:57:00 - root - INFO - Round #2 => test_data=b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:57:05 - root - INFO - Deleted all breakpoints.
+2025-02-14 13:57:05 - root - INFO - Setting breakpoint at 0x805c5
+2025-02-14 13:57:05 - root - INFO - Breakpoint set at 0x805c5, bkptno=8
+2025-02-14 13:57:05 - root - INFO - Setting breakpoint at 0x8060d
+2025-02-14 13:57:05 - root - INFO - Breakpoint set at 0x8060d, bkptno=9
+2025-02-14 13:57:05 - root - INFO - Setting breakpoint at 0x801a5
+2025-02-14 13:57:05 - root - INFO - Breakpoint set at 0x801a5, bkptno=10
+2025-02-14 13:57:05 - root - INFO - Setting breakpoint at 0x80e69
+2025-02-14 13:57:05 - root - INFO - Breakpoint set at 0x80e69, bkptno=11
+2025-02-14 13:57:05 - root - INFO - Setting breakpoint at 0x80e83
+2025-02-14 13:57:05 - root - INFO - Breakpoint set at 0x80e83, bkptno=12
+2025-02-14 13:57:05 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-14 13:57:05 - root - INFO - Breakpoint set at 0x80e63, bkptno=13
+2025-02-14 13:57:05 - root - INFO - [DEF chunk attempt] => sending b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:57:05 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:57:10 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:57:10 - root - INFO - Sending test case to the board.
+2025-02-14 13:57:10 - root - INFO - Sent 224 bytes of data: b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:57:12 - root - WARNING - No response from the board.
+2025-02-14 13:57:12 - root - INFO - Def triggered => 0x801a5
+2025-02-14 13:57:12 - root - INFO - Removed breakpoint id=10
+2025-02-14 13:57:12 - root - INFO - Handling uses for def=0x801a5. Found 1 uses.
+2025-02-14 13:57:12 - root - INFO - Setting breakpoint at 0x801f3
+2025-02-14 13:57:12 - root - INFO - Breakpoint set at 0x801f3, bkptno=14
+2025-02-14 13:57:12 - root - INFO - [Use Attempt] => sending b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:57:12 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:57:17 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:57:17 - root - INFO - Sending test case to the board.
+2025-02-14 13:57:17 - root - INFO - Sent 224 bytes of data: b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:57:19 - root - WARNING - No response from the board.
+2025-02-14 13:57:19 - root - INFO - Unknown breakpoint => 12, continuing.
+2025-02-14 13:57:19 - root - INFO - [Use Attempt] => sending b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:57:19 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:57:24 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:57:24 - root - INFO - Sending test case to the board.
+2025-02-14 13:57:24 - root - INFO - Sent 224 bytes of data: b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:57:26 - root - WARNING - No response from the board.
+2025-02-14 13:57:26 - root - INFO - Unknown breakpoint => 12, continuing.
+2025-02-14 13:57:26 - root - INFO - [Use Attempt] => sending b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:57:26 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:57:31 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:57:31 - root - INFO - Sending test case to the board.
+2025-02-14 13:57:31 - root - INFO - Sent 224 bytes of data: b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:57:33 - root - WARNING - No response from the board.
+2025-02-14 13:57:33 - root - INFO - Unknown breakpoint => 12, continuing.
+2025-02-14 13:57:33 - root - INFO - [Use Attempt] => sending b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:57:33 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:57:38 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:57:38 - root - INFO - Sending test case to the board.
+2025-02-14 13:57:38 - root - INFO - Sent 224 bytes of data: b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:57:40 - root - WARNING - No response from the board.
+2025-02-14 13:57:40 - root - INFO - Unknown breakpoint => 12, continuing.
+2025-02-14 13:57:40 - root - INFO - [Use Attempt] => sending b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:57:40 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:57:45 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:57:45 - root - INFO - Sending test case to the board.
+2025-02-14 13:57:45 - root - INFO - Sent 224 bytes of data: b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:57:47 - root - WARNING - No response from the board.
+2025-02-14 13:57:47 - root - INFO - Unknown breakpoint => 12, continuing.
+2025-02-14 13:57:47 - root - INFO - [Use Attempt] => sending b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:57:47 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:57:52 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:57:52 - root - INFO - Sending test case to the board.
+2025-02-14 13:57:52 - root - INFO - Sent 224 bytes of data: b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:57:54 - root - WARNING - No response from the board.
+2025-02-14 13:57:54 - root - INFO - Unknown breakpoint => 12, continuing.
+2025-02-14 13:57:54 - root - INFO - [Use Attempt] => sending b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:57:54 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:57:59 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:57:59 - root - INFO - Sending test case to the board.
+2025-02-14 13:57:59 - root - INFO - Sent 224 bytes of data: b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:58:01 - root - WARNING - No response from the board.
+2025-02-14 13:58:01 - root - INFO - Unknown breakpoint => 12, continuing.
+2025-02-14 13:58:01 - root - INFO - [Use Attempt] => sending b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:58:01 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:58:06 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:58:06 - root - INFO - Sending test case to the board.
+2025-02-14 13:58:06 - root - INFO - Sent 224 bytes of data: b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:58:08 - root - WARNING - No response from the board.
+2025-02-14 13:58:08 - root - INFO - Unknown breakpoint => 12, continuing.
+2025-02-14 13:58:08 - root - INFO - [Use Attempt] => sending b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:58:08 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:58:13 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:58:13 - root - INFO - Sending test case to the board.
+2025-02-14 13:58:13 - root - INFO - Sent 224 bytes of data: b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:58:15 - root - WARNING - No response from the board.
+2025-02-14 13:58:15 - root - INFO - Unknown breakpoint => 12, continuing.
+2025-02-14 13:58:15 - root - INFO - [Use Attempt] => sending b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:58:15 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:58:20 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:58:20 - root - INFO - Sending test case to the board.
+2025-02-14 13:58:20 - root - INFO - Sent 224 bytes of data: b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:58:22 - root - WARNING - No response from the board.
+2025-02-14 13:58:22 - root - INFO - Unknown breakpoint => 12, continuing.
+2025-02-14 13:58:22 - root - INFO - [Use Attempt] => sending b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:58:22 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:58:27 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:58:27 - root - INFO - Sending test case to the board.
+2025-02-14 13:58:27 - root - INFO - Sent 224 bytes of data: b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:58:29 - root - WARNING - No response from the board.
+2025-02-14 13:58:29 - root - INFO - Unknown breakpoint => 12, continuing.
+2025-02-14 13:58:29 - root - INFO - [Use Attempt] => sending b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:58:29 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:58:34 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:58:34 - root - INFO - Sending test case to the board.
+2025-02-14 13:58:34 - root - INFO - Sent 224 bytes of data: b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:58:36 - root - WARNING - No response from the board.
+2025-02-14 13:58:36 - root - INFO - Unknown breakpoint => 12, continuing.
+2025-02-14 13:58:36 - root - INFO - [Use Attempt] => sending b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:58:36 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:58:41 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:58:41 - root - INFO - Sending test case to the board.
+2025-02-14 13:58:41 - root - INFO - Sent 224 bytes of data: b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:58:43 - root - WARNING - No response from the board.
+2025-02-14 13:58:43 - root - INFO - Unknown breakpoint => 12, continuing.
+2025-02-14 13:58:43 - root - INFO - [Use Attempt] => sending b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:58:43 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:58:48 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:58:48 - root - INFO - Sending test case to the board.
+2025-02-14 13:58:48 - root - INFO - Sent 224 bytes of data: b'1E 00 00 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{J{{{{{{{{{{{{{{{{{((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{{((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((({{{{{{{{{{{{{{{{{{{{00 62 75\n'
+2025-02-14 13:58:49 - root - INFO - Stopped by user.
+2025-02-14 13:58:49 - fuzzing.coverage_manager - INFO - CoverageManager SHM removed.
+2025-02-14 13:58:50 - root - INFO - === Starting main with 'one testcase until def/use triggers' ===
+2025-02-14 13:58:50 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-02-14 13:58:51 - root - INFO - Initial stop => reason=stopped, no reason given, payload={'type': 'notify', 'message': 'stopped', 'payload': {'frame': {'addr': '0x000818b6', 'func': 'GetTickCount', 'args': [], 'arch': 'armv7'}, 'thread-id': '1', 'stopped-threads': 'all'}, 'token': None, 'stream': 'stdout'}
+2025-02-14 13:58:51 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-14 13:58:53 - root - INFO - === Starting Round #1 ===
+2025-02-14 13:58:53 - root - INFO - Round #1 => test_data=b'1E 00 00 00 62 75\n'
+2025-02-14 13:58:58 - root - INFO - Deleted all breakpoints.
+2025-02-14 13:58:58 - root - INFO - Setting breakpoint at 0x8237d
+2025-02-14 13:58:58 - root - INFO - Breakpoint set at 0x8237d, bkptno=2
+2025-02-14 13:58:58 - root - INFO - Setting breakpoint at 0x80559
+2025-02-14 13:58:58 - root - INFO - Breakpoint set at 0x80559, bkptno=3
+2025-02-14 13:58:58 - root - INFO - Setting breakpoint at 0x80121
+2025-02-14 13:58:58 - root - INFO - Breakpoint set at 0x80121, bkptno=4
+2025-02-14 13:58:58 - root - INFO - Setting breakpoint at 0x80691
+2025-02-14 13:58:58 - root - INFO - Breakpoint set at 0x80691, bkptno=5
+2025-02-14 13:58:58 - root - INFO - Setting breakpoint at 0x80641
+2025-02-14 13:58:58 - root - INFO - Breakpoint set at 0x80641, bkptno=6
+2025-02-14 13:58:58 - root - INFO - Setting breakpoint at 0x8062d
+2025-02-14 13:58:58 - root - INFO - Breakpoint set at 0x8062d, bkptno=7
+2025-02-14 13:58:58 - root - INFO - [DEF chunk attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-14 13:58:58 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:59:03 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:59:03 - root - INFO - Sending test case to the board.
+2025-02-14 13:59:03 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-14 13:59:05 - root - WARNING - No response from the board.
+2025-02-14 13:59:05 - root - INFO - Def triggered => 0x8062d
+2025-02-14 13:59:05 - root - INFO - Removed breakpoint id=7
+2025-02-14 13:59:05 - root - INFO - Handling uses for def=0x8062d. Found 3 uses.
+2025-02-14 13:59:05 - root - INFO - Setting breakpoint at 0x80631
+2025-02-14 13:59:05 - root - INFO - Breakpoint set at 0x80631, bkptno=8
+2025-02-14 13:59:05 - root - INFO - Setting breakpoint at 0x8063b
+2025-02-14 13:59:05 - root - INFO - Breakpoint set at 0x8063b, bkptno=9
+2025-02-14 13:59:05 - root - INFO - Setting breakpoint at 0x80641
+2025-02-14 13:59:05 - root - INFO - Breakpoint set at 0x80641, bkptno=10
+2025-02-14 13:59:05 - root - INFO - [Use Attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-14 13:59:05 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:59:10 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:59:10 - root - INFO - Sending test case to the board.
+2025-02-14 13:59:10 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-14 13:59:12 - root - WARNING - No response from the board.
+2025-02-14 13:59:15 - root - INFO - No use triggered this attempt.
+2025-02-14 13:59:15 - fuzzing.coverage_manager - INFO - New coverage detected.
+2025-02-14 13:59:15 - root - INFO - New coverage from uses => add input to corpus.
+2025-02-14 13:59:20 - root - INFO - Removed breakpoint id=8
+2025-02-14 13:59:20 - root - INFO - Removed breakpoint id=9
+2025-02-14 13:59:20 - root - INFO - Removed breakpoint id=10
+2025-02-14 13:59:20 - root - INFO - End of use chunk, continuing to next chunk.
+2025-02-14 13:59:20 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-14 13:59:21 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-14 13:59:21 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-14 13:59:22 - root - INFO - [DEF chunk attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-14 13:59:22 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:59:27 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:59:27 - root - INFO - Sending test case to the board.
+2025-02-14 13:59:27 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-14 13:59:29 - root - WARNING - No response from the board.
+2025-02-14 13:59:32 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-14 13:59:37 - root - INFO - Removed breakpoint id=2
+2025-02-14 13:59:37 - root - INFO - Removed breakpoint id=3
+2025-02-14 13:59:37 - root - INFO - Removed breakpoint id=4
+2025-02-14 13:59:37 - root - INFO - Removed breakpoint id=5
+2025-02-14 13:59:37 - root - INFO - Removed breakpoint id=6
+2025-02-14 13:59:37 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-14 13:59:37 - root - INFO - End of round #1, coverage reset.
+
+2025-02-14 13:59:37 - root - INFO - === Starting Round #2 ===
+2025-02-14 13:59:37 - root - INFO - Round #2 => test_data=b'1E 00 00 00 62 75\n'
+2025-02-14 13:59:42 - root - INFO - Deleted all breakpoints.
+2025-02-14 13:59:42 - root - INFO - Setting breakpoint at 0x80e61
+2025-02-14 13:59:42 - root - INFO - Breakpoint set at 0x80e61, bkptno=11
+2025-02-14 13:59:42 - root - INFO - Setting breakpoint at 0x801f1
+2025-02-14 13:59:42 - root - INFO - Breakpoint set at 0x801f1, bkptno=12
+2025-02-14 13:59:42 - root - INFO - Setting breakpoint at 0x80121
+2025-02-14 13:59:42 - root - INFO - Breakpoint set at 0x80121, bkptno=13
+2025-02-14 13:59:42 - root - INFO - Setting breakpoint at 0x80685
+2025-02-14 13:59:42 - root - INFO - Breakpoint set at 0x80685, bkptno=14
+2025-02-14 13:59:42 - root - INFO - Setting breakpoint at 0x81ca7
+2025-02-14 13:59:42 - root - INFO - Breakpoint set at 0x81ca7, bkptno=15
+2025-02-14 13:59:42 - root - INFO - Setting breakpoint at 0x80731
+2025-02-14 13:59:42 - root - INFO - Breakpoint set at 0x80731, bkptno=16
+2025-02-14 13:59:42 - root - INFO - [DEF chunk attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-14 13:59:42 - root - INFO - Waiting for the board to request input...
+2025-02-14 13:59:47 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 13:59:47 - root - INFO - Sending test case to the board.
+2025-02-14 13:59:47 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-14 13:59:49 - root - WARNING - No response from the board.
+2025-02-14 13:59:52 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-14 13:59:57 - root - INFO - Removed breakpoint id=11
+2025-02-14 13:59:57 - root - INFO - Removed breakpoint id=12
+2025-02-14 13:59:57 - root - INFO - Removed breakpoint id=13
+2025-02-14 13:59:57 - root - INFO - Removed breakpoint id=14
+2025-02-14 13:59:57 - root - INFO - Removed breakpoint id=15
+2025-02-14 13:59:57 - root - INFO - Removed breakpoint id=16
+2025-02-14 13:59:57 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-14 13:59:57 - root - INFO - End of round #2, coverage reset.
+
+2025-02-14 13:59:57 - root - INFO - === Starting Round #3 ===
+2025-02-14 13:59:57 - root - INFO - Round #3 => test_data=b'1K 00* 01 00 6\xd9 75\n'
+2025-02-14 14:00:02 - root - INFO - Deleted all breakpoints.
+2025-02-14 14:00:02 - root - INFO - Setting breakpoint at 0x805c3
+2025-02-14 14:00:02 - root - INFO - Breakpoint set at 0x805c3, bkptno=17
+2025-02-14 14:00:02 - root - INFO - Setting breakpoint at 0x81c83
+2025-02-14 14:00:02 - root - INFO - Breakpoint set at 0x81c83, bkptno=18
+2025-02-14 14:00:02 - root - INFO - Setting breakpoint at 0x806e9
+2025-02-14 14:00:02 - root - INFO - Breakpoint set at 0x806e9, bkptno=19
+2025-02-14 14:00:02 - root - INFO - Setting breakpoint at 0x81c95
+2025-02-14 14:00:02 - root - INFO - Breakpoint set at 0x81c95, bkptno=20
+2025-02-14 14:00:02 - root - INFO - Setting breakpoint at 0x80771
+2025-02-14 14:00:02 - root - INFO - Breakpoint set at 0x80771, bkptno=21
+2025-02-14 14:00:02 - root - INFO - Setting breakpoint at 0x80559
+2025-02-14 14:00:02 - root - INFO - Breakpoint set at 0x80559, bkptno=22
+2025-02-14 14:00:02 - root - INFO - [DEF chunk attempt] => sending b'1K 00* 01 00 6\xd9 75\n'
+2025-02-14 14:00:02 - root - INFO - Waiting for the board to request input...
+2025-02-14 14:00:07 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 14:00:07 - root - INFO - Sending test case to the board.
+2025-02-14 14:00:07 - root - INFO - Sent 19 bytes of data: b'1K 00* 01 00 6\xd9 75\n'
+2025-02-14 14:00:09 - root - WARNING - No response from the board.
+2025-02-14 14:00:12 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-14 14:00:17 - root - INFO - Removed breakpoint id=17
+2025-02-14 14:00:17 - root - INFO - Removed breakpoint id=18
+2025-02-14 14:00:17 - root - INFO - Removed breakpoint id=19
+2025-02-14 14:00:17 - root - INFO - Removed breakpoint id=20
+2025-02-14 14:00:17 - root - INFO - Removed breakpoint id=21
+2025-02-14 14:00:17 - root - INFO - Removed breakpoint id=22
+2025-02-14 14:00:17 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-14 14:00:17 - root - INFO - End of round #3, coverage reset.
+
+2025-02-14 14:00:17 - root - INFO - === Starting Round #4 ===
+2025-02-14 14:00:17 - root - INFO - Round #4 => test_data=b'1E 00 00 00 62 75\n'
+2025-02-14 14:00:22 - root - INFO - Deleted all breakpoints.
+2025-02-14 14:00:22 - root - INFO - Setting breakpoint at 0x80641
+2025-02-14 14:00:22 - root - INFO - Breakpoint set at 0x80641, bkptno=23
+2025-02-14 14:00:22 - root - INFO - Setting breakpoint at 0x8061b
+2025-02-14 14:00:22 - root - INFO - Breakpoint set at 0x8061b, bkptno=24
+2025-02-14 14:00:22 - root - INFO - Setting breakpoint at 0x80685
+2025-02-14 14:00:22 - root - INFO - Breakpoint set at 0x80685, bkptno=25
+2025-02-14 14:00:22 - root - INFO - Setting breakpoint at 0x801cf
+2025-02-14 14:00:22 - root - INFO - Breakpoint set at 0x801cf, bkptno=26
+2025-02-14 14:00:22 - root - INFO - Setting breakpoint at 0x80621
+2025-02-14 14:00:22 - root - INFO - Breakpoint set at 0x80621, bkptno=27
+2025-02-14 14:00:22 - root - INFO - Setting breakpoint at 0x801e3
+2025-02-14 14:00:22 - root - INFO - Breakpoint set at 0x801e3, bkptno=28
+2025-02-14 14:00:22 - root - INFO - [DEF chunk attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-14 14:00:22 - root - INFO - Waiting for the board to request input...
+2025-02-14 14:00:27 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 14:00:27 - root - INFO - Sending test case to the board.
+2025-02-14 14:00:27 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-14 14:00:29 - root - WARNING - No response from the board.
+2025-02-14 14:00:29 - root - INFO - Def triggered => 0x801cf
+2025-02-14 14:00:29 - root - INFO - Removed breakpoint id=26
+2025-02-14 14:00:29 - root - INFO - Handling uses for def=0x801cf. Found 3 uses.
+2025-02-14 14:00:29 - root - INFO - Setting breakpoint at 0x801ed
+2025-02-14 14:00:29 - root - INFO - Breakpoint set at 0x801ed, bkptno=29
+2025-02-14 14:00:29 - root - INFO - Setting breakpoint at 0x801f1
+2025-02-14 14:00:29 - root - INFO - Breakpoint set at 0x801f1, bkptno=30
+2025-02-14 14:00:29 - root - INFO - Setting breakpoint at 0x801f3
+2025-02-14 14:00:29 - root - INFO - Breakpoint set at 0x801f3, bkptno=31
+2025-02-14 14:00:29 - root - INFO - [Use Attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-14 14:00:29 - root - INFO - Waiting for the board to request input...
+2025-02-14 14:00:34 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 14:00:34 - root - INFO - Sending test case to the board.
+2025-02-14 14:00:34 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-14 14:00:36 - root - WARNING - No response from the board.
+2025-02-14 14:00:36 - root - INFO - Unknown breakpoint => 27, continuing.
+2025-02-14 14:00:36 - root - INFO - [Use Attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-14 14:00:36 - root - INFO - Waiting for the board to request input...
+2025-02-14 14:00:41 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 14:00:41 - root - INFO - Sending test case to the board.
+2025-02-14 14:00:41 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-14 14:00:43 - root - WARNING - No response from the board.
+2025-02-14 14:00:43 - root - INFO - Unknown breakpoint => 28, continuing.
+2025-02-14 14:00:43 - root - INFO - [Use Attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-14 14:00:43 - root - INFO - Waiting for the board to request input...
+2025-02-14 14:00:48 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 14:00:48 - root - INFO - Sending test case to the board.
+2025-02-14 14:00:48 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-14 14:00:50 - root - WARNING - No response from the board.
+2025-02-14 14:00:50 - root - INFO - Unknown breakpoint => 27, continuing.
+2025-02-14 14:00:50 - root - INFO - [Use Attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-14 14:00:50 - root - INFO - Waiting for the board to request input...
+2025-02-14 14:00:55 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 14:00:55 - root - INFO - Sending test case to the board.
+2025-02-14 14:00:55 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-14 14:00:57 - root - WARNING - No response from the board.
+2025-02-14 14:00:57 - root - INFO - Unknown breakpoint => 27, continuing.
+2025-02-14 14:00:57 - root - INFO - [Use Attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-14 14:00:57 - root - INFO - Waiting for the board to request input...
+2025-02-14 14:01:02 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 14:01:02 - root - INFO - Sending test case to the board.
+2025-02-14 14:01:02 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-14 14:01:04 - root - WARNING - No response from the board.
+2025-02-14 14:01:04 - root - INFO - Unknown breakpoint => 27, continuing.
+2025-02-14 14:01:04 - root - INFO - [Use Attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-14 14:01:04 - root - INFO - Waiting for the board to request input...
+2025-02-14 14:01:09 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 14:01:09 - root - INFO - Sending test case to the board.
+2025-02-14 14:01:09 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-14 14:01:11 - root - WARNING - No response from the board.
+2025-02-14 14:01:11 - root - INFO - Unknown breakpoint => 28, continuing.
+2025-02-14 14:01:11 - root - INFO - [Use Attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-14 14:01:11 - root - INFO - Waiting for the board to request input...
+2025-02-14 14:01:16 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-14 14:01:16 - root - INFO - Sending test case to the board.
+2025-02-14 14:01:16 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-14 14:01:18 - root - WARNING - No response from the board.
+2025-02-14 14:01:18 - root - WARNING - Target exited => treat as crash for uses, restarting.
+2025-02-14 14:01:18 - root - WARNING - === Target crash detected ===
+2025-02-14 14:01:18 - root - WARNING - Saving crash testcase as: output_buggy/crashes/1739541678_no_stacktrace
+2025-02-14 14:01:18 - root - INFO - Restarting program from scratch...
+2025-02-14 14:01:18 - root - WARNING - Could not run after restart; continuing.
+2025-02-14 14:01:18 - root - WARNING - continue_execution() error: The program is not being run., Trying continue_execution() again in 0.5 seconds
+2025-02-14 14:01:19 - root - WARNING - continue_execution() error: The program is not being run., Trying continue_execution() again in 0.5 seconds
+2025-02-14 14:01:19 - root - WARNING - continue_execution() error: The program is not being run., Trying continue_execution() again in 0.5 seconds
+2025-02-14 14:01:20 - root - WARNING - continue_execution() error: The program is not being run., Trying continue_execution() again in 0.5 seconds
+2025-02-14 14:01:20 - root - WARNING - continue_execution() error: The program is not being run., Trying continue_execution() again in 0.5 seconds
+2025-02-14 14:01:21 - root - WARNING - continue_execution() error: The program is not being run., Trying continue_execution() again in 0.5 seconds
+2025-02-14 14:01:21 - fuzzing.coverage_manager - INFO - New coverage detected.
+2025-02-14 14:01:21 - root - INFO - New coverage from uses => add input to corpus.
+2025-02-14 14:01:26 - root - WARNING - Interrupt timed out, target may not have halted.
+2025-02-14 14:01:36 - root - WARNING - Interrupt timed out, target may not have halted.
+2025-02-14 14:01:46 - root - WARNING - Interrupt timed out, target may not have halted.
+2025-02-14 14:01:51 - fuzzing.coverage_manager - INFO - CoverageManager SHM removed.

@@ -18,6 +18,7 @@ from communication.serial_comm import send_test_case, process_response
 from utils.file_parsing import parse_def_use_file
 
 HW_BREAKPOINT_LIMIT = 6
+# 6
 MAX_DEF_TRIES_PER_CHUNK = 1
 MAX_USE_TRIES = 1
 NUM_ROUNDS = 999999
@@ -99,7 +100,6 @@ def delete_all_breakpoints(gdb: GDB):
     else:
         logger.info("Deleted all breakpoints.")
 
-# [ADDED]
 def remove_breakpoints(gdb: GDB, bp_ids):
     """
     Removes only the specified list of breakpoint IDs from GDB.
@@ -125,6 +125,87 @@ def restart_program(gdb: GDB, elf_path: str):
     if reason == 'timed out':
         raise Exception("Program did not halt at main after restart.")
     gdb.continue_execution()
+
+def on_crash(gdb: GDB, test_data: bytes, crash_dir: str) -> None:
+    """
+    Enriched crash handler: tries to retrieve a stack trace and saves
+    the crashing input with some identifying info.
+    """
+    logger.warning("=== Target crash detected ===")
+    # Attempt to get a stacktrace
+    stacktrace_str = "no_stacktrace"
+    try:
+        resp = gdb.send('-stack-list-frames')
+        if 'payload' in resp and 'stack' in resp['payload']:
+            frames = resp['payload']['stack']
+            # Basic example: gather the addresses (limit to avoid huge filenames)
+            stack_addrs = [frame['addr'] for frame in frames]
+            # Join them up to some limit
+            short_trace = "_".join(stack_addrs[:4])  # just the first few frames
+            # Make it filename-safe:
+            short_trace = "".join(c for c in short_trace if c.isalnum() or c in '_')
+            stacktrace_str = short_trace if short_trace else "empty"
+    except Exception as e:
+        logger.warning(f"Could not retrieve stacktrace: {e}")
+
+    # Save the crashing input
+    # filename = f"{int(time.time())}_{stacktrace_str}"
+    # filepath = os.path.join(crash_dir, filename)
+    # os.makedirs(crash_dir, exist_ok=True)
+
+    # logger.warning(f"Saving crash testcase as: {filepath}")
+    # with open(filepath, 'wb') as f:
+    #     f.write(test_data)
+    if len(stacktrace) > 100:
+            stacktrace = stacktrace[0:100]
+        
+        # Make string os file name friendly 
+#     stacktrace = "".join([c for c in stacktrace if re.match(r'\w', c)])
+#     write_crashing_input(test_data, stacktrace_str)
+# def write_crashing_input(
+#             self,
+#             current_input: bytes,
+#             filename: str
+#     ) -> None:
+#         filepath = os.path.join(self.crashes_directory, filename)
+#         if os.path.isfile(filepath):
+#             log.info(f'Found duplicate crash with {current_input=}')
+#             return
+
+#         with open(filepath, 'wb') as f:
+#             log.info(f'New crash with {current_input=}')
+#             f.write(current_input)
+
+def on_timeout(gdb: GDB, test_data: bytes, timeout_dir: str) -> None:
+    """
+    Enriched timeout handler: forcibly halts, optionally collects stack info,
+    and stores the input in a dedicated 'timeouts' directory.
+    """
+    logger.warning("=== Timeout detected ===")
+    # Interrupt to gather any debug info
+    gdb.interrupt()
+    time.sleep(1)  # short wait for target to stop
+
+    stacktrace_str = "timeout_no_stacktrace"
+    try:
+        resp = gdb.send('-stack-list-frames')
+        if 'payload' in resp and 'stack' in resp['payload']:
+            frames = resp['payload']['stack']
+            stack_addrs = [frame['addr'] for frame in frames]
+            short_trace = "_".join(stack_addrs[:4])  # just the first few frames
+            short_trace = "".join(c for c in short_trace if c.isalnum() or c in '_')
+            stacktrace_str = short_trace if short_trace else "empty"
+    except Exception as e:
+        logger.warning(f"Could not retrieve stacktrace on timeout: {e}")
+
+    filename = f"{int(time.time())}_{stacktrace_str}"
+    filepath = os.path.join(timeout_dir, filename)
+    os.makedirs(timeout_dir, exist_ok=True)
+
+    logger.warning(f"Saving timeout testcase as: {filepath}")
+    with open(filepath, 'wb') as f:
+        f.write(test_data)
+
 
 def main():
     logger.info("=== Starting main with 'one testcase until def/use triggers' ===")
@@ -161,6 +242,7 @@ def main():
         return
 
     # Serial + Input generation
+    # restart_program(gdb, ELF_PATH)
     ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=SERIAL_TIMEOUT)
     time.sleep(2)
 
@@ -169,6 +251,9 @@ def main():
         seeds_directory=SEEDS_DIRECTORY,
         max_input_length=1024
     )
+
+    crash_dir = os.path.join(OUTPUT_DIRECTORY, "crashes")
+    timeout_dir = os.path.join(OUTPUT_DIRECTORY, "timeouts")
 
     try:
         round_count = 0
@@ -180,12 +265,9 @@ def main():
             test_data = input_gen.generate_input()
             logger.info(f"Round #{round_count} => test_data={test_data!r}")
 
-            # Weighted-random generator of all defs
             def_generator = get_defs_in_weighted_random_order(all_defs)
             done_with_round = False
-            #for current implement, the code run once the brekapoint is triggered, all the breakpoints will be deleted after that. which will cause the fuzzing miss some definitions at the same group. 
-            # the another problem is that for one testcase, it will only stop after the def is triggered, which will cause the testcase not to be tested for the other defs in the same group. and lack of the whole coverage map. 
-            #- the thing I need to do is that I need to fix the first problem and for second one, make for one testcase, it will iterate all the defs and related uses. after that, the next testcase will be tested.
+
             while not done_with_round:
                 # chunk up to 6
                 chunk = []
@@ -200,11 +282,9 @@ def main():
                     logger.info("Exhausted all defs in this pass => new test next round.")
                     break
 
-                # [MODIFIED] Instead of deleting all breakpoints each time, we only
-                # do it once before setting a new chunk. This helps keep GDB clean
                 force_halt_if_running(gdb)
                 delete_all_breakpoints(gdb)
-                
+
                 # Create a mapping from breakpoint_id -> (def_addr, uses_list)
                 def_bp_map = {}
                 for def_addr, uses_list in chunk:
@@ -213,11 +293,16 @@ def main():
 
                 gdb.continue_execution()
                 no_trigger_count = 0
-                # We'll attempt to trigger these chunk breakpoints for up to MAX_DEF_TRIES_PER_CHUNK times
-                # but we won't remove them all if only some triggers occur.
+
                 while def_bp_map and no_trigger_count < MAX_DEF_TRIES_PER_CHUNK:
                     logger.info(f"[DEF chunk attempt] => sending {test_data!r}")
+                    # try:
                     resp = send_test_case(ser, test_data)
+                    # except RuntimeError as e:
+                    #     if str(e) == "BoardStuckTimeout":
+                    #         logger.warning("Board stuck => treat as crash.")
+                    #         on_crash(gdb, test_data, crash_dir)
+                    #         restart_program(gdb, ELF_PATH)
                     process_response(resp)
 
                     reason, payload = gdb.wait_for_stop(timeout=3)
@@ -229,55 +314,51 @@ def main():
                             logger.info(f"Def triggered => {def_addr_str}")
                             coverage_mgr.update_coverage_for_def(def_addr_str)
 
-                            # remove only this triggered breakpoint
                             remove_breakpoints(gdb, [payload])
                             del def_bp_map[payload]
 
-                            # Because something triggered, reset the no-trigger count
                             no_trigger_count = 0
 
-                            # Immediately handle uses for this def
                             force_halt_if_running(gdb)
                             if uses_list:
                                 _handle_uses_for_def(
                                     gdb, ser, test_data,
                                     def_addr_str, uses_list,
-                                    coverage_mgr, input_gen
+                                    coverage_mgr, input_gen, crash_dir
                                 )
 
-                            # Continue execution so we can see if any other def triggers
-                            if def_bp_map:  # If there are still more def BPs left
+                            if def_bp_map:
                                 gdb.continue_execution()
 
                         else:
                             logger.debug(f"Unknown breakpoint => {payload}, continuing.")
                             gdb.continue_execution()
-                            # Possibly this means a leftover or invalid ID
 
                     elif reason == 'timed out':
                         logger.debug("No def triggered this attempt.")
-                        no_trigger_count += 1  # increment because we got no triggers
+                        no_trigger_count += 1
+
                     elif reason in ('exited','crashed'):
-                        logger.warning("Target crashed => restart.")
+                        logger.warning(f"Target {reason} => treat as crash, restarting.")
+                        on_crash(gdb, test_data, crash_dir)
                         restart_program(gdb, ELF_PATH)
-                        # Possibly record crash input
-                        logger.warning(f"Target {reason}. Logging input and restarting.")
-                        # Save the crashing input
-                        crash_dir = os.path.join(OUTPUT_DIRECTORY, 'crashes')
-                        os.makedirs(crash_dir, exist_ok=True)
-                        crash_file = os.path.join(crash_dir, str(int(time.time())))
-                        with open(crash_file, 'wb') as f:
-                            f.write(test_data)
                         break
+
                     else:
-                        logger.info(f"Unknown reason => {reason}, continuing.")
+                        # Possibly an interrupt or any other reason
+                        logger.warning(f"Unexpected stop => reason={reason}, payload={payload}")
+
+                        if reason == 'interrupt':
+                            logger.warning("Interrupt => treat as crash.")
+                            on_crash(gdb, test_data, crash_dir)
+                        # on_crash(gdb, test_data, crash_dir)
                         gdb.continue_execution()
 
-                    # If we have no breakpoints left in def_bp_map => chunk is done
+                    # If no BPs left => chunk is done
                     if not def_bp_map:
                         break
 
-                # [NEW LOGIC FOR COVERAGE AFTER DEFS]
+                # Coverage check after finishing chunk attempts
                 timestamp = int(time.time())
                 input_gen.report_address_reached(test_data, address=0, timestamp=timestamp)
 
@@ -286,22 +367,18 @@ def main():
                     input_gen.add_corpus_entry(test_data, address=0, timestamp=timestamp)
                     input_gen.choose_new_baseline_input()
 
-                # Cleanup at chunk completion. If some defs never triggered, we discard them
-                # or keep them. For now let's remove them:
+                # Cleanup leftover breakpoints
                 force_halt_if_running(gdb)
-                remaining_bp_ids = list(def_bp_map.keys())
-                if remaining_bp_ids:
-                    remove_breakpoints(gdb, remaining_bp_ids)
+                if def_bp_map:
+                    remove_breakpoints(gdb, list(def_bp_map.keys()))
                     def_bp_map.clear()
 
                 gdb.continue_execution()
 
-                # If we had a triggered def or we exhausted tries, we've completed this chunk
-                # => Move to next chunk or next round
                 done_with_round = True
 
             coverage_mgr.reset_coverage()
-            logger.info(f"End of round #{round_count}, coverage reset. Next pass.\n")
+            logger.info(f"End of round #{round_count}, coverage reset.\n")
 
     except KeyboardInterrupt:
         logger.info("Stopped by user.")
@@ -311,13 +388,12 @@ def main():
         gdb.stop()
         logger.info("Clean exit from main().")
 
-
-# [ADDED]
 def _handle_uses_for_def(gdb, ser, test_data, def_addr_str, uses_list,
-                         coverage_mgr, input_gen):
+                         coverage_mgr, input_gen, crash_dir):
     logger.info(f"Handling uses for def={def_addr_str}. Found {len(uses_list)} uses.")
     uses_sorted = get_closest_uses(def_addr_str, uses_list)
     uses_idx = 0
+
     any_use_triggered = False
 
     while uses_idx < len(uses_sorted):
@@ -326,7 +402,6 @@ def _handle_uses_for_def(gdb, ser, test_data, def_addr_str, uses_list,
 
         force_halt_if_running(gdb)
         # delete_all_breakpoints(gdb)
-        #for now, there're 5 breakpoints set at defs, so we need to delete all the breakpoints after the def is triggered. and keep track back to the def after iterate all the uses. 
 
         uses_bp_map = {}
         for use_addr_str in uses_chunk:
@@ -335,7 +410,6 @@ def _handle_uses_for_def(gdb, ser, test_data, def_addr_str, uses_list,
 
         gdb.continue_execution()
 
-        # We'll try until we run out of BPs or no triggers in a row
         no_trigger_count = 0
         while uses_bp_map and no_trigger_count < MAX_USE_TRIES:
             logger.info(f"[Use Attempt] => sending {test_data!r}")
@@ -354,23 +428,28 @@ def _handle_uses_for_def(gdb, ser, test_data, def_addr_str, uses_list,
                     gdb.continue_execution()
 
                     any_use_triggered = True
-                    no_trigger_count = 0  # reset since something triggered
+                    no_trigger_count = 0
                 else:
-                    logger.info(f"Unknown breakpoint => continuing.",payload2)
+                    logger.info(f"Unknown breakpoint => {payload2}, continuing.")
+                    logger.info(f"{reason2}, {payload2}")
                     gdb.continue_execution()
 
             elif reason2 == 'timed out':
                 logger.info("No use triggered this attempt.")
                 no_trigger_count += 1
+
             elif reason2 in ('exited','crashed'):
-                logger.warning("Target crashed => restart.")
+                logger.warning(f"Target {reason2} => treat as crash for uses, restarting.")
+                
+                on_crash(gdb, test_data, crash_dir)
+
                 restart_program(gdb, ELF_PATH)
                 break
             else:
                 logger.info(f"Unknown reason => {reason2}, continuing.")
                 gdb.continue_execution()
 
-        # coverage after finishing a chunk
+        # Coverage check
         timestamp = int(time.time())
         input_gen.report_address_reached(test_data, address=0, timestamp=timestamp)
 
@@ -383,13 +462,11 @@ def _handle_uses_for_def(gdb, ser, test_data, def_addr_str, uses_list,
         if uses_bp_map:
             remove_breakpoints(gdb, list(uses_bp_map.keys()))
             uses_bp_map.clear()
-        logger.info("start continue")
-        gdb.continue_execution()
+
         logger.info(f"End of use chunk, continuing to next chunk.")
+        gdb.continue_execution()
 
     return any_use_triggered
-
-
 
 if __name__ == '__main__':
     main()

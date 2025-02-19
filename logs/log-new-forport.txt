@@ -1,0 +1,1594 @@
+2025-02-12 09:32:01 - root - INFO - === Starting main with 'one testcase until def/use triggers' ===
+2025-02-12 09:32:01 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-02-12 09:32:01 - root - INFO - Initial stop => reason=stopped, no reason given, payload={'type': 'notify', 'message': 'stopped', 'payload': {'frame': {'addr': '0x00081702', 'func': 'delayMS', 'args': [{'name': 'millis', 'value': '300'}], 'file': '/home/kai/Arduino/libraries/FreeRTOS_ARM/src/FreeRTOS_ARM.c', 'fullname': '/home/kai/Arduino/libraries/FreeRTOS_ARM/src/FreeRTOS_ARM.c', 'line': '16', 'arch': 'armv7'}, 'thread-id': '1', 'stopped-threads': 'all'}, 'token': None, 'stream': 'stdout'}
+2025-02-12 09:32:01 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-12 09:32:03 - root - INFO - === Starting Round #1 ===
+2025-02-12 09:32:03 - root - INFO - Round #1 => test_data=b'{"test": 123, "valid": true}'
+2025-02-12 09:32:03 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:32:03 - root - INFO - Setting breakpoint at 0x84f17
+2025-02-12 09:32:03 - root - INFO - Breakpoint set at 0x84f17, bkptno=2
+2025-02-12 09:32:03 - root - INFO - Setting breakpoint at 0x82efb
+2025-02-12 09:32:03 - root - INFO - Breakpoint set at 0x82efb, bkptno=3
+2025-02-12 09:32:03 - root - INFO - Setting breakpoint at 0x85aa1
+2025-02-12 09:32:03 - root - INFO - Breakpoint set at 0x85aa1, bkptno=4
+2025-02-12 09:32:03 - root - INFO - Setting breakpoint at 0x806db
+2025-02-12 09:32:03 - root - INFO - Breakpoint set at 0x806db, bkptno=5
+2025-02-12 09:32:03 - root - INFO - Setting breakpoint at 0x82807
+2025-02-12 09:32:03 - root - INFO - Breakpoint set at 0x82807, bkptno=6
+2025-02-12 09:32:03 - root - INFO - Setting breakpoint at 0x82e81
+2025-02-12 09:32:03 - root - INFO - Breakpoint set at 0x82e81, bkptno=7
+2025-02-12 09:32:03 - root - INFO - [DEF chunk attempt] => sending b'{"test": 123, "valid": true}'
+2025-02-12 09:32:03 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:32:03 - root - INFO - Received data: b'A'
+2025-02-12 09:32:03 - root - INFO - Received request (A) from the board.
+2025-02-12 09:32:03 - root - INFO - Sending test case to the board.
+2025-02-12 09:32:03 - root - INFO - Sent 28 bytes of data: b'{"test": 123, "valid": true}'
+2025-02-12 09:32:03 - root - INFO - Received data: b'\x00\x19\x00\x00'
+2025-02-12 09:32:03 - root - INFO - Received data: b'\x00{"test":123,"valid":true}A'
+2025-02-12 09:32:03 - root - INFO - Received JSON data (25 bytes): {"test":123,"valid":true}
+2025-02-12 09:32:03 - root - WARNING - Target exited => treat as crash, restarting.
+2025-02-12 09:32:03 - root - WARNING - === Target crash detected ===
+2025-02-12 09:32:03 - root - WARNING - Saving crash testcase as: output/crashes/1739352723_no_stacktrace
+2025-02-12 09:32:03 - root - INFO - Restarting program from scratch...
+2025-02-12 09:32:03 - root - WARNING - Could not run after restart; continuing.
+2025-02-12 09:32:03 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-12 09:32:04 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-12 09:32:04 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-12 09:32:05 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-12 09:32:05 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-12 09:32:06 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-12 09:32:06 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:32:06 - root - INFO - Removed breakpoint id=2
+2025-02-12 09:32:06 - root - INFO - Removed breakpoint id=3
+2025-02-12 09:32:06 - root - INFO - Removed breakpoint id=4
+2025-02-12 09:32:06 - root - INFO - Removed breakpoint id=5
+2025-02-12 09:32:06 - root - INFO - Removed breakpoint id=6
+2025-02-12 09:32:06 - root - INFO - Removed breakpoint id=7
+2025-02-12 09:32:06 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:32:06 - root - INFO - End of round #1, coverage reset.
+
+2025-02-12 09:32:06 - root - INFO - === Starting Round #2 ===
+2025-02-12 09:32:06 - root - INFO - Round #2 => test_data=b'{"test": lid":tr ue}'
+2025-02-12 09:32:11 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:32:11 - root - INFO - Setting breakpoint at 0x82e81
+2025-02-12 09:32:11 - root - INFO - Breakpoint set at 0x82e81, bkptno=8
+2025-02-12 09:32:11 - root - INFO - Setting breakpoint at 0x82fad
+2025-02-12 09:32:11 - root - INFO - Breakpoint set at 0x82fad, bkptno=9
+2025-02-12 09:32:11 - root - INFO - Setting breakpoint at 0x8280d
+2025-02-12 09:32:11 - root - INFO - Breakpoint set at 0x8280d, bkptno=10
+2025-02-12 09:32:11 - root - INFO - Setting breakpoint at 0x8634f
+2025-02-12 09:32:11 - root - INFO - Breakpoint set at 0x8634f, bkptno=11
+2025-02-12 09:32:11 - root - INFO - Setting breakpoint at 0x85ac7
+2025-02-12 09:32:11 - root - INFO - Breakpoint set at 0x85ac7, bkptno=12
+2025-02-12 09:32:11 - root - INFO - Setting breakpoint at 0x80c13
+2025-02-12 09:32:11 - root - INFO - Breakpoint set at 0x80c13, bkptno=13
+2025-02-12 09:32:11 - root - INFO - [DEF chunk attempt] => sending b'{"test": lid":tr ue}'
+2025-02-12 09:32:11 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:32:13 - root - INFO - Received data: b'A'
+2025-02-12 09:32:13 - root - INFO - Received request (A) from the board.
+2025-02-12 09:32:13 - root - INFO - Sending test case to the board.
+2025-02-12 09:32:13 - root - INFO - Sent 20 bytes of data: b'{"test": lid":tr ue}'
+2025-02-12 09:32:13 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:32:13 - root - ERROR - Received error code: 3
+2025-02-12 09:32:16 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:32:22 - root - INFO - Removed breakpoint id=8
+2025-02-12 09:32:22 - root - INFO - Removed breakpoint id=9
+2025-02-12 09:32:22 - root - INFO - Removed breakpoint id=10
+2025-02-12 09:32:22 - root - INFO - Removed breakpoint id=11
+2025-02-12 09:32:22 - root - INFO - Removed breakpoint id=12
+2025-02-12 09:32:22 - root - INFO - Removed breakpoint id=13
+2025-02-12 09:32:22 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:32:22 - root - INFO - End of round #2, coverage reset.
+
+2025-02-12 09:32:22 - root - INFO - === Starting Round #3 ===
+2025-02-12 09:32:22 - root - INFO - Round #3 => test_data=b'{"test": 123, "valid": true}'
+2025-02-12 09:32:27 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:32:27 - root - INFO - Setting breakpoint at 0x806db
+2025-02-12 09:32:27 - root - INFO - Breakpoint set at 0x806db, bkptno=14
+2025-02-12 09:32:27 - root - INFO - Setting breakpoint at 0x85adb
+2025-02-12 09:32:27 - root - INFO - Breakpoint set at 0x85adb, bkptno=15
+2025-02-12 09:32:27 - root - INFO - Setting breakpoint at 0x8280d
+2025-02-12 09:32:27 - root - INFO - Breakpoint set at 0x8280d, bkptno=16
+2025-02-12 09:32:27 - root - INFO - Setting breakpoint at 0x825eb
+2025-02-12 09:32:27 - root - INFO - Breakpoint set at 0x825eb, bkptno=17
+2025-02-12 09:32:27 - root - INFO - Setting breakpoint at 0x85ab7
+2025-02-12 09:32:27 - root - INFO - Breakpoint set at 0x85ab7, bkptno=18
+2025-02-12 09:32:27 - root - INFO - Setting breakpoint at 0x80b91
+2025-02-12 09:32:27 - root - INFO - Breakpoint set at 0x80b91, bkptno=19
+2025-02-12 09:32:27 - root - INFO - [DEF chunk attempt] => sending b'{"test": 123, "valid": true}'
+2025-02-12 09:32:27 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:32:29 - root - INFO - Received data: b'A'
+2025-02-12 09:32:29 - root - INFO - Received request (A) from the board.
+2025-02-12 09:32:29 - root - INFO - Sending test case to the board.
+2025-02-12 09:32:29 - root - INFO - Sent 28 bytes of data: b'{"test": 123, "valid": true}'
+2025-02-12 09:32:29 - root - INFO - Received data: b'\x00\x19\x00\x00\x00{"test":123,"valid":true}A'
+2025-02-12 09:32:29 - root - INFO - Received JSON data (25 bytes): {"test":123,"valid":true}
+2025-02-12 09:32:32 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:32:37 - root - INFO - Removed breakpoint id=14
+2025-02-12 09:32:37 - root - INFO - Removed breakpoint id=15
+2025-02-12 09:32:37 - root - INFO - Removed breakpoint id=16
+2025-02-12 09:32:37 - root - INFO - Removed breakpoint id=17
+2025-02-12 09:32:37 - root - INFO - Removed breakpoint id=18
+2025-02-12 09:32:37 - root - INFO - Removed breakpoint id=19
+2025-02-12 09:32:37 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:32:37 - root - INFO - End of round #3, coverage reset.
+
+2025-02-12 09:32:37 - root - INFO - === Starting Round #4 ===
+2025-02-12 09:32:37 - root - INFO - Round #4 => test_data=b'{"test": lid":tr ue}'
+2025-02-12 09:32:42 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:32:42 - root - INFO - Setting breakpoint at 0x80665
+2025-02-12 09:32:42 - root - INFO - Breakpoint set at 0x80665, bkptno=20
+2025-02-12 09:32:42 - root - INFO - Setting breakpoint at 0x81b67
+2025-02-12 09:32:42 - root - INFO - Breakpoint set at 0x81b67, bkptno=21
+2025-02-12 09:32:42 - root - INFO - Setting breakpoint at 0x84f03
+2025-02-12 09:32:42 - root - INFO - Breakpoint set at 0x84f03, bkptno=22
+2025-02-12 09:32:42 - root - INFO - Setting breakpoint at 0x8146d
+2025-02-12 09:32:42 - root - INFO - Breakpoint set at 0x8146d, bkptno=23
+2025-02-12 09:32:42 - root - INFO - Setting breakpoint at 0x85abb
+2025-02-12 09:32:42 - root - INFO - Breakpoint set at 0x85abb, bkptno=24
+2025-02-12 09:32:42 - root - INFO - Setting breakpoint at 0x86a65
+2025-02-12 09:32:42 - root - INFO - Breakpoint set at 0x86a65, bkptno=25
+2025-02-12 09:32:42 - root - INFO - [DEF chunk attempt] => sending b'{"test": lid":tr ue}'
+2025-02-12 09:32:42 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:32:44 - root - INFO - Received data: b'A'
+2025-02-12 09:32:44 - root - INFO - Received request (A) from the board.
+2025-02-12 09:32:44 - root - INFO - Sending test case to the board.
+2025-02-12 09:32:44 - root - INFO - Sent 20 bytes of data: b'{"test": lid":tr ue}'
+2025-02-12 09:32:44 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:32:44 - root - ERROR - Received error code: 3
+2025-02-12 09:32:47 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:32:52 - root - INFO - Removed breakpoint id=20
+2025-02-12 09:32:52 - root - INFO - Removed breakpoint id=21
+2025-02-12 09:32:52 - root - INFO - Removed breakpoint id=22
+2025-02-12 09:32:52 - root - INFO - Removed breakpoint id=23
+2025-02-12 09:32:52 - root - INFO - Removed breakpoint id=24
+2025-02-12 09:32:52 - root - INFO - Removed breakpoint id=25
+2025-02-12 09:32:52 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:32:52 - root - INFO - End of round #4, coverage reset.
+
+2025-02-12 09:32:52 - root - INFO - === Starting Round #5 ===
+2025-02-12 09:32:52 - root - INFO - Round #5 => test_data=b'{test": lid":tr u)}?'
+2025-02-12 09:32:57 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:32:57 - root - INFO - Setting breakpoint at 0x829e3
+2025-02-12 09:32:57 - root - INFO - Breakpoint set at 0x829e3, bkptno=26
+2025-02-12 09:32:57 - root - INFO - Setting breakpoint at 0x83867
+2025-02-12 09:32:57 - root - INFO - Breakpoint set at 0x83867, bkptno=27
+2025-02-12 09:32:57 - root - INFO - Setting breakpoint at 0x806d5
+2025-02-12 09:32:57 - root - INFO - Breakpoint set at 0x806d5, bkptno=28
+2025-02-12 09:32:57 - root - INFO - Setting breakpoint at 0x82807
+2025-02-12 09:32:57 - root - INFO - Breakpoint set at 0x82807, bkptno=29
+2025-02-12 09:32:57 - root - INFO - Setting breakpoint at 0x81b83
+2025-02-12 09:32:57 - root - INFO - Breakpoint set at 0x81b83, bkptno=30
+2025-02-12 09:32:57 - root - INFO - Setting breakpoint at 0x86a51
+2025-02-12 09:32:57 - root - INFO - Breakpoint set at 0x86a51, bkptno=31
+2025-02-12 09:32:57 - root - INFO - [DEF chunk attempt] => sending b'{test": lid":tr u)}?'
+2025-02-12 09:32:57 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:32:59 - root - INFO - Received data: b'A'
+2025-02-12 09:32:59 - root - INFO - Received request (A) from the board.
+2025-02-12 09:32:59 - root - INFO - Sending test case to the board.
+2025-02-12 09:32:59 - root - INFO - Sent 20 bytes of data: b'{test": lid":tr u)}?'
+2025-02-12 09:32:59 - root - INFO - Received data: b'\x03'
+2025-02-12 09:32:59 - root - ERROR - Received error code: 3
+2025-02-12 09:33:02 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:33:07 - root - INFO - Removed breakpoint id=26
+2025-02-12 09:33:07 - root - INFO - Removed breakpoint id=27
+2025-02-12 09:33:07 - root - INFO - Removed breakpoint id=28
+2025-02-12 09:33:07 - root - INFO - Removed breakpoint id=29
+2025-02-12 09:33:07 - root - INFO - Removed breakpoint id=30
+2025-02-12 09:33:07 - root - INFO - Removed breakpoint id=31
+2025-02-12 09:33:07 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:33:07 - root - INFO - End of round #5, coverage reset.
+
+2025-02-12 09:33:07 - root - INFO - === Starting Round #6 ===
+2025-02-12 09:33:07 - root - INFO - Round #6 => test_data=b'{"test": 123, "valid": true}'
+2025-02-12 09:33:12 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:33:12 - root - INFO - Setting breakpoint at 0x863df
+2025-02-12 09:33:12 - root - INFO - Breakpoint set at 0x863df, bkptno=32
+2025-02-12 09:33:12 - root - INFO - Setting breakpoint at 0x806d5
+2025-02-12 09:33:12 - root - INFO - Breakpoint set at 0x806d5, bkptno=33
+2025-02-12 09:33:12 - root - INFO - Setting breakpoint at 0x807c3
+2025-02-12 09:33:12 - root - INFO - Breakpoint set at 0x807c3, bkptno=34
+2025-02-12 09:33:12 - root - INFO - Setting breakpoint at 0x8079d
+2025-02-12 09:33:12 - root - INFO - Breakpoint set at 0x8079d, bkptno=35
+2025-02-12 09:33:12 - root - INFO - Setting breakpoint at 0x8222b
+2025-02-12 09:33:12 - root - INFO - Breakpoint set at 0x8222b, bkptno=36
+2025-02-12 09:33:12 - root - INFO - Setting breakpoint at 0x82e7d
+2025-02-12 09:33:12 - root - INFO - Breakpoint set at 0x82e7d, bkptno=37
+2025-02-12 09:33:12 - root - INFO - [DEF chunk attempt] => sending b'{"test": 123, "valid": true}'
+2025-02-12 09:33:12 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:33:12 - root - INFO - Received data: b'A'
+2025-02-12 09:33:12 - root - INFO - Received request (A) from the board.
+2025-02-12 09:33:12 - root - INFO - Sending test case to the board.
+2025-02-12 09:33:12 - root - INFO - Sent 28 bytes of data: b'{"test": 123, "valid": true}'
+2025-02-12 09:33:12 - root - INFO - Received data: b'AAAAA'
+2025-02-12 09:33:12 - root - ERROR - Received error code: 65
+2025-02-12 09:33:15 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:33:20 - root - INFO - Removed breakpoint id=32
+2025-02-12 09:33:20 - root - INFO - Removed breakpoint id=33
+2025-02-12 09:33:20 - root - INFO - Removed breakpoint id=34
+2025-02-12 09:33:20 - root - INFO - Removed breakpoint id=35
+2025-02-12 09:33:20 - root - INFO - Removed breakpoint id=36
+2025-02-12 09:33:20 - root - INFO - Removed breakpoint id=37
+2025-02-12 09:33:20 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:33:20 - root - INFO - End of round #6, coverage reset.
+
+2025-02-12 09:33:20 - root - INFO - === Starting Round #7 ===
+2025-02-12 09:33:20 - root - INFO - Round #7 => test_data=b'{"test": lid":tr ue}'
+2025-02-12 09:33:25 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:33:25 - root - INFO - Setting breakpoint at 0x80b2d
+2025-02-12 09:33:25 - root - INFO - Breakpoint set at 0x80b2d, bkptno=38
+2025-02-12 09:33:25 - root - INFO - Setting breakpoint at 0x81775
+2025-02-12 09:33:25 - root - INFO - Breakpoint set at 0x81775, bkptno=39
+2025-02-12 09:33:25 - root - INFO - Setting breakpoint at 0x82255
+2025-02-12 09:33:25 - root - INFO - Breakpoint set at 0x82255, bkptno=40
+2025-02-12 09:33:25 - root - INFO - Setting breakpoint at 0x8065f
+2025-02-12 09:33:25 - root - INFO - Breakpoint set at 0x8065f, bkptno=41
+2025-02-12 09:33:25 - root - INFO - Setting breakpoint at 0x807e3
+2025-02-12 09:33:25 - root - INFO - Breakpoint set at 0x807e3, bkptno=42
+2025-02-12 09:33:25 - root - INFO - Setting breakpoint at 0x80ceb
+2025-02-12 09:33:25 - root - INFO - Breakpoint set at 0x80ceb, bkptno=43
+2025-02-12 09:33:25 - root - INFO - [DEF chunk attempt] => sending b'{"test": lid":tr ue}'
+2025-02-12 09:33:25 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:33:25 - root - INFO - Received data: b'A'
+2025-02-12 09:33:25 - root - INFO - Received request (A) from the board.
+2025-02-12 09:33:25 - root - INFO - Sending test case to the board.
+2025-02-12 09:33:25 - root - INFO - Sent 20 bytes of data: b'{"test": lid":tr ue}'
+2025-02-12 09:33:25 - root - INFO - Received data: b'AAAAA'
+2025-02-12 09:33:25 - root - ERROR - Received error code: 65
+2025-02-12 09:33:28 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:33:33 - root - INFO - Removed breakpoint id=38
+2025-02-12 09:33:33 - root - INFO - Removed breakpoint id=39
+2025-02-12 09:33:33 - root - INFO - Removed breakpoint id=40
+2025-02-12 09:33:33 - root - INFO - Removed breakpoint id=41
+2025-02-12 09:33:33 - root - INFO - Removed breakpoint id=42
+2025-02-12 09:33:33 - root - INFO - Removed breakpoint id=43
+2025-02-12 09:33:33 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:33:33 - root - INFO - End of round #7, coverage reset.
+
+2025-02-12 09:33:33 - root - INFO - === Starting Round #8 ===
+2025-02-12 09:33:33 - root - INFO - Round #8 => test_data=b'{test": lid":tr u)}?'
+2025-02-12 09:33:38 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:33:38 - root - INFO - Setting breakpoint at 0x80b19
+2025-02-12 09:33:38 - root - INFO - Breakpoint set at 0x80b19, bkptno=44
+2025-02-12 09:33:38 - root - INFO - Setting breakpoint at 0x82495
+2025-02-12 09:33:38 - root - INFO - Breakpoint set at 0x82495, bkptno=45
+2025-02-12 09:33:38 - root - INFO - Setting breakpoint at 0x82669
+2025-02-12 09:33:38 - root - INFO - Breakpoint set at 0x82669, bkptno=46
+2025-02-12 09:33:38 - root - INFO - Setting breakpoint at 0x80cf9
+2025-02-12 09:33:38 - root - INFO - Breakpoint set at 0x80cf9, bkptno=47
+2025-02-12 09:33:38 - root - INFO - Setting breakpoint at 0x84f3f
+2025-02-12 09:33:38 - root - INFO - Breakpoint set at 0x84f3f, bkptno=48
+2025-02-12 09:33:38 - root - INFO - Setting breakpoint at 0x8634f
+2025-02-12 09:33:38 - root - INFO - Breakpoint set at 0x8634f, bkptno=49
+2025-02-12 09:33:38 - root - INFO - [DEF chunk attempt] => sending b'{test": lid":tr u)}?'
+2025-02-12 09:33:38 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:33:40 - root - INFO - Received data: b'A'
+2025-02-12 09:33:40 - root - INFO - Received request (A) from the board.
+2025-02-12 09:33:40 - root - INFO - Sending test case to the board.
+2025-02-12 09:33:40 - root - INFO - Sent 20 bytes of data: b'{test": lid":tr u)}?'
+2025-02-12 09:33:40 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:33:40 - root - ERROR - Received error code: 3
+2025-02-12 09:33:43 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:33:48 - root - INFO - Removed breakpoint id=44
+2025-02-12 09:33:48 - root - INFO - Removed breakpoint id=45
+2025-02-12 09:33:48 - root - INFO - Removed breakpoint id=46
+2025-02-12 09:33:48 - root - INFO - Removed breakpoint id=47
+2025-02-12 09:33:48 - root - INFO - Removed breakpoint id=48
+2025-02-12 09:33:48 - root - INFO - Removed breakpoint id=49
+2025-02-12 09:33:48 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:33:48 - root - INFO - End of round #8, coverage reset.
+
+2025-02-12 09:33:48 - root - INFO - === Starting Round #9 ===
+2025-02-12 09:33:48 - root - INFO - Round #9 => test_data=b'\x11{test": liu) rdt":}?'
+2025-02-12 09:33:53 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:33:53 - root - INFO - Setting breakpoint at 0x80b2d
+2025-02-12 09:33:53 - root - INFO - Breakpoint set at 0x80b2d, bkptno=50
+2025-02-12 09:33:53 - root - INFO - Setting breakpoint at 0x82fb9
+2025-02-12 09:33:53 - root - INFO - Breakpoint set at 0x82fb9, bkptno=51
+2025-02-12 09:33:53 - root - INFO - Setting breakpoint at 0x821a5
+2025-02-12 09:33:53 - root - INFO - Breakpoint set at 0x821a5, bkptno=52
+2025-02-12 09:33:53 - root - INFO - Setting breakpoint at 0x84f17
+2025-02-12 09:33:53 - root - INFO - Breakpoint set at 0x84f17, bkptno=53
+2025-02-12 09:33:53 - root - INFO - Setting breakpoint at 0x83865
+2025-02-12 09:33:53 - root - INFO - Breakpoint set at 0x83865, bkptno=54
+2025-02-12 09:33:53 - root - INFO - Setting breakpoint at 0x8634f
+2025-02-12 09:33:53 - root - INFO - Breakpoint set at 0x8634f, bkptno=55
+2025-02-12 09:33:53 - root - INFO - [DEF chunk attempt] => sending b'\x11{test": liu) rdt":}?'
+2025-02-12 09:33:53 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:33:55 - root - INFO - Received data: b'A'
+2025-02-12 09:33:55 - root - INFO - Received request (A) from the board.
+2025-02-12 09:33:55 - root - INFO - Sending test case to the board.
+2025-02-12 09:33:55 - root - INFO - Sent 21 bytes of data: b'\x11{test": liu) rdt":}?'
+2025-02-12 09:33:55 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:33:55 - root - ERROR - Received error code: 3
+2025-02-12 09:33:58 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:34:03 - root - INFO - Removed breakpoint id=50
+2025-02-12 09:34:03 - root - INFO - Removed breakpoint id=51
+2025-02-12 09:34:03 - root - INFO - Removed breakpoint id=52
+2025-02-12 09:34:03 - root - INFO - Removed breakpoint id=53
+2025-02-12 09:34:03 - root - INFO - Removed breakpoint id=54
+2025-02-12 09:34:03 - root - INFO - Removed breakpoint id=55
+2025-02-12 09:34:03 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:34:03 - root - INFO - End of round #9, coverage reset.
+
+2025-02-12 09:34:03 - root - INFO - === Starting Round #10 ===
+2025-02-12 09:34:03 - root - INFO - Round #10 => test_data=b'{"test": 123, "valid": true}'
+2025-02-12 09:34:08 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:34:08 - root - INFO - Setting breakpoint at 0x80d75
+2025-02-12 09:34:08 - root - INFO - Breakpoint set at 0x80d75, bkptno=56
+2025-02-12 09:34:08 - root - INFO - Setting breakpoint at 0x86bdf
+2025-02-12 09:34:08 - root - INFO - Breakpoint set at 0x86bdf, bkptno=57
+2025-02-12 09:34:08 - root - INFO - Setting breakpoint at 0x80b7d
+2025-02-12 09:34:08 - root - INFO - Breakpoint set at 0x80b7d, bkptno=58
+2025-02-12 09:34:08 - root - INFO - Setting breakpoint at 0x82e81
+2025-02-12 09:34:08 - root - INFO - Breakpoint set at 0x82e81, bkptno=59
+2025-02-12 09:34:08 - root - INFO - Setting breakpoint at 0x81dc9
+2025-02-12 09:34:08 - root - INFO - Breakpoint set at 0x81dc9, bkptno=60
+2025-02-12 09:34:08 - root - INFO - Setting breakpoint at 0x80b0b
+2025-02-12 09:34:08 - root - INFO - Breakpoint set at 0x80b0b, bkptno=61
+2025-02-12 09:34:08 - root - INFO - [DEF chunk attempt] => sending b'{"test": 123, "valid": true}'
+2025-02-12 09:34:08 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:34:10 - root - INFO - Received data: b'A'
+2025-02-12 09:34:10 - root - INFO - Received request (A) from the board.
+2025-02-12 09:34:10 - root - INFO - Sending test case to the board.
+2025-02-12 09:34:10 - root - INFO - Sent 28 bytes of data: b'{"test": 123, "valid": true}'
+2025-02-12 09:34:10 - root - INFO - Received data: b'\x00\x19\x00\x00\x00{"test":123,"valid":true}A'
+2025-02-12 09:34:10 - root - INFO - Received JSON data (25 bytes): {"test":123,"valid":true}
+2025-02-12 09:34:13 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:34:18 - root - INFO - Removed breakpoint id=56
+2025-02-12 09:34:18 - root - INFO - Removed breakpoint id=57
+2025-02-12 09:34:18 - root - INFO - Removed breakpoint id=58
+2025-02-12 09:34:18 - root - INFO - Removed breakpoint id=59
+2025-02-12 09:34:18 - root - INFO - Removed breakpoint id=60
+2025-02-12 09:34:18 - root - INFO - Removed breakpoint id=61
+2025-02-12 09:34:18 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:34:18 - root - INFO - End of round #10, coverage reset.
+
+2025-02-12 09:34:18 - root - INFO - === Starting Round #11 ===
+2025-02-12 09:34:18 - root - INFO - Round #11 => test_data=b'{"test": lid":tr ue}'
+2025-02-12 09:34:23 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:34:23 - root - INFO - Setting breakpoint at 0x84f17
+2025-02-12 09:34:23 - root - INFO - Breakpoint set at 0x84f17, bkptno=62
+2025-02-12 09:34:23 - root - INFO - Setting breakpoint at 0x825ff
+2025-02-12 09:34:23 - root - INFO - Breakpoint set at 0x825ff, bkptno=63
+2025-02-12 09:34:23 - root - INFO - Setting breakpoint at 0x80121
+2025-02-12 09:34:23 - root - INFO - Breakpoint set at 0x80121, bkptno=64
+2025-02-12 09:34:23 - root - INFO - Setting breakpoint at 0x83867
+2025-02-12 09:34:23 - root - INFO - Breakpoint set at 0x83867, bkptno=65
+2025-02-12 09:34:23 - root - INFO - Setting breakpoint at 0x81ffb
+2025-02-12 09:34:23 - root - INFO - Breakpoint set at 0x81ffb, bkptno=66
+2025-02-12 09:34:23 - root - INFO - Setting breakpoint at 0x821a5
+2025-02-12 09:34:23 - root - INFO - Breakpoint set at 0x821a5, bkptno=67
+2025-02-12 09:34:23 - root - INFO - [DEF chunk attempt] => sending b'{"test": lid":tr ue}'
+2025-02-12 09:34:23 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:34:25 - root - INFO - Received data: b'A'
+2025-02-12 09:34:25 - root - INFO - Received request (A) from the board.
+2025-02-12 09:34:25 - root - INFO - Sending test case to the board.
+2025-02-12 09:34:25 - root - INFO - Sent 20 bytes of data: b'{"test": lid":tr ue}'
+2025-02-12 09:34:25 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:34:25 - root - ERROR - Received error code: 3
+2025-02-12 09:34:28 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:34:33 - root - INFO - Removed breakpoint id=62
+2025-02-12 09:34:33 - root - INFO - Removed breakpoint id=63
+2025-02-12 09:34:33 - root - INFO - Removed breakpoint id=64
+2025-02-12 09:34:33 - root - INFO - Removed breakpoint id=65
+2025-02-12 09:34:33 - root - INFO - Removed breakpoint id=66
+2025-02-12 09:34:33 - root - INFO - Removed breakpoint id=67
+2025-02-12 09:34:33 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:34:33 - root - INFO - End of round #11, coverage reset.
+
+2025-02-12 09:34:33 - root - INFO - === Starting Round #12 ===
+2025-02-12 09:34:33 - root - INFO - Round #12 => test_data=b'{test": lid":tr u)}?'
+2025-02-12 09:34:38 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:34:38 - root - INFO - Setting breakpoint at 0x83865
+2025-02-12 09:34:38 - root - INFO - Breakpoint set at 0x83865, bkptno=68
+2025-02-12 09:34:38 - root - INFO - Setting breakpoint at 0x86a65
+2025-02-12 09:34:38 - root - INFO - Breakpoint set at 0x86a65, bkptno=69
+2025-02-12 09:34:38 - root - INFO - Setting breakpoint at 0x81573
+2025-02-12 09:34:38 - root - INFO - Breakpoint set at 0x81573, bkptno=70
+2025-02-12 09:34:38 - root - INFO - Setting breakpoint at 0x8634f
+2025-02-12 09:34:38 - root - INFO - Breakpoint set at 0x8634f, bkptno=71
+2025-02-12 09:34:38 - root - INFO - Setting breakpoint at 0x81477
+2025-02-12 09:34:38 - root - INFO - Breakpoint set at 0x81477, bkptno=72
+2025-02-12 09:34:38 - root - INFO - Setting breakpoint at 0x861a1
+2025-02-12 09:34:38 - root - INFO - Breakpoint set at 0x861a1, bkptno=73
+2025-02-12 09:34:38 - root - INFO - [DEF chunk attempt] => sending b'{test": lid":tr u)}?'
+2025-02-12 09:34:38 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:34:40 - root - INFO - Received data: b'A'
+2025-02-12 09:34:40 - root - INFO - Received request (A) from the board.
+2025-02-12 09:34:40 - root - INFO - Sending test case to the board.
+2025-02-12 09:34:40 - root - INFO - Sent 20 bytes of data: b'{test": lid":tr u)}?'
+2025-02-12 09:34:40 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:34:40 - root - ERROR - Received error code: 3
+2025-02-12 09:34:43 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:34:48 - root - INFO - Removed breakpoint id=68
+2025-02-12 09:34:48 - root - INFO - Removed breakpoint id=69
+2025-02-12 09:34:48 - root - INFO - Removed breakpoint id=70
+2025-02-12 09:34:48 - root - INFO - Removed breakpoint id=71
+2025-02-12 09:34:48 - root - INFO - Removed breakpoint id=72
+2025-02-12 09:34:48 - root - INFO - Removed breakpoint id=73
+2025-02-12 09:34:48 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:34:48 - root - INFO - End of round #12, coverage reset.
+
+2025-02-12 09:34:48 - root - INFO - === Starting Round #13 ===
+2025-02-12 09:34:48 - root - INFO - Round #13 => test_data=b'\x11{test": liu) rdt":}?'
+2025-02-12 09:34:53 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:34:53 - root - INFO - Setting breakpoint at 0x80b95
+2025-02-12 09:34:53 - root - INFO - Breakpoint set at 0x80b95, bkptno=74
+2025-02-12 09:34:53 - root - INFO - Setting breakpoint at 0x82e81
+2025-02-12 09:34:53 - root - INFO - Breakpoint set at 0x82e81, bkptno=75
+2025-02-12 09:34:53 - root - INFO - Setting breakpoint at 0x81539
+2025-02-12 09:34:53 - root - INFO - Breakpoint set at 0x81539, bkptno=76
+2025-02-12 09:34:53 - root - INFO - Setting breakpoint at 0x83867
+2025-02-12 09:34:53 - root - INFO - Breakpoint set at 0x83867, bkptno=77
+2025-02-12 09:34:53 - root - INFO - Setting breakpoint at 0x80b9f
+2025-02-12 09:34:53 - root - INFO - Breakpoint set at 0x80b9f, bkptno=78
+2025-02-12 09:34:53 - root - INFO - Setting breakpoint at 0x82eed
+2025-02-12 09:34:53 - root - INFO - Breakpoint set at 0x82eed, bkptno=79
+2025-02-12 09:34:53 - root - INFO - [DEF chunk attempt] => sending b'\x11{test": liu) rdt":}?'
+2025-02-12 09:34:53 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:34:55 - root - INFO - Received data: b'A'
+2025-02-12 09:34:55 - root - INFO - Received request (A) from the board.
+2025-02-12 09:34:55 - root - INFO - Sending test case to the board.
+2025-02-12 09:34:55 - root - INFO - Sent 21 bytes of data: b'\x11{test": liu) rdt":}?'
+2025-02-12 09:34:55 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:34:55 - root - ERROR - Received error code: 3
+2025-02-12 09:34:58 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:35:03 - root - INFO - Removed breakpoint id=74
+2025-02-12 09:35:03 - root - INFO - Removed breakpoint id=75
+2025-02-12 09:35:03 - root - INFO - Removed breakpoint id=76
+2025-02-12 09:35:03 - root - INFO - Removed breakpoint id=77
+2025-02-12 09:35:03 - root - INFO - Removed breakpoint id=78
+2025-02-12 09:35:03 - root - INFO - Removed breakpoint id=79
+2025-02-12 09:35:03 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:35:03 - root - INFO - End of round #13, coverage reset.
+
+2025-02-12 09:35:03 - root - INFO - === Starting Round #14 ===
+2025-02-12 09:35:03 - root - INFO - Round #14 => test_data=b'\x11{tet:{tet:s liu) d}?'
+2025-02-12 09:35:08 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:35:08 - root - INFO - Setting breakpoint at 0x825eb
+2025-02-12 09:35:08 - root - INFO - Breakpoint set at 0x825eb, bkptno=80
+2025-02-12 09:35:08 - root - INFO - Setting breakpoint at 0x807b1
+2025-02-12 09:35:08 - root - INFO - Breakpoint set at 0x807b1, bkptno=81
+2025-02-12 09:35:08 - root - INFO - Setting breakpoint at 0x80b7b
+2025-02-12 09:35:08 - root - INFO - Breakpoint set at 0x80b7b, bkptno=82
+2025-02-12 09:35:08 - root - INFO - Setting breakpoint at 0x8634f
+2025-02-12 09:35:08 - root - INFO - Breakpoint set at 0x8634f, bkptno=83
+2025-02-12 09:35:08 - root - INFO - Setting breakpoint at 0x80d75
+2025-02-12 09:35:08 - root - INFO - Breakpoint set at 0x80d75, bkptno=84
+2025-02-12 09:35:08 - root - INFO - Setting breakpoint at 0x80b91
+2025-02-12 09:35:08 - root - INFO - Breakpoint set at 0x80b91, bkptno=85
+2025-02-12 09:35:08 - root - INFO - [DEF chunk attempt] => sending b'\x11{tet:{tet:s liu) d}?'
+2025-02-12 09:35:08 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:35:10 - root - INFO - Received data: b'A'
+2025-02-12 09:35:10 - root - INFO - Received request (A) from the board.
+2025-02-12 09:35:10 - root - INFO - Sending test case to the board.
+2025-02-12 09:35:10 - root - INFO - Sent 21 bytes of data: b'\x11{tet:{tet:s liu) d}?'
+2025-02-12 09:35:10 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:35:10 - root - ERROR - Received error code: 3
+2025-02-12 09:35:13 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:35:18 - root - INFO - Removed breakpoint id=80
+2025-02-12 09:35:18 - root - INFO - Removed breakpoint id=81
+2025-02-12 09:35:18 - root - INFO - Removed breakpoint id=82
+2025-02-12 09:35:18 - root - INFO - Removed breakpoint id=83
+2025-02-12 09:35:18 - root - INFO - Removed breakpoint id=84
+2025-02-12 09:35:18 - root - INFO - Removed breakpoint id=85
+2025-02-12 09:35:18 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:35:18 - root - INFO - End of round #14, coverage reset.
+
+2025-02-12 09:35:18 - root - INFO - === Starting Round #15 ===
+2025-02-12 09:35:18 - root - INFO - Round #15 => test_data=b'{"test": 123, "valid": true}'
+2025-02-12 09:35:23 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:35:23 - root - INFO - Setting breakpoint at 0x8079d
+2025-02-12 09:35:23 - root - INFO - Breakpoint set at 0x8079d, bkptno=86
+2025-02-12 09:35:23 - root - INFO - Setting breakpoint at 0x80b9f
+2025-02-12 09:35:23 - root - INFO - Breakpoint set at 0x80b9f, bkptno=87
+2025-02-12 09:35:23 - root - INFO - Setting breakpoint at 0x806db
+2025-02-12 09:35:23 - root - INFO - Breakpoint set at 0x806db, bkptno=88
+2025-02-12 09:35:23 - root - INFO - Setting breakpoint at 0x8309b
+2025-02-12 09:35:23 - root - INFO - Breakpoint set at 0x8309b, bkptno=89
+2025-02-12 09:35:23 - root - INFO - Setting breakpoint at 0x84f2b
+2025-02-12 09:35:23 - root - INFO - Breakpoint set at 0x84f2b, bkptno=90
+2025-02-12 09:35:23 - root - INFO - Setting breakpoint at 0x80b0b
+2025-02-12 09:35:23 - root - INFO - Breakpoint set at 0x80b0b, bkptno=91
+2025-02-12 09:35:23 - root - INFO - [DEF chunk attempt] => sending b'{"test": 123, "valid": true}'
+2025-02-12 09:35:23 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:35:25 - root - INFO - Received data: b'A'
+2025-02-12 09:35:25 - root - INFO - Received request (A) from the board.
+2025-02-12 09:35:25 - root - INFO - Sending test case to the board.
+2025-02-12 09:35:25 - root - INFO - Sent 28 bytes of data: b'{"test": 123, "valid": true}'
+2025-02-12 09:35:25 - root - INFO - Received data: b'\x00\x19'
+2025-02-12 09:35:25 - root - INFO - Received data: b'\x00\x00\x00{"test":123,"valid":true}A'
+2025-02-12 09:35:25 - root - INFO - Received JSON data (25 bytes): {"test":123,"valid":true}
+2025-02-12 09:35:28 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:35:33 - root - INFO - Removed breakpoint id=86
+2025-02-12 09:35:33 - root - INFO - Removed breakpoint id=87
+2025-02-12 09:35:33 - root - INFO - Removed breakpoint id=88
+2025-02-12 09:35:33 - root - INFO - Removed breakpoint id=89
+2025-02-12 09:35:33 - root - INFO - Removed breakpoint id=90
+2025-02-12 09:35:33 - root - INFO - Removed breakpoint id=91
+2025-02-12 09:35:33 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:35:33 - root - INFO - End of round #15, coverage reset.
+
+2025-02-12 09:35:33 - root - INFO - === Starting Round #16 ===
+2025-02-12 09:35:33 - root - INFO - Round #16 => test_data=b'{"test": lid":tr ue}'
+2025-02-12 09:35:38 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:35:38 - root - INFO - Setting breakpoint at 0x86a65
+2025-02-12 09:35:38 - root - INFO - Breakpoint set at 0x86a65, bkptno=92
+2025-02-12 09:35:38 - root - INFO - Setting breakpoint at 0x807db
+2025-02-12 09:35:38 - root - INFO - Breakpoint set at 0x807db, bkptno=93
+2025-02-12 09:35:38 - root - INFO - Setting breakpoint at 0x83021
+2025-02-12 09:35:38 - root - INFO - Breakpoint set at 0x83021, bkptno=94
+2025-02-12 09:35:38 - root - INFO - Setting breakpoint at 0x81fa7
+2025-02-12 09:35:38 - root - INFO - Breakpoint set at 0x81fa7, bkptno=95
+2025-02-12 09:35:38 - root - INFO - Setting breakpoint at 0x83867
+2025-02-12 09:35:38 - root - INFO - Breakpoint set at 0x83867, bkptno=96
+2025-02-12 09:35:38 - root - INFO - Setting breakpoint at 0x80b2d
+2025-02-12 09:35:38 - root - INFO - Breakpoint set at 0x80b2d, bkptno=97
+2025-02-12 09:35:38 - root - INFO - [DEF chunk attempt] => sending b'{"test": lid":tr ue}'
+2025-02-12 09:35:38 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:35:40 - root - INFO - Received data: b'A'
+2025-02-12 09:35:40 - root - INFO - Received request (A) from the board.
+2025-02-12 09:35:40 - root - INFO - Sending test case to the board.
+2025-02-12 09:35:40 - root - INFO - Sent 20 bytes of data: b'{"test": lid":tr ue}'
+2025-02-12 09:35:40 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:35:40 - root - ERROR - Received error code: 3
+2025-02-12 09:35:43 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:35:48 - root - INFO - Removed breakpoint id=92
+2025-02-12 09:35:48 - root - INFO - Removed breakpoint id=93
+2025-02-12 09:35:48 - root - INFO - Removed breakpoint id=94
+2025-02-12 09:35:48 - root - INFO - Removed breakpoint id=95
+2025-02-12 09:35:48 - root - INFO - Removed breakpoint id=96
+2025-02-12 09:35:48 - root - INFO - Removed breakpoint id=97
+2025-02-12 09:35:48 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:35:48 - root - INFO - End of round #16, coverage reset.
+
+2025-02-12 09:35:48 - root - INFO - === Starting Round #17 ===
+2025-02-12 09:35:48 - root - INFO - Round #17 => test_data=b'{test": lid":tr u)}?'
+2025-02-12 09:35:53 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:35:53 - root - INFO - Setting breakpoint at 0x80b7b
+2025-02-12 09:35:53 - root - INFO - Breakpoint set at 0x80b7b, bkptno=98
+2025-02-12 09:35:53 - root - INFO - Setting breakpoint at 0x82fad
+2025-02-12 09:35:53 - root - INFO - Breakpoint set at 0x82fad, bkptno=99
+2025-02-12 09:35:53 - root - INFO - Setting breakpoint at 0x8634f
+2025-02-12 09:35:53 - root - INFO - Breakpoint set at 0x8634f, bkptno=100
+2025-02-12 09:35:53 - root - INFO - Setting breakpoint at 0x82eed
+2025-02-12 09:35:53 - root - INFO - Breakpoint set at 0x82eed, bkptno=101
+2025-02-12 09:35:53 - root - INFO - Setting breakpoint at 0x80121
+2025-02-12 09:35:53 - root - INFO - Breakpoint set at 0x80121, bkptno=102
+2025-02-12 09:35:53 - root - INFO - Setting breakpoint at 0x80b19
+2025-02-12 09:35:53 - root - INFO - Breakpoint set at 0x80b19, bkptno=103
+2025-02-12 09:35:53 - root - INFO - [DEF chunk attempt] => sending b'{test": lid":tr u)}?'
+2025-02-12 09:35:53 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:35:55 - root - INFO - Received data: b'A'
+2025-02-12 09:35:55 - root - INFO - Received request (A) from the board.
+2025-02-12 09:35:55 - root - INFO - Sending test case to the board.
+2025-02-12 09:35:55 - root - INFO - Sent 20 bytes of data: b'{test": lid":tr u)}?'
+2025-02-12 09:35:55 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:35:55 - root - ERROR - Received error code: 3
+2025-02-12 09:35:58 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:36:03 - root - INFO - Removed breakpoint id=98
+2025-02-12 09:36:03 - root - INFO - Removed breakpoint id=99
+2025-02-12 09:36:03 - root - INFO - Removed breakpoint id=100
+2025-02-12 09:36:03 - root - INFO - Removed breakpoint id=101
+2025-02-12 09:36:03 - root - INFO - Removed breakpoint id=102
+2025-02-12 09:36:03 - root - INFO - Removed breakpoint id=103
+2025-02-12 09:36:03 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:36:03 - root - INFO - End of round #17, coverage reset.
+
+2025-02-12 09:36:03 - root - INFO - === Starting Round #18 ===
+2025-02-12 09:36:03 - root - INFO - Round #18 => test_data=b'\x11{test": liu) rdt":}?'
+2025-02-12 09:36:08 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:36:08 - root - INFO - Setting breakpoint at 0x8280d
+2025-02-12 09:36:08 - root - INFO - Breakpoint set at 0x8280d, bkptno=104
+2025-02-12 09:36:08 - root - INFO - Setting breakpoint at 0x8618b
+2025-02-12 09:36:08 - root - INFO - Breakpoint set at 0x8618b, bkptno=105
+2025-02-12 09:36:08 - root - INFO - Setting breakpoint at 0x8634f
+2025-02-12 09:36:08 - root - INFO - Breakpoint set at 0x8634f, bkptno=106
+2025-02-12 09:36:08 - root - INFO - Setting breakpoint at 0x81775
+2025-02-12 09:36:08 - root - INFO - Breakpoint set at 0x81775, bkptno=107
+2025-02-12 09:36:08 - root - INFO - Setting breakpoint at 0x84f17
+2025-02-12 09:36:08 - root - INFO - Breakpoint set at 0x84f17, bkptno=108
+2025-02-12 09:36:08 - root - INFO - Setting breakpoint at 0x84f3f
+2025-02-12 09:36:08 - root - INFO - Breakpoint set at 0x84f3f, bkptno=109
+2025-02-12 09:36:08 - root - INFO - [DEF chunk attempt] => sending b'\x11{test": liu) rdt":}?'
+2025-02-12 09:36:08 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:36:10 - root - INFO - Received data: b'A'
+2025-02-12 09:36:10 - root - INFO - Received request (A) from the board.
+2025-02-12 09:36:10 - root - INFO - Sending test case to the board.
+2025-02-12 09:36:10 - root - INFO - Sent 21 bytes of data: b'\x11{test": liu) rdt":}?'
+2025-02-12 09:36:10 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:36:10 - root - ERROR - Received error code: 3
+2025-02-12 09:36:13 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:36:18 - root - INFO - Removed breakpoint id=104
+2025-02-12 09:36:18 - root - INFO - Removed breakpoint id=105
+2025-02-12 09:36:18 - root - INFO - Removed breakpoint id=106
+2025-02-12 09:36:18 - root - INFO - Removed breakpoint id=107
+2025-02-12 09:36:18 - root - INFO - Removed breakpoint id=108
+2025-02-12 09:36:18 - root - INFO - Removed breakpoint id=109
+2025-02-12 09:36:18 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:36:18 - root - INFO - End of round #18, coverage reset.
+
+2025-02-12 09:36:18 - root - INFO - === Starting Round #19 ===
+2025-02-12 09:36:18 - root - INFO - Round #19 => test_data=b'\x11{tet:{tet:s liu) d}?'
+2025-02-12 09:36:23 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:36:23 - root - INFO - Setting breakpoint at 0x86a51
+2025-02-12 09:36:23 - root - INFO - Breakpoint set at 0x86a51, bkptno=110
+2025-02-12 09:36:23 - root - INFO - Setting breakpoint at 0x80b7f
+2025-02-12 09:36:23 - root - INFO - Breakpoint set at 0x80b7f, bkptno=111
+2025-02-12 09:36:23 - root - INFO - Setting breakpoint at 0x806c3
+2025-02-12 09:36:23 - root - INFO - Breakpoint set at 0x806c3, bkptno=112
+2025-02-12 09:36:23 - root - INFO - Setting breakpoint at 0x84f17
+2025-02-12 09:36:23 - root - INFO - Breakpoint set at 0x84f17, bkptno=113
+2025-02-12 09:36:23 - root - INFO - Setting breakpoint at 0x8634f
+2025-02-12 09:36:23 - root - INFO - Breakpoint set at 0x8634f, bkptno=114
+2025-02-12 09:36:23 - root - INFO - Setting breakpoint at 0x85ab7
+2025-02-12 09:36:23 - root - INFO - Breakpoint set at 0x85ab7, bkptno=115
+2025-02-12 09:36:23 - root - INFO - [DEF chunk attempt] => sending b'\x11{tet:{tet:s liu) d}?'
+2025-02-12 09:36:23 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:36:25 - root - INFO - Received data: b'A'
+2025-02-12 09:36:25 - root - INFO - Received request (A) from the board.
+2025-02-12 09:36:25 - root - INFO - Sending test case to the board.
+2025-02-12 09:36:25 - root - INFO - Sent 21 bytes of data: b'\x11{tet:{tet:s liu) d}?'
+2025-02-12 09:36:25 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:36:25 - root - ERROR - Received error code: 3
+2025-02-12 09:36:28 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:36:33 - root - INFO - Removed breakpoint id=110
+2025-02-12 09:36:33 - root - INFO - Removed breakpoint id=111
+2025-02-12 09:36:33 - root - INFO - Removed breakpoint id=112
+2025-02-12 09:36:33 - root - INFO - Removed breakpoint id=113
+2025-02-12 09:36:33 - root - INFO - Removed breakpoint id=114
+2025-02-12 09:36:33 - root - INFO - Removed breakpoint id=115
+2025-02-12 09:36:33 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:36:33 - root - INFO - End of round #19, coverage reset.
+
+2025-02-12 09:36:33 - root - INFO - === Starting Round #20 ===
+2025-02-12 09:36:33 - root - INFO - Round #20 => test_data=b'\x11t:s liu) d\xfd?'
+2025-02-12 09:36:38 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:36:38 - root - INFO - Setting breakpoint at 0x82f69
+2025-02-12 09:36:38 - root - INFO - Breakpoint set at 0x82f69, bkptno=116
+2025-02-12 09:36:38 - root - INFO - Setting breakpoint at 0x80be3
+2025-02-12 09:36:38 - root - INFO - Breakpoint set at 0x80be3, bkptno=117
+2025-02-12 09:36:38 - root - INFO - Setting breakpoint at 0x8386d
+2025-02-12 09:36:38 - root - INFO - Breakpoint set at 0x8386d, bkptno=118
+2025-02-12 09:36:38 - root - INFO - Setting breakpoint at 0x80d39
+2025-02-12 09:36:38 - root - INFO - Breakpoint set at 0x80d39, bkptno=119
+2025-02-12 09:36:38 - root - INFO - Setting breakpoint at 0x81fa7
+2025-02-12 09:36:38 - root - INFO - Breakpoint set at 0x81fa7, bkptno=120
+2025-02-12 09:36:38 - root - INFO - Setting breakpoint at 0x8301d
+2025-02-12 09:36:38 - root - INFO - Breakpoint set at 0x8301d, bkptno=121
+2025-02-12 09:36:38 - root - INFO - [DEF chunk attempt] => sending b'\x11t:s liu) d\xfd?'
+2025-02-12 09:36:38 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:36:40 - root - INFO - Received data: b'A'
+2025-02-12 09:36:40 - root - INFO - Received request (A) from the board.
+2025-02-12 09:36:40 - root - INFO - Sending test case to the board.
+2025-02-12 09:36:40 - root - INFO - Sent 13 bytes of data: b'\x11t:s liu) d\xfd?'
+2025-02-12 09:36:40 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:36:40 - root - ERROR - Received error code: 3
+2025-02-12 09:36:43 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:36:48 - root - INFO - Removed breakpoint id=116
+2025-02-12 09:36:48 - root - INFO - Removed breakpoint id=117
+2025-02-12 09:36:48 - root - INFO - Removed breakpoint id=118
+2025-02-12 09:36:48 - root - INFO - Removed breakpoint id=119
+2025-02-12 09:36:48 - root - INFO - Removed breakpoint id=120
+2025-02-12 09:36:48 - root - INFO - Removed breakpoint id=121
+2025-02-12 09:36:48 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:36:48 - root - INFO - End of round #20, coverage reset.
+
+2025-02-12 09:36:48 - root - INFO - === Starting Round #21 ===
+2025-02-12 09:36:48 - root - INFO - Round #21 => test_data=b'{"test": 123, "valid": true}'
+2025-02-12 09:36:53 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:36:53 - root - INFO - Setting breakpoint at 0x82807
+2025-02-12 09:36:53 - root - INFO - Breakpoint set at 0x82807, bkptno=122
+2025-02-12 09:36:53 - root - INFO - Setting breakpoint at 0x83865
+2025-02-12 09:36:53 - root - INFO - Breakpoint set at 0x83865, bkptno=123
+2025-02-12 09:36:53 - root - INFO - Setting breakpoint at 0x80d75
+2025-02-12 09:36:53 - root - INFO - Breakpoint set at 0x80d75, bkptno=124
+2025-02-12 09:36:53 - root - INFO - Setting breakpoint at 0x8634f
+2025-02-12 09:36:53 - root - INFO - Breakpoint set at 0x8634f, bkptno=125
+2025-02-12 09:36:53 - root - INFO - Setting breakpoint at 0x80b95
+2025-02-12 09:36:53 - root - INFO - Breakpoint set at 0x80b95, bkptno=126
+2025-02-12 09:36:53 - root - INFO - Setting breakpoint at 0x80b45
+2025-02-12 09:36:53 - root - INFO - Breakpoint set at 0x80b45, bkptno=127
+2025-02-12 09:36:53 - root - INFO - [DEF chunk attempt] => sending b'{"test": 123, "valid": true}'
+2025-02-12 09:36:53 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:36:55 - root - INFO - Received data: b'A'
+2025-02-12 09:36:55 - root - INFO - Received request (A) from the board.
+2025-02-12 09:36:55 - root - INFO - Sending test case to the board.
+2025-02-12 09:36:55 - root - INFO - Sent 28 bytes of data: b'{"test": 123, "valid": true}'
+2025-02-12 09:36:56 - root - INFO - Received data: b'\x00\x19\x00\x00\x00{"test":123,"valid":true}A'
+2025-02-12 09:36:56 - root - INFO - Received JSON data (25 bytes): {"test":123,"valid":true}
+2025-02-12 09:36:59 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:37:04 - root - INFO - Removed breakpoint id=122
+2025-02-12 09:37:04 - root - INFO - Removed breakpoint id=123
+2025-02-12 09:37:04 - root - INFO - Removed breakpoint id=124
+2025-02-12 09:37:04 - root - INFO - Removed breakpoint id=125
+2025-02-12 09:37:04 - root - INFO - Removed breakpoint id=126
+2025-02-12 09:37:04 - root - INFO - Removed breakpoint id=127
+2025-02-12 09:37:04 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:37:04 - root - INFO - End of round #21, coverage reset.
+
+2025-02-12 09:37:04 - root - INFO - === Starting Round #22 ===
+2025-02-12 09:37:04 - root - INFO - Round #22 => test_data=b'{"test": lid":tr ue}'
+2025-02-12 09:37:09 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:37:09 - root - INFO - Setting breakpoint at 0x80b17
+2025-02-12 09:37:09 - root - INFO - Breakpoint set at 0x80b17, bkptno=128
+2025-02-12 09:37:09 - root - INFO - Setting breakpoint at 0x85adb
+2025-02-12 09:37:09 - root - INFO - Breakpoint set at 0x85adb, bkptno=129
+2025-02-12 09:37:09 - root - INFO - Setting breakpoint at 0x86bc5
+2025-02-12 09:37:09 - root - INFO - Breakpoint set at 0x86bc5, bkptno=130
+2025-02-12 09:37:09 - root - INFO - Setting breakpoint at 0x8634f
+2025-02-12 09:37:09 - root - INFO - Breakpoint set at 0x8634f, bkptno=131
+2025-02-12 09:37:09 - root - INFO - Setting breakpoint at 0x82193
+2025-02-12 09:37:09 - root - INFO - Breakpoint set at 0x82193, bkptno=132
+2025-02-12 09:37:09 - root - INFO - Setting breakpoint at 0x80b19
+2025-02-12 09:37:09 - root - INFO - Breakpoint set at 0x80b19, bkptno=133
+2025-02-12 09:37:09 - root - INFO - [DEF chunk attempt] => sending b'{"test": lid":tr ue}'
+2025-02-12 09:37:09 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:37:11 - root - INFO - Received data: b'A'
+2025-02-12 09:37:11 - root - INFO - Received request (A) from the board.
+2025-02-12 09:37:11 - root - INFO - Sending test case to the board.
+2025-02-12 09:37:11 - root - INFO - Sent 20 bytes of data: b'{"test": lid":tr ue}'
+2025-02-12 09:37:11 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:37:11 - root - ERROR - Received error code: 3
+2025-02-12 09:37:14 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:37:19 - root - INFO - Removed breakpoint id=128
+2025-02-12 09:37:19 - root - INFO - Removed breakpoint id=129
+2025-02-12 09:37:19 - root - INFO - Removed breakpoint id=130
+2025-02-12 09:37:19 - root - INFO - Removed breakpoint id=131
+2025-02-12 09:37:19 - root - INFO - Removed breakpoint id=132
+2025-02-12 09:37:19 - root - INFO - Removed breakpoint id=133
+2025-02-12 09:37:19 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:37:19 - root - INFO - End of round #22, coverage reset.
+
+2025-02-12 09:37:19 - root - INFO - === Starting Round #23 ===
+2025-02-12 09:37:19 - root - INFO - Round #23 => test_data=b'{test": lid":tr u)}?'
+2025-02-12 09:37:24 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:37:24 - root - INFO - Setting breakpoint at 0x863db
+2025-02-12 09:37:24 - root - INFO - Breakpoint set at 0x863db, bkptno=134
+2025-02-12 09:37:24 - root - INFO - Setting breakpoint at 0x8634b
+2025-02-12 09:37:24 - root - INFO - Breakpoint set at 0x8634b, bkptno=135
+2025-02-12 09:37:24 - root - INFO - Setting breakpoint at 0x82edf
+2025-02-12 09:37:24 - root - INFO - Breakpoint set at 0x82edf, bkptno=136
+2025-02-12 09:37:24 - root - INFO - Setting breakpoint at 0x82e81
+2025-02-12 09:37:24 - root - INFO - Breakpoint set at 0x82e81, bkptno=137
+2025-02-12 09:37:24 - root - INFO - Setting breakpoint at 0x84f03
+2025-02-12 09:37:24 - root - INFO - Breakpoint set at 0x84f03, bkptno=138
+2025-02-12 09:37:24 - root - INFO - Setting breakpoint at 0x8634f
+2025-02-12 09:37:24 - root - INFO - Breakpoint set at 0x8634f, bkptno=139
+2025-02-12 09:37:24 - root - INFO - [DEF chunk attempt] => sending b'{test": lid":tr u)}?'
+2025-02-12 09:37:24 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:37:26 - root - INFO - Received data: b'A'
+2025-02-12 09:37:26 - root - INFO - Received request (A) from the board.
+2025-02-12 09:37:26 - root - INFO - Sending test case to the board.
+2025-02-12 09:37:26 - root - INFO - Sent 20 bytes of data: b'{test": lid":tr u)}?'
+2025-02-12 09:37:26 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:37:26 - root - ERROR - Received error code: 3
+2025-02-12 09:37:29 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:37:34 - root - INFO - Removed breakpoint id=134
+2025-02-12 09:37:34 - root - INFO - Removed breakpoint id=135
+2025-02-12 09:37:34 - root - INFO - Removed breakpoint id=136
+2025-02-12 09:37:34 - root - INFO - Removed breakpoint id=137
+2025-02-12 09:37:34 - root - INFO - Removed breakpoint id=138
+2025-02-12 09:37:34 - root - INFO - Removed breakpoint id=139
+2025-02-12 09:37:34 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:37:34 - root - INFO - End of round #23, coverage reset.
+
+2025-02-12 09:37:34 - root - INFO - === Starting Round #24 ===
+2025-02-12 09:37:34 - root - INFO - Round #24 => test_data=b'\x11{test": liu) rdt":}?'
+2025-02-12 09:37:39 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:37:39 - root - INFO - Setting breakpoint at 0x825f1
+2025-02-12 09:37:39 - root - INFO - Breakpoint set at 0x825f1, bkptno=140
+2025-02-12 09:37:39 - root - INFO - Setting breakpoint at 0x82491
+2025-02-12 09:37:39 - root - INFO - Breakpoint set at 0x82491, bkptno=141
+2025-02-12 09:37:39 - root - INFO - Setting breakpoint at 0x84f3f
+2025-02-12 09:37:39 - root - INFO - Breakpoint set at 0x84f3f, bkptno=142
+2025-02-12 09:37:39 - root - INFO - Setting breakpoint at 0x80121
+2025-02-12 09:37:39 - root - INFO - Breakpoint set at 0x80121, bkptno=143
+2025-02-12 09:37:39 - root - INFO - Setting breakpoint at 0x85abb
+2025-02-12 09:37:39 - root - INFO - Breakpoint set at 0x85abb, bkptno=144
+2025-02-12 09:37:39 - root - INFO - Setting breakpoint at 0x81fa7
+2025-02-12 09:37:39 - root - INFO - Breakpoint set at 0x81fa7, bkptno=145
+2025-02-12 09:37:39 - root - INFO - [DEF chunk attempt] => sending b'\x11{test": liu) rdt":}?'
+2025-02-12 09:37:39 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:37:41 - root - INFO - Received data: b'A'
+2025-02-12 09:37:41 - root - INFO - Received request (A) from the board.
+2025-02-12 09:37:41 - root - INFO - Sending test case to the board.
+2025-02-12 09:37:41 - root - INFO - Sent 21 bytes of data: b'\x11{test": liu) rdt":}?'
+2025-02-12 09:37:41 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:37:41 - root - ERROR - Received error code: 3
+2025-02-12 09:37:44 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:37:49 - root - INFO - Removed breakpoint id=140
+2025-02-12 09:37:49 - root - INFO - Removed breakpoint id=141
+2025-02-12 09:37:49 - root - INFO - Removed breakpoint id=142
+2025-02-12 09:37:49 - root - INFO - Removed breakpoint id=143
+2025-02-12 09:37:49 - root - INFO - Removed breakpoint id=144
+2025-02-12 09:37:49 - root - INFO - Removed breakpoint id=145
+2025-02-12 09:37:49 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:37:49 - root - INFO - End of round #24, coverage reset.
+
+2025-02-12 09:37:49 - root - INFO - === Starting Round #25 ===
+2025-02-12 09:37:49 - root - INFO - Round #25 => test_data=b'\x11{tet:{tet:s liu) d}?'
+2025-02-12 09:37:54 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:37:54 - root - INFO - Setting breakpoint at 0x8634f
+2025-02-12 09:37:54 - root - INFO - Breakpoint set at 0x8634f, bkptno=146
+2025-02-12 09:37:54 - root - INFO - Setting breakpoint at 0x82f7f
+2025-02-12 09:37:54 - root - INFO - Breakpoint set at 0x82f7f, bkptno=147
+2025-02-12 09:37:54 - root - INFO - Setting breakpoint at 0x806e5
+2025-02-12 09:37:54 - root - INFO - Breakpoint set at 0x806e5, bkptno=148
+2025-02-12 09:37:54 - root - INFO - Setting breakpoint at 0x81b83
+2025-02-12 09:37:54 - root - INFO - Breakpoint set at 0x81b83, bkptno=149
+2025-02-12 09:37:54 - root - INFO - Setting breakpoint at 0x82807
+2025-02-12 09:37:54 - root - INFO - Breakpoint set at 0x82807, bkptno=150
+2025-02-12 09:37:54 - root - INFO - Setting breakpoint at 0x80dbb
+2025-02-12 09:37:54 - root - INFO - Breakpoint set at 0x80dbb, bkptno=151
+2025-02-12 09:37:54 - root - INFO - [DEF chunk attempt] => sending b'\x11{tet:{tet:s liu) d}?'
+2025-02-12 09:37:54 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:37:56 - root - INFO - Received data: b'A'
+2025-02-12 09:37:56 - root - INFO - Received request (A) from the board.
+2025-02-12 09:37:56 - root - INFO - Sending test case to the board.
+2025-02-12 09:37:56 - root - INFO - Sent 21 bytes of data: b'\x11{tet:{tet:s liu) d}?'
+2025-02-12 09:37:56 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:37:56 - root - ERROR - Received error code: 3
+2025-02-12 09:37:59 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:38:04 - root - INFO - Removed breakpoint id=146
+2025-02-12 09:38:04 - root - INFO - Removed breakpoint id=147
+2025-02-12 09:38:04 - root - INFO - Removed breakpoint id=148
+2025-02-12 09:38:04 - root - INFO - Removed breakpoint id=149
+2025-02-12 09:38:04 - root - INFO - Removed breakpoint id=150
+2025-02-12 09:38:04 - root - INFO - Removed breakpoint id=151
+2025-02-12 09:38:04 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:38:04 - root - INFO - End of round #25, coverage reset.
+
+2025-02-12 09:38:04 - root - INFO - === Starting Round #26 ===
+2025-02-12 09:38:04 - root - INFO - Round #26 => test_data=b'\x11t:s liu) d\xfd?'
+2025-02-12 09:38:09 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:38:09 - root - INFO - Setting breakpoint at 0x83021
+2025-02-12 09:38:09 - root - INFO - Breakpoint set at 0x83021, bkptno=152
+2025-02-12 09:38:09 - root - INFO - Setting breakpoint at 0x82fb9
+2025-02-12 09:38:09 - root - INFO - Breakpoint set at 0x82fb9, bkptno=153
+2025-02-12 09:38:09 - root - INFO - Setting breakpoint at 0x84f03
+2025-02-12 09:38:09 - root - INFO - Breakpoint set at 0x84f03, bkptno=154
+2025-02-12 09:38:09 - root - INFO - Setting breakpoint at 0x84f2b
+2025-02-12 09:38:09 - root - INFO - Breakpoint set at 0x84f2b, bkptno=155
+2025-02-12 09:38:09 - root - INFO - Setting breakpoint at 0x807ad
+2025-02-12 09:38:09 - root - INFO - Breakpoint set at 0x807ad, bkptno=156
+2025-02-12 09:38:09 - root - INFO - Setting breakpoint at 0x80d7d
+2025-02-12 09:38:09 - root - INFO - Breakpoint set at 0x80d7d, bkptno=157
+2025-02-12 09:38:09 - root - INFO - [DEF chunk attempt] => sending b'\x11t:s liu) d\xfd?'
+2025-02-12 09:38:09 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:38:11 - root - INFO - Received data: b'A'
+2025-02-12 09:38:11 - root - INFO - Received request (A) from the board.
+2025-02-12 09:38:11 - root - INFO - Sending test case to the board.
+2025-02-12 09:38:11 - root - INFO - Sent 13 bytes of data: b'\x11t:s liu) d\xfd?'
+2025-02-12 09:38:11 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:38:11 - root - ERROR - Received error code: 3
+2025-02-12 09:38:14 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:38:19 - root - INFO - Removed breakpoint id=152
+2025-02-12 09:38:19 - root - INFO - Removed breakpoint id=153
+2025-02-12 09:38:19 - root - INFO - Removed breakpoint id=154
+2025-02-12 09:38:19 - root - INFO - Removed breakpoint id=155
+2025-02-12 09:38:19 - root - INFO - Removed breakpoint id=156
+2025-02-12 09:38:19 - root - INFO - Removed breakpoint id=157
+2025-02-12 09:38:19 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:38:19 - root - INFO - End of round #26, coverage reset.
+
+2025-02-12 09:38:19 - root - INFO - === Starting Round #27 ===
+2025-02-12 09:38:19 - root - INFO - Round #27 => test_data=b'\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x11tliu?'
+2025-02-12 09:38:24 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:38:24 - root - INFO - Setting breakpoint at 0x84f03
+2025-02-12 09:38:24 - root - INFO - Breakpoint set at 0x84f03, bkptno=158
+2025-02-12 09:38:24 - root - INFO - Setting breakpoint at 0x80b7f
+2025-02-12 09:38:24 - root - INFO - Breakpoint set at 0x80b7f, bkptno=159
+2025-02-12 09:38:24 - root - INFO - Setting breakpoint at 0x80133
+2025-02-12 09:38:24 - root - INFO - Breakpoint set at 0x80133, bkptno=160
+2025-02-12 09:38:24 - root - INFO - Setting breakpoint at 0x806db
+2025-02-12 09:38:24 - root - INFO - Breakpoint set at 0x806db, bkptno=161
+2025-02-12 09:38:24 - root - INFO - Setting breakpoint at 0x8224d
+2025-02-12 09:38:24 - root - INFO - Breakpoint set at 0x8224d, bkptno=162
+2025-02-12 09:38:24 - root - INFO - Setting breakpoint at 0x80d39
+2025-02-12 09:38:24 - root - INFO - Breakpoint set at 0x80d39, bkptno=163
+2025-02-12 09:38:24 - root - INFO - [DEF chunk attempt] => sending b'\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x11tliu?'
+2025-02-12 09:38:24 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:38:26 - root - INFO - Received data: b'A'
+2025-02-12 09:38:26 - root - INFO - Received request (A) from the board.
+2025-02-12 09:38:26 - root - INFO - Sending test case to the board.
+2025-02-12 09:38:26 - root - INFO - Sent 19 bytes of data: b'\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x11tliu?'
+2025-02-12 09:38:26 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:38:26 - root - ERROR - Received error code: 3
+2025-02-12 09:38:29 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:38:34 - root - INFO - Removed breakpoint id=158
+2025-02-12 09:38:34 - root - INFO - Removed breakpoint id=159
+2025-02-12 09:38:34 - root - INFO - Removed breakpoint id=160
+2025-02-12 09:38:34 - root - INFO - Removed breakpoint id=161
+2025-02-12 09:38:34 - root - INFO - Removed breakpoint id=162
+2025-02-12 09:38:34 - root - INFO - Removed breakpoint id=163
+2025-02-12 09:38:34 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:38:34 - root - INFO - End of round #27, coverage reset.
+
+2025-02-12 09:38:34 - root - INFO - === Starting Round #28 ===
+2025-02-12 09:38:34 - root - INFO - Round #28 => test_data=b'{"test": 123, "valid": true}'
+2025-02-12 09:38:39 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:38:39 - root - INFO - Setting breakpoint at 0x80af7
+2025-02-12 09:38:39 - root - INFO - Breakpoint set at 0x80af7, bkptno=164
+2025-02-12 09:38:39 - root - INFO - Setting breakpoint at 0x8634f
+2025-02-12 09:38:39 - root - INFO - Breakpoint set at 0x8634f, bkptno=165
+2025-02-12 09:38:39 - root - INFO - Setting breakpoint at 0x821f9
+2025-02-12 09:38:39 - root - INFO - Breakpoint set at 0x821f9, bkptno=166
+2025-02-12 09:38:39 - root - INFO - Setting breakpoint at 0x85aa1
+2025-02-12 09:38:39 - root - INFO - Breakpoint set at 0x85aa1, bkptno=167
+2025-02-12 09:38:39 - root - INFO - Setting breakpoint at 0x83867
+2025-02-12 09:38:39 - root - INFO - Breakpoint set at 0x83867, bkptno=168
+2025-02-12 09:38:39 - root - INFO - Setting breakpoint at 0x81b6d
+2025-02-12 09:38:39 - root - INFO - Breakpoint set at 0x81b6d, bkptno=169
+2025-02-12 09:38:39 - root - INFO - [DEF chunk attempt] => sending b'{"test": 123, "valid": true}'
+2025-02-12 09:38:39 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:38:41 - root - INFO - Received data: b'A'
+2025-02-12 09:38:41 - root - INFO - Received request (A) from the board.
+2025-02-12 09:38:41 - root - INFO - Sending test case to the board.
+2025-02-12 09:38:41 - root - INFO - Sent 28 bytes of data: b'{"test": 123, "valid": true}'
+2025-02-12 09:38:41 - root - INFO - Received data: b'\x00\x19\x00\x00\x00{"test":123,"valid":true}A'
+2025-02-12 09:38:41 - root - INFO - Received JSON data (25 bytes): {"test":123,"valid":true}
+2025-02-12 09:38:44 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:38:49 - root - INFO - Removed breakpoint id=164
+2025-02-12 09:38:49 - root - INFO - Removed breakpoint id=165
+2025-02-12 09:38:49 - root - INFO - Removed breakpoint id=166
+2025-02-12 09:38:49 - root - INFO - Removed breakpoint id=167
+2025-02-12 09:38:49 - root - INFO - Removed breakpoint id=168
+2025-02-12 09:38:49 - root - INFO - Removed breakpoint id=169
+2025-02-12 09:38:49 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:38:49 - root - INFO - End of round #28, coverage reset.
+
+2025-02-12 09:38:49 - root - INFO - === Starting Round #29 ===
+2025-02-12 09:38:49 - root - INFO - Round #29 => test_data=b'{"test": lid":tr ue}'
+2025-02-12 09:38:54 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:38:54 - root - INFO - Setting breakpoint at 0x82e81
+2025-02-12 09:38:54 - root - INFO - Breakpoint set at 0x82e81, bkptno=170
+2025-02-12 09:38:54 - root - INFO - Setting breakpoint at 0x829fd
+2025-02-12 09:38:54 - root - INFO - Breakpoint set at 0x829fd, bkptno=171
+2025-02-12 09:38:54 - root - INFO - Setting breakpoint at 0x83869
+2025-02-12 09:38:54 - root - INFO - Breakpoint set at 0x83869, bkptno=172
+2025-02-12 09:38:54 - root - INFO - Setting breakpoint at 0x80c13
+2025-02-12 09:38:54 - root - INFO - Breakpoint set at 0x80c13, bkptno=173
+2025-02-12 09:38:54 - root - INFO - Setting breakpoint at 0x81fef
+2025-02-12 09:38:54 - root - INFO - Breakpoint set at 0x81fef, bkptno=174
+2025-02-12 09:38:54 - root - INFO - Setting breakpoint at 0x807ad
+2025-02-12 09:38:54 - root - INFO - Breakpoint set at 0x807ad, bkptno=175
+2025-02-12 09:38:54 - root - INFO - [DEF chunk attempt] => sending b'{"test": lid":tr ue}'
+2025-02-12 09:38:54 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:38:56 - root - INFO - Received data: b'A'
+2025-02-12 09:38:56 - root - INFO - Received request (A) from the board.
+2025-02-12 09:38:56 - root - INFO - Sending test case to the board.
+2025-02-12 09:38:56 - root - INFO - Sent 20 bytes of data: b'{"test": lid":tr ue}'
+2025-02-12 09:38:56 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:38:56 - root - ERROR - Received error code: 3
+2025-02-12 09:38:59 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:39:04 - root - INFO - Removed breakpoint id=170
+2025-02-12 09:39:04 - root - INFO - Removed breakpoint id=171
+2025-02-12 09:39:04 - root - INFO - Removed breakpoint id=172
+2025-02-12 09:39:04 - root - INFO - Removed breakpoint id=173
+2025-02-12 09:39:04 - root - INFO - Removed breakpoint id=174
+2025-02-12 09:39:04 - root - INFO - Removed breakpoint id=175
+2025-02-12 09:39:04 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:39:04 - root - INFO - End of round #29, coverage reset.
+
+2025-02-12 09:39:04 - root - INFO - === Starting Round #30 ===
+2025-02-12 09:39:04 - root - INFO - Round #30 => test_data=b'{test": lid":tr u)}?'
+2025-02-12 09:39:09 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:39:09 - root - INFO - Setting breakpoint at 0x84f3f
+2025-02-12 09:39:09 - root - INFO - Breakpoint set at 0x84f3f, bkptno=176
+2025-02-12 09:39:09 - root - INFO - Setting breakpoint at 0x80c0f
+2025-02-12 09:39:09 - root - INFO - Breakpoint set at 0x80c0f, bkptno=177
+2025-02-12 09:39:09 - root - INFO - Setting breakpoint at 0x83867
+2025-02-12 09:39:09 - root - INFO - Breakpoint set at 0x83867, bkptno=178
+2025-02-12 09:39:09 - root - INFO - Setting breakpoint at 0x84f17
+2025-02-12 09:39:09 - root - INFO - Breakpoint set at 0x84f17, bkptno=179
+2025-02-12 09:39:09 - root - INFO - Setting breakpoint at 0x8634f
+2025-02-12 09:39:09 - root - INFO - Breakpoint set at 0x8634f, bkptno=180
+2025-02-12 09:39:09 - root - INFO - Setting breakpoint at 0x82ef7
+2025-02-12 09:39:09 - root - INFO - Breakpoint set at 0x82ef7, bkptno=181
+2025-02-12 09:39:09 - root - INFO - [DEF chunk attempt] => sending b'{test": lid":tr u)}?'
+2025-02-12 09:39:09 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:39:11 - root - INFO - Received data: b'A'
+2025-02-12 09:39:11 - root - INFO - Received request (A) from the board.
+2025-02-12 09:39:11 - root - INFO - Sending test case to the board.
+2025-02-12 09:39:11 - root - INFO - Sent 20 bytes of data: b'{test": lid":tr u)}?'
+2025-02-12 09:39:11 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:39:11 - root - ERROR - Received error code: 3
+2025-02-12 09:39:14 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:39:19 - root - INFO - Removed breakpoint id=176
+2025-02-12 09:39:19 - root - INFO - Removed breakpoint id=177
+2025-02-12 09:39:19 - root - INFO - Removed breakpoint id=178
+2025-02-12 09:39:19 - root - INFO - Removed breakpoint id=179
+2025-02-12 09:39:19 - root - INFO - Removed breakpoint id=180
+2025-02-12 09:39:19 - root - INFO - Removed breakpoint id=181
+2025-02-12 09:39:19 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:39:19 - root - INFO - End of round #30, coverage reset.
+
+2025-02-12 09:39:19 - root - INFO - === Starting Round #31 ===
+2025-02-12 09:39:19 - root - INFO - Round #31 => test_data=b'\x11{test": liu) rdt":}?'
+2025-02-12 09:39:24 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:39:24 - root - INFO - Setting breakpoint at 0x8634f
+2025-02-12 09:39:24 - root - INFO - Breakpoint set at 0x8634f, bkptno=182
+2025-02-12 09:39:24 - root - INFO - Setting breakpoint at 0x821f3
+2025-02-12 09:39:24 - root - INFO - Breakpoint set at 0x821f3, bkptno=183
+2025-02-12 09:39:24 - root - INFO - Setting breakpoint at 0x82f93
+2025-02-12 09:39:24 - root - INFO - Breakpoint set at 0x82f93, bkptno=184
+2025-02-12 09:39:24 - root - INFO - Setting breakpoint at 0x80b7f
+2025-02-12 09:39:24 - root - INFO - Breakpoint set at 0x80b7f, bkptno=185
+2025-02-12 09:39:24 - root - INFO - Setting breakpoint at 0x806c3
+2025-02-12 09:39:24 - root - INFO - Breakpoint set at 0x806c3, bkptno=186
+2025-02-12 09:39:24 - root - INFO - Setting breakpoint at 0x8244f
+2025-02-12 09:39:24 - root - INFO - Breakpoint set at 0x8244f, bkptno=187
+2025-02-12 09:39:24 - root - INFO - [DEF chunk attempt] => sending b'\x11{test": liu) rdt":}?'
+2025-02-12 09:39:24 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:39:26 - root - INFO - Received data: b'A'
+2025-02-12 09:39:26 - root - INFO - Received request (A) from the board.
+2025-02-12 09:39:26 - root - INFO - Sending test case to the board.
+2025-02-12 09:39:26 - root - INFO - Sent 21 bytes of data: b'\x11{test": liu) rdt":}?'
+2025-02-12 09:39:26 - root - INFO - Received data: b'\x03'
+2025-02-12 09:39:26 - root - ERROR - Received error code: 3
+2025-02-12 09:39:29 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:39:34 - root - INFO - Removed breakpoint id=182
+2025-02-12 09:39:34 - root - INFO - Removed breakpoint id=183
+2025-02-12 09:39:34 - root - INFO - Removed breakpoint id=184
+2025-02-12 09:39:34 - root - INFO - Removed breakpoint id=185
+2025-02-12 09:39:34 - root - INFO - Removed breakpoint id=186
+2025-02-12 09:39:34 - root - INFO - Removed breakpoint id=187
+2025-02-12 09:39:34 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:39:34 - root - INFO - End of round #31, coverage reset.
+
+2025-02-12 09:39:34 - root - INFO - === Starting Round #32 ===
+2025-02-12 09:39:34 - root - INFO - Round #32 => test_data=b'\x11{tet:{tet:s liu) d}?'
+2025-02-12 09:39:39 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:39:39 - root - INFO - Setting breakpoint at 0x80baf
+2025-02-12 09:39:39 - root - INFO - Breakpoint set at 0x80baf, bkptno=188
+2025-02-12 09:39:39 - root - INFO - Setting breakpoint at 0x8634b
+2025-02-12 09:39:39 - root - INFO - Breakpoint set at 0x8634b, bkptno=189
+2025-02-12 09:39:39 - root - INFO - Setting breakpoint at 0x80133
+2025-02-12 09:39:39 - root - INFO - Breakpoint set at 0x80133, bkptno=190
+2025-02-12 09:39:39 - root - INFO - Setting breakpoint at 0x8386d
+2025-02-12 09:39:39 - root - INFO - Breakpoint set at 0x8386d, bkptno=191
+2025-02-12 09:39:39 - root - INFO - Setting breakpoint at 0x82eed
+2025-02-12 09:39:39 - root - INFO - Breakpoint set at 0x82eed, bkptno=192
+2025-02-12 09:39:39 - root - INFO - Setting breakpoint at 0x81965
+2025-02-12 09:39:39 - root - INFO - Breakpoint set at 0x81965, bkptno=193
+2025-02-12 09:39:39 - root - INFO - [DEF chunk attempt] => sending b'\x11{tet:{tet:s liu) d}?'
+2025-02-12 09:39:39 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:39:39 - root - INFO - Received data: b'A'
+2025-02-12 09:39:39 - root - INFO - Received request (A) from the board.
+2025-02-12 09:39:39 - root - INFO - Sending test case to the board.
+2025-02-12 09:39:39 - root - INFO - Sent 21 bytes of data: b'\x11{tet:{tet:s liu) d}?'
+2025-02-12 09:39:39 - root - INFO - Received data: b'AAAA'
+2025-02-12 09:39:39 - root - ERROR - Received error code: 65
+2025-02-12 09:39:42 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:39:47 - root - INFO - Removed breakpoint id=188
+2025-02-12 09:39:47 - root - INFO - Removed breakpoint id=189
+2025-02-12 09:39:47 - root - INFO - Removed breakpoint id=190
+2025-02-12 09:39:47 - root - INFO - Removed breakpoint id=191
+2025-02-12 09:39:47 - root - INFO - Removed breakpoint id=192
+2025-02-12 09:39:47 - root - INFO - Removed breakpoint id=193
+2025-02-12 09:39:47 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:39:47 - root - INFO - End of round #32, coverage reset.
+
+2025-02-12 09:39:47 - root - INFO - === Starting Round #33 ===
+2025-02-12 09:39:47 - root - INFO - Round #33 => test_data=b'\x11t:s liu) d\xfd?'
+2025-02-12 09:39:52 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:39:52 - root - INFO - Setting breakpoint at 0x81b67
+2025-02-12 09:39:52 - root - INFO - Breakpoint set at 0x81b67, bkptno=194
+2025-02-12 09:39:52 - root - INFO - Setting breakpoint at 0x8634f
+2025-02-12 09:39:52 - root - INFO - Breakpoint set at 0x8634f, bkptno=195
+2025-02-12 09:39:52 - root - INFO - Setting breakpoint at 0x82499
+2025-02-12 09:39:52 - root - INFO - Breakpoint set at 0x82499, bkptno=196
+2025-02-12 09:39:52 - root - INFO - Setting breakpoint at 0x806d5
+2025-02-12 09:39:52 - root - INFO - Breakpoint set at 0x806d5, bkptno=197
+2025-02-12 09:39:52 - root - INFO - Setting breakpoint at 0x82657
+2025-02-12 09:39:52 - root - INFO - Breakpoint set at 0x82657, bkptno=198
+2025-02-12 09:39:52 - root - INFO - Setting breakpoint at 0x806db
+2025-02-12 09:39:52 - root - INFO - Breakpoint set at 0x806db, bkptno=199
+2025-02-12 09:39:52 - root - INFO - [DEF chunk attempt] => sending b'\x11t:s liu) d\xfd?'
+2025-02-12 09:39:52 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:39:54 - root - INFO - Received data: b'A'
+2025-02-12 09:39:54 - root - INFO - Received request (A) from the board.
+2025-02-12 09:39:54 - root - INFO - Sending test case to the board.
+2025-02-12 09:39:54 - root - INFO - Sent 13 bytes of data: b'\x11t:s liu) d\xfd?'
+2025-02-12 09:39:54 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:39:54 - root - ERROR - Received error code: 3
+2025-02-12 09:39:57 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:40:02 - root - INFO - Removed breakpoint id=194
+2025-02-12 09:40:02 - root - INFO - Removed breakpoint id=195
+2025-02-12 09:40:02 - root - INFO - Removed breakpoint id=196
+2025-02-12 09:40:02 - root - INFO - Removed breakpoint id=197
+2025-02-12 09:40:02 - root - INFO - Removed breakpoint id=198
+2025-02-12 09:40:02 - root - INFO - Removed breakpoint id=199
+2025-02-12 09:40:02 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:40:02 - root - INFO - End of round #33, coverage reset.
+
+2025-02-12 09:40:02 - root - INFO - === Starting Round #34 ===
+2025-02-12 09:40:02 - root - INFO - Round #34 => test_data=b'\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x11tliu?'
+2025-02-12 09:40:07 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:40:07 - root - INFO - Setting breakpoint at 0x825eb
+2025-02-12 09:40:07 - root - INFO - Breakpoint set at 0x825eb, bkptno=200
+2025-02-12 09:40:07 - root - INFO - Setting breakpoint at 0x80b17
+2025-02-12 09:40:07 - root - INFO - Breakpoint set at 0x80b17, bkptno=201
+2025-02-12 09:40:07 - root - INFO - Setting breakpoint at 0x82eeb
+2025-02-12 09:40:07 - root - INFO - Breakpoint set at 0x82eeb, bkptno=202
+2025-02-12 09:40:07 - root - INFO - Setting breakpoint at 0x8306b
+2025-02-12 09:40:07 - root - INFO - Breakpoint set at 0x8306b, bkptno=203
+2025-02-12 09:40:07 - root - INFO - Setting breakpoint at 0x83867
+2025-02-12 09:40:07 - root - INFO - Breakpoint set at 0x83867, bkptno=204
+2025-02-12 09:40:07 - root - INFO - Setting breakpoint at 0x85ab7
+2025-02-12 09:40:07 - root - INFO - Breakpoint set at 0x85ab7, bkptno=205
+2025-02-12 09:40:07 - root - INFO - [DEF chunk attempt] => sending b'\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x11tliu?'
+2025-02-12 09:40:07 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:40:09 - root - INFO - Received data: b'A'
+2025-02-12 09:40:09 - root - INFO - Received request (A) from the board.
+2025-02-12 09:40:09 - root - INFO - Sending test case to the board.
+2025-02-12 09:40:09 - root - INFO - Sent 19 bytes of data: b'\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x11tliu?'
+2025-02-12 09:40:09 - root - INFO - Received data: b'\x03'
+2025-02-12 09:40:09 - root - ERROR - Received error code: 3
+2025-02-12 09:40:12 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:40:17 - root - INFO - Removed breakpoint id=200
+2025-02-12 09:40:17 - root - INFO - Removed breakpoint id=201
+2025-02-12 09:40:17 - root - INFO - Removed breakpoint id=202
+2025-02-12 09:40:17 - root - INFO - Removed breakpoint id=203
+2025-02-12 09:40:17 - root - INFO - Removed breakpoint id=204
+2025-02-12 09:40:17 - root - INFO - Removed breakpoint id=205
+2025-02-12 09:40:17 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:40:17 - root - INFO - End of round #34, coverage reset.
+
+2025-02-12 09:40:17 - root - INFO - === Starting Round #35 ===
+2025-02-12 09:40:17 - root - INFO - Round #35 => test_data=b'[\x05\x05\x05\x05\x05\x05\x05\x05\x05tl\x05i\x05\x11\x05\xfeu?'
+2025-02-12 09:40:22 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:40:22 - root - INFO - Setting breakpoint at 0x80d39
+2025-02-12 09:40:22 - root - INFO - Breakpoint set at 0x80d39, bkptno=206
+2025-02-12 09:40:22 - root - INFO - Setting breakpoint at 0x82fad
+2025-02-12 09:40:22 - root - INFO - Breakpoint set at 0x82fad, bkptno=207
+2025-02-12 09:40:22 - root - INFO - Setting breakpoint at 0x82f55
+2025-02-12 09:40:22 - root - INFO - Breakpoint set at 0x82f55, bkptno=208
+2025-02-12 09:40:22 - root - INFO - Setting breakpoint at 0x82071
+2025-02-12 09:40:22 - root - INFO - Breakpoint set at 0x82071, bkptno=209
+2025-02-12 09:40:22 - root - INFO - Setting breakpoint at 0x83097
+2025-02-12 09:40:22 - root - INFO - Breakpoint set at 0x83097, bkptno=210
+2025-02-12 09:40:22 - root - INFO - Setting breakpoint at 0x84f17
+2025-02-12 09:40:22 - root - INFO - Breakpoint set at 0x84f17, bkptno=211
+2025-02-12 09:40:22 - root - INFO - [DEF chunk attempt] => sending b'[\x05\x05\x05\x05\x05\x05\x05\x05\x05tl\x05i\x05\x11\x05\xfeu?'
+2025-02-12 09:40:22 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:40:22 - root - INFO - Received data: b'A'
+2025-02-12 09:40:22 - root - INFO - Received request (A) from the board.
+2025-02-12 09:40:22 - root - INFO - Sending test case to the board.
+2025-02-12 09:40:22 - root - INFO - Sent 20 bytes of data: b'[\x05\x05\x05\x05\x05\x05\x05\x05\x05tl\x05i\x05\x11\x05\xfeu?'
+2025-02-12 09:40:22 - root - INFO - Received data: b'AAAA'
+2025-02-12 09:40:22 - root - ERROR - Received error code: 65
+2025-02-12 09:40:25 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:40:30 - root - INFO - Removed breakpoint id=206
+2025-02-12 09:40:30 - root - INFO - Removed breakpoint id=207
+2025-02-12 09:40:30 - root - INFO - Removed breakpoint id=208
+2025-02-12 09:40:30 - root - INFO - Removed breakpoint id=209
+2025-02-12 09:40:30 - root - INFO - Removed breakpoint id=210
+2025-02-12 09:40:30 - root - INFO - Removed breakpoint id=211
+2025-02-12 09:40:30 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:40:30 - root - INFO - End of round #35, coverage reset.
+
+2025-02-12 09:40:30 - root - INFO - === Starting Round #36 ===
+2025-02-12 09:40:30 - root - INFO - Round #36 => test_data=b'{"test": 123, "valid": true}'
+2025-02-12 09:40:35 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:40:35 - root - INFO - Setting breakpoint at 0x82f7f
+2025-02-12 09:40:35 - root - INFO - Breakpoint set at 0x82f7f, bkptno=212
+2025-02-12 09:40:35 - root - INFO - Setting breakpoint at 0x82665
+2025-02-12 09:40:35 - root - INFO - Breakpoint set at 0x82665, bkptno=213
+2025-02-12 09:40:35 - root - INFO - Setting breakpoint at 0x806db
+2025-02-12 09:40:35 - root - INFO - Breakpoint set at 0x806db, bkptno=214
+2025-02-12 09:40:35 - root - INFO - Setting breakpoint at 0x80d7d
+2025-02-12 09:40:35 - root - INFO - Breakpoint set at 0x80d7d, bkptno=215
+2025-02-12 09:40:35 - root - INFO - Setting breakpoint at 0x81b83
+2025-02-12 09:40:35 - root - INFO - Breakpoint set at 0x81b83, bkptno=216
+2025-02-12 09:40:35 - root - INFO - Setting breakpoint at 0x80ebf
+2025-02-12 09:40:35 - root - INFO - Breakpoint set at 0x80ebf, bkptno=217
+2025-02-12 09:40:35 - root - INFO - [DEF chunk attempt] => sending b'{"test": 123, "valid": true}'
+2025-02-12 09:40:35 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:40:37 - root - INFO - Received data: b'A'
+2025-02-12 09:40:37 - root - INFO - Received request (A) from the board.
+2025-02-12 09:40:37 - root - INFO - Sending test case to the board.
+2025-02-12 09:40:37 - root - INFO - Sent 28 bytes of data: b'{"test": 123, "valid": true}'
+2025-02-12 09:40:37 - root - INFO - Received data: b'\x00\x19\x00\x00\x00{"test":123,"valid":true}A'
+2025-02-12 09:40:37 - root - INFO - Received JSON data (25 bytes): {"test":123,"valid":true}
+2025-02-12 09:40:40 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:40:45 - root - INFO - Removed breakpoint id=212
+2025-02-12 09:40:45 - root - INFO - Removed breakpoint id=213
+2025-02-12 09:40:45 - root - INFO - Removed breakpoint id=214
+2025-02-12 09:40:45 - root - INFO - Removed breakpoint id=215
+2025-02-12 09:40:45 - root - INFO - Removed breakpoint id=216
+2025-02-12 09:40:45 - root - INFO - Removed breakpoint id=217
+2025-02-12 09:40:45 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:40:45 - root - INFO - End of round #36, coverage reset.
+
+2025-02-12 09:40:45 - root - INFO - === Starting Round #37 ===
+2025-02-12 09:40:45 - root - INFO - Round #37 => test_data=b'{"test": lid":tr ue}'
+2025-02-12 09:40:50 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:40:50 - root - INFO - Setting breakpoint at 0x81b83
+2025-02-12 09:40:50 - root - INFO - Breakpoint set at 0x81b83, bkptno=218
+2025-02-12 09:40:50 - root - INFO - Setting breakpoint at 0x82edf
+2025-02-12 09:40:50 - root - INFO - Breakpoint set at 0x82edf, bkptno=219
+2025-02-12 09:40:50 - root - INFO - Setting breakpoint at 0x80b35
+2025-02-12 09:40:50 - root - INFO - Breakpoint set at 0x80b35, bkptno=220
+2025-02-12 09:40:50 - root - INFO - Setting breakpoint at 0x80133
+2025-02-12 09:40:50 - root - INFO - Breakpoint set at 0x80133, bkptno=221
+2025-02-12 09:40:50 - root - INFO - Setting breakpoint at 0x80be3
+2025-02-12 09:40:50 - root - INFO - Breakpoint set at 0x80be3, bkptno=222
+2025-02-12 09:40:50 - root - INFO - Setting breakpoint at 0x82f55
+2025-02-12 09:40:50 - root - INFO - Breakpoint set at 0x82f55, bkptno=223
+2025-02-12 09:40:50 - root - INFO - [DEF chunk attempt] => sending b'{"test": lid":tr ue}'
+2025-02-12 09:40:50 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:40:52 - root - INFO - Received data: b'A'
+2025-02-12 09:40:52 - root - INFO - Received request (A) from the board.
+2025-02-12 09:40:52 - root - INFO - Sending test case to the board.
+2025-02-12 09:40:52 - root - INFO - Sent 20 bytes of data: b'{"test": lid":tr ue}'
+2025-02-12 09:40:52 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:40:52 - root - ERROR - Received error code: 3
+2025-02-12 09:40:55 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:41:00 - root - INFO - Removed breakpoint id=218
+2025-02-12 09:41:00 - root - INFO - Removed breakpoint id=219
+2025-02-12 09:41:00 - root - INFO - Removed breakpoint id=220
+2025-02-12 09:41:00 - root - INFO - Removed breakpoint id=221
+2025-02-12 09:41:00 - root - INFO - Removed breakpoint id=222
+2025-02-12 09:41:00 - root - INFO - Removed breakpoint id=223
+2025-02-12 09:41:00 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:41:00 - root - INFO - End of round #37, coverage reset.
+
+2025-02-12 09:41:00 - root - INFO - === Starting Round #38 ===
+2025-02-12 09:41:00 - root - INFO - Round #38 => test_data=b'{test": lid":tr u)}?'
+2025-02-12 09:41:05 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:41:05 - root - INFO - Setting breakpoint at 0x80da7
+2025-02-12 09:41:05 - root - INFO - Breakpoint set at 0x80da7, bkptno=224
+2025-02-12 09:41:05 - root - INFO - Setting breakpoint at 0x82f49
+2025-02-12 09:41:05 - root - INFO - Breakpoint set at 0x82f49, bkptno=225
+2025-02-12 09:41:05 - root - INFO - Setting breakpoint at 0x81bdf
+2025-02-12 09:41:05 - root - INFO - Breakpoint set at 0x81bdf, bkptno=226
+2025-02-12 09:41:05 - root - INFO - Setting breakpoint at 0x80d75
+2025-02-12 09:41:05 - root - INFO - Breakpoint set at 0x80d75, bkptno=227
+2025-02-12 09:41:05 - root - INFO - Setting breakpoint at 0x8265b
+2025-02-12 09:41:05 - root - INFO - Breakpoint set at 0x8265b, bkptno=228
+2025-02-12 09:41:05 - root - INFO - Setting breakpoint at 0x83869
+2025-02-12 09:41:05 - root - INFO - Breakpoint set at 0x83869, bkptno=229
+2025-02-12 09:41:05 - root - INFO - [DEF chunk attempt] => sending b'{test": lid":tr u)}?'
+2025-02-12 09:41:05 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:41:07 - root - INFO - Received data: b'A'
+2025-02-12 09:41:07 - root - INFO - Received request (A) from the board.
+2025-02-12 09:41:07 - root - INFO - Sending test case to the board.
+2025-02-12 09:41:07 - root - INFO - Sent 20 bytes of data: b'{test": lid":tr u)}?'
+2025-02-12 09:41:07 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:41:07 - root - ERROR - Received error code: 3
+2025-02-12 09:41:10 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:41:15 - root - INFO - Removed breakpoint id=224
+2025-02-12 09:41:15 - root - INFO - Removed breakpoint id=225
+2025-02-12 09:41:15 - root - INFO - Removed breakpoint id=226
+2025-02-12 09:41:15 - root - INFO - Removed breakpoint id=227
+2025-02-12 09:41:15 - root - INFO - Removed breakpoint id=228
+2025-02-12 09:41:15 - root - INFO - Removed breakpoint id=229
+2025-02-12 09:41:15 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:41:15 - root - INFO - End of round #38, coverage reset.
+
+2025-02-12 09:41:15 - root - INFO - === Starting Round #39 ===
+2025-02-12 09:41:15 - root - INFO - Round #39 => test_data=b'\x11{test": liu) rdt":}?'
+2025-02-12 09:41:20 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:41:20 - root - INFO - Setting breakpoint at 0x82f55
+2025-02-12 09:41:20 - root - INFO - Breakpoint set at 0x82f55, bkptno=230
+2025-02-12 09:41:20 - root - INFO - Setting breakpoint at 0x82f7f
+2025-02-12 09:41:20 - root - INFO - Breakpoint set at 0x82f7f, bkptno=231
+2025-02-12 09:41:20 - root - INFO - Setting breakpoint at 0x8634f
+2025-02-12 09:41:20 - root - INFO - Breakpoint set at 0x8634f, bkptno=232
+2025-02-12 09:41:20 - root - INFO - Setting breakpoint at 0x8632b
+2025-02-12 09:41:20 - root - INFO - Breakpoint set at 0x8632b, bkptno=233
+2025-02-12 09:41:20 - root - INFO - Setting breakpoint at 0x86189
+2025-02-12 09:41:20 - root - INFO - Breakpoint set at 0x86189, bkptno=234
+2025-02-12 09:41:20 - root - INFO - Setting breakpoint at 0x806df
+2025-02-12 09:41:20 - root - INFO - Breakpoint set at 0x806df, bkptno=235
+2025-02-12 09:41:20 - root - INFO - [DEF chunk attempt] => sending b'\x11{test": liu) rdt":}?'
+2025-02-12 09:41:20 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:41:22 - root - INFO - Received data: b'A'
+2025-02-12 09:41:22 - root - INFO - Received request (A) from the board.
+2025-02-12 09:41:22 - root - INFO - Sending test case to the board.
+2025-02-12 09:41:22 - root - INFO - Sent 21 bytes of data: b'\x11{test": liu) rdt":}?'
+2025-02-12 09:41:22 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:41:22 - root - ERROR - Received error code: 3
+2025-02-12 09:41:25 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:41:30 - root - INFO - Removed breakpoint id=230
+2025-02-12 09:41:30 - root - INFO - Removed breakpoint id=231
+2025-02-12 09:41:30 - root - INFO - Removed breakpoint id=232
+2025-02-12 09:41:30 - root - INFO - Removed breakpoint id=233
+2025-02-12 09:41:30 - root - INFO - Removed breakpoint id=234
+2025-02-12 09:41:30 - root - INFO - Removed breakpoint id=235
+2025-02-12 09:41:30 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:41:30 - root - INFO - End of round #39, coverage reset.
+
+2025-02-12 09:41:30 - root - INFO - === Starting Round #40 ===
+2025-02-12 09:41:30 - root - INFO - Round #40 => test_data=b'\x11{tet:{tet:s liu) d}?'
+2025-02-12 09:41:36 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:41:36 - root - INFO - Setting breakpoint at 0x84f2b
+2025-02-12 09:41:36 - root - INFO - Breakpoint set at 0x84f2b, bkptno=236
+2025-02-12 09:41:36 - root - INFO - Setting breakpoint at 0x80b7f
+2025-02-12 09:41:36 - root - INFO - Breakpoint set at 0x80b7f, bkptno=237
+2025-02-12 09:41:36 - root - INFO - Setting breakpoint at 0x80b7b
+2025-02-12 09:41:36 - root - INFO - Breakpoint set at 0x80b7b, bkptno=238
+2025-02-12 09:41:36 - root - INFO - Setting breakpoint at 0x8301d
+2025-02-12 09:41:36 - root - INFO - Breakpoint set at 0x8301d, bkptno=239
+2025-02-12 09:41:36 - root - INFO - Setting breakpoint at 0x82499
+2025-02-12 09:41:36 - root - INFO - Breakpoint set at 0x82499, bkptno=240
+2025-02-12 09:41:36 - root - INFO - Setting breakpoint at 0x806df
+2025-02-12 09:41:36 - root - INFO - Breakpoint set at 0x806df, bkptno=241
+2025-02-12 09:41:36 - root - INFO - [DEF chunk attempt] => sending b'\x11{tet:{tet:s liu) d}?'
+2025-02-12 09:41:36 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:41:38 - root - INFO - Received data: b'A'
+2025-02-12 09:41:38 - root - INFO - Received request (A) from the board.
+2025-02-12 09:41:38 - root - INFO - Sending test case to the board.
+2025-02-12 09:41:38 - root - INFO - Sent 21 bytes of data: b'\x11{tet:{tet:s liu) d}?'
+2025-02-12 09:41:38 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:41:38 - root - ERROR - Received error code: 3
+2025-02-12 09:41:41 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:41:46 - root - INFO - Removed breakpoint id=236
+2025-02-12 09:41:46 - root - INFO - Removed breakpoint id=237
+2025-02-12 09:41:46 - root - INFO - Removed breakpoint id=238
+2025-02-12 09:41:46 - root - INFO - Removed breakpoint id=239
+2025-02-12 09:41:46 - root - INFO - Removed breakpoint id=240
+2025-02-12 09:41:46 - root - INFO - Removed breakpoint id=241
+2025-02-12 09:41:46 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:41:46 - root - INFO - End of round #40, coverage reset.
+
+2025-02-12 09:41:46 - root - INFO - === Starting Round #41 ===
+2025-02-12 09:41:46 - root - INFO - Round #41 => test_data=b'\x11t:s liu) d\xfd?'
+2025-02-12 09:41:51 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:41:51 - root - INFO - Setting breakpoint at 0x806bd
+2025-02-12 09:41:51 - root - INFO - Breakpoint set at 0x806bd, bkptno=242
+2025-02-12 09:41:51 - root - INFO - Setting breakpoint at 0x80b7f
+2025-02-12 09:41:51 - root - INFO - Breakpoint set at 0x80b7f, bkptno=243
+2025-02-12 09:41:51 - root - INFO - Setting breakpoint at 0x82809
+2025-02-12 09:41:51 - root - INFO - Breakpoint set at 0x82809, bkptno=244
+2025-02-12 09:41:51 - root - INFO - Setting breakpoint at 0x821a5
+2025-02-12 09:41:51 - root - INFO - Breakpoint set at 0x821a5, bkptno=245
+2025-02-12 09:41:51 - root - INFO - Setting breakpoint at 0x80c11
+2025-02-12 09:41:51 - root - INFO - Breakpoint set at 0x80c11, bkptno=246
+2025-02-12 09:41:51 - root - INFO - Setting breakpoint at 0x80b85
+2025-02-12 09:41:51 - root - INFO - Breakpoint set at 0x80b85, bkptno=247
+2025-02-12 09:41:51 - root - INFO - [DEF chunk attempt] => sending b'\x11t:s liu) d\xfd?'
+2025-02-12 09:41:51 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:41:53 - root - INFO - Received data: b'A'
+2025-02-12 09:41:53 - root - INFO - Received request (A) from the board.
+2025-02-12 09:41:53 - root - INFO - Sending test case to the board.
+2025-02-12 09:41:53 - root - INFO - Sent 13 bytes of data: b'\x11t:s liu) d\xfd?'
+2025-02-12 09:41:53 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:41:53 - root - ERROR - Received error code: 3
+2025-02-12 09:41:56 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:42:01 - root - INFO - Removed breakpoint id=242
+2025-02-12 09:42:01 - root - INFO - Removed breakpoint id=243
+2025-02-12 09:42:01 - root - INFO - Removed breakpoint id=244
+2025-02-12 09:42:01 - root - INFO - Removed breakpoint id=245
+2025-02-12 09:42:01 - root - INFO - Removed breakpoint id=246
+2025-02-12 09:42:01 - root - INFO - Removed breakpoint id=247
+2025-02-12 09:42:01 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:42:01 - root - INFO - End of round #41, coverage reset.
+
+2025-02-12 09:42:01 - root - INFO - === Starting Round #42 ===
+2025-02-12 09:42:01 - root - INFO - Round #42 => test_data=b'\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x11tliu?'
+2025-02-12 09:42:06 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:42:06 - root - INFO - Setting breakpoint at 0x81b67
+2025-02-12 09:42:06 - root - INFO - Breakpoint set at 0x81b67, bkptno=248
+2025-02-12 09:42:06 - root - INFO - Setting breakpoint at 0x80121
+2025-02-12 09:42:06 - root - INFO - Breakpoint set at 0x80121, bkptno=249
+2025-02-12 09:42:06 - root - INFO - Setting breakpoint at 0x80b2d
+2025-02-12 09:42:06 - root - INFO - Breakpoint set at 0x80b2d, bkptno=250
+2025-02-12 09:42:06 - root - INFO - Setting breakpoint at 0x863d7
+2025-02-12 09:42:06 - root - INFO - Breakpoint set at 0x863d7, bkptno=251
+2025-02-12 09:42:06 - root - INFO - Setting breakpoint at 0x85ab7
+2025-02-12 09:42:06 - root - INFO - Breakpoint set at 0x85ab7, bkptno=252
+2025-02-12 09:42:06 - root - INFO - Setting breakpoint at 0x8222b
+2025-02-12 09:42:06 - root - INFO - Breakpoint set at 0x8222b, bkptno=253
+2025-02-12 09:42:06 - root - INFO - [DEF chunk attempt] => sending b'\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x11tliu?'
+2025-02-12 09:42:06 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:42:08 - root - INFO - Received data: b'A'
+2025-02-12 09:42:08 - root - INFO - Received request (A) from the board.
+2025-02-12 09:42:08 - root - INFO - Sending test case to the board.
+2025-02-12 09:42:08 - root - INFO - Sent 19 bytes of data: b'\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x11tliu?'
+2025-02-12 09:42:08 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:42:08 - root - ERROR - Received error code: 3
+2025-02-12 09:42:11 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:42:16 - root - INFO - Removed breakpoint id=248
+2025-02-12 09:42:16 - root - INFO - Removed breakpoint id=249
+2025-02-12 09:42:16 - root - INFO - Removed breakpoint id=250
+2025-02-12 09:42:16 - root - INFO - Removed breakpoint id=251
+2025-02-12 09:42:16 - root - INFO - Removed breakpoint id=252
+2025-02-12 09:42:16 - root - INFO - Removed breakpoint id=253
+2025-02-12 09:42:16 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:42:16 - root - INFO - End of round #42, coverage reset.
+
+2025-02-12 09:42:16 - root - INFO - === Starting Round #43 ===
+2025-02-12 09:42:16 - root - INFO - Round #43 => test_data=b'[\x05\x05\x05\x05\x05\x05\x05\x05\x05tl\x05i\x05\x11\x05\xfeu?'
+2025-02-12 09:42:21 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:42:21 - root - INFO - Setting breakpoint at 0x806d1
+2025-02-12 09:42:21 - root - INFO - Breakpoint set at 0x806d1, bkptno=254
+2025-02-12 09:42:21 - root - INFO - Setting breakpoint at 0x80b17
+2025-02-12 09:42:21 - root - INFO - Breakpoint set at 0x80b17, bkptno=255
+2025-02-12 09:42:21 - root - INFO - Setting breakpoint at 0x84ecb
+2025-02-12 09:42:21 - root - INFO - Breakpoint set at 0x84ecb, bkptno=256
+2025-02-12 09:42:21 - root - INFO - Setting breakpoint at 0x8682b
+2025-02-12 09:42:21 - root - INFO - Breakpoint set at 0x8682b, bkptno=257
+2025-02-12 09:42:21 - root - INFO - Setting breakpoint at 0x80b7b
+2025-02-12 09:42:21 - root - INFO - Breakpoint set at 0x80b7b, bkptno=258
+2025-02-12 09:42:21 - root - INFO - Setting breakpoint at 0x82e7d
+2025-02-12 09:42:21 - root - INFO - Breakpoint set at 0x82e7d, bkptno=259
+2025-02-12 09:42:21 - root - INFO - [DEF chunk attempt] => sending b'[\x05\x05\x05\x05\x05\x05\x05\x05\x05tl\x05i\x05\x11\x05\xfeu?'
+2025-02-12 09:42:21 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:42:23 - root - INFO - Received data: b'A'
+2025-02-12 09:42:23 - root - INFO - Received request (A) from the board.
+2025-02-12 09:42:23 - root - INFO - Sending test case to the board.
+2025-02-12 09:42:23 - root - INFO - Sent 20 bytes of data: b'[\x05\x05\x05\x05\x05\x05\x05\x05\x05tl\x05i\x05\x11\x05\xfeu?'
+2025-02-12 09:42:23 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:42:23 - root - ERROR - Received error code: 3
+2025-02-12 09:42:26 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:42:31 - root - INFO - Removed breakpoint id=254
+2025-02-12 09:42:31 - root - INFO - Removed breakpoint id=255
+2025-02-12 09:42:31 - root - INFO - Removed breakpoint id=256
+2025-02-12 09:42:31 - root - INFO - Removed breakpoint id=257
+2025-02-12 09:42:31 - root - INFO - Removed breakpoint id=258
+2025-02-12 09:42:31 - root - INFO - Removed breakpoint id=259
+2025-02-12 09:42:31 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:42:31 - root - INFO - End of round #43, coverage reset.
+
+2025-02-12 09:42:31 - root - INFO - === Starting Round #44 ===
+2025-02-12 09:42:31 - root - INFO - Round #44 => test_data=b'[\x05\x05\x05\x15\x05\x05\x05\x05\x05tl\x05i\x05\x11\x05\xfeu?'
+2025-02-12 09:42:36 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:42:36 - root - INFO - Setting breakpoint at 0x83881
+2025-02-12 09:42:36 - root - INFO - Breakpoint set at 0x83881, bkptno=260
+2025-02-12 09:42:36 - root - INFO - Setting breakpoint at 0x82809
+2025-02-12 09:42:36 - root - INFO - Breakpoint set at 0x82809, bkptno=261
+2025-02-12 09:42:36 - root - INFO - Setting breakpoint at 0x80c13
+2025-02-12 09:42:36 - root - INFO - Breakpoint set at 0x80c13, bkptno=262
+2025-02-12 09:42:36 - root - INFO - Setting breakpoint at 0x80bdb
+2025-02-12 09:42:36 - root - INFO - Breakpoint set at 0x80bdb, bkptno=263
+2025-02-12 09:42:36 - root - INFO - Setting breakpoint at 0x81425
+2025-02-12 09:42:36 - root - INFO - Breakpoint set at 0x81425, bkptno=264
+2025-02-12 09:42:36 - root - INFO - Setting breakpoint at 0x80121
+2025-02-12 09:42:36 - root - INFO - Breakpoint set at 0x80121, bkptno=265
+2025-02-12 09:42:36 - root - INFO - [DEF chunk attempt] => sending b'[\x05\x05\x05\x15\x05\x05\x05\x05\x05tl\x05i\x05\x11\x05\xfeu?'
+2025-02-12 09:42:36 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:42:38 - root - INFO - Received data: b'A'
+2025-02-12 09:42:38 - root - INFO - Received request (A) from the board.
+2025-02-12 09:42:38 - root - INFO - Sending test case to the board.
+2025-02-12 09:42:38 - root - INFO - Sent 20 bytes of data: b'[\x05\x05\x05\x15\x05\x05\x05\x05\x05tl\x05i\x05\x11\x05\xfeu?'
+2025-02-12 09:42:38 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:42:38 - root - ERROR - Received error code: 3
+2025-02-12 09:42:41 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:42:46 - root - INFO - Removed breakpoint id=260
+2025-02-12 09:42:46 - root - INFO - Removed breakpoint id=261
+2025-02-12 09:42:46 - root - INFO - Removed breakpoint id=262
+2025-02-12 09:42:46 - root - INFO - Removed breakpoint id=263
+2025-02-12 09:42:46 - root - INFO - Removed breakpoint id=264
+2025-02-12 09:42:46 - root - INFO - Removed breakpoint id=265
+2025-02-12 09:42:46 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:42:46 - root - INFO - End of round #44, coverage reset.
+
+2025-02-12 09:42:46 - root - INFO - === Starting Round #45 ===
+2025-02-12 09:42:46 - root - INFO - Round #45 => test_data=b'{"test": 123, "valid": true}'
+2025-02-12 09:42:51 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:42:51 - root - INFO - Setting breakpoint at 0x80b0b
+2025-02-12 09:42:51 - root - INFO - Breakpoint set at 0x80b0b, bkptno=266
+2025-02-12 09:42:51 - root - INFO - Setting breakpoint at 0x83865
+2025-02-12 09:42:51 - root - INFO - Breakpoint set at 0x83865, bkptno=267
+2025-02-12 09:42:51 - root - INFO - Setting breakpoint at 0x84ecb
+2025-02-12 09:42:51 - root - INFO - Breakpoint set at 0x84ecb, bkptno=268
+2025-02-12 09:42:51 - root - INFO - Setting breakpoint at 0x8190f
+2025-02-12 09:42:51 - root - INFO - Breakpoint set at 0x8190f, bkptno=269
+2025-02-12 09:42:51 - root - INFO - Setting breakpoint at 0x83867
+2025-02-12 09:42:51 - root - INFO - Breakpoint set at 0x83867, bkptno=270
+2025-02-12 09:42:51 - root - INFO - Setting breakpoint at 0x84f03
+2025-02-12 09:42:51 - root - INFO - Breakpoint set at 0x84f03, bkptno=271
+2025-02-12 09:42:51 - root - INFO - [DEF chunk attempt] => sending b'{"test": 123, "valid": true}'
+2025-02-12 09:42:51 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:42:53 - root - INFO - Received data: b'A'
+2025-02-12 09:42:53 - root - INFO - Received request (A) from the board.
+2025-02-12 09:42:53 - root - INFO - Sending test case to the board.
+2025-02-12 09:42:53 - root - INFO - Sent 28 bytes of data: b'{"test": 123, "valid": true}'
+2025-02-12 09:42:53 - root - INFO - Received data: b'\x00\x19\x00\x00\x00{"test":123,"valid":true}A'
+2025-02-12 09:42:53 - root - INFO - Received JSON data (25 bytes): {"test":123,"valid":true}
+2025-02-12 09:42:56 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:43:01 - root - INFO - Removed breakpoint id=266
+2025-02-12 09:43:01 - root - INFO - Removed breakpoint id=267
+2025-02-12 09:43:01 - root - INFO - Removed breakpoint id=268
+2025-02-12 09:43:01 - root - INFO - Removed breakpoint id=269
+2025-02-12 09:43:01 - root - INFO - Removed breakpoint id=270
+2025-02-12 09:43:01 - root - INFO - Removed breakpoint id=271
+2025-02-12 09:43:01 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:43:01 - root - INFO - End of round #45, coverage reset.
+
+2025-02-12 09:43:01 - root - INFO - === Starting Round #46 ===
+2025-02-12 09:43:01 - root - INFO - Round #46 => test_data=b'{"test": lid":tr ue}'
+2025-02-12 09:43:06 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:43:06 - root - INFO - Setting breakpoint at 0x821f3
+2025-02-12 09:43:06 - root - INFO - Breakpoint set at 0x821f3, bkptno=272
+2025-02-12 09:43:06 - root - INFO - Setting breakpoint at 0x80c13
+2025-02-12 09:43:06 - root - INFO - Breakpoint set at 0x80c13, bkptno=273
+2025-02-12 09:43:06 - root - INFO - Setting breakpoint at 0x82f35
+2025-02-12 09:43:06 - root - INFO - Breakpoint set at 0x82f35, bkptno=274
+2025-02-12 09:43:06 - root - INFO - Setting breakpoint at 0x80c11
+2025-02-12 09:43:06 - root - INFO - Breakpoint set at 0x80c11, bkptno=275
+2025-02-12 09:43:06 - root - INFO - Setting breakpoint at 0x83059
+2025-02-12 09:43:06 - root - INFO - Breakpoint set at 0x83059, bkptno=276
+2025-02-12 09:43:06 - root - INFO - Setting breakpoint at 0x82057
+2025-02-12 09:43:06 - root - INFO - Breakpoint set at 0x82057, bkptno=277
+2025-02-12 09:43:06 - root - INFO - [DEF chunk attempt] => sending b'{"test": lid":tr ue}'
+2025-02-12 09:43:06 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:43:08 - root - INFO - Received data: b'A'
+2025-02-12 09:43:08 - root - INFO - Received request (A) from the board.
+2025-02-12 09:43:08 - root - INFO - Sending test case to the board.
+2025-02-12 09:43:08 - root - INFO - Sent 20 bytes of data: b'{"test": lid":tr ue}'
+2025-02-12 09:43:08 - root - INFO - Received data: b'\x03'
+2025-02-12 09:43:08 - root - ERROR - Received error code: 3
+2025-02-12 09:43:11 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:43:16 - root - INFO - Removed breakpoint id=272
+2025-02-12 09:43:16 - root - INFO - Removed breakpoint id=273
+2025-02-12 09:43:16 - root - INFO - Removed breakpoint id=274
+2025-02-12 09:43:16 - root - INFO - Removed breakpoint id=275
+2025-02-12 09:43:16 - root - INFO - Removed breakpoint id=276
+2025-02-12 09:43:16 - root - INFO - Removed breakpoint id=277
+2025-02-12 09:43:16 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:43:16 - root - INFO - End of round #46, coverage reset.
+
+2025-02-12 09:43:16 - root - INFO - === Starting Round #47 ===
+2025-02-12 09:43:16 - root - INFO - Round #47 => test_data=b'{test": lid":tr u)}?'
+2025-02-12 09:43:21 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:43:21 - root - INFO - Setting breakpoint at 0x80b7f
+2025-02-12 09:43:21 - root - INFO - Breakpoint set at 0x80b7f, bkptno=278
+2025-02-12 09:43:21 - root - INFO - Setting breakpoint at 0x80af5
+2025-02-12 09:43:21 - root - INFO - Breakpoint set at 0x80af5, bkptno=279
+2025-02-12 09:43:21 - root - INFO - Setting breakpoint at 0x82807
+2025-02-12 09:43:21 - root - INFO - Breakpoint set at 0x82807, bkptno=280
+2025-02-12 09:43:21 - root - INFO - Setting breakpoint at 0x81fa9
+2025-02-12 09:43:21 - root - INFO - Breakpoint set at 0x81fa9, bkptno=281
+2025-02-12 09:43:21 - root - INFO - Setting breakpoint at 0x81ffb
+2025-02-12 09:43:21 - root - INFO - Breakpoint set at 0x81ffb, bkptno=282
+2025-02-12 09:43:21 - root - INFO - Setting breakpoint at 0x81ce1
+2025-02-12 09:43:21 - root - INFO - Breakpoint set at 0x81ce1, bkptno=283
+2025-02-12 09:43:21 - root - INFO - [DEF chunk attempt] => sending b'{test": lid":tr u)}?'
+2025-02-12 09:43:21 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:43:21 - root - INFO - Received data: b'A'
+2025-02-12 09:43:21 - root - INFO - Received request (A) from the board.
+2025-02-12 09:43:21 - root - INFO - Sending test case to the board.
+2025-02-12 09:43:21 - root - INFO - Sent 20 bytes of data: b'{test": lid":tr u)}?'
+2025-02-12 09:43:21 - root - INFO - Received data: b'AAAA'
+2025-02-12 09:43:21 - root - ERROR - Received error code: 65
+2025-02-12 09:43:24 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:43:29 - root - INFO - Removed breakpoint id=278
+2025-02-12 09:43:29 - root - INFO - Removed breakpoint id=279
+2025-02-12 09:43:29 - root - INFO - Removed breakpoint id=280
+2025-02-12 09:43:29 - root - INFO - Removed breakpoint id=281
+2025-02-12 09:43:29 - root - INFO - Removed breakpoint id=282
+2025-02-12 09:43:29 - root - INFO - Removed breakpoint id=283
+2025-02-12 09:43:29 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-12 09:43:29 - root - INFO - End of round #47, coverage reset.
+
+2025-02-12 09:43:29 - root - INFO - === Starting Round #48 ===
+2025-02-12 09:43:29 - root - INFO - Round #48 => test_data=b'\x11{test": liu) rdt":}?'
+2025-02-12 09:43:34 - root - INFO - Deleted all breakpoints.
+2025-02-12 09:43:34 - root - INFO - Setting breakpoint at 0x8634f
+2025-02-12 09:43:34 - root - INFO - Breakpoint set at 0x8634f, bkptno=284
+2025-02-12 09:43:34 - root - INFO - Setting breakpoint at 0x80d7d
+2025-02-12 09:43:34 - root - INFO - Breakpoint set at 0x80d7d, bkptno=285
+2025-02-12 09:43:34 - root - INFO - Setting breakpoint at 0x84f17
+2025-02-12 09:43:34 - root - INFO - Breakpoint set at 0x84f17, bkptno=286
+2025-02-12 09:43:34 - root - INFO - Setting breakpoint at 0x8148b
+2025-02-12 09:43:34 - root - INFO - Breakpoint set at 0x8148b, bkptno=287
+2025-02-12 09:43:34 - root - INFO - Setting breakpoint at 0x806db
+2025-02-12 09:43:34 - root - INFO - Breakpoint set at 0x806db, bkptno=288
+2025-02-12 09:43:34 - root - INFO - Setting breakpoint at 0x80b7f
+2025-02-12 09:43:34 - root - INFO - Breakpoint set at 0x80b7f, bkptno=289
+2025-02-12 09:43:34 - root - INFO - [DEF chunk attempt] => sending b'\x11{test": liu) rdt":}?'
+2025-02-12 09:43:34 - root - INFO - Waiting for the board to request input...
+2025-02-12 09:43:36 - root - INFO - Received data: b'A'
+2025-02-12 09:43:36 - root - INFO - Received request (A) from the board.
+2025-02-12 09:43:36 - root - INFO - Sending test case to the board.
+2025-02-12 09:43:36 - root - INFO - Sent 21 bytes of data: b'\x11{test": liu) rdt":}?'
+2025-02-12 09:43:36 - root - INFO - Received data: b'\x03A'
+2025-02-12 09:43:36 - root - ERROR - Received error code: 3
+2025-02-12 09:43:39 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-12 09:43:44 - root - INFO - Stopped by user.
+2025-02-12 09:43:44 - fuzzing.coverage_manager - INFO - CoverageManager SHM removed.

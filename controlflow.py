@@ -73,6 +73,7 @@ def is_critical_memory(addr):
 definitions_not_in_cfg = set()
 def_use_chains_not_in_cfg = set()
 external_defs_not_in_cfg = set()
+all_def_use_chains = set()
 # def get_block_containing_insn(cfg, ins_addr):
 #     node = cfg.get_any_node(ins_addr, anyaddr=True)
 #     if node:
@@ -86,7 +87,7 @@ external_defs_not_in_cfg = set()
 
 
 # Try to locate the entry node from the CFG's nodes
-entry_node = None
+entry_node = cfg.get_any_node(entry_point)
 for n in cfg.graph.nodes():
     if n.addr == entry_point:
         entry_node = n
@@ -167,8 +168,10 @@ for function_addr, function in cfg.kb.functions.items():
             if uses:
                 for use in uses:
                     use_ins_addr = use.ins_addr
+                    # if def_ins_addr != use_ins_addr:
+                    all_def_use_chains.add((def_ins_addr, use_ins_addr))
                     use_node = cfg.get_any_node(use_ins_addr, anyaddr=True)
-                    print(use_node)
+                    # print(use_node)
                     # use_node = get_block_containing_insn(cfg, use_ins_addr)
                     # print("**********")
                     # print(use_node1)
@@ -217,7 +220,14 @@ for function_addr, function in cfg.kb.functions.items():
 #     print(f"Definition at instruction address: {def_ins_addr_str} - Reason: {reason}")
 
 # print(f"Total number of definitions not in CFG: {len(definitions_not_in_cfg)}")
-
+with open('alldef.txt', 'w') as f:
+        f.write("Def-use chains  valid control flow path:\n\n")
+        for def_addr, use_addr in all_def_use_chains:
+            def_addr_str = f"0x{def_addr:x}"
+            use_addr_str = f"0x{use_addr:x}"
+            f.write(f"Definition: {def_addr_str:x}\n")
+            f.write(f"Use: {use_addr_str:x}\n\n")
+        f.write(f"Total def-use chains in CFG: {len(all_def_use_chains)}\n")
 print("\nDef-use chains not included in the CFG or without control flow path:")
 for def_ins_addr, use_ins_addr, reason in def_use_chains_not_in_cfg:
     if def_ins_addr is not None:

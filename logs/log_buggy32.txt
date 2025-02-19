@@ -1,0 +1,1014 @@
+2025-02-19 08:42:17 - root - INFO - === Starting main with 'one testcase until def/use triggers' ===
+2025-02-19 08:42:17 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-02-19 08:42:17 - root - INFO - Initial stop => reason=stopped, no reason given, payload={'type': 'notify', 'message': 'stopped', 'payload': {'frame': {'addr': '0x000808c6', 'func': 'UARTClass::available', 'args': [{'name': 'this', 'value': '<optimised out>'}], 'file': '/home/kai/.arduino15/packages/arduino/hardware/sam/1.6.12/cores/arduino/UARTClass.cpp', 'fullname': '/home/kai/.arduino15/packages/arduino/hardware/sam/1.6.12/cores/arduino/UARTClass.cpp', 'line': '107', 'arch': 'armv7'}, 'thread-id': '1', 'stopped-threads': 'all'}, 'token': None, 'stream': 'stdout'}
+2025-02-19 08:42:17 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 08:42:20 - root - INFO - === Starting Round #1 ===
+2025-02-19 08:42:20 - root - INFO - Round #1 => test_data=b'1E 00 00 00 62 75\n'
+2025-02-19 08:42:25 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:42:25 - root - INFO - Setting breakpoint at 0x80e65
+2025-02-19 08:42:25 - root - INFO - Breakpoint set at 0x80e65, bkptno=2
+2025-02-19 08:42:25 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 08:42:25 - root - INFO - Breakpoint set at 0x80e63, bkptno=3
+2025-02-19 08:42:25 - root - INFO - Setting breakpoint at 0x80e7b
+2025-02-19 08:42:25 - root - INFO - Breakpoint set at 0x80e7b, bkptno=4
+2025-02-19 08:42:25 - root - INFO - Setting breakpoint at 0x80133
+2025-02-19 08:42:25 - root - INFO - Breakpoint set at 0x80133, bkptno=5
+2025-02-19 08:42:25 - root - INFO - Setting breakpoint at 0x81c83
+2025-02-19 08:42:25 - root - INFO - Breakpoint set at 0x81c83, bkptno=6
+2025-02-19 08:42:25 - root - INFO - Setting breakpoint at 0x80e61
+2025-02-19 08:42:25 - root - INFO - Breakpoint set at 0x80e61, bkptno=7
+2025-02-19 08:42:25 - root - INFO - [DEF chunk attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-19 08:42:25 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:42:30 - root - WARNING - Timeout waiting for 'A' from the board.
+2025-02-19 08:42:30 - fuzzing.coverage_manager - INFO - CoverageManager SHM removed.
+2025-02-19 08:52:33 - root - INFO - === Starting main with 'one testcase until def/use triggers' ===
+2025-02-19 08:52:33 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-02-19 08:52:34 - root - INFO - Initial stop => reason=stopped, no reason given, payload={'type': 'notify', 'message': 'stopped', 'payload': {'frame': {'addr': '0x000808be', 'func': 'UARTClass::available', 'args': [{'name': 'this', 'value': '0x200709e0 <Serial>'}], 'file': '/home/kai/.arduino15/packages/arduino/hardware/sam/1.6.12/cores/arduino/UARTClass.cpp', 'fullname': '/home/kai/.arduino15/packages/arduino/hardware/sam/1.6.12/cores/arduino/UARTClass.cpp', 'line': '107', 'arch': 'armv7'}, 'thread-id': '1', 'stopped-threads': 'all'}, 'token': None, 'stream': 'stdout'}
+2025-02-19 08:52:34 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 08:52:34 - root - INFO - Restarting program from scratch...
+2025-02-19 08:52:34 - root - WARNING - Could not run after restart; continuing.
+2025-02-19 08:52:34 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 08:52:35 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 08:52:35 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 08:52:36 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 08:52:36 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 08:52:37 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 08:52:39 - root - INFO - === Starting Round #1 ===
+2025-02-19 08:52:39 - root - INFO - Round #1 => test_data=b'1E 00 00 00 62 75\n'
+2025-02-19 08:52:39 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:52:39 - root - INFO - Setting breakpoint at 0x80e69
+2025-02-19 08:52:39 - root - INFO - Breakpoint set at 0x80e69, bkptno=2
+2025-02-19 08:52:39 - root - INFO - Setting breakpoint at 0x8257f
+2025-02-19 08:52:39 - root - INFO - Breakpoint set at 0x8257f, bkptno=3
+2025-02-19 08:52:39 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 08:52:39 - root - INFO - Breakpoint set at 0x80e63, bkptno=4
+2025-02-19 08:52:39 - root - INFO - Setting breakpoint at 0x81ca7
+2025-02-19 08:52:39 - root - INFO - Breakpoint set at 0x81ca7, bkptno=5
+2025-02-19 08:52:39 - root - INFO - Setting breakpoint at 0x805c3
+2025-02-19 08:52:39 - root - INFO - Breakpoint set at 0x805c3, bkptno=6
+2025-02-19 08:52:39 - root - INFO - Setting breakpoint at 0x80771
+2025-02-19 08:52:39 - root - INFO - Breakpoint set at 0x80771, bkptno=7
+2025-02-19 08:52:39 - root - INFO - [DEF chunk attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-19 08:52:39 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:53:13 - root - INFO - Stopped by user.
+2025-02-19 08:53:13 - fuzzing.coverage_manager - INFO - CoverageManager SHM removed.
+2025-02-19 08:55:32 - root - INFO - === Starting main with 'one testcase until def/use triggers' ===
+2025-02-19 08:55:32 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-02-19 08:55:33 - root - INFO - Initial stop => reason=stopped, no reason given, payload={'type': 'notify', 'message': 'stopped', 'payload': {'frame': {'addr': '0x000808c6', 'func': 'UARTClass::available', 'args': [{'name': 'this', 'value': '<optimised out>'}], 'file': '/home/kai/.arduino15/packages/arduino/hardware/sam/1.6.12/cores/arduino/UARTClass.cpp', 'fullname': '/home/kai/.arduino15/packages/arduino/hardware/sam/1.6.12/cores/arduino/UARTClass.cpp', 'line': '107', 'arch': 'armv7'}, 'thread-id': '1', 'stopped-threads': 'all'}, 'token': None, 'stream': 'stdout'}
+2025-02-19 08:55:33 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 08:55:35 - root - INFO - === Starting Round #1 ===
+2025-02-19 08:55:35 - root - INFO - Round #1 => test_data=b'1E 00 00 00 62 75\n'
+2025-02-19 08:55:40 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:55:40 - root - INFO - Setting breakpoint at 0x81c83
+2025-02-19 08:55:40 - root - INFO - Breakpoint set at 0x81c83, bkptno=2
+2025-02-19 08:55:40 - root - INFO - Setting breakpoint at 0x801f1
+2025-02-19 08:55:40 - root - INFO - Breakpoint set at 0x801f1, bkptno=3
+2025-02-19 08:55:40 - root - INFO - Setting breakpoint at 0x805d3
+2025-02-19 08:55:40 - root - INFO - Breakpoint set at 0x805d3, bkptno=4
+2025-02-19 08:55:40 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 08:55:40 - root - INFO - Breakpoint set at 0x80e63, bkptno=5
+2025-02-19 08:55:40 - root - INFO - Setting breakpoint at 0x81c7d
+2025-02-19 08:55:40 - root - INFO - Breakpoint set at 0x81c7d, bkptno=6
+2025-02-19 08:55:40 - root - INFO - Setting breakpoint at 0x8062f
+2025-02-19 08:55:40 - root - INFO - Breakpoint set at 0x8062f, bkptno=7
+2025-02-19 08:55:40 - root - INFO - [DEF chunk attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-19 08:55:40 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:55:40 - root - INFO - Sending test case to the board.
+2025-02-19 08:55:40 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-19 08:55:42 - root - INFO - Received response: b''
+2025-02-19 08:55:42 - root - WARNING - No response from the board.
+2025-02-19 08:55:45 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 08:55:50 - root - INFO - Removed breakpoint id=2
+2025-02-19 08:55:50 - root - INFO - Removed breakpoint id=3
+2025-02-19 08:55:50 - root - INFO - Removed breakpoint id=4
+2025-02-19 08:55:50 - root - INFO - Removed breakpoint id=5
+2025-02-19 08:55:50 - root - INFO - Removed breakpoint id=6
+2025-02-19 08:55:50 - root - INFO - Removed breakpoint id=7
+2025-02-19 08:55:50 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 08:55:50 - root - INFO - End of round #1, coverage reset.
+
+2025-02-19 08:55:50 - root - INFO - === Starting Round #2 ===
+2025-02-19 08:55:50 - root - INFO - Round #2 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:55:55 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:55:55 - root - INFO - Setting breakpoint at 0x8062d
+2025-02-19 08:55:55 - root - INFO - Breakpoint set at 0x8062d, bkptno=8
+2025-02-19 08:55:55 - root - INFO - Setting breakpoint at 0x8066b
+2025-02-19 08:55:55 - root - INFO - Breakpoint set at 0x8066b, bkptno=9
+2025-02-19 08:55:55 - root - INFO - Setting breakpoint at 0x80641
+2025-02-19 08:55:55 - root - INFO - Breakpoint set at 0x80641, bkptno=10
+2025-02-19 08:55:55 - root - INFO - Setting breakpoint at 0x80e61
+2025-02-19 08:55:55 - root - INFO - Breakpoint set at 0x80e61, bkptno=11
+2025-02-19 08:55:55 - root - INFO - Setting breakpoint at 0x806f9
+2025-02-19 08:55:55 - root - INFO - Breakpoint set at 0x806f9, bkptno=12
+2025-02-19 08:55:55 - root - INFO - Setting breakpoint at 0x80585
+2025-02-19 08:55:55 - root - INFO - Breakpoint set at 0x80585, bkptno=13
+2025-02-19 08:55:55 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:55:55 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:55:55 - root - INFO - Sending test case to the board.
+2025-02-19 08:55:55 - root - INFO - Sent 93 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:55:57 - root - INFO - Received response: b''
+2025-02-19 08:55:57 - root - WARNING - No response from the board.
+2025-02-19 08:56:00 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 08:56:05 - root - INFO - Removed breakpoint id=8
+2025-02-19 08:56:05 - root - INFO - Removed breakpoint id=9
+2025-02-19 08:56:05 - root - INFO - Removed breakpoint id=10
+2025-02-19 08:56:05 - root - INFO - Removed breakpoint id=11
+2025-02-19 08:56:05 - root - INFO - Removed breakpoint id=12
+2025-02-19 08:56:05 - root - INFO - Removed breakpoint id=13
+2025-02-19 08:56:05 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 08:56:05 - root - INFO - End of round #2, coverage reset.
+
+2025-02-19 08:56:05 - root - INFO - === Starting Round #3 ===
+2025-02-19 08:56:05 - root - INFO - Round #3 => test_data=b'1E 00 00 00 62 75\n'
+2025-02-19 08:56:10 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:56:10 - root - INFO - Setting breakpoint at 0x80171
+2025-02-19 08:56:10 - root - INFO - Breakpoint set at 0x80171, bkptno=14
+2025-02-19 08:56:10 - root - INFO - Setting breakpoint at 0x80559
+2025-02-19 08:56:10 - root - INFO - Breakpoint set at 0x80559, bkptno=15
+2025-02-19 08:56:10 - root - INFO - Setting breakpoint at 0x81c6d
+2025-02-19 08:56:10 - root - INFO - Breakpoint set at 0x81c6d, bkptno=16
+2025-02-19 08:56:10 - root - INFO - Setting breakpoint at 0x8018d
+2025-02-19 08:56:10 - root - INFO - Breakpoint set at 0x8018d, bkptno=17
+2025-02-19 08:56:10 - root - INFO - Setting breakpoint at 0x8053b
+2025-02-19 08:56:10 - root - INFO - Breakpoint set at 0x8053b, bkptno=18
+2025-02-19 08:56:10 - root - INFO - Setting breakpoint at 0x80645
+2025-02-19 08:56:10 - root - INFO - Breakpoint set at 0x80645, bkptno=19
+2025-02-19 08:56:10 - root - INFO - [DEF chunk attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-19 08:56:10 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:56:10 - root - INFO - Sending test case to the board.
+2025-02-19 08:56:10 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-19 08:56:12 - root - INFO - Received response: b''
+2025-02-19 08:56:12 - root - WARNING - No response from the board.
+2025-02-19 08:56:15 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 08:56:20 - root - INFO - Removed breakpoint id=14
+2025-02-19 08:56:20 - root - INFO - Removed breakpoint id=15
+2025-02-19 08:56:20 - root - INFO - Removed breakpoint id=16
+2025-02-19 08:56:20 - root - INFO - Removed breakpoint id=17
+2025-02-19 08:56:20 - root - INFO - Removed breakpoint id=18
+2025-02-19 08:56:20 - root - INFO - Removed breakpoint id=19
+2025-02-19 08:56:20 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 08:56:20 - root - INFO - End of round #3, coverage reset.
+
+2025-02-19 08:56:20 - root - INFO - === Starting Round #4 ===
+2025-02-19 08:56:20 - root - INFO - Round #4 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:56:25 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:56:25 - root - INFO - Setting breakpoint at 0x80e61
+2025-02-19 08:56:25 - root - INFO - Breakpoint set at 0x80e61, bkptno=20
+2025-02-19 08:56:25 - root - INFO - Setting breakpoint at 0x80e65
+2025-02-19 08:56:25 - root - INFO - Breakpoint set at 0x80e65, bkptno=21
+2025-02-19 08:56:25 - root - INFO - Setting breakpoint at 0x805c5
+2025-02-19 08:56:25 - root - INFO - Breakpoint set at 0x805c5, bkptno=22
+2025-02-19 08:56:25 - root - INFO - Setting breakpoint at 0x81ca7
+2025-02-19 08:56:25 - root - INFO - Breakpoint set at 0x81ca7, bkptno=23
+2025-02-19 08:56:25 - root - INFO - Setting breakpoint at 0x80773
+2025-02-19 08:56:25 - root - INFO - Breakpoint set at 0x80773, bkptno=24
+2025-02-19 08:56:25 - root - INFO - Setting breakpoint at 0x805c3
+2025-02-19 08:56:25 - root - INFO - Breakpoint set at 0x805c3, bkptno=25
+2025-02-19 08:56:25 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:56:25 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:56:25 - root - INFO - Sending test case to the board.
+2025-02-19 08:56:25 - root - INFO - Sent 93 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:56:27 - root - INFO - Received response: b''
+2025-02-19 08:56:27 - root - WARNING - No response from the board.
+2025-02-19 08:56:30 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 08:56:35 - root - INFO - Removed breakpoint id=20
+2025-02-19 08:56:35 - root - INFO - Removed breakpoint id=21
+2025-02-19 08:56:35 - root - INFO - Removed breakpoint id=22
+2025-02-19 08:56:35 - root - INFO - Removed breakpoint id=23
+2025-02-19 08:56:35 - root - INFO - Removed breakpoint id=24
+2025-02-19 08:56:35 - root - INFO - Removed breakpoint id=25
+2025-02-19 08:56:35 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 08:56:35 - root - INFO - End of round #4, coverage reset.
+
+2025-02-19 08:56:35 - root - INFO - === Starting Round #5 ===
+2025-02-19 08:56:35 - root - INFO - Round #5 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:56:40 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:56:40 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 08:56:40 - root - INFO - Breakpoint set at 0x80e63, bkptno=26
+2025-02-19 08:56:40 - root - INFO - Setting breakpoint at 0x80e61
+2025-02-19 08:56:40 - root - INFO - Breakpoint set at 0x80e61, bkptno=27
+2025-02-19 08:56:40 - root - INFO - Setting breakpoint at 0x80e65
+2025-02-19 08:56:40 - root - INFO - Breakpoint set at 0x80e65, bkptno=28
+2025-02-19 08:56:40 - root - INFO - Setting breakpoint at 0x806c1
+2025-02-19 08:56:40 - root - INFO - Breakpoint set at 0x806c1, bkptno=29
+2025-02-19 08:56:40 - root - INFO - Setting breakpoint at 0x801ef
+2025-02-19 08:56:40 - root - INFO - Breakpoint set at 0x801ef, bkptno=30
+2025-02-19 08:56:40 - root - INFO - Setting breakpoint at 0x80641
+2025-02-19 08:56:40 - root - INFO - Breakpoint set at 0x80641, bkptno=31
+2025-02-19 08:56:40 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:56:40 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:56:40 - root - INFO - Sending test case to the board.
+2025-02-19 08:56:40 - root - INFO - Sent 205 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:56:42 - root - INFO - Received response: b''
+2025-02-19 08:56:42 - root - WARNING - No response from the board.
+2025-02-19 08:56:45 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 08:56:50 - root - INFO - Removed breakpoint id=26
+2025-02-19 08:56:50 - root - INFO - Removed breakpoint id=27
+2025-02-19 08:56:50 - root - INFO - Removed breakpoint id=28
+2025-02-19 08:56:50 - root - INFO - Removed breakpoint id=29
+2025-02-19 08:56:50 - root - INFO - Removed breakpoint id=30
+2025-02-19 08:56:50 - root - INFO - Removed breakpoint id=31
+2025-02-19 08:56:50 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 08:56:50 - root - INFO - End of round #5, coverage reset.
+
+2025-02-19 08:56:50 - root - INFO - === Starting Round #6 ===
+2025-02-19 08:56:50 - root - INFO - Round #6 => test_data=b'1E 00 00 00 62 75\n'
+2025-02-19 08:56:55 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:56:55 - root - INFO - Setting breakpoint at 0x801dd
+2025-02-19 08:56:55 - root - INFO - Breakpoint set at 0x801dd, bkptno=32
+2025-02-19 08:56:55 - root - INFO - Setting breakpoint at 0x81ca7
+2025-02-19 08:56:55 - root - INFO - Breakpoint set at 0x81ca7, bkptno=33
+2025-02-19 08:56:55 - root - INFO - Setting breakpoint at 0x801f1
+2025-02-19 08:56:55 - root - INFO - Breakpoint set at 0x801f1, bkptno=34
+2025-02-19 08:56:55 - root - INFO - Setting breakpoint at 0x805bb
+2025-02-19 08:56:55 - root - INFO - Breakpoint set at 0x805bb, bkptno=35
+2025-02-19 08:56:55 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 08:56:55 - root - INFO - Breakpoint set at 0x80e63, bkptno=36
+2025-02-19 08:56:55 - root - INFO - Setting breakpoint at 0x806f5
+2025-02-19 08:56:55 - root - INFO - Breakpoint set at 0x806f5, bkptno=37
+2025-02-19 08:56:55 - root - INFO - [DEF chunk attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-19 08:56:55 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:56:55 - root - INFO - Sending test case to the board.
+2025-02-19 08:56:55 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-19 08:56:57 - root - INFO - Received response: b''
+2025-02-19 08:56:57 - root - WARNING - No response from the board.
+2025-02-19 08:57:00 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 08:57:05 - root - INFO - Removed breakpoint id=32
+2025-02-19 08:57:05 - root - INFO - Removed breakpoint id=33
+2025-02-19 08:57:05 - root - INFO - Removed breakpoint id=34
+2025-02-19 08:57:05 - root - INFO - Removed breakpoint id=35
+2025-02-19 08:57:05 - root - INFO - Removed breakpoint id=36
+2025-02-19 08:57:05 - root - INFO - Removed breakpoint id=37
+2025-02-19 08:57:05 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 08:57:05 - root - INFO - End of round #6, coverage reset.
+
+2025-02-19 08:57:05 - root - INFO - === Starting Round #7 ===
+2025-02-19 08:57:05 - root - INFO - Round #7 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:57:11 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:57:11 - root - INFO - Setting breakpoint at 0x80e61
+2025-02-19 08:57:11 - root - INFO - Breakpoint set at 0x80e61, bkptno=38
+2025-02-19 08:57:11 - root - INFO - Setting breakpoint at 0x81c97
+2025-02-19 08:57:11 - root - INFO - Breakpoint set at 0x81c97, bkptno=39
+2025-02-19 08:57:11 - root - INFO - Setting breakpoint at 0x80e79
+2025-02-19 08:57:11 - root - INFO - Breakpoint set at 0x80e79, bkptno=40
+2025-02-19 08:57:11 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 08:57:11 - root - INFO - Breakpoint set at 0x80e63, bkptno=41
+2025-02-19 08:57:11 - root - INFO - Setting breakpoint at 0x8062d
+2025-02-19 08:57:11 - root - INFO - Breakpoint set at 0x8062d, bkptno=42
+2025-02-19 08:57:11 - root - INFO - Setting breakpoint at 0x81ca7
+2025-02-19 08:57:11 - root - INFO - Breakpoint set at 0x81ca7, bkptno=43
+2025-02-19 08:57:11 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:57:11 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:57:11 - root - INFO - Sending test case to the board.
+2025-02-19 08:57:11 - root - INFO - Sent 93 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:57:13 - root - INFO - Received response: b''
+2025-02-19 08:57:13 - root - WARNING - No response from the board.
+2025-02-19 08:57:13 - root - INFO - Def triggered => 0x80e79
+2025-02-19 08:57:13 - root - INFO - Removed breakpoint id=40
+2025-02-19 08:57:13 - root - INFO - Handling uses for def=0x80e79. Found 2 uses.
+2025-02-19 08:57:13 - root - INFO - Setting breakpoint at 0x80e93
+2025-02-19 08:57:13 - root - INFO - Breakpoint set at 0x80e93, bkptno=44
+2025-02-19 08:57:13 - root - INFO - Setting breakpoint at 0x80ea3
+2025-02-19 08:57:13 - root - INFO - Breakpoint set at 0x80ea3, bkptno=45
+2025-02-19 08:57:13 - root - INFO - [Use Attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:57:13 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:57:13 - root - INFO - Sending test case to the board.
+2025-02-19 08:57:13 - root - INFO - Sent 93 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:57:15 - root - INFO - Received response: b''
+2025-02-19 08:57:15 - root - WARNING - No response from the board.
+2025-02-19 08:57:18 - root - INFO - No use triggered this attempt.
+2025-02-19 08:57:18 - fuzzing.coverage_manager - INFO - New coverage detected.
+2025-02-19 08:57:18 - root - INFO - New coverage from uses => add input to corpus.
+2025-02-19 08:57:23 - root - INFO - Removed breakpoint id=44
+2025-02-19 08:57:23 - root - INFO - Removed breakpoint id=45
+2025-02-19 08:57:23 - root - INFO - End of use chunk, continuing to next chunk.
+2025-02-19 08:57:23 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 08:57:23 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 08:57:24 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 08:57:24 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:57:24 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:57:24 - root - INFO - Sending test case to the board.
+2025-02-19 08:57:24 - root - INFO - Sent 93 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:57:26 - root - INFO - Received response: b''
+2025-02-19 08:57:26 - root - WARNING - No response from the board.
+2025-02-19 08:57:29 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 08:57:34 - root - INFO - Removed breakpoint id=38
+2025-02-19 08:57:34 - root - INFO - Removed breakpoint id=39
+2025-02-19 08:57:34 - root - INFO - Removed breakpoint id=41
+2025-02-19 08:57:34 - root - INFO - Removed breakpoint id=42
+2025-02-19 08:57:34 - root - INFO - Removed breakpoint id=43
+2025-02-19 08:57:34 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 08:57:34 - root - INFO - End of round #7, coverage reset.
+
+2025-02-19 08:57:34 - root - INFO - === Starting Round #8 ===
+2025-02-19 08:57:34 - root - INFO - Round #8 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:57:39 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:57:39 - root - INFO - Setting breakpoint at 0x80559
+2025-02-19 08:57:39 - root - INFO - Breakpoint set at 0x80559, bkptno=46
+2025-02-19 08:57:39 - root - INFO - Setting breakpoint at 0x80625
+2025-02-19 08:57:39 - root - INFO - Breakpoint set at 0x80625, bkptno=47
+2025-02-19 08:57:39 - root - INFO - Setting breakpoint at 0x806f9
+2025-02-19 08:57:39 - root - INFO - Breakpoint set at 0x806f9, bkptno=48
+2025-02-19 08:57:39 - root - INFO - Setting breakpoint at 0x80e65
+2025-02-19 08:57:39 - root - INFO - Breakpoint set at 0x80e65, bkptno=49
+2025-02-19 08:57:39 - root - INFO - Setting breakpoint at 0x80685
+2025-02-19 08:57:39 - root - INFO - Breakpoint set at 0x80685, bkptno=50
+2025-02-19 08:57:39 - root - INFO - Setting breakpoint at 0x81ca7
+2025-02-19 08:57:39 - root - INFO - Breakpoint set at 0x81ca7, bkptno=51
+2025-02-19 08:57:39 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:57:39 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:57:39 - root - INFO - Sending test case to the board.
+2025-02-19 08:57:39 - root - INFO - Sent 205 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:57:41 - root - INFO - Received response: b''
+2025-02-19 08:57:41 - root - WARNING - No response from the board.
+2025-02-19 08:57:44 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 08:57:49 - root - INFO - Removed breakpoint id=46
+2025-02-19 08:57:49 - root - INFO - Removed breakpoint id=47
+2025-02-19 08:57:49 - root - INFO - Removed breakpoint id=48
+2025-02-19 08:57:49 - root - INFO - Removed breakpoint id=49
+2025-02-19 08:57:49 - root - INFO - Removed breakpoint id=50
+2025-02-19 08:57:49 - root - INFO - Removed breakpoint id=51
+2025-02-19 08:57:49 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 08:57:49 - root - INFO - End of round #8, coverage reset.
+
+2025-02-19 08:57:49 - root - INFO - === Starting Round #9 ===
+2025-02-19 08:57:49 - root - INFO - Round #9 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:57:54 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:57:54 - root - INFO - Setting breakpoint at 0x805c5
+2025-02-19 08:57:54 - root - INFO - Breakpoint set at 0x805c5, bkptno=52
+2025-02-19 08:57:54 - root - INFO - Setting breakpoint at 0x80773
+2025-02-19 08:57:54 - root - INFO - Breakpoint set at 0x80773, bkptno=53
+2025-02-19 08:57:54 - root - INFO - Setting breakpoint at 0x80e69
+2025-02-19 08:57:54 - root - INFO - Breakpoint set at 0x80e69, bkptno=54
+2025-02-19 08:57:54 - root - INFO - Setting breakpoint at 0x80e61
+2025-02-19 08:57:54 - root - INFO - Breakpoint set at 0x80e61, bkptno=55
+2025-02-19 08:57:54 - root - INFO - Setting breakpoint at 0x8060d
+2025-02-19 08:57:54 - root - INFO - Breakpoint set at 0x8060d, bkptno=56
+2025-02-19 08:57:54 - root - INFO - Setting breakpoint at 0x81c7f
+2025-02-19 08:57:54 - root - INFO - Breakpoint set at 0x81c7f, bkptno=57
+2025-02-19 08:57:54 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:57:54 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:57:54 - root - INFO - Sending test case to the board.
+2025-02-19 08:57:54 - root - INFO - Sent 93 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:57:56 - root - INFO - Received response: b''
+2025-02-19 08:57:56 - root - WARNING - No response from the board.
+2025-02-19 08:57:59 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 08:58:04 - root - INFO - Removed breakpoint id=52
+2025-02-19 08:58:04 - root - INFO - Removed breakpoint id=53
+2025-02-19 08:58:04 - root - INFO - Removed breakpoint id=54
+2025-02-19 08:58:04 - root - INFO - Removed breakpoint id=55
+2025-02-19 08:58:04 - root - INFO - Removed breakpoint id=56
+2025-02-19 08:58:04 - root - INFO - Removed breakpoint id=57
+2025-02-19 08:58:04 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 08:58:04 - root - INFO - End of round #9, coverage reset.
+
+2025-02-19 08:58:04 - root - INFO - === Starting Round #10 ===
+2025-02-19 08:58:04 - root - INFO - Round #10 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff!\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:58:09 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:58:09 - root - INFO - Setting breakpoint at 0x805c3
+2025-02-19 08:58:09 - root - INFO - Breakpoint set at 0x805c3, bkptno=58
+2025-02-19 08:58:09 - root - INFO - Setting breakpoint at 0x80657
+2025-02-19 08:58:09 - root - INFO - Breakpoint set at 0x80657, bkptno=59
+2025-02-19 08:58:09 - root - INFO - Setting breakpoint at 0x806c1
+2025-02-19 08:58:09 - root - INFO - Breakpoint set at 0x806c1, bkptno=60
+2025-02-19 08:58:09 - root - INFO - Setting breakpoint at 0x806f5
+2025-02-19 08:58:09 - root - INFO - Breakpoint set at 0x806f5, bkptno=61
+2025-02-19 08:58:09 - root - INFO - Setting breakpoint at 0x81c93
+2025-02-19 08:58:09 - root - INFO - Breakpoint set at 0x81c93, bkptno=62
+2025-02-19 08:58:09 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 08:58:09 - root - INFO - Breakpoint set at 0x80e63, bkptno=63
+2025-02-19 08:58:09 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff!\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:58:09 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:58:09 - root - INFO - Sending test case to the board.
+2025-02-19 08:58:09 - root - INFO - Sent 94 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff!\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:58:11 - root - INFO - Received response: b''
+2025-02-19 08:58:11 - root - WARNING - No response from the board.
+2025-02-19 08:58:14 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 08:58:19 - root - INFO - Removed breakpoint id=58
+2025-02-19 08:58:19 - root - INFO - Removed breakpoint id=59
+2025-02-19 08:58:19 - root - INFO - Removed breakpoint id=60
+2025-02-19 08:58:19 - root - INFO - Removed breakpoint id=61
+2025-02-19 08:58:19 - root - INFO - Removed breakpoint id=62
+2025-02-19 08:58:19 - root - INFO - Removed breakpoint id=63
+2025-02-19 08:58:19 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 08:58:19 - root - INFO - End of round #10, coverage reset.
+
+2025-02-19 08:58:19 - root - INFO - === Starting Round #11 ===
+2025-02-19 08:58:19 - root - INFO - Round #11 => test_data=b'1E 00 00 00 62 75\n'
+2025-02-19 08:58:24 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:58:24 - root - INFO - Setting breakpoint at 0x80657
+2025-02-19 08:58:24 - root - INFO - Breakpoint set at 0x80657, bkptno=64
+2025-02-19 08:58:24 - root - INFO - Setting breakpoint at 0x81ca7
+2025-02-19 08:58:24 - root - INFO - Breakpoint set at 0x81ca7, bkptno=65
+2025-02-19 08:58:24 - root - INFO - Setting breakpoint at 0x8061d
+2025-02-19 08:58:24 - root - INFO - Breakpoint set at 0x8061d, bkptno=66
+2025-02-19 08:58:24 - root - INFO - Setting breakpoint at 0x80559
+2025-02-19 08:58:24 - root - INFO - Breakpoint set at 0x80559, bkptno=67
+2025-02-19 08:58:24 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 08:58:24 - root - INFO - Breakpoint set at 0x80e63, bkptno=68
+2025-02-19 08:58:24 - root - INFO - Setting breakpoint at 0x81c87
+2025-02-19 08:58:24 - root - INFO - Breakpoint set at 0x81c87, bkptno=69
+2025-02-19 08:58:24 - root - INFO - [DEF chunk attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-19 08:58:24 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:58:24 - root - INFO - Sending test case to the board.
+2025-02-19 08:58:24 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-19 08:58:26 - root - INFO - Received response: b''
+2025-02-19 08:58:26 - root - WARNING - No response from the board.
+2025-02-19 08:58:29 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 08:58:34 - root - INFO - Removed breakpoint id=64
+2025-02-19 08:58:34 - root - INFO - Removed breakpoint id=65
+2025-02-19 08:58:34 - root - INFO - Removed breakpoint id=66
+2025-02-19 08:58:34 - root - INFO - Removed breakpoint id=67
+2025-02-19 08:58:34 - root - INFO - Removed breakpoint id=68
+2025-02-19 08:58:34 - root - INFO - Removed breakpoint id=69
+2025-02-19 08:58:34 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 08:58:34 - root - INFO - End of round #11, coverage reset.
+
+2025-02-19 08:58:34 - root - INFO - === Starting Round #12 ===
+2025-02-19 08:58:34 - root - INFO - Round #12 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:58:39 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:58:39 - root - INFO - Setting breakpoint at 0x81c83
+2025-02-19 08:58:39 - root - INFO - Breakpoint set at 0x81c83, bkptno=70
+2025-02-19 08:58:39 - root - INFO - Setting breakpoint at 0x8076f
+2025-02-19 08:58:39 - root - INFO - Breakpoint set at 0x8076f, bkptno=71
+2025-02-19 08:58:39 - root - INFO - Setting breakpoint at 0x82401
+2025-02-19 08:58:39 - root - INFO - Breakpoint set at 0x82401, bkptno=72
+2025-02-19 08:58:39 - root - INFO - Setting breakpoint at 0x80e77
+2025-02-19 08:58:39 - root - INFO - Breakpoint set at 0x80e77, bkptno=73
+2025-02-19 08:58:39 - root - INFO - Setting breakpoint at 0x8237d
+2025-02-19 08:58:39 - root - INFO - Breakpoint set at 0x8237d, bkptno=74
+2025-02-19 08:58:39 - root - INFO - Setting breakpoint at 0x81c93
+2025-02-19 08:58:39 - root - INFO - Breakpoint set at 0x81c93, bkptno=75
+2025-02-19 08:58:39 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:58:39 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:58:39 - root - INFO - Sending test case to the board.
+2025-02-19 08:58:39 - root - INFO - Sent 93 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:58:41 - root - INFO - Received response: b''
+2025-02-19 08:58:41 - root - WARNING - No response from the board.
+2025-02-19 08:58:44 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 08:58:49 - root - INFO - Removed breakpoint id=70
+2025-02-19 08:58:49 - root - INFO - Removed breakpoint id=71
+2025-02-19 08:58:49 - root - INFO - Removed breakpoint id=72
+2025-02-19 08:58:49 - root - INFO - Removed breakpoint id=73
+2025-02-19 08:58:49 - root - INFO - Removed breakpoint id=74
+2025-02-19 08:58:49 - root - INFO - Removed breakpoint id=75
+2025-02-19 08:58:49 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 08:58:49 - root - INFO - End of round #12, coverage reset.
+
+2025-02-19 08:58:49 - root - INFO - === Starting Round #13 ===
+2025-02-19 08:58:49 - root - INFO - Round #13 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:58:54 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:58:54 - root - INFO - Setting breakpoint at 0x80e69
+2025-02-19 08:58:54 - root - INFO - Breakpoint set at 0x80e69, bkptno=76
+2025-02-19 08:58:54 - root - INFO - Setting breakpoint at 0x81c83
+2025-02-19 08:58:54 - root - INFO - Breakpoint set at 0x81c83, bkptno=77
+2025-02-19 08:58:54 - root - INFO - Setting breakpoint at 0x81c87
+2025-02-19 08:58:54 - root - INFO - Breakpoint set at 0x81c87, bkptno=78
+2025-02-19 08:58:54 - root - INFO - Setting breakpoint at 0x8236b
+2025-02-19 08:58:54 - root - INFO - Breakpoint set at 0x8236b, bkptno=79
+2025-02-19 08:58:54 - root - INFO - Setting breakpoint at 0x80527
+2025-02-19 08:58:54 - root - INFO - Breakpoint set at 0x80527, bkptno=80
+2025-02-19 08:58:54 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 08:58:54 - root - INFO - Breakpoint set at 0x80e63, bkptno=81
+2025-02-19 08:58:54 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:58:54 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:58:54 - root - INFO - Sending test case to the board.
+2025-02-19 08:58:54 - root - INFO - Sent 205 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:58:56 - root - INFO - Received response: b''
+2025-02-19 08:58:56 - root - WARNING - No response from the board.
+2025-02-19 08:58:59 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 08:59:04 - root - INFO - Removed breakpoint id=76
+2025-02-19 08:59:04 - root - INFO - Removed breakpoint id=77
+2025-02-19 08:59:04 - root - INFO - Removed breakpoint id=78
+2025-02-19 08:59:04 - root - INFO - Removed breakpoint id=79
+2025-02-19 08:59:04 - root - INFO - Removed breakpoint id=80
+2025-02-19 08:59:04 - root - INFO - Removed breakpoint id=81
+2025-02-19 08:59:04 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 08:59:04 - root - INFO - End of round #13, coverage reset.
+
+2025-02-19 08:59:04 - root - INFO - === Starting Round #14 ===
+2025-02-19 08:59:04 - root - INFO - Round #14 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:59:10 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:59:10 - root - INFO - Setting breakpoint at 0x801f1
+2025-02-19 08:59:10 - root - INFO - Breakpoint set at 0x801f1, bkptno=82
+2025-02-19 08:59:10 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 08:59:10 - root - INFO - Breakpoint set at 0x80e63, bkptno=83
+2025-02-19 08:59:10 - root - INFO - Setting breakpoint at 0x8236b
+2025-02-19 08:59:10 - root - INFO - Breakpoint set at 0x8236b, bkptno=84
+2025-02-19 08:59:10 - root - INFO - Setting breakpoint at 0x80559
+2025-02-19 08:59:10 - root - INFO - Breakpoint set at 0x80559, bkptno=85
+2025-02-19 08:59:10 - root - INFO - Setting breakpoint at 0x80689
+2025-02-19 08:59:10 - root - INFO - Breakpoint set at 0x80689, bkptno=86
+2025-02-19 08:59:10 - root - INFO - Setting breakpoint at 0x806f5
+2025-02-19 08:59:10 - root - INFO - Breakpoint set at 0x806f5, bkptno=87
+2025-02-19 08:59:10 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:59:10 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:59:10 - root - INFO - Sending test case to the board.
+2025-02-19 08:59:10 - root - INFO - Sent 93 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:59:12 - root - INFO - Received response: b''
+2025-02-19 08:59:12 - root - WARNING - No response from the board.
+2025-02-19 08:59:15 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 08:59:20 - root - INFO - Removed breakpoint id=82
+2025-02-19 08:59:20 - root - INFO - Removed breakpoint id=83
+2025-02-19 08:59:20 - root - INFO - Removed breakpoint id=84
+2025-02-19 08:59:20 - root - INFO - Removed breakpoint id=85
+2025-02-19 08:59:20 - root - INFO - Removed breakpoint id=86
+2025-02-19 08:59:20 - root - INFO - Removed breakpoint id=87
+2025-02-19 08:59:20 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 08:59:20 - root - INFO - End of round #14, coverage reset.
+
+2025-02-19 08:59:20 - root - INFO - === Starting Round #15 ===
+2025-02-19 08:59:20 - root - INFO - Round #15 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff!\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:59:25 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:59:25 - root - INFO - Setting breakpoint at 0x8062d
+2025-02-19 08:59:25 - root - INFO - Breakpoint set at 0x8062d, bkptno=88
+2025-02-19 08:59:25 - root - INFO - Setting breakpoint at 0x806f9
+2025-02-19 08:59:25 - root - INFO - Breakpoint set at 0x806f9, bkptno=89
+2025-02-19 08:59:25 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 08:59:25 - root - INFO - Breakpoint set at 0x80e63, bkptno=90
+2025-02-19 08:59:25 - root - INFO - Setting breakpoint at 0x80e61
+2025-02-19 08:59:25 - root - INFO - Breakpoint set at 0x80e61, bkptno=91
+2025-02-19 08:59:25 - root - INFO - Setting breakpoint at 0x825c7
+2025-02-19 08:59:25 - root - INFO - Breakpoint set at 0x825c7, bkptno=92
+2025-02-19 08:59:25 - root - INFO - Setting breakpoint at 0x80171
+2025-02-19 08:59:25 - root - INFO - Breakpoint set at 0x80171, bkptno=93
+2025-02-19 08:59:25 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff!\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:59:25 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:59:25 - root - INFO - Sending test case to the board.
+2025-02-19 08:59:25 - root - INFO - Sent 94 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff!\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:59:27 - root - INFO - Received response: b''
+2025-02-19 08:59:27 - root - WARNING - No response from the board.
+2025-02-19 08:59:30 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 08:59:35 - root - INFO - Removed breakpoint id=88
+2025-02-19 08:59:35 - root - INFO - Removed breakpoint id=89
+2025-02-19 08:59:35 - root - INFO - Removed breakpoint id=90
+2025-02-19 08:59:35 - root - INFO - Removed breakpoint id=91
+2025-02-19 08:59:35 - root - INFO - Removed breakpoint id=92
+2025-02-19 08:59:35 - root - INFO - Removed breakpoint id=93
+2025-02-19 08:59:35 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 08:59:35 - root - INFO - End of round #15, coverage reset.
+
+2025-02-19 08:59:35 - root - INFO - === Starting Round #16 ===
+2025-02-19 08:59:35 - root - INFO - Round #16 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff%\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb=\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff,\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:59:40 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:59:40 - root - INFO - Setting breakpoint at 0x806f5
+2025-02-19 08:59:40 - root - INFO - Breakpoint set at 0x806f5, bkptno=94
+2025-02-19 08:59:40 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 08:59:40 - root - INFO - Breakpoint set at 0x80e63, bkptno=95
+2025-02-19 08:59:40 - root - INFO - Setting breakpoint at 0x81c83
+2025-02-19 08:59:40 - root - INFO - Breakpoint set at 0x81c83, bkptno=96
+2025-02-19 08:59:40 - root - INFO - Setting breakpoint at 0x80e69
+2025-02-19 08:59:40 - root - INFO - Breakpoint set at 0x80e69, bkptno=97
+2025-02-19 08:59:40 - root - INFO - Setting breakpoint at 0x80e77
+2025-02-19 08:59:40 - root - INFO - Breakpoint set at 0x80e77, bkptno=98
+2025-02-19 08:59:40 - root - INFO - Setting breakpoint at 0x80171
+2025-02-19 08:59:40 - root - INFO - Breakpoint set at 0x80171, bkptno=99
+2025-02-19 08:59:40 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff%\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb=\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff,\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:59:40 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:59:40 - root - INFO - Sending test case to the board.
+2025-02-19 08:59:40 - root - INFO - Sent 95 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff%\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb=\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff,\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 08:59:42 - root - INFO - Received response: b''
+2025-02-19 08:59:42 - root - WARNING - No response from the board.
+2025-02-19 08:59:45 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 08:59:50 - root - INFO - Removed breakpoint id=94
+2025-02-19 08:59:50 - root - INFO - Removed breakpoint id=95
+2025-02-19 08:59:50 - root - INFO - Removed breakpoint id=96
+2025-02-19 08:59:50 - root - INFO - Removed breakpoint id=97
+2025-02-19 08:59:50 - root - INFO - Removed breakpoint id=98
+2025-02-19 08:59:50 - root - INFO - Removed breakpoint id=99
+2025-02-19 08:59:50 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 08:59:50 - root - INFO - End of round #16, coverage reset.
+
+2025-02-19 08:59:50 - root - INFO - === Starting Round #17 ===
+2025-02-19 08:59:50 - root - INFO - Round #17 => test_data=b'1E 00 00 00 62 75\n'
+2025-02-19 08:59:55 - root - INFO - Deleted all breakpoints.
+2025-02-19 08:59:55 - root - INFO - Setting breakpoint at 0x805c5
+2025-02-19 08:59:55 - root - INFO - Breakpoint set at 0x805c5, bkptno=100
+2025-02-19 08:59:55 - root - INFO - Setting breakpoint at 0x806f5
+2025-02-19 08:59:55 - root - INFO - Breakpoint set at 0x806f5, bkptno=101
+2025-02-19 08:59:55 - root - INFO - Setting breakpoint at 0x80187
+2025-02-19 08:59:55 - root - INFO - Breakpoint set at 0x80187, bkptno=102
+2025-02-19 08:59:55 - root - INFO - Setting breakpoint at 0x80e65
+2025-02-19 08:59:55 - root - INFO - Breakpoint set at 0x80e65, bkptno=103
+2025-02-19 08:59:55 - root - INFO - Setting breakpoint at 0x81c6d
+2025-02-19 08:59:55 - root - INFO - Breakpoint set at 0x81c6d, bkptno=104
+2025-02-19 08:59:55 - root - INFO - Setting breakpoint at 0x80559
+2025-02-19 08:59:55 - root - INFO - Breakpoint set at 0x80559, bkptno=105
+2025-02-19 08:59:55 - root - INFO - [DEF chunk attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-19 08:59:55 - root - INFO - Waiting for the board to request input...
+2025-02-19 08:59:55 - root - INFO - Sending test case to the board.
+2025-02-19 08:59:55 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-19 08:59:57 - root - INFO - Received response: b''
+2025-02-19 08:59:57 - root - WARNING - No response from the board.
+2025-02-19 09:00:00 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 09:00:05 - root - INFO - Removed breakpoint id=100
+2025-02-19 09:00:05 - root - INFO - Removed breakpoint id=101
+2025-02-19 09:00:05 - root - INFO - Removed breakpoint id=102
+2025-02-19 09:00:05 - root - INFO - Removed breakpoint id=103
+2025-02-19 09:00:05 - root - INFO - Removed breakpoint id=104
+2025-02-19 09:00:05 - root - INFO - Removed breakpoint id=105
+2025-02-19 09:00:05 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 09:00:05 - root - INFO - End of round #17, coverage reset.
+
+2025-02-19 09:00:05 - root - INFO - === Starting Round #18 ===
+2025-02-19 09:00:05 - root - INFO - Round #18 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:00:10 - root - INFO - Deleted all breakpoints.
+2025-02-19 09:00:10 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 09:00:10 - root - INFO - Breakpoint set at 0x80e63, bkptno=106
+2025-02-19 09:00:10 - root - INFO - Setting breakpoint at 0x805bb
+2025-02-19 09:00:10 - root - INFO - Breakpoint set at 0x805bb, bkptno=107
+2025-02-19 09:00:10 - root - INFO - Setting breakpoint at 0x80e61
+2025-02-19 09:00:10 - root - INFO - Breakpoint set at 0x80e61, bkptno=108
+2025-02-19 09:00:10 - root - INFO - Setting breakpoint at 0x80585
+2025-02-19 09:00:10 - root - INFO - Breakpoint set at 0x80585, bkptno=109
+2025-02-19 09:00:10 - root - INFO - Setting breakpoint at 0x80e65
+2025-02-19 09:00:10 - root - INFO - Breakpoint set at 0x80e65, bkptno=110
+2025-02-19 09:00:10 - root - INFO - Setting breakpoint at 0x8060d
+2025-02-19 09:00:10 - root - INFO - Breakpoint set at 0x8060d, bkptno=111
+2025-02-19 09:00:10 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:00:10 - root - INFO - Waiting for the board to request input...
+2025-02-19 09:00:10 - root - INFO - Sending test case to the board.
+2025-02-19 09:00:10 - root - INFO - Sent 93 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:00:12 - root - INFO - Received response: b''
+2025-02-19 09:00:12 - root - WARNING - No response from the board.
+2025-02-19 09:00:15 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 09:00:20 - root - INFO - Removed breakpoint id=106
+2025-02-19 09:00:20 - root - INFO - Removed breakpoint id=107
+2025-02-19 09:00:20 - root - INFO - Removed breakpoint id=108
+2025-02-19 09:00:20 - root - INFO - Removed breakpoint id=109
+2025-02-19 09:00:20 - root - INFO - Removed breakpoint id=110
+2025-02-19 09:00:20 - root - INFO - Removed breakpoint id=111
+2025-02-19 09:00:20 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 09:00:20 - root - INFO - End of round #18, coverage reset.
+
+2025-02-19 09:00:20 - root - INFO - === Starting Round #19 ===
+2025-02-19 09:00:20 - root - INFO - Round #19 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:00:25 - root - INFO - Deleted all breakpoints.
+2025-02-19 09:00:25 - root - INFO - Setting breakpoint at 0x81c83
+2025-02-19 09:00:25 - root - INFO - Breakpoint set at 0x81c83, bkptno=112
+2025-02-19 09:00:25 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 09:00:25 - root - INFO - Breakpoint set at 0x80e63, bkptno=113
+2025-02-19 09:00:25 - root - INFO - Setting breakpoint at 0x80e7b
+2025-02-19 09:00:25 - root - INFO - Breakpoint set at 0x80e7b, bkptno=114
+2025-02-19 09:00:25 - root - INFO - Setting breakpoint at 0x80e61
+2025-02-19 09:00:25 - root - INFO - Breakpoint set at 0x80e61, bkptno=115
+2025-02-19 09:00:25 - root - INFO - Setting breakpoint at 0x81ca7
+2025-02-19 09:00:25 - root - INFO - Breakpoint set at 0x81ca7, bkptno=116
+2025-02-19 09:00:25 - root - INFO - Setting breakpoint at 0x80773
+2025-02-19 09:00:25 - root - INFO - Breakpoint set at 0x80773, bkptno=117
+2025-02-19 09:00:25 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:00:25 - root - INFO - Waiting for the board to request input...
+2025-02-19 09:00:25 - root - INFO - Sending test case to the board.
+2025-02-19 09:00:25 - root - INFO - Sent 205 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:00:27 - root - INFO - Received response: b''
+2025-02-19 09:00:27 - root - WARNING - No response from the board.
+2025-02-19 09:00:27 - root - INFO - Def triggered => 0x80e7b
+2025-02-19 09:00:27 - root - INFO - Removed breakpoint id=114
+2025-02-19 09:00:27 - root - INFO - Handling uses for def=0x80e7b. Found 3 uses.
+2025-02-19 09:00:27 - root - INFO - Setting breakpoint at 0x80e85
+2025-02-19 09:00:27 - root - INFO - Breakpoint set at 0x80e85, bkptno=118
+2025-02-19 09:00:27 - root - INFO - Setting breakpoint at 0x80e89
+2025-02-19 09:00:27 - root - INFO - Breakpoint set at 0x80e89, bkptno=119
+2025-02-19 09:00:27 - root - INFO - Setting breakpoint at 0x80e8d
+2025-02-19 09:00:27 - root - INFO - Breakpoint set at 0x80e8d, bkptno=120
+2025-02-19 09:00:27 - root - INFO - [Use Attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:00:27 - root - INFO - Waiting for the board to request input...
+2025-02-19 09:00:27 - root - INFO - Sending test case to the board.
+2025-02-19 09:00:27 - root - INFO - Sent 205 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:00:29 - root - INFO - Received response: b''
+2025-02-19 09:00:29 - root - WARNING - No response from the board.
+2025-02-19 09:00:29 - root - INFO - Use triggered => 0x80e8d
+2025-02-19 09:00:29 - fuzzing.coverage_manager - INFO - Updating def-use coverage => def=0x00080E7B, use=0x00080E8D, idx=246
+2025-02-19 09:00:29 - root - INFO - Removed breakpoint id=120
+2025-02-19 09:00:29 - root - INFO - [Use Attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:00:29 - root - INFO - Waiting for the board to request input...
+2025-02-19 09:00:29 - root - INFO - Sending test case to the board.
+2025-02-19 09:00:29 - root - INFO - Sent 205 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:00:31 - root - INFO - Received response: b''
+2025-02-19 09:00:31 - root - WARNING - No response from the board.
+2025-02-19 09:00:34 - root - INFO - No use triggered this attempt.
+2025-02-19 09:00:34 - fuzzing.coverage_manager - INFO - New coverage detected.
+2025-02-19 09:00:34 - root - INFO - New coverage from uses => add input to corpus.
+2025-02-19 09:00:39 - root - INFO - Removed breakpoint id=118
+2025-02-19 09:00:39 - root - INFO - Removed breakpoint id=119
+2025-02-19 09:00:39 - root - INFO - End of use chunk, continuing to next chunk.
+2025-02-19 09:00:39 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 09:00:39 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 09:00:40 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 09:00:40 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:00:40 - root - INFO - Waiting for the board to request input...
+2025-02-19 09:00:40 - root - INFO - Sending test case to the board.
+2025-02-19 09:00:40 - root - INFO - Sent 205 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:00:42 - root - INFO - Received response: b''
+2025-02-19 09:00:42 - root - WARNING - No response from the board.
+2025-02-19 09:00:45 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 09:00:50 - root - INFO - Removed breakpoint id=112
+2025-02-19 09:00:50 - root - INFO - Removed breakpoint id=113
+2025-02-19 09:00:50 - root - INFO - Removed breakpoint id=115
+2025-02-19 09:00:50 - root - INFO - Removed breakpoint id=116
+2025-02-19 09:00:50 - root - INFO - Removed breakpoint id=117
+2025-02-19 09:00:50 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 09:00:50 - root - INFO - End of round #19, coverage reset.
+
+2025-02-19 09:00:50 - root - INFO - === Starting Round #20 ===
+2025-02-19 09:00:50 - root - INFO - Round #20 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:00:55 - root - INFO - Deleted all breakpoints.
+2025-02-19 09:00:55 - root - INFO - Setting breakpoint at 0x801a5
+2025-02-19 09:00:55 - root - INFO - Breakpoint set at 0x801a5, bkptno=121
+2025-02-19 09:00:55 - root - INFO - Setting breakpoint at 0x801ef
+2025-02-19 09:00:55 - root - INFO - Breakpoint set at 0x801ef, bkptno=122
+2025-02-19 09:00:55 - root - INFO - Setting breakpoint at 0x80e61
+2025-02-19 09:00:55 - root - INFO - Breakpoint set at 0x80e61, bkptno=123
+2025-02-19 09:00:55 - root - INFO - Setting breakpoint at 0x80e69
+2025-02-19 09:00:55 - root - INFO - Breakpoint set at 0x80e69, bkptno=124
+2025-02-19 09:00:55 - root - INFO - Setting breakpoint at 0x80e65
+2025-02-19 09:00:55 - root - INFO - Breakpoint set at 0x80e65, bkptno=125
+2025-02-19 09:00:55 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 09:00:55 - root - INFO - Breakpoint set at 0x80e63, bkptno=126
+2025-02-19 09:00:55 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:00:55 - root - INFO - Waiting for the board to request input...
+2025-02-19 09:00:55 - root - INFO - Sending test case to the board.
+2025-02-19 09:00:55 - root - INFO - Sent 93 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:00:57 - root - INFO - Received response: b''
+2025-02-19 09:00:57 - root - WARNING - No response from the board.
+2025-02-19 09:00:57 - root - INFO - Def triggered => 0x801a5
+2025-02-19 09:00:57 - root - INFO - Removed breakpoint id=121
+2025-02-19 09:00:57 - root - INFO - Handling uses for def=0x801a5. Found 1 uses.
+2025-02-19 09:00:57 - root - INFO - Setting breakpoint at 0x801f3
+2025-02-19 09:00:57 - root - INFO - Breakpoint set at 0x801f3, bkptno=127
+2025-02-19 09:00:57 - root - INFO - [Use Attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:00:57 - root - INFO - Waiting for the board to request input...
+2025-02-19 09:00:57 - root - INFO - Sending test case to the board.
+2025-02-19 09:00:57 - root - INFO - Sent 93 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:00:59 - root - INFO - Received response: b''
+2025-02-19 09:00:59 - root - WARNING - No response from the board.
+2025-02-19 09:01:02 - root - INFO - No use triggered this attempt.
+2025-02-19 09:01:02 - fuzzing.coverage_manager - INFO - New coverage detected.
+2025-02-19 09:01:02 - root - INFO - New coverage from uses => add input to corpus.
+2025-02-19 09:01:07 - root - INFO - Removed breakpoint id=127
+2025-02-19 09:01:07 - root - INFO - End of use chunk, continuing to next chunk.
+2025-02-19 09:01:07 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 09:01:08 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 09:01:08 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 09:01:09 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:01:09 - root - INFO - Waiting for the board to request input...
+2025-02-19 09:01:09 - root - INFO - Sending test case to the board.
+2025-02-19 09:01:09 - root - INFO - Sent 93 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:01:11 - root - INFO - Received response: b''
+2025-02-19 09:01:11 - root - WARNING - No response from the board.
+2025-02-19 09:01:14 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 09:01:19 - root - INFO - Removed breakpoint id=122
+2025-02-19 09:01:19 - root - INFO - Removed breakpoint id=123
+2025-02-19 09:01:19 - root - INFO - Removed breakpoint id=124
+2025-02-19 09:01:19 - root - INFO - Removed breakpoint id=125
+2025-02-19 09:01:19 - root - INFO - Removed breakpoint id=126
+2025-02-19 09:01:19 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 09:01:19 - root - INFO - End of round #20, coverage reset.
+
+2025-02-19 09:01:19 - root - INFO - === Starting Round #21 ===
+2025-02-19 09:01:19 - root - INFO - Round #21 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff!\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:01:24 - root - INFO - Deleted all breakpoints.
+2025-02-19 09:01:24 - root - INFO - Setting breakpoint at 0x8076f
+2025-02-19 09:01:24 - root - INFO - Breakpoint set at 0x8076f, bkptno=128
+2025-02-19 09:01:24 - root - INFO - Setting breakpoint at 0x80581
+2025-02-19 09:01:24 - root - INFO - Breakpoint set at 0x80581, bkptno=129
+2025-02-19 09:01:24 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 09:01:24 - root - INFO - Breakpoint set at 0x80e63, bkptno=130
+2025-02-19 09:01:24 - root - INFO - Setting breakpoint at 0x81c97
+2025-02-19 09:01:24 - root - INFO - Breakpoint set at 0x81c97, bkptno=131
+2025-02-19 09:01:24 - root - INFO - Setting breakpoint at 0x80e65
+2025-02-19 09:01:24 - root - INFO - Breakpoint set at 0x80e65, bkptno=132
+2025-02-19 09:01:24 - root - INFO - Setting breakpoint at 0x8066b
+2025-02-19 09:01:24 - root - INFO - Breakpoint set at 0x8066b, bkptno=133
+2025-02-19 09:01:24 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff!\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:01:24 - root - INFO - Waiting for the board to request input...
+2025-02-19 09:01:24 - root - INFO - Sending test case to the board.
+2025-02-19 09:01:24 - root - INFO - Sent 94 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff!\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:01:26 - root - INFO - Received response: b''
+2025-02-19 09:01:26 - root - WARNING - No response from the board.
+2025-02-19 09:01:29 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 09:01:34 - root - INFO - Removed breakpoint id=128
+2025-02-19 09:01:34 - root - INFO - Removed breakpoint id=129
+2025-02-19 09:01:34 - root - INFO - Removed breakpoint id=130
+2025-02-19 09:01:34 - root - INFO - Removed breakpoint id=131
+2025-02-19 09:01:34 - root - INFO - Removed breakpoint id=132
+2025-02-19 09:01:34 - root - INFO - Removed breakpoint id=133
+2025-02-19 09:01:34 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 09:01:34 - root - INFO - End of round #21, coverage reset.
+
+2025-02-19 09:01:34 - root - INFO - === Starting Round #22 ===
+2025-02-19 09:01:34 - root - INFO - Round #22 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff%\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb=\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff,\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:01:39 - root - INFO - Deleted all breakpoints.
+2025-02-19 09:01:39 - root - INFO - Setting breakpoint at 0x80559
+2025-02-19 09:01:39 - root - INFO - Breakpoint set at 0x80559, bkptno=134
+2025-02-19 09:01:39 - root - INFO - Setting breakpoint at 0x806e9
+2025-02-19 09:01:39 - root - INFO - Breakpoint set at 0x806e9, bkptno=135
+2025-02-19 09:01:39 - root - INFO - Setting breakpoint at 0x801e3
+2025-02-19 09:01:39 - root - INFO - Breakpoint set at 0x801e3, bkptno=136
+2025-02-19 09:01:39 - root - INFO - Setting breakpoint at 0x80c43
+2025-02-19 09:01:39 - root - INFO - Breakpoint set at 0x80c43, bkptno=137
+2025-02-19 09:01:39 - root - INFO - Setting breakpoint at 0x80685
+2025-02-19 09:01:39 - root - INFO - Breakpoint set at 0x80685, bkptno=138
+2025-02-19 09:01:39 - root - INFO - Setting breakpoint at 0x81c83
+2025-02-19 09:01:39 - root - INFO - Breakpoint set at 0x81c83, bkptno=139
+2025-02-19 09:01:39 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff%\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb=\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff,\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:01:39 - root - INFO - Waiting for the board to request input...
+2025-02-19 09:01:39 - root - INFO - Sending test case to the board.
+2025-02-19 09:01:39 - root - INFO - Sent 95 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff%\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb=\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff,\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:01:41 - root - INFO - Received response: b''
+2025-02-19 09:01:41 - root - WARNING - No response from the board.
+2025-02-19 09:01:44 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 09:01:49 - root - INFO - Removed breakpoint id=134
+2025-02-19 09:01:49 - root - INFO - Removed breakpoint id=135
+2025-02-19 09:01:49 - root - INFO - Removed breakpoint id=136
+2025-02-19 09:01:49 - root - INFO - Removed breakpoint id=137
+2025-02-19 09:01:49 - root - INFO - Removed breakpoint id=138
+2025-02-19 09:01:49 - root - INFO - Removed breakpoint id=139
+2025-02-19 09:01:49 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 09:01:49 - root - INFO - End of round #22, coverage reset.
+
+2025-02-19 09:01:49 - root - INFO - === Starting Round #23 ===
+2025-02-19 09:01:49 - root - INFO - Round #23 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:01:54 - root - INFO - Deleted all breakpoints.
+2025-02-19 09:01:54 - root - INFO - Setting breakpoint at 0x80609
+2025-02-19 09:01:54 - root - INFO - Breakpoint set at 0x80609, bkptno=140
+2025-02-19 09:01:54 - root - INFO - Setting breakpoint at 0x80e65
+2025-02-19 09:01:54 - root - INFO - Breakpoint set at 0x80e65, bkptno=141
+2025-02-19 09:01:54 - root - INFO - Setting breakpoint at 0x80e61
+2025-02-19 09:01:54 - root - INFO - Breakpoint set at 0x80e61, bkptno=142
+2025-02-19 09:01:54 - root - INFO - Setting breakpoint at 0x80e69
+2025-02-19 09:01:54 - root - INFO - Breakpoint set at 0x80e69, bkptno=143
+2025-02-19 09:01:54 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 09:01:54 - root - INFO - Breakpoint set at 0x80e63, bkptno=144
+2025-02-19 09:01:54 - root - INFO - Setting breakpoint at 0x8060d
+2025-02-19 09:01:54 - root - INFO - Breakpoint set at 0x8060d, bkptno=145
+2025-02-19 09:01:54 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:01:54 - root - INFO - Waiting for the board to request input...
+2025-02-19 09:01:54 - root - INFO - Sending test case to the board.
+2025-02-19 09:01:54 - root - INFO - Sent 205 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff]\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:01:56 - root - INFO - Received response: b''
+2025-02-19 09:01:56 - root - WARNING - No response from the board.
+2025-02-19 09:01:59 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 09:02:04 - root - INFO - Removed breakpoint id=140
+2025-02-19 09:02:04 - root - INFO - Removed breakpoint id=141
+2025-02-19 09:02:04 - root - INFO - Removed breakpoint id=142
+2025-02-19 09:02:04 - root - INFO - Removed breakpoint id=143
+2025-02-19 09:02:04 - root - INFO - Removed breakpoint id=144
+2025-02-19 09:02:04 - root - INFO - Removed breakpoint id=145
+2025-02-19 09:02:04 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 09:02:04 - root - INFO - End of round #23, coverage reset.
+
+2025-02-19 09:02:04 - root - INFO - === Starting Round #24 ===
+2025-02-19 09:02:04 - root - INFO - Round #24 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:02:09 - root - INFO - Deleted all breakpoints.
+2025-02-19 09:02:09 - root - INFO - Setting breakpoint at 0x80743
+2025-02-19 09:02:09 - root - INFO - Breakpoint set at 0x80743, bkptno=146
+2025-02-19 09:02:09 - root - INFO - Setting breakpoint at 0x8237d
+2025-02-19 09:02:09 - root - INFO - Breakpoint set at 0x8237d, bkptno=147
+2025-02-19 09:02:09 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 09:02:09 - root - INFO - Breakpoint set at 0x80e63, bkptno=148
+2025-02-19 09:02:09 - root - INFO - Setting breakpoint at 0x80e69
+2025-02-19 09:02:09 - root - INFO - Breakpoint set at 0x80e69, bkptno=149
+2025-02-19 09:02:09 - root - INFO - Setting breakpoint at 0x80e61
+2025-02-19 09:02:09 - root - INFO - Breakpoint set at 0x80e61, bkptno=150
+2025-02-19 09:02:09 - root - INFO - Setting breakpoint at 0x80645
+2025-02-19 09:02:09 - root - INFO - Breakpoint set at 0x80645, bkptno=151
+2025-02-19 09:02:09 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:02:09 - root - INFO - Waiting for the board to request input...
+2025-02-19 09:02:09 - root - INFO - Sending test case to the board.
+2025-02-19 09:02:09 - root - INFO - Sent 93 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:02:11 - root - INFO - Received response: b''
+2025-02-19 09:02:11 - root - WARNING - No response from the board.
+2025-02-19 09:02:14 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 09:02:19 - root - INFO - Removed breakpoint id=146
+2025-02-19 09:02:19 - root - INFO - Removed breakpoint id=147
+2025-02-19 09:02:19 - root - INFO - Removed breakpoint id=148
+2025-02-19 09:02:19 - root - INFO - Removed breakpoint id=149
+2025-02-19 09:02:19 - root - INFO - Removed breakpoint id=150
+2025-02-19 09:02:19 - root - INFO - Removed breakpoint id=151
+2025-02-19 09:02:19 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 09:02:19 - root - INFO - End of round #24, coverage reset.
+
+2025-02-19 09:02:19 - root - INFO - === Starting Round #25 ===
+2025-02-19 09:02:19 - root - INFO - Round #25 => test_data=b'1E 00 00 00 62\x007u\n'
+2025-02-19 09:02:24 - root - INFO - Deleted all breakpoints.
+2025-02-19 09:02:24 - root - INFO - Setting breakpoint at 0x81c83
+2025-02-19 09:02:24 - root - INFO - Breakpoint set at 0x81c83, bkptno=152
+2025-02-19 09:02:24 - root - INFO - Setting breakpoint at 0x80e63
+2025-02-19 09:02:24 - root - INFO - Breakpoint set at 0x80e63, bkptno=153
+2025-02-19 09:02:24 - root - INFO - Setting breakpoint at 0x80121
+2025-02-19 09:02:24 - root - INFO - Breakpoint set at 0x80121, bkptno=154
+2025-02-19 09:02:24 - root - INFO - Setting breakpoint at 0x8236f
+2025-02-19 09:02:24 - root - INFO - Breakpoint set at 0x8236f, bkptno=155
+2025-02-19 09:02:24 - root - INFO - Setting breakpoint at 0x80e77
+2025-02-19 09:02:24 - root - INFO - Breakpoint set at 0x80e77, bkptno=156
+2025-02-19 09:02:24 - root - INFO - Setting breakpoint at 0x8236b
+2025-02-19 09:02:24 - root - INFO - Breakpoint set at 0x8236b, bkptno=157
+2025-02-19 09:02:24 - root - INFO - [DEF chunk attempt] => sending b'1E 00 00 00 62\x007u\n'
+2025-02-19 09:02:24 - root - INFO - Waiting for the board to request input...
+2025-02-19 09:02:24 - root - INFO - Sending test case to the board.
+2025-02-19 09:02:24 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62\x007u\n'
+2025-02-19 09:02:26 - root - INFO - Received response: b''
+2025-02-19 09:02:26 - root - WARNING - No response from the board.
+2025-02-19 09:02:29 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 09:02:34 - root - INFO - Removed breakpoint id=152
+2025-02-19 09:02:34 - root - INFO - Removed breakpoint id=153
+2025-02-19 09:02:34 - root - INFO - Removed breakpoint id=154
+2025-02-19 09:02:34 - root - INFO - Removed breakpoint id=155
+2025-02-19 09:02:34 - root - INFO - Removed breakpoint id=156
+2025-02-19 09:02:34 - root - INFO - Removed breakpoint id=157
+2025-02-19 09:02:34 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 09:02:34 - root - INFO - End of round #25, coverage reset.
+
+2025-02-19 09:02:34 - root - INFO - === Starting Round #26 ===
+2025-02-19 09:02:34 - root - INFO - Round #26 => test_data=b'1E 00 00 00 62 75\n'
+2025-02-19 09:02:39 - root - INFO - Deleted all breakpoints.
+2025-02-19 09:02:39 - root - INFO - Setting breakpoint at 0x8076f
+2025-02-19 09:02:39 - root - INFO - Breakpoint set at 0x8076f, bkptno=158
+2025-02-19 09:02:39 - root - INFO - Setting breakpoint at 0x8236b
+2025-02-19 09:02:39 - root - INFO - Breakpoint set at 0x8236b, bkptno=159
+2025-02-19 09:02:39 - root - INFO - Setting breakpoint at 0x80e77
+2025-02-19 09:02:39 - root - INFO - Breakpoint set at 0x80e77, bkptno=160
+2025-02-19 09:02:39 - root - INFO - Setting breakpoint at 0x801cf
+2025-02-19 09:02:39 - root - INFO - Breakpoint set at 0x801cf, bkptno=161
+2025-02-19 09:02:39 - root - INFO - Setting breakpoint at 0x806f5
+2025-02-19 09:02:39 - root - INFO - Breakpoint set at 0x806f5, bkptno=162
+2025-02-19 09:02:39 - root - INFO - Setting breakpoint at 0x8060d
+2025-02-19 09:02:39 - root - INFO - Breakpoint set at 0x8060d, bkptno=163
+2025-02-19 09:02:39 - root - INFO - [DEF chunk attempt] => sending b'1E 00 00 00 62 75\n'
+2025-02-19 09:02:39 - root - INFO - Waiting for the board to request input...
+2025-02-19 09:02:39 - root - INFO - Sending test case to the board.
+2025-02-19 09:02:39 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
+2025-02-19 09:02:41 - root - INFO - Received response: b''
+2025-02-19 09:02:41 - root - WARNING - No response from the board.
+2025-02-19 09:02:44 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 09:02:49 - root - INFO - Removed breakpoint id=158
+2025-02-19 09:02:49 - root - INFO - Removed breakpoint id=159
+2025-02-19 09:02:49 - root - INFO - Removed breakpoint id=160
+2025-02-19 09:02:49 - root - INFO - Removed breakpoint id=161
+2025-02-19 09:02:49 - root - INFO - Removed breakpoint id=162
+2025-02-19 09:02:49 - root - INFO - Removed breakpoint id=163
+2025-02-19 09:02:49 - fuzzing.coverage_manager - INFO - Coverage arrays reset to zero.
+2025-02-19 09:02:49 - root - INFO - End of round #26, coverage reset.
+
+2025-02-19 09:02:49 - root - INFO - === Starting Round #27 ===
+2025-02-19 09:02:49 - root - INFO - Round #27 => test_data=b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:02:54 - root - INFO - Deleted all breakpoints.
+2025-02-19 09:02:54 - root - INFO - Setting breakpoint at 0x80171
+2025-02-19 09:02:54 - root - INFO - Breakpoint set at 0x80171, bkptno=164
+2025-02-19 09:02:54 - root - INFO - Setting breakpoint at 0x80e7b
+2025-02-19 09:02:54 - root - INFO - Breakpoint set at 0x80e7b, bkptno=165
+2025-02-19 09:02:54 - root - INFO - Setting breakpoint at 0x82583
+2025-02-19 09:02:54 - root - INFO - Breakpoint set at 0x82583, bkptno=166
+2025-02-19 09:02:54 - root - INFO - Setting breakpoint at 0x81ca7
+2025-02-19 09:02:54 - root - INFO - Breakpoint set at 0x81ca7, bkptno=167
+2025-02-19 09:02:54 - root - INFO - Setting breakpoint at 0x80657
+2025-02-19 09:02:54 - root - INFO - Breakpoint set at 0x80657, bkptno=168
+2025-02-19 09:02:54 - root - INFO - Setting breakpoint at 0x8060d
+2025-02-19 09:02:54 - root - INFO - Breakpoint set at 0x8060d, bkptno=169
+2025-02-19 09:02:54 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:02:54 - root - INFO - Waiting for the board to request input...
+2025-02-19 09:02:54 - root - INFO - Sending test case to the board.
+2025-02-19 09:02:54 - root - INFO - Sent 93 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:02:56 - root - INFO - Received response: b''
+2025-02-19 09:02:56 - root - WARNING - No response from the board.
+2025-02-19 09:02:56 - root - INFO - Def triggered => 0x80e7b
+2025-02-19 09:02:56 - root - INFO - Removed breakpoint id=165
+2025-02-19 09:02:56 - root - INFO - Handling uses for def=0x80e7b. Found 3 uses.
+2025-02-19 09:02:56 - root - INFO - Setting breakpoint at 0x80e85
+2025-02-19 09:02:56 - root - INFO - Breakpoint set at 0x80e85, bkptno=170
+2025-02-19 09:02:56 - root - INFO - Setting breakpoint at 0x80e89
+2025-02-19 09:02:56 - root - INFO - Breakpoint set at 0x80e89, bkptno=171
+2025-02-19 09:02:56 - root - INFO - Setting breakpoint at 0x80e8d
+2025-02-19 09:02:56 - root - INFO - Breakpoint set at 0x80e8d, bkptno=172
+2025-02-19 09:02:56 - root - INFO - [Use Attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:02:56 - root - INFO - Waiting for the board to request input...
+2025-02-19 09:02:56 - root - INFO - Sending test case to the board.
+2025-02-19 09:02:56 - root - INFO - Sent 93 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:02:58 - root - INFO - Received response: b''
+2025-02-19 09:02:58 - root - WARNING - No response from the board.
+2025-02-19 09:02:58 - root - INFO - Use triggered => 0x80e8d
+2025-02-19 09:02:58 - fuzzing.coverage_manager - INFO - Updating def-use coverage => def=0x00080E7B, use=0x00080E8D, idx=246
+2025-02-19 09:02:58 - root - INFO - Removed breakpoint id=172
+2025-02-19 09:02:58 - root - INFO - [Use Attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:02:58 - root - INFO - Waiting for the board to request input...
+2025-02-19 09:02:58 - root - INFO - Sending test case to the board.
+2025-02-19 09:02:58 - root - INFO - Sent 93 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:03:00 - root - INFO - Received response: b''
+2025-02-19 09:03:00 - root - WARNING - No response from the board.
+2025-02-19 09:03:03 - root - INFO - No use triggered this attempt.
+2025-02-19 09:03:03 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-02-19 09:03:08 - root - INFO - Removed breakpoint id=170
+2025-02-19 09:03:08 - root - INFO - Removed breakpoint id=171
+2025-02-19 09:03:08 - root - INFO - End of use chunk, continuing to next chunk.
+2025-02-19 09:03:08 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 09:03:09 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 09:03:09 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-02-19 09:03:10 - root - INFO - [DEF chunk attempt] => sending b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:03:10 - root - INFO - Waiting for the board to request input...
+2025-02-19 09:03:10 - root - INFO - Sending test case to the board.
+2025-02-19 09:03:10 - root - INFO - Sent 93 bytes of data: b'1\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff&\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xffE 00 00 00 62 75\n'
+2025-02-19 09:03:12 - root - INFO - Received response: b''
+2025-02-19 09:03:12 - root - WARNING - No response from the board.
+2025-02-19 09:03:14 - root - INFO - Stopped by user.
+2025-02-19 09:03:14 - fuzzing.coverage_manager - INFO - CoverageManager SHM removed.
