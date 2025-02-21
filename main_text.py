@@ -4,7 +4,7 @@ import random
 import logging
 import logging.handlers
 import serial
-
+import re
 from fuzzing.coverage_manager import CoverageManager
 from config.settings import (
     LOG_LEVEL, LOG_FORMAT, LOG_DATEFMT, LOG_FILE,
@@ -110,6 +110,16 @@ def remove_breakpoints(gdb: GDB, bp_ids):
             logger.info(f"Removed breakpoint id={bp_id}")
         except Exception as e:
             logger.warning(f"Could not remove breakpoint id={bp_id}: {e}")
+def write_crashing_input(crash_data: bytes, crash_dir: str, filename: str) -> None:
+  
+    if not os.path.exists(crash_dir):
+        os.makedirs(crash_dir, exist_ok=True)
+
+    file_path = os.path.join(crash_dir, filename)
+    logger.info(f"Writing crash input to {file_path} ...")
+
+    with open(file_path, 'wb') as f:
+        f.write(crash_data)
 
 def restart_program(gdb: GDB, elf_path: str):
     logger.info("Restarting program from scratch...")
@@ -126,28 +136,87 @@ def restart_program(gdb: GDB, elf_path: str):
         raise Exception("Program did not halt at main after restart.")
     gdb.continue_execution()
 
-def on_crash(gdb: GDB, test_data: bytes, crash_dir: str) -> None:
+def on_timeout(test_input: bytes, gdb, crash_dir: str) -> None:
     """
-    Enriched crash handler: tries to retrieve a stack trace and saves
-    the crashing input with some identifying info.
+    Handle an infinite loop or board-stuck scenario the same as a crash.
+    1) Attempt to retrieve a partial stack trace
+    2) Build a 'timeout' filename
+    3) Write out the input
     """
-    logger.warning("=== Target crash detected ===")
-    # Attempt to get a stacktrace
-    stacktrace_str = "no_stacktrace"
+    logger.warning("=== Timeout / Stuck detected ===")
+
+    stacktrace_str = "timeout_no_stacktrace"
     try:
+        # Force an interrupt so we can get frames
+        gdb.interrupt()
+        time.sleep(1)
         resp = gdb.send('-stack-list-frames')
         if 'payload' in resp and 'stack' in resp['payload']:
             frames = resp['payload']['stack']
-            # Basic example: gather the addresses (limit to avoid huge filenames)
-            stack_addrs = [frame['addr'] for frame in frames]
-            # Join them up to some limit
-            short_trace = "_".join(stack_addrs[:4])  # just the first few frames
-            # Make it filename-safe:
-            short_trace = "".join(c for c in short_trace if c.isalnum() or c in '_')
-            stacktrace_str = short_trace if short_trace else "empty"
+            addresses = [frame['addr'] for frame in frames]
+            stacktrace_str = "_".join(addresses[:4])
+    except Exception as e:
+        logger.warning(f"Could not retrieve stacktrace on timeout: {e}")
+
+    timestamp_str = str(int(time.time()))
+    stacktrace_str = re.sub(r'[^a-zA-Z0-9_]', '', stacktrace_str)
+    filename = f"timeout_{timestamp_str}_{stacktrace_str}"
+
+    write_crashing_input(test_input, crash_dir, filename)
+
+
+def on_crash(gdb: GDB, test_data: bytes, crash_dir: str) -> None:
+    """
+    Handle a crash condition:
+    1) Attempt to get a stack trace from GDB
+    2) Build a filename (e.g. using timestamp + partial trace)
+    3) Write out the crashing input
+    """
+   
+    logger.warning("=== Target crash detected ===")
+    # # Attempt to get a stacktrace
+    # stacktrace_str = "no_stacktrace"
+    # try:
+    #     resp = gdb.send('-stack-list-frames')
+    #     if 'payload' in resp and 'stack' in resp['payload']:
+    #         frames = resp['payload']['stack']
+    #         # Basic example: gather the addresses (limit to avoid huge filenames)
+    #         stack_addrs = [frame['addr'] for frame in frames]
+    #         # Join them up to some limit
+    #         short_trace = "_".join(stack_addrs[:4])  # just the first few frames
+    #         # Make it filename-safe:
+    #         short_trace = "".join(c for c in short_trace if c.isalnum() or c in '_')
+    #         stacktrace_str = short_trace if short_trace else "empty"
+    # except Exception as e:
+    #     logger.warning(f"Could not retrieve stacktrace: {e}")
+    stacktrace = '' 
+    stacktrace_str = "no_stacktrace"
+    try:
+        resp = gdb.send('-stack-list-frames')
+        # Make sure the response is valid
+        if 'payload' in resp and 'stack' in resp['payload']:
+            frames = resp['payload']['stack']
+            # Collect frame addresses (or function names)
+            addresses = [frame['addr'] for frame in frames]
+            # Just combine them as a short string
+            # e.g., '0x08001234_0x08005678'
+            stacktrace_str = "_".join(addresses[:4])  # limit to ~4 frames
+        else:
+            logger.warning("No valid stack info in GDB response. Payload missing or invalid.")
     except Exception as e:
         logger.warning(f"Could not retrieve stacktrace: {e}")
 
+    # Build a crash filename. For example:
+    # crash_<timestamp>_<some-stack-frames>
+    timestamp_str = str(int(time.time()))
+    # Clean out weird characters from stacktrace so it's a safe filename
+    stacktrace_str = re.sub(r'[^a-zA-Z0-9_]', '', stacktrace_str)
+
+    # Combine them
+    filename = f"crash_{timestamp_str}_{stacktrace_str}"
+
+    # Write the input
+    write_crashing_input(test_data, crash_dir, filename)
     # Save the crashing input
     # filename = f"{int(time.time())}_{stacktrace_str}"
     # filepath = os.path.join(crash_dir, filename)
@@ -176,35 +245,35 @@ def on_crash(gdb: GDB, test_data: bytes, crash_dir: str) -> None:
 #             log.info(f'New crash with {current_input=}')
 #             f.write(current_input)
 
-def on_timeout(gdb: GDB, test_data: bytes, timeout_dir: str) -> None:
-    """
-    Enriched timeout handler: forcibly halts, optionally collects stack info,
-    and stores the input in a dedicated 'timeouts' directory.
-    """
-    logger.warning("=== Timeout detected ===")
-    # Interrupt to gather any debug info
-    gdb.interrupt()
-    time.sleep(1)  # short wait for target to stop
+# def on_timeout(gdb: GDB, test_data: bytes, timeout_dir: str) -> None:
+#     """
+#     Enriched timeout handler: forcibly halts, optionally collects stack info,
+#     and stores the input in a dedicated 'timeouts' directory.
+#     """
+#     logger.warning("=== Timeout detected ===")
+#     # Interrupt to gather any debug info
+#     gdb.interrupt()
+#     time.sleep(1)  # short wait for target to stop
 
-    stacktrace_str = "timeout_no_stacktrace"
-    try:
-        resp = gdb.send('-stack-list-frames')
-        if 'payload' in resp and 'stack' in resp['payload']:
-            frames = resp['payload']['stack']
-            stack_addrs = [frame['addr'] for frame in frames]
-            short_trace = "_".join(stack_addrs[:4])  # just the first few frames
-            short_trace = "".join(c for c in short_trace if c.isalnum() or c in '_')
-            stacktrace_str = short_trace if short_trace else "empty"
-    except Exception as e:
-        logger.warning(f"Could not retrieve stacktrace on timeout: {e}")
+#     stacktrace_str = "timeout_no_stacktrace"
+#     try:
+#         resp = gdb.send('-stack-list-frames')
+#         if 'payload' in resp and 'stack' in resp['payload']:
+#             frames = resp['payload']['stack']
+#             stack_addrs = [frame['addr'] for frame in frames]
+#             short_trace = "_".join(stack_addrs[:4])  # just the first few frames
+#             short_trace = "".join(c for c in short_trace if c.isalnum() or c in '_')
+#             stacktrace_str = short_trace if short_trace else "empty"
+#     except Exception as e:
+#         logger.warning(f"Could not retrieve stacktrace on timeout: {e}")
 
-    filename = f"{int(time.time())}_{stacktrace_str}"
-    filepath = os.path.join(timeout_dir, filename)
-    os.makedirs(timeout_dir, exist_ok=True)
+#     filename = f"{int(time.time())}_{stacktrace_str}"
+#     filepath = os.path.join(timeout_dir, filename)
+#     os.makedirs(timeout_dir, exist_ok=True)
 
-    logger.warning(f"Saving timeout testcase as: {filepath}")
-    with open(filepath, 'wb') as f:
-        f.write(test_data)
+#     logger.warning(f"Saving timeout testcase as: {filepath}")
+#     with open(filepath, 'wb') as f:
+#         f.write(test_data)
 
 
 def main():
@@ -257,14 +326,22 @@ def main():
 
     try:
         round_count = 0
+        test_case = b""
+        coverage_changed = True
         while round_count < NUM_ROUNDS:
             round_count += 1
             logger.info(f"=== Starting Round #{round_count} ===")
 
             # (A) Generate exactly 1 test
-            test_data = input_gen.generate_input()
-            logger.info(f"Round #{round_count} => test_data={test_data!r}")
-
+            if coverage_changed:
+                input_gen.choose_new_baseline_input()
+                test_data = input_gen.generate_input()
+                logger.info(f"Round #{round_count} => test_data={test_data!r}")
+            else:
+                # test_data = input_gen.generate_input()
+                # logger.info(f"Round #{round_count} => test_data={test_data!r} (reused)")
+                logger.info("No new coverage => skipping test generation.")
+            coverage_changed = False
             def_generator = get_defs_in_weighted_random_order(all_defs)
             done_with_round = False
 
@@ -321,25 +398,34 @@ def main():
 
                             force_halt_if_running(gdb)
                             if uses_list:
-                                _handle_uses_for_def(
+                                use_status = _handle_uses_for_def(
                                     gdb, ser, test_data,
                                     def_addr_str, uses_list,
                                     coverage_mgr, input_gen, crash_dir
                                 )
+                                coverage_changed = use_status
 
                             if def_bp_map:
                                 gdb.continue_execution()
 
                         else:
                             logger.debug(f"Unknown breakpoint => {payload}, continuing.")
+                            pc_resp = gdb.send('-data-evaluate-expression $pc')
+                            pc_val_str = pc_resp['payload'].get('value','')
+                            if pc_val_str:
+                                coverage_mgr.update_coverage_for_def(pc_val_str)
+                            remove_breakpoints(gdb, [payload])
                             gdb.continue_execution()
 
                     elif reason == 'timed out':
+                        on_timeout(test_data, gdb, timeout_dir)
+                        coverage_changed = True
                         logger.debug("No def triggered this attempt.")
                         no_trigger_count += 1
 
                     elif reason in ('exited','crashed'):
                         logger.warning(f"Target {reason} => treat as crash, restarting.")
+                        coverage_changed = True
                         on_crash(gdb, test_data, crash_dir)
                         restart_program(gdb, ELF_PATH)
                         break
@@ -347,10 +433,11 @@ def main():
                     else:
                         # Possibly an interrupt or any other reason
                         logger.warning(f"Unexpected stop => reason={reason}, payload={payload}")
+                        coverage_changed = True
 
                         if reason == 'interrupt':
                             logger.warning("Interrupt => treat as crash.")
-                            on_crash(gdb, test_data, crash_dir)
+                            # on_crash(gdb, test_data, crash_dir)
                         # on_crash(gdb, test_data, crash_dir)
                         gdb.continue_execution()
 
@@ -363,6 +450,7 @@ def main():
                 input_gen.report_address_reached(test_data, address=0, timestamp=timestamp)
 
                 if coverage_mgr.check_new_coverage():
+                    coverage_changed = True
                     logger.info("New coverage found => add input to corpus.")
                     input_gen.add_corpus_entry(test_data, address=0, timestamp=timestamp)
                     input_gen.choose_new_baseline_input()
@@ -431,7 +519,13 @@ def _handle_uses_for_def(gdb, ser, test_data, def_addr_str, uses_list,
                     no_trigger_count = 0
                 else:
                     logger.info(f"Unknown breakpoint => {payload2}, continuing.")
+                    pc_resp = gdb.send('-data-evaluate-expression $pc')
+                    pc_val_str = pc_resp['payload'].get('value', '')
+                    if pc_val_str:
+                        coverage_mgr.update_coverage_for_def(pc_val_str)
+                    remove_breakpoints(gdb, [payload2])
                     logger.info(f"{reason2}, {payload2}")
+                    any_use_triggered = True
                     gdb.continue_execution()
 
             elif reason2 == 'timed out':
@@ -440,6 +534,7 @@ def _handle_uses_for_def(gdb, ser, test_data, def_addr_str, uses_list,
 
             elif reason2 in ('exited','crashed'):
                 logger.warning(f"Target {reason2} => treat as crash for uses, restarting.")
+                any_use_triggered = True
                 
                 on_crash(gdb, test_data, crash_dir)
 
@@ -454,6 +549,7 @@ def _handle_uses_for_def(gdb, ser, test_data, def_addr_str, uses_list,
         input_gen.report_address_reached(test_data, address=0, timestamp=timestamp)
 
         if coverage_mgr.check_new_coverage():
+            any_use_triggered = True
             logger.info("New coverage from uses => add input to corpus.")
             input_gen.add_corpus_entry(test_data, address=0, timestamp=timestamp)
             input_gen.choose_new_baseline_input()
