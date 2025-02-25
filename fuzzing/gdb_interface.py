@@ -146,7 +146,12 @@ class GDBCommunicator(mp.Process):
                 response['message'] is None and
                 'Target halted' in response['payload']
         ):
-            pass
+            payload = response['payload'].split(', ')
+            for chunk in payload:
+                key_val = chunk.split('=')
+                if key_val[0] == 'pc':
+                    self.aditional_hit_addresses.put(int(key_val[1], 16))
+                    logger.warning(f"Additional hit address: {key_val[1]}")
 
 
 class GDB:

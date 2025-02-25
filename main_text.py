@@ -22,6 +22,8 @@ HW_BREAKPOINT_LIMIT = 6
 MAX_DEF_TRIES_PER_CHUNK = 1
 MAX_USE_TRIES = 1
 NUM_ROUNDS = 999999
+# global dic for the numbers of the def/breakpoint has been hit across rounds
+global_hit_counts = {}
 
 def setup_logging():
     logger = logging.getLogger()
@@ -44,18 +46,41 @@ def setup_logging():
 
 logger = setup_logging()
 
+def increment_bp_hit_count(d_str):
+    global_hit_counts[d_str] = global_hit_counts.get(d_str, 0) + 1
+
 def get_defs_in_weighted_random_order(all_defs):
     weighted_list = []
+    local_usage_count = {}
+    original_weight = {}
     for d_str, u_list in all_defs:
-        w = max(1, len(u_list))
-        weighted_list.append((d_str, u_list, w))
+        local_usage_count[d_str] = 0 # add the dictionary for the def count, this is for updating the weight
+        base_w = max(1, len(u_list))
+        # trying to dividede by ten
+        # trying to count how many times the def is used dictionary
+        # and reduce the weight according to the counts. 
+
+        # original_weight[d_str] = w
+        weighted_list.append((d_str, u_list, base_w))
+        local_usage_count[d_str] = 0
 
     while weighted_list:
-        total_weight = sum(item[2] for item in weighted_list)
-        if total_weight <= 0:
-            for (d, u, w) in weighted_list:
-                yield (d, u)
-            return
+        total_weight = 0.0
+        new_list = []
+        for i, (d_str, u_list, base_w) in enumerate(weighted_list):
+            loc_hit = local_usage_count[d_str]
+            glob_hits = global_hit_counts.get(d_str, 0)
+            scale = (1.0 / (1 + loc_hit)) * (1.0 / (1 + glob_hits) ** 0.5)
+            w = base_w * scale
+            # print(f"def={d_str}, base_w={base_w}, loc_hit={loc_hit}, glob_hits={glob_hits}, scale={scale}, w={w}")
+            new_list.append((d_str, u_list, w))
+            total_weight += w
+        # total_weight = sum(item[2] for item in weighted_list)
+        # #delete this, this will never be true
+        # if total_weight <= 0:
+        #     for (d, u, w) in weighted_list:
+        #         yield (d, u)
+        #     return
 
         r = random.random() * total_weight
         cumulative = 0.0
@@ -63,7 +88,11 @@ def get_defs_in_weighted_random_order(all_defs):
             cumulative += w
             if cumulative >= r:
                 yield (d, u)
-                weighted_list.pop(i)
+                local_usage_count[d] += 1
+                # new_weight = max(1, original_weight[d] //(2 ** local_usage_count[d]))
+                # new_weight = max(1, original_weight[d] //  (1 + local_usage_count[d]))
+                # weighted_list[i] = (d, u, new_weight)
+                # weighted_list.pop(i)
                 break
 
 def get_closest_uses(def_addr_str, uses_list):
@@ -161,8 +190,8 @@ def on_timeout(test_input: bytes, gdb, crash_dir: str) -> None:
     timestamp_str = str(int(time.time()))
     stacktrace_str = re.sub(r'[^a-zA-Z0-9_]', '', stacktrace_str)
     filename = f"timeout_{timestamp_str}_{stacktrace_str}"
-
-    write_crashing_input(test_input, crash_dir, filename)
+    # every time the timeout is called, the file is written, but we don't store them. there're too many of them.
+    # write_crashing_input(test_input, crash_dir, filename)
 
 
 def on_crash(gdb: GDB, test_data: bytes, crash_dir: str) -> None:
@@ -388,7 +417,10 @@ def main():
                     if reason in ("breakpoint hit", "stopped, no reason given"):
                         if payload in def_bp_map:
                             def_addr_str, uses_list = def_bp_map[payload]
+                            increment_bp_hit_count(def_addr_str)
+
                             logger.info(f"Def triggered => {def_addr_str}")
+                            # Update coverage to check if this is the new coverage.
                             coverage_mgr.update_coverage_for_def(def_addr_str)
 
                             remove_breakpoints(gdb, [payload])
@@ -413,7 +445,8 @@ def main():
                             pc_resp = gdb.send('-data-evaluate-expression $pc')
                             pc_val_str = pc_resp['payload'].get('value','')
                             if pc_val_str:
-                                coverage_mgr.update_coverage_for_def(pc_val_str)
+                                pc_str = pc_val_str.split()[0]
+                                coverage_mgr.update_coverage_for_def(pc_str)
                             remove_breakpoints(gdb, [payload])
                             gdb.continue_execution()
 
@@ -445,7 +478,7 @@ def main():
                     if not def_bp_map:
                         break
 
-                # Coverage check after finishing chunk attempts
+                # Coverage check
                 timestamp = int(time.time())
                 input_gen.report_address_reached(test_data, address=0, timestamp=timestamp)
 
@@ -455,7 +488,7 @@ def main():
                     input_gen.add_corpus_entry(test_data, address=0, timestamp=timestamp)
                     input_gen.choose_new_baseline_input()
 
-                # Cleanup leftover breakpoints
+                # Cleanup breakpoints
                 force_halt_if_running(gdb)
                 if def_bp_map:
                     remove_breakpoints(gdb, list(def_bp_map.keys()))
@@ -522,7 +555,9 @@ def _handle_uses_for_def(gdb, ser, test_data, def_addr_str, uses_list,
                     pc_resp = gdb.send('-data-evaluate-expression $pc')
                     pc_val_str = pc_resp['payload'].get('value', '')
                     if pc_val_str:
-                        coverage_mgr.update_coverage_for_def(pc_val_str)
+                        pc_str = pc_val_str.split()[0]
+
+                        coverage_mgr.update_coverage_for_def(pc_str)
                     remove_breakpoints(gdb, [payload2])
                     logger.info(f"{reason2}, {payload2}")
                     any_use_triggered = True

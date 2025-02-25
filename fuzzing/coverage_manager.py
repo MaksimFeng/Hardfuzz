@@ -72,7 +72,7 @@ class CoverageManager:
         """
         def_addr = int(def_addr_str, 16)
         idx = def_addr & 0xFFFF
-        logger.debug(f"Updating def coverage for def_addr=0x{def_addr:08X}, idx={idx}")
+        logger.info(f"Updating def coverage for def_addr=0x{def_addr:08X}, idx={idx}")
         self.trace_bits_defs[idx] = 1
 
     def update_coverage_for_defuse(self, def_addr_str: str, use_addr_str: str):
@@ -103,7 +103,7 @@ class CoverageManager:
         for i in hits_defs:
             if self.virgin_defs[i] == 0xFF:
                 self.virgin_defs[i] = 0x00
-                logger.debug(f"New def coverage found => index {i}")
+                logger.info(f"New def coverage found => index {i}")
                 new_bits_found = True
 
         # Check def-use coverage
