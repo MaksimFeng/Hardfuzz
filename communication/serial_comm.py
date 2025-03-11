@@ -1,6 +1,197 @@
-import time
+from __future__ import annotations
+
+import configparser
+import multiprocessing as mp
+import signal
 import logging as log
+import time
+import struct
+from abc import abstractmethod
+from typing import Any
+
 import serial
+
+class ConnectionBaseClass(mp.Process):
+    """
+    Base class that runs in its own Process to handle SUT I/O. 
+    Override connect(), connect_async(), wait_for_input_request(),
+    send_input(), and disconnect() in a subclass.
+    """
+
+    def __init__(
+        self,
+        stop_responses: mp.Queue[tuple[str, Any]],
+        SUTConnection_config: configparser.SectionProxy,
+        inputs: mp.Queue[bytes],
+        reset_sut
+    ):
+        super().__init__()
+        self.stop_responses = stop_responses
+        self.SUTConnection_config = SUTConnection_config
+        self.inputs = inputs
+        self.reset_sut_function = reset_sut
+
+    def start(self):
+        # Optionally do a "connect" while the SUT is halted, 
+        # so we can fail early if the port is invalid, etc.
+        try:
+            self.connect(self.SUTConnection_config)
+        except Exception as e:
+            log.warning(f"Initial connect() failed: {e}")
+        
+        # Now actually start the subprocess
+        super().start()
+        # Give the process some time to spin up fully
+        time.sleep(1)
+
+    def run(self) -> None:
+     
+        signal.signal(signal.SIGUSR1, self.on_exit)
+
+        # If certain connections require the target to run, do it here
+        self.connect_async()
+
+        while True:
+            # 1) Wait for the target to say it's ready (e.g. sending 'A')
+            self.wait_for_input_request()
+            # 2) Notify the main process that we want fuzz data now
+            self.stop_responses.put(('input request', ''))
+
+            # 3) Fetch the next fuzz input from our queue (blocking)
+            fuzz_input = self.inputs.get(block=True)
+            # 4) Send it
+            self.send_input(fuzz_input)
+
+    def reset_sut(self):
+        """
+        Optional. If you want to e.g. send a GDB command 
+        or toggle reset lines, do it here.
+        """
+        self.reset_sut_function()
+
+    def on_exit(self, signum: Any, frame: Any) -> None:
+        """
+        Cleanly disconnect and exit when we receive SIGUSR1.
+        """
+        self.disconnect()
+        exit(0)
+
+    @abstractmethod
+    def connect(self, SUTConnection_config: configparser.SectionProxy) -> None:
+        """Connect to the SUT while it is halted (if applicable)."""
+        ...
+
+    @abstractmethod
+    def connect_async(self) -> None:
+        """Connect to the SUT asynchronously (while running)."""
+        ...
+
+    @abstractmethod
+    def send_input(self, fuzz_input: bytes) -> None:
+        """Send fuzz_input to the SUT via your protocol."""
+        ...
+
+    @abstractmethod
+    def wait_for_input_request(self) -> None:
+        """
+        Block until the SUT indicates it wants data 
+        (e.g. by sending the ASCII character 'A').
+        """
+        ...
+
+    def disconnect(self) -> None:
+        """Free any resources, e.g. close the serial port."""
+        pass
+
+
+class SerialConnection(ConnectionBaseClass):
+    """
+    A concrete implementation of ConnectionBaseClass 
+    that uses the serial port.
+    """
+
+    def connect(self, SUTConnection_config: configparser.SectionProxy) -> None:
+        # Read config
+        port = SUTConnection_config['port']
+        baud = SUTConnection_config.getint('baud_rate', 115200)
+        to   = SUTConnection_config.getint('serial_timeout', 1)
+
+        # Open serial
+        self.serial = serial.Serial(port, baud, timeout=to)
+        self.serial.reset_input_buffer()
+        
+        # Optionally reset the SUT so it starts running 
+        # and eventually prints 'A' to request input
+        self.reset_sut()
+
+        log.info(f"Established connection on {self.serial.name} at {baud} baud.")
+
+    def connect_async(self) -> None:
+        """
+        If your SUT needs to be running (i.e., not halted in GDB) 
+        to complete the handshake, do nothing special 
+        or handle any 'run' commands here.
+        """
+        pass
+
+    def wait_for_input_request(self) -> None:
+        """
+        Blocks until the board sends 'A'.
+        For safety, we read everything available 
+        and look for ASCII 65 in the buffer.
+        """
+        buffer = b''
+        while True:
+            chunk = self.serial.read_all()
+            if chunk:
+                log.debug(f"Received chunk: {chunk}")
+                buffer += chunk
+                # Check if 'A' (ASCII 65) is in the data
+                if b'A' in buffer:
+                    log.info("Received request (A) from the board.")
+                    return
+            time.sleep(0.01)
+
+    def send_input(self, fuzz_input: bytes) -> None:
+        """
+        Our protocol: 
+          1) Send 4-byte little-endian length 
+          2) Then send the fuzz data
+        """
+        import struct
+        log.debug(f"Sending fuzz input of length {len(fuzz_input)}.")
+        length_bytes = struct.pack("<I", len(fuzz_input))
+        
+        self.serial.write(length_bytes)
+        self.serial.write(fuzz_input)
+        self.serial.flush()
+        log.info(f"Sent {len(fuzz_input)} bytes to SUT.")
+
+    def disconnect(self) -> None:
+        if hasattr(self, 'serial'):
+            self.serial.close()
+            log.info("Closed serial port connection.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#----
+
 
 def wait_for_request(ser, timeout=5):
     """

@@ -15,7 +15,8 @@ def start_jlink_gdb_server():
         '-if', 'JTAG',
         '-speed', '4000',
         '-port', '2331',
-        '-nohalt',        # Uncomment if your JLink version supports this
+        # '-nohalt',        # Keep the target running
+        # '-singlerun',     # Exit after GDB disconnects
     ]
 
     # Start the JLink GDB Server process

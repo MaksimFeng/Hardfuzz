@@ -1,0 +1,1049 @@
+2025-03-11 07:42:15 - root - INFO - === Starting main with snippet-based SerialConnection ===
+2025-03-11 07:42:15 - fuzzing.coverage_manager - DEBUG - Allocating shared memory of size: 131072 bytes.
+2025-03-11 07:42:15 - fuzzing.coverage_manager - DEBUG - Coverage arrays (trace_bits_defs, trace_bits_pairs) initialized to zero.
+2025-03-11 07:42:15 - fuzzing.coverage_manager - DEBUG - Virgin arrays (virgin_defs, virgin_pairs) initialized to 0xFF.
+2025-03-11 07:42:15 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-03-11 07:42:15 - root - DEBUG - Initialize GDB & load ELF.
+2025-03-11 07:42:15 - root - ERROR - No defs found => exit.
+2025-03-11 07:42:15 - root - INFO - Established connection on /dev/ttyACM1 at 38400 baud.
+2025-03-11 07:42:15 - root - DEBUG - Received chunk: b'A'
+2025-03-11 07:42:15 - root - INFO - Received request (A) from the board.
+2025-03-11 07:42:16 - root - INFO - GDB & SerialConnection initialized.
+2025-03-11 07:42:16 - pygdbmi.gdbcontroller - DEBUG - Launching gdb: gdb-multiarch --nx --quiet --interpreter=mi3
+2025-03-11 07:42:16 - root - DEBUG - Connecting to GDB server...
+2025-03-11 07:42:16 - root - DEBUG - Queueing GDB command: -gdb-set mi-async on with token 1
+2025-03-11 07:42:16 - root - DEBUG - Sending GDB command: 1-gdb-set mi-async on
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - writing: 1-gdb-set mi-async on
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'thread-group-added',
+ 'payload': {'id': 'i1'},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'thread-group-added', 'payload': {'id': 'i1'}, 'token': None, 'stream': 'stdout'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': None,
+ 'stream': 'stdout',
+ 'token': 1,
+ 'type': 'result'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': None, 'token': 1, 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received matched response for token 1: {'type': 'result', 'message': 'done', 'payload': None, 'token': 1, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:16 - root - DEBUG - Queueing GDB command: set architecture armv7-m with token 2
+2025-03-11 07:42:16 - root - DEBUG - Sending GDB command: 2set architecture armv7-m
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - writing: 2set architecture armv7-m
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'set architecture armv7-m\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'set architecture armv7-m\n', 'stream': 'stdout'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Undefined item: "armv7-m".\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'error',
+ 'payload': {'msg': 'Undefined item: "armv7-m".'},
+ 'stream': 'stdout',
+ 'token': 2,
+ 'type': 'result'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Undefined item: "armv7-m".\n', 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Undefined item: "armv7-m".'}, 'token': 2, 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received matched response for token 2: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Undefined item: "armv7-m".'}, 'token': 2, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:16 - root - DEBUG - Queueing GDB command: file /home/kai/Arduino/program1_json/build/arduino.sam.arduino_due_x_dbg/program1_json.ino.elf with token 3
+2025-03-11 07:42:16 - root - DEBUG - Sending GDB command: 3file /home/kai/Arduino/program1_json/build/arduino.sam.arduino_due_x_dbg/program1_json.ino.elf
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - writing: 3file /home/kai/Arduino/program1_json/build/arduino.sam.arduino_due_x_dbg/program1_json.ino.elf
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'file '
+            '/home/kai/Arduino/program1_json/build/arduino.sam.arduino_due_x_dbg/program1_json.ino.elf\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'file /home/kai/Arduino/program1_json/build/arduino.sam.arduino_due_x_dbg/program1_json.ino.elf\n', 'stream': 'stdout'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Reading symbols from '
+            '/home/kai/Arduino/program1_json/build/arduino.sam.arduino_due_x_dbg/program1_json.ino.elf...\n',
+ 'stream': 'stdout',
+ 'type': 'console'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'console', 'message': None, 'payload': 'Reading symbols from /home/kai/Arduino/program1_json/build/arduino.sam.arduino_due_x_dbg/program1_json.ino.elf...\n', 'stream': 'stdout'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': None,
+ 'stream': 'stdout',
+ 'token': 3,
+ 'type': 'result'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': None, 'token': 3, 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received matched response for token 3: {'type': 'result', 'message': 'done', 'payload': None, 'token': 3, 'stream': 'stdout', 'console_data': [{'type': 'console', 'message': None, 'payload': 'Reading symbols from /home/kai/Arduino/program1_json/build/arduino.sam.arduino_due_x_dbg/program1_json.ino.elf...\n', 'stream': 'stdout'}]}
+2025-03-11 07:42:16 - root - DEBUG - Queueing GDB command: -target-select extended-remote localhost:2331 with token 4
+2025-03-11 07:42:16 - root - DEBUG - Sending GDB command: 4-target-select extended-remote localhost:2331
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - writing: 4-target-select extended-remote localhost:2331
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'thread-group-started',
+ 'payload': {'id': 'i1', 'pid': '42000'},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'thread-created',
+ 'payload': {'group-id': 'i1', 'id': '1'},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'thread-group-started', 'payload': {'id': 'i1', 'pid': '42000'}, 'token': None, 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'thread-created', 'payload': {'id': '1', 'group-id': 'i1'}, 'token': None, 'stream': 'stdout'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'ArduinoJson::V721PB22::detail::StringNode::resize (node=0x0, '
+            'length=4, allocator=0x20070958 <pxReadyTasksLists+80>) at '
+            '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Memory/StringNode.hpp:49\n',
+ 'stream': 'stdout',
+ 'type': 'console'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': '49\t  static StringNode* resize(StringNode* node, size_t '
+            'length,\n',
+ 'stream': 'stdout',
+ 'type': 'console'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'stopped',
+ 'payload': {'frame': {'addr': '0x000801a4',
+                       'arch': 'armv7',
+                       'args': [{'name': 'node', 'value': '0x0'},
+                                {'name': 'length', 'value': '4'},
+                                {'name': 'allocator',
+                                 'value': '0x20070958 <pxReadyTasksLists+80>'}],
+                       'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Memory/StringNode.hpp',
+                       'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Memory/StringNode.hpp',
+                       'func': 'ArduinoJson::V721PB22::detail::StringNode::resize',
+                       'line': '49'},
+             'stopped-threads': 'all',
+             'thread-id': '1'},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'console', 'message': None, 'payload': 'ArduinoJson::V721PB22::detail::StringNode::resize (node=0x0, length=4, allocator=0x20070958 <pxReadyTasksLists+80>) at /home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Memory/StringNode.hpp:49\n', 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'console', 'message': None, 'payload': '49\t  static StringNode* resize(StringNode* node, size_t length,\n', 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'stopped', 'payload': {'frame': {'addr': '0x000801a4', 'func': 'ArduinoJson::V721PB22::detail::StringNode::resize', 'args': [{'name': 'node', 'value': '0x0'}, {'name': 'length', 'value': '4'}, {'name': 'allocator', 'value': '0x20070958 <pxReadyTasksLists+80>'}], 'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Memory/StringNode.hpp', 'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Memory/StringNode.hpp', 'line': '49', 'arch': 'armv7'}, 'thread-id': '1', 'stopped-threads': 'all'}, 'token': None, 'stream': 'stdout'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'connected',
+ 'payload': None,
+ 'stream': 'stdout',
+ 'token': 4,
+ 'type': 'result'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'connected', 'payload': None, 'token': 4, 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received matched response for token 4: {'type': 'result', 'message': 'connected', 'payload': None, 'token': 4, 'stream': 'stdout', 'console_data': [{'type': 'console', 'message': None, 'payload': 'ArduinoJson::V721PB22::detail::StringNode::resize (node=0x0, length=4, allocator=0x20070958 <pxReadyTasksLists+80>) at /home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Memory/StringNode.hpp:49\n', 'stream': 'stdout'}, {'type': 'console', 'message': None, 'payload': '49\t  static StringNode* resize(StringNode* node, size_t length,\n', 'stream': 'stdout'}]}
+2025-03-11 07:42:16 - root - DEBUG - Queueing GDB command: monitor reset with token 5
+2025-03-11 07:42:16 - root - DEBUG - Sending GDB command: 5monitor reset
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - writing: 5monitor reset
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'monitor reset\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'monitor reset\n', 'stream': 'stdout'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Resetting target\r\n',
+ 'stream': 'stdout',
+ 'type': 'target'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'target', 'message': None, 'payload': 'Resetting target\r\n', 'stream': 'stdout'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': None,
+ 'stream': 'stdout',
+ 'token': 5,
+ 'type': 'result'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': None, 'token': 5, 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received matched response for token 5: {'type': 'result', 'message': 'done', 'payload': None, 'token': 5, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:16 - root - DEBUG - Queueing GDB command: monitor halt with token 6
+2025-03-11 07:42:16 - root - DEBUG - Sending GDB command: 6monitor halt
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - writing: 6monitor halt
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'monitor halt\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'monitor halt\n', 'stream': 'stdout'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': None,
+ 'stream': 'stdout',
+ 'token': 6,
+ 'type': 'result'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': None, 'token': 6, 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received matched response for token 6: {'type': 'result', 'message': 'done', 'payload': None, 'token': 6, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:16 - root - DEBUG - Queueing GDB command: -file-exec-and-symbols /home/kai/Arduino/program1_json/build/arduino.sam.arduino_due_x_dbg/program1_json.ino.elf with token 7
+2025-03-11 07:42:16 - root - DEBUG - Sending GDB command: 7-file-exec-and-symbols /home/kai/Arduino/program1_json/build/arduino.sam.arduino_due_x_dbg/program1_json.ino.elf
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - writing: 7-file-exec-and-symbols /home/kai/Arduino/program1_json/build/arduino.sam.arduino_due_x_dbg/program1_json.ino.elf
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': None,
+ 'stream': 'stdout',
+ 'token': 7,
+ 'type': 'result'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': None, 'token': 7, 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received matched response for token 7: {'type': 'result', 'message': 'done', 'payload': None, 'token': 7, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:16 - root - DEBUG - Queueing GDB command: -break-insert main with token 8
+2025-03-11 07:42:16 - root - DEBUG - Sending GDB command: 8-break-insert main
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - writing: 8-break-insert main
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': {'bkpt': {'addr': '0x0008352c',
+                      'disp': 'keep',
+                      'enabled': 'y',
+                      'file': '/home/kai/.arduino15/packages/arduino/hardware/sam/1.6.12/cores/arduino/main.cpp',
+                      'fullname': '/home/kai/.arduino15/packages/arduino/hardware/sam/1.6.12/cores/arduino/main.cpp',
+                      'func': 'main()',
+                      'line': '43',
+                      'number': '1',
+                      'original-location': 'main',
+                      'thread-groups': ['i1'],
+                      'times': '0',
+                      'type': 'breakpoint'}},
+ 'stream': 'stdout',
+ 'token': 8,
+ 'type': 'result'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': {'bkpt': {'number': '1', 'type': 'breakpoint', 'disp': 'keep', 'enabled': 'y', 'addr': '0x0008352c', 'func': 'main()', 'file': '/home/kai/.arduino15/packages/arduino/hardware/sam/1.6.12/cores/arduino/main.cpp', 'fullname': '/home/kai/.arduino15/packages/arduino/hardware/sam/1.6.12/cores/arduino/main.cpp', 'line': '43', 'thread-groups': ['i1'], 'times': '0', 'original-location': 'main'}}, 'token': 8, 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received matched response for token 8: {'type': 'result', 'message': 'done', 'payload': {'bkpt': {'number': '1', 'type': 'breakpoint', 'disp': 'keep', 'enabled': 'y', 'addr': '0x0008352c', 'func': 'main()', 'file': '/home/kai/.arduino15/packages/arduino/hardware/sam/1.6.12/cores/arduino/main.cpp', 'fullname': '/home/kai/.arduino15/packages/arduino/hardware/sam/1.6.12/cores/arduino/main.cpp', 'line': '43', 'thread-groups': ['i1'], 'times': '0', 'original-location': 'main'}}, 'token': 8, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:16 - root - DEBUG - Queueing GDB command: -exec-run with token 9
+2025-03-11 07:42:16 - root - DEBUG - Sending GDB command: 9-exec-run
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - writing: 9-exec-run
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'thread-exited',
+ 'payload': {'group-id': 'i1', 'id': '1'},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'thread-exited', 'payload': {'id': '1', 'group-id': 'i1'}, 'token': None, 'stream': 'stdout'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'thread-group-exited',
+ 'payload': {'id': 'i1'},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'thread-group-exited', 'payload': {'id': 'i1'}, 'token': None, 'stream': 'stdout'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'thread-group-started',
+ 'payload': {'id': 'i1', 'pid': '42000'},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'thread-created',
+ 'payload': {'group-id': 'i1', 'id': '1'},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'thread-group-started', 'payload': {'id': 'i1', 'pid': '42000'}, 'token': None, 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'thread-created', 'payload': {'id': '1', 'group-id': 'i1'}, 'token': None, 'stream': 'stdout'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'running',
+ 'payload': None,
+ 'stream': 'stdout',
+ 'token': 9,
+ 'type': 'result'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'running',
+ 'payload': {'thread-id': 'all'},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'running', 'payload': None, 'token': 9, 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'running', 'payload': {'thread-id': 'all'}, 'token': None, 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received matched response for token 9: {'type': 'result', 'message': 'running', 'payload': None, 'token': 9, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:16 - root - DEBUG - Wait_for_stop received stop event: ('stopped, no reason given', "{'type': 'notify', 'message': 'stopped', 'payload': {'frame': {'addr': '0x000801a4', 'func': 'ArduinoJson::V721PB22::detail::StringNode::resize', 'args': [{'name': 'node', 'value': '0x0'}, {'name': 'length', 'value': '4'}, {'name': 'allocator', 'value': '0x20070958 <pxReadyTasksLists+80>'}], 'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Memory/StringNode.hpp', 'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Memory/StringNode.hpp', 'line': '49', 'arch': 'armv7'}, 'thread-id': '1', 'stopped-threads': 'all'}, 'token': None, 'stream': 'stdout'}")
+2025-03-11 07:42:16 - root - INFO - Initial stop => reason=stopped, no reason given, payload={'type': 'notify', 'message': 'stopped', 'payload': {'frame': {'addr': '0x000801a4', 'func': 'ArduinoJson::V721PB22::detail::StringNode::resize', 'args': [{'name': 'node', 'value': '0x0'}, {'name': 'length', 'value': '4'}, {'name': 'allocator', 'value': '0x20070958 <pxReadyTasksLists+80>'}], 'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Memory/StringNode.hpp', 'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Memory/StringNode.hpp', 'line': '49', 'arch': 'armv7'}, 'thread-id': '1', 'stopped-threads': 'all'}, 'token': None, 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Continuing execution...
+2025-03-11 07:42:16 - root - DEBUG - Queueing GDB command: monitor reset with token 10
+2025-03-11 07:42:16 - root - DEBUG - Sending GDB command: 10monitor reset
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - writing: 10monitor reset
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'monitor reset\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'monitor reset\n', 'stream': 'stdout'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Cannot execute this command while the target is running.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Use the "interrupt" command to stop the target\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'and then try again.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'error',
+ 'payload': {'msg': 'Cannot execute this command while the target is running.\n'
+                    'Use the "interrupt" command to stop the target\n'
+                    'and then try again.'},
+ 'stream': 'stdout',
+ 'token': 10,
+ 'type': 'result'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Cannot execute this command while the target is running.\n', 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Use the "interrupt" command to stop the target\n', 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'and then try again.\n', 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 10, 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received matched response for token 10: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 10, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:16 - root - DEBUG - Queueing GDB command: monitor halt with token 11
+2025-03-11 07:42:16 - root - DEBUG - Sending GDB command: 11monitor halt
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - writing: 11monitor halt
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'monitor halt\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'monitor halt\n', 'stream': 'stdout'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Cannot execute this command while the target is running.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Use the "interrupt" command to stop the target\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'and then try again.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'error',
+ 'payload': {'msg': 'Cannot execute this command while the target is running.\n'
+                    'Use the "interrupt" command to stop the target\n'
+                    'and then try again.'},
+ 'stream': 'stdout',
+ 'token': 11,
+ 'type': 'result'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Cannot execute this command while the target is running.\n', 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Use the "interrupt" command to stop the target\n', 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'and then try again.\n', 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 11, 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received matched response for token 11: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 11, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:16 - root - DEBUG - Queueing GDB command: -exec-continue --all with token 12
+2025-03-11 07:42:16 - root - DEBUG - Sending GDB command: 12-exec-continue --all
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - writing: 12-exec-continue --all
+2025-03-11 07:42:16 - pygdbmi.IoManager - DEBUG - {'message': 'error',
+ 'payload': {'msg': 'Cannot execute this command while the selected thread is '
+                    'running.'},
+ 'stream': 'stdout',
+ 'token': 12,
+ 'type': 'result'}
+2025-03-11 07:42:16 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the selected thread is running.'}, 'token': 12, 'stream': 'stdout'}
+2025-03-11 07:42:16 - root - DEBUG - Received matched response for token 12: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the selected thread is running.'}, 'token': 12, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:16 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-03-11 07:42:17 - root - DEBUG - Continuing execution...
+2025-03-11 07:42:17 - root - DEBUG - Queueing GDB command: monitor reset with token 13
+2025-03-11 07:42:17 - root - DEBUG - Sending GDB command: 13monitor reset
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - writing: 13monitor reset
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'monitor reset\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'monitor reset\n', 'stream': 'stdout'}
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Cannot execute this command while the target is running.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Use the "interrupt" command to stop the target\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'and then try again.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': 'error',
+ 'payload': {'msg': 'Cannot execute this command while the target is running.\n'
+                    'Use the "interrupt" command to stop the target\n'
+                    'and then try again.'},
+ 'stream': 'stdout',
+ 'token': 13,
+ 'type': 'result'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Cannot execute this command while the target is running.\n', 'stream': 'stdout'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Use the "interrupt" command to stop the target\n', 'stream': 'stdout'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'and then try again.\n', 'stream': 'stdout'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 13, 'stream': 'stdout'}
+2025-03-11 07:42:17 - root - DEBUG - Received matched response for token 13: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 13, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:17 - root - DEBUG - Queueing GDB command: monitor halt with token 14
+2025-03-11 07:42:17 - root - DEBUG - Sending GDB command: 14monitor halt
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - writing: 14monitor halt
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'monitor halt\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'monitor halt\n', 'stream': 'stdout'}
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Cannot execute this command while the target is running.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Use the "interrupt" command to stop the target\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'and then try again.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': 'error',
+ 'payload': {'msg': 'Cannot execute this command while the target is running.\n'
+                    'Use the "interrupt" command to stop the target\n'
+                    'and then try again.'},
+ 'stream': 'stdout',
+ 'token': 14,
+ 'type': 'result'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Cannot execute this command while the target is running.\n', 'stream': 'stdout'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Use the "interrupt" command to stop the target\n', 'stream': 'stdout'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'and then try again.\n', 'stream': 'stdout'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 14, 'stream': 'stdout'}
+2025-03-11 07:42:17 - root - DEBUG - Received matched response for token 14: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 14, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:17 - root - DEBUG - Queueing GDB command: -exec-continue --all with token 15
+2025-03-11 07:42:17 - root - DEBUG - Sending GDB command: 15-exec-continue --all
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - writing: 15-exec-continue --all
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': 'error',
+ 'payload': {'msg': 'Cannot execute this command while the selected thread is '
+                    'running.'},
+ 'stream': 'stdout',
+ 'token': 15,
+ 'type': 'result'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the selected thread is running.'}, 'token': 15, 'stream': 'stdout'}
+2025-03-11 07:42:17 - root - DEBUG - Received matched response for token 15: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the selected thread is running.'}, 'token': 15, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:17 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-03-11 07:42:17 - root - DEBUG - Continuing execution...
+2025-03-11 07:42:17 - root - DEBUG - Queueing GDB command: monitor reset with token 16
+2025-03-11 07:42:17 - root - DEBUG - Sending GDB command: 16monitor reset
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - writing: 16monitor reset
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'monitor reset\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'monitor reset\n', 'stream': 'stdout'}
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Cannot execute this command while the target is running.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Use the "interrupt" command to stop the target\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'and then try again.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': 'error',
+ 'payload': {'msg': 'Cannot execute this command while the target is running.\n'
+                    'Use the "interrupt" command to stop the target\n'
+                    'and then try again.'},
+ 'stream': 'stdout',
+ 'token': 16,
+ 'type': 'result'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Cannot execute this command while the target is running.\n', 'stream': 'stdout'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Use the "interrupt" command to stop the target\n', 'stream': 'stdout'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'and then try again.\n', 'stream': 'stdout'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 16, 'stream': 'stdout'}
+2025-03-11 07:42:17 - root - DEBUG - Received matched response for token 16: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 16, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:17 - root - DEBUG - Queueing GDB command: monitor halt with token 17
+2025-03-11 07:42:17 - root - DEBUG - Sending GDB command: 17monitor halt
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - writing: 17monitor halt
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'monitor halt\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'monitor halt\n', 'stream': 'stdout'}
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Cannot execute this command while the target is running.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Use the "interrupt" command to stop the target\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'and then try again.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': 'error',
+ 'payload': {'msg': 'Cannot execute this command while the target is running.\n'
+                    'Use the "interrupt" command to stop the target\n'
+                    'and then try again.'},
+ 'stream': 'stdout',
+ 'token': 17,
+ 'type': 'result'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Cannot execute this command while the target is running.\n', 'stream': 'stdout'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Use the "interrupt" command to stop the target\n', 'stream': 'stdout'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'and then try again.\n', 'stream': 'stdout'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 17, 'stream': 'stdout'}
+2025-03-11 07:42:17 - root - DEBUG - Received matched response for token 17: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 17, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:17 - root - DEBUG - Queueing GDB command: -exec-continue --all with token 18
+2025-03-11 07:42:17 - root - DEBUG - Sending GDB command: 18-exec-continue --all
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - writing: 18-exec-continue --all
+2025-03-11 07:42:17 - pygdbmi.IoManager - DEBUG - {'message': 'error',
+ 'payload': {'msg': 'Cannot execute this command while the selected thread is '
+                    'running.'},
+ 'stream': 'stdout',
+ 'token': 18,
+ 'type': 'result'}
+2025-03-11 07:42:17 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the selected thread is running.'}, 'token': 18, 'stream': 'stdout'}
+2025-03-11 07:42:17 - root - DEBUG - Received matched response for token 18: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the selected thread is running.'}, 'token': 18, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:17 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-03-11 07:42:18 - root - DEBUG - Continuing execution...
+2025-03-11 07:42:18 - root - DEBUG - Queueing GDB command: monitor reset with token 19
+2025-03-11 07:42:18 - root - DEBUG - Sending GDB command: 19monitor reset
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - writing: 19monitor reset
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'monitor reset\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'monitor reset\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Cannot execute this command while the target is running.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Use the "interrupt" command to stop the target\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'and then try again.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'error',
+ 'payload': {'msg': 'Cannot execute this command while the target is running.\n'
+                    'Use the "interrupt" command to stop the target\n'
+                    'and then try again.'},
+ 'stream': 'stdout',
+ 'token': 19,
+ 'type': 'result'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Cannot execute this command while the target is running.\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Use the "interrupt" command to stop the target\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'and then try again.\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 19, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received matched response for token 19: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 19, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:18 - root - DEBUG - Queueing GDB command: monitor halt with token 20
+2025-03-11 07:42:18 - root - DEBUG - Sending GDB command: 20monitor halt
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - writing: 20monitor halt
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'monitor halt\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'monitor halt\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Cannot execute this command while the target is running.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Use the "interrupt" command to stop the target\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'and then try again.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'error',
+ 'payload': {'msg': 'Cannot execute this command while the target is running.\n'
+                    'Use the "interrupt" command to stop the target\n'
+                    'and then try again.'},
+ 'stream': 'stdout',
+ 'token': 20,
+ 'type': 'result'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Cannot execute this command while the target is running.\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Use the "interrupt" command to stop the target\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'and then try again.\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 20, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received matched response for token 20: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 20, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:18 - root - DEBUG - Queueing GDB command: -exec-continue --all with token 21
+2025-03-11 07:42:18 - root - DEBUG - Sending GDB command: 21-exec-continue --all
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - writing: 21-exec-continue --all
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'error',
+ 'payload': {'msg': 'Cannot execute this command while the selected thread is '
+                    'running.'},
+ 'stream': 'stdout',
+ 'token': 21,
+ 'type': 'result'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the selected thread is running.'}, 'token': 21, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received matched response for token 21: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the selected thread is running.'}, 'token': 21, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:18 - root - INFO - === Starting Round #1 ===
+2025-03-11 07:42:18 - root - INFO - Round #1 => test_data=b'{"test": 123, "valid": true}'
+2025-03-11 07:42:18 - root - DEBUG - Queueing GDB command: -data-list-register-values x with token 22
+2025-03-11 07:42:18 - root - DEBUG - Sending GDB command: 22-data-list-register-values x
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - writing: 22-data-list-register-values x
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'error',
+ 'payload': {'msg': 'Selected thread is running.'},
+ 'stream': 'stdout',
+ 'token': 22,
+ 'type': 'result'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Selected thread is running.'}, 'token': 22, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received matched response for token 22: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Selected thread is running.'}, 'token': 22, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:18 - root - DEBUG - CPU not halted => attempt=1, sending interrupt.
+2025-03-11 07:42:18 - root - DEBUG - Interrupting execution...
+2025-03-11 07:42:18 - root - DEBUG - Queueing GDB command: -exec-interrupt --all with token 23
+2025-03-11 07:42:18 - root - DEBUG - Sending GDB command: 23-exec-interrupt --all
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - writing: 23-exec-interrupt --all
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': None,
+ 'stream': 'stdout',
+ 'token': 23,
+ 'type': 'result'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': None, 'token': 23, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received matched response for token 23: {'type': 'result', 'message': 'done', 'payload': None, 'token': 23, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:18 - root - DEBUG - Queueing GDB command: monitor reset with token 24
+2025-03-11 07:42:18 - root - DEBUG - Sending GDB command: 24monitor reset
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - writing: 24monitor reset
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'monitor reset\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'monitor reset\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Cannot execute this command while the target is running.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Use the "interrupt" command to stop the target\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'and then try again.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'error',
+ 'payload': {'msg': 'Cannot execute this command while the target is running.\n'
+                    'Use the "interrupt" command to stop the target\n'
+                    'and then try again.'},
+ 'stream': 'stdout',
+ 'token': 24,
+ 'type': 'result'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Cannot execute this command while the target is running.\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Use the "interrupt" command to stop the target\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'and then try again.\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 24, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received matched response for token 24: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 24, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:18 - root - DEBUG - Queueing GDB command: monitor halt with token 25
+2025-03-11 07:42:18 - root - DEBUG - Sending GDB command: 25monitor halt
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - writing: 25monitor halt
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'monitor halt\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'monitor halt\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Cannot execute this command while the target is running.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Use the "interrupt" command to stop the target\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'and then try again.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'error',
+ 'payload': {'msg': 'Cannot execute this command while the target is running.\n'
+                    'Use the "interrupt" command to stop the target\n'
+                    'and then try again.'},
+ 'stream': 'stdout',
+ 'token': 25,
+ 'type': 'result'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Cannot execute this command while the target is running.\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'Use the "interrupt" command to stop the target\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'and then try again.\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 25, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received matched response for token 25: {'type': 'result', 'message': 'error', 'payload': {'msg': 'Cannot execute this command while the target is running.\nUse the "interrupt" command to stop the target\nand then try again.'}, 'token': 25, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'thread-created',
+ 'payload': {'group-id': 'i1', 'id': '2'},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2025-03-11 07:42:18 - root - DEBUG - Wait_for_stop received stop event: ('exited', '')
+2025-03-11 07:42:18 - root - DEBUG - Target halted after interrupt.
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': '[New Thread 57005]\n',
+ 'stream': 'stdout',
+ 'type': 'console'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': '[Thread <main> exited]\n',
+ 'stream': 'stdout',
+ 'type': 'console'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'thread-exited',
+ 'payload': {'group-id': 'i1', 'id': '1'},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None, 'payload': '\nThread ', 'stream': 'stdout', 'type': 'console'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': '2 received signal SIGTRAP, Trace/breakpoint trap.\n',
+ 'stream': 'stdout',
+ 'type': 'console'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': '[Switching to Thread 57005]\n',
+ 'stream': 'stdout',
+ 'type': 'console'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': '0x000808bc in '
+            'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeRaw '
+            "(c=92 '\\\\', this=0x20087fe4) at "
+            '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp:170\n',
+ 'stream': 'stdout',
+ 'type': 'console'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': '170\t    writer_.write(static_cast<uint8_t>(c));\n',
+ 'stream': 'stdout',
+ 'type': 'console'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'stopped',
+ 'payload': {'frame': {'addr': '0x000808bc',
+                       'arch': 'armv7',
+                       'args': [{'name': 'c', 'value': "92 '\\\\'"},
+                                {'name': 'this', 'value': '0x20087fe4'}],
+                       'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp',
+                       'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp',
+                       'func': 'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeRaw',
+                       'line': '170'},
+             'reason': 'signal-received',
+             'signal-meaning': 'Trace/breakpoint trap',
+             'signal-name': 'SIGTRAP',
+             'stopped-threads': 'all',
+             'thread-id': '2'},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'thread-created', 'payload': {'id': '2', 'group-id': 'i1'}, 'token': None, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'console', 'message': None, 'payload': '[New Thread 57005]\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'console', 'message': None, 'payload': '[Thread <main> exited]\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'thread-exited', 'payload': {'id': '1', 'group-id': 'i1'}, 'token': None, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'console', 'message': None, 'payload': '\nThread ', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'console', 'message': None, 'payload': '2 received signal SIGTRAP, Trace/breakpoint trap.\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'console', 'message': None, 'payload': '[Switching to Thread 57005]\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'console', 'message': None, 'payload': "0x000808bc in ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeRaw (c=92 '\\\\', this=0x20087fe4) at /home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp:170\n", 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'console', 'message': None, 'payload': '170\t    writer_.write(static_cast<uint8_t>(c));\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'stopped', 'payload': {'reason': 'signal-received', 'signal-name': 'SIGTRAP', 'signal-meaning': 'Trace/breakpoint trap', 'frame': {'addr': '0x000808bc', 'func': 'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeRaw', 'args': [{'name': 'c', 'value': "92 '\\\\'"}, {'name': 'this', 'value': '0x20087fe4'}], 'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'line': '170', 'arch': 'armv7'}, 'thread-id': '2', 'stopped-threads': 'all'}, 'token': None, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Wait_for_stop received stop event: ('interrupt', 526524)
+2025-03-11 07:42:18 - root - DEBUG - Queueing GDB command: -data-list-register-values x with token 26
+2025-03-11 07:42:18 - root - DEBUG - Sending GDB command: 26-data-list-register-values x
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - writing: 26-data-list-register-values x
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': {'register-values': [{'number': '0', 'value': '0x200709e0'},
+                                 {'number': '1', 'value': '0x4'},
+                                 {'number': '2', 'value': '0x20070958'},
+                                 {'number': '3', 'value': '0x0'},
+                                 {'number': '4', 'value': '0x20087fe4'},
+                                 {'number': '5', 'value': '0x20087fe8'},
+                                 {'number': '6', 'value': '0xdbc243eb'},
+                                 {'number': '7', 'value': '0x52858100'},
+                                 {'number': '8', 'value': '0xc943d387'},
+                                 {'number': '9', 'value': '0xd7811305'},
+                                 {'number': '10', 'value': '0x91218804'},
+                                 {'number': '11', 'value': '0xc323d40d'},
+                                 {'number': '12', 'value': '0x200712b0'},
+                                 {'number': '13', 'value': '0x20087fd0'},
+                                 {'number': '14', 'value': '0x801a5'},
+                                 {'number': '15', 'value': '0x808bc'},
+                                 {'number': '25', 'value': '0x61000000'},
+                                 {'number': '91', 'value': '0x20087fd0'},
+                                 {'number': '92', 'value': '0xbd934320'},
+                                 {'number': '93', 'value': '0x0'},
+                                 {'number': '94', 'value': '0x0'},
+                                 {'number': '95', 'value': '0x0'},
+                                 {'number': '96', 'value': '0x0'},
+                                 {'number': '97', 'value': '0x60000000'},
+                                 {'number': '98', 'value': '0x1000000'},
+                                 {'number': '99', 'value': '0x0'},
+                                 {'number': '100', 'value': '0x60000000'},
+                                 {'number': '101', 'value': '0x61000000'},
+                                 {'number': '102', 'value': '0x1000000'}]},
+ 'stream': 'stdout',
+ 'token': 26,
+ 'type': 'result'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': {'register-values': [{'number': '0', 'value': '0x200709e0'}, {'number': '1', 'value': '0x4'}, {'number': '2', 'value': '0x20070958'}, {'number': '3', 'value': '0x0'}, {'number': '4', 'value': '0x20087fe4'}, {'number': '5', 'value': '0x20087fe8'}, {'number': '6', 'value': '0xdbc243eb'}, {'number': '7', 'value': '0x52858100'}, {'number': '8', 'value': '0xc943d387'}, {'number': '9', 'value': '0xd7811305'}, {'number': '10', 'value': '0x91218804'}, {'number': '11', 'value': '0xc323d40d'}, {'number': '12', 'value': '0x200712b0'}, {'number': '13', 'value': '0x20087fd0'}, {'number': '14', 'value': '0x801a5'}, {'number': '15', 'value': '0x808bc'}, {'number': '25', 'value': '0x61000000'}, {'number': '91', 'value': '0x20087fd0'}, {'number': '92', 'value': '0xbd934320'}, {'number': '93', 'value': '0x0'}, {'number': '94', 'value': '0x0'}, {'number': '95', 'value': '0x0'}, {'number': '96', 'value': '0x0'}, {'number': '97', 'value': '0x60000000'}, {'number': '98', 'value': '0x1000000'}, {'number': '99', 'value': '0x0'}, {'number': '100', 'value': '0x60000000'}, {'number': '101', 'value': '0x61000000'}, {'number': '102', 'value': '0x1000000'}]}, 'token': 26, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received matched response for token 26: {'type': 'result', 'message': 'done', 'payload': {'register-values': [{'number': '0', 'value': '0x200709e0'}, {'number': '1', 'value': '0x4'}, {'number': '2', 'value': '0x20070958'}, {'number': '3', 'value': '0x0'}, {'number': '4', 'value': '0x20087fe4'}, {'number': '5', 'value': '0x20087fe8'}, {'number': '6', 'value': '0xdbc243eb'}, {'number': '7', 'value': '0x52858100'}, {'number': '8', 'value': '0xc943d387'}, {'number': '9', 'value': '0xd7811305'}, {'number': '10', 'value': '0x91218804'}, {'number': '11', 'value': '0xc323d40d'}, {'number': '12', 'value': '0x200712b0'}, {'number': '13', 'value': '0x20087fd0'}, {'number': '14', 'value': '0x801a5'}, {'number': '15', 'value': '0x808bc'}, {'number': '25', 'value': '0x61000000'}, {'number': '91', 'value': '0x20087fd0'}, {'number': '92', 'value': '0xbd934320'}, {'number': '93', 'value': '0x0'}, {'number': '94', 'value': '0x0'}, {'number': '95', 'value': '0x0'}, {'number': '96', 'value': '0x0'}, {'number': '97', 'value': '0x60000000'}, {'number': '98', 'value': '0x1000000'}, {'number': '99', 'value': '0x0'}, {'number': '100', 'value': '0x60000000'}, {'number': '101', 'value': '0x61000000'}, {'number': '102', 'value': '0x1000000'}]}, 'token': 26, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:18 - root - DEBUG - CPU is halted.
+2025-03-11 07:42:18 - root - DEBUG - Deleting all existing breakpoints.
+2025-03-11 07:42:18 - root - DEBUG - Queueing GDB command: -break-delete with token 27
+2025-03-11 07:42:18 - root - DEBUG - Sending GDB command: 27-break-delete
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - writing: 27-break-delete
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': None,
+ 'stream': 'stdout',
+ 'token': 27,
+ 'type': 'result'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': None, 'token': 27, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received matched response for token 27: {'type': 'result', 'message': 'done', 'payload': None, 'token': 27, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:18 - root - INFO - Deleted all breakpoints.
+2025-03-11 07:42:18 - root - INFO - Setting breakpoint at 0x20070621
+2025-03-11 07:42:18 - root - DEBUG - Queueing GDB command: -break-insert *0x20070621 with token 28
+2025-03-11 07:42:18 - root - DEBUG - Sending GDB command: 28-break-insert *0x20070621
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - writing: 28-break-insert *0x20070621
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'warning: Breakpoint address adjusted from 0x20070621 to '
+            '0x20070620.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'warning: Breakpoint address adjusted from 0x20070621 to 0x20070620.\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': {'bkpt': {'addr': '0x20070620',
+                      'at': '<__malloc_av_+380>',
+                      'disp': 'keep',
+                      'enabled': 'y',
+                      'number': '2',
+                      'original-location': '*0x20070621',
+                      'thread-groups': ['i1'],
+                      'times': '0',
+                      'type': 'breakpoint'}},
+ 'stream': 'stdout',
+ 'token': 28,
+ 'type': 'result'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': {'bkpt': {'number': '2', 'type': 'breakpoint', 'disp': 'keep', 'enabled': 'y', 'addr': '0x20070620', 'at': '<__malloc_av_+380>', 'thread-groups': ['i1'], 'times': '0', 'original-location': '*0x20070621'}}, 'token': 28, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received matched response for token 28: {'type': 'result', 'message': 'done', 'payload': {'bkpt': {'number': '2', 'type': 'breakpoint', 'disp': 'keep', 'enabled': 'y', 'addr': '0x20070620', 'at': '<__malloc_av_+380>', 'thread-groups': ['i1'], 'times': '0', 'original-location': '*0x20070621'}}, 'token': 28, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:18 - root - INFO - Breakpoint set at 0x20070621, bkptno=2
+2025-03-11 07:42:18 - root - INFO - Setting breakpoint at 0x80cdb
+2025-03-11 07:42:18 - root - DEBUG - Queueing GDB command: -break-insert *0x80cdb with token 29
+2025-03-11 07:42:18 - root - DEBUG - Sending GDB command: 29-break-insert *0x80cdb
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - writing: 29-break-insert *0x80cdb
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'warning: Breakpoint address adjusted from 0x00080cdb to '
+            '0x00080cda.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'warning: Breakpoint address adjusted from 0x00080cdb to 0x00080cda.\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': {'bkpt': {'addr': '0x00080cda',
+                      'disp': 'keep',
+                      'enabled': 'y',
+                      'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp',
+                      'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp',
+                      'func': 'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeInteger<unsigned '
+                              'long>',
+                      'line': '127',
+                      'number': '3',
+                      'original-location': '*0x80cdb',
+                      'thread-groups': ['i1'],
+                      'times': '0',
+                      'type': 'breakpoint'}},
+ 'stream': 'stdout',
+ 'token': 29,
+ 'type': 'result'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': {'bkpt': {'number': '3', 'type': 'breakpoint', 'disp': 'keep', 'enabled': 'y', 'addr': '0x00080cda', 'func': 'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeInteger<unsigned long>', 'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'line': '127', 'thread-groups': ['i1'], 'times': '0', 'original-location': '*0x80cdb'}}, 'token': 29, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received matched response for token 29: {'type': 'result', 'message': 'done', 'payload': {'bkpt': {'number': '3', 'type': 'breakpoint', 'disp': 'keep', 'enabled': 'y', 'addr': '0x00080cda', 'func': 'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeInteger<unsigned long>', 'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'line': '127', 'thread-groups': ['i1'], 'times': '0', 'original-location': '*0x80cdb'}}, 'token': 29, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:18 - root - INFO - Breakpoint set at 0x80cdb, bkptno=3
+2025-03-11 07:42:18 - root - INFO - Setting breakpoint at 0x80d5b
+2025-03-11 07:42:18 - root - DEBUG - Queueing GDB command: -break-insert *0x80d5b with token 30
+2025-03-11 07:42:18 - root - DEBUG - Sending GDB command: 30-break-insert *0x80d5b
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - writing: 30-break-insert *0x80d5b
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'warning: Breakpoint address adjusted from 0x00080d5b to '
+            '0x00080d5a.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'warning: Breakpoint address adjusted from 0x00080d5b to 0x00080d5a.\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': {'bkpt': {'addr': '0x00080d5a',
+                      'disp': 'keep',
+                      'enabled': 'y',
+                      'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp',
+                      'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp',
+                      'func': 'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeInteger<unsigned '
+                              'short>',
+                      'line': '127',
+                      'number': '4',
+                      'original-location': '*0x80d5b',
+                      'thread-groups': ['i1'],
+                      'times': '0',
+                      'type': 'breakpoint'}},
+ 'stream': 'stdout',
+ 'token': 30,
+ 'type': 'result'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': {'bkpt': {'number': '4', 'type': 'breakpoint', 'disp': 'keep', 'enabled': 'y', 'addr': '0x00080d5a', 'func': 'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeInteger<unsigned short>', 'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'line': '127', 'thread-groups': ['i1'], 'times': '0', 'original-location': '*0x80d5b'}}, 'token': 30, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received matched response for token 30: {'type': 'result', 'message': 'done', 'payload': {'bkpt': {'number': '4', 'type': 'breakpoint', 'disp': 'keep', 'enabled': 'y', 'addr': '0x00080d5a', 'func': 'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeInteger<unsigned short>', 'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'line': '127', 'thread-groups': ['i1'], 'times': '0', 'original-location': '*0x80d5b'}}, 'token': 30, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:18 - root - INFO - Breakpoint set at 0x80d5b, bkptno=4
+2025-03-11 07:42:18 - root - INFO - Setting breakpoint at 0x80d11
+2025-03-11 07:42:18 - root - DEBUG - Queueing GDB command: -break-insert *0x80d11 with token 31
+2025-03-11 07:42:18 - root - DEBUG - Sending GDB command: 31-break-insert *0x80d11
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - writing: 31-break-insert *0x80d11
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'warning: Breakpoint address adjusted from 0x00080d11 to '
+            '0x00080d10.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'warning: Breakpoint address adjusted from 0x00080d11 to 0x00080d10.\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': {'bkpt': {'addr': '0x00080d10',
+                      'disp': 'keep',
+                      'enabled': 'y',
+                      'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp',
+                      'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp',
+                      'func': 'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeDecimals(unsigned '
+                              'long, signed char)',
+                      'line': '143',
+                      'number': '5',
+                      'original-location': '*0x80d11',
+                      'thread-groups': ['i1'],
+                      'times': '0',
+                      'type': 'breakpoint'}},
+ 'stream': 'stdout',
+ 'token': 31,
+ 'type': 'result'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': {'bkpt': {'number': '5', 'type': 'breakpoint', 'disp': 'keep', 'enabled': 'y', 'addr': '0x00080d10', 'func': 'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeDecimals(unsigned long, signed char)', 'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'line': '143', 'thread-groups': ['i1'], 'times': '0', 'original-location': '*0x80d11'}}, 'token': 31, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received matched response for token 31: {'type': 'result', 'message': 'done', 'payload': {'bkpt': {'number': '5', 'type': 'breakpoint', 'disp': 'keep', 'enabled': 'y', 'addr': '0x00080d10', 'func': 'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeDecimals(unsigned long, signed char)', 'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'line': '143', 'thread-groups': ['i1'], 'times': '0', 'original-location': '*0x80d11'}}, 'token': 31, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:18 - root - INFO - Breakpoint set at 0x80d11, bkptno=5
+2025-03-11 07:42:18 - root - INFO - Setting breakpoint at 0x80c31
+2025-03-11 07:42:18 - root - DEBUG - Queueing GDB command: -break-insert *0x80c31 with token 32
+2025-03-11 07:42:18 - root - DEBUG - Sending GDB command: 32-break-insert *0x80c31
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - writing: 32-break-insert *0x80c31
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'warning: Breakpoint address adjusted from 0x00080c31 to '
+            '0x00080c30.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'warning: Breakpoint address adjusted from 0x00080c31 to 0x00080c30.\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': {'bkpt': {'addr': '0x00080c30',
+                      'disp': 'keep',
+                      'enabled': 'y',
+                      'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Numbers/FloatParts.hpp',
+                      'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Numbers/FloatParts.hpp',
+                      'func': 'ArduinoJson::V721PB22::detail::decomposeFloat',
+                      'line': '64',
+                      'number': '6',
+                      'original-location': '*0x80c31',
+                      'thread-groups': ['i1'],
+                      'times': '0',
+                      'type': 'breakpoint'}},
+ 'stream': 'stdout',
+ 'token': 32,
+ 'type': 'result'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': {'bkpt': {'number': '6', 'type': 'breakpoint', 'disp': 'keep', 'enabled': 'y', 'addr': '0x00080c30', 'func': 'ArduinoJson::V721PB22::detail::decomposeFloat', 'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Numbers/FloatParts.hpp', 'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Numbers/FloatParts.hpp', 'line': '64', 'thread-groups': ['i1'], 'times': '0', 'original-location': '*0x80c31'}}, 'token': 32, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received matched response for token 32: {'type': 'result', 'message': 'done', 'payload': {'bkpt': {'number': '6', 'type': 'breakpoint', 'disp': 'keep', 'enabled': 'y', 'addr': '0x00080c30', 'func': 'ArduinoJson::V721PB22::detail::decomposeFloat', 'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Numbers/FloatParts.hpp', 'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Numbers/FloatParts.hpp', 'line': '64', 'thread-groups': ['i1'], 'times': '0', 'original-location': '*0x80c31'}}, 'token': 32, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:18 - root - INFO - Breakpoint set at 0x80c31, bkptno=6
+2025-03-11 07:42:18 - root - INFO - Setting breakpoint at 0x80d7b
+2025-03-11 07:42:18 - root - DEBUG - Queueing GDB command: -break-insert *0x80d7b with token 33
+2025-03-11 07:42:18 - root - DEBUG - Sending GDB command: 33-break-insert *0x80d7b
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - writing: 33-break-insert *0x80d7b
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'warning: Breakpoint address adjusted from 0x00080d7b to '
+            '0x00080d7a.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'warning: Breakpoint address adjusted from 0x00080d7b to 0x00080d7a.\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': {'bkpt': {'addr': '0x00080d7a',
+                      'disp': 'keep',
+                      'enabled': 'y',
+                      'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp',
+                      'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp',
+                      'func': 'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeFloat(double, '
+                              'signed char)',
+                      'line': '104',
+                      'number': '7',
+                      'original-location': '*0x80d7b',
+                      'thread-groups': ['i1'],
+                      'times': '0',
+                      'type': 'breakpoint'}},
+ 'stream': 'stdout',
+ 'token': 33,
+ 'type': 'result'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': {'bkpt': {'number': '7', 'type': 'breakpoint', 'disp': 'keep', 'enabled': 'y', 'addr': '0x00080d7a', 'func': 'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeFloat(double, signed char)', 'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'line': '104', 'thread-groups': ['i1'], 'times': '0', 'original-location': '*0x80d7b'}}, 'token': 33, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received matched response for token 33: {'type': 'result', 'message': 'done', 'payload': {'bkpt': {'number': '7', 'type': 'breakpoint', 'disp': 'keep', 'enabled': 'y', 'addr': '0x00080d7a', 'func': 'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeFloat(double, signed char)', 'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'line': '104', 'thread-groups': ['i1'], 'times': '0', 'original-location': '*0x80d7b'}}, 'token': 33, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:18 - root - INFO - Breakpoint set at 0x80d7b, bkptno=7
+2025-03-11 07:42:18 - root - DEBUG - Continuing execution...
+2025-03-11 07:42:18 - root - DEBUG - Queueing GDB command: monitor reset with token 34
+2025-03-11 07:42:18 - root - DEBUG - Sending GDB command: 34monitor reset
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - writing: 34monitor reset
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'monitor reset\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'monitor reset\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Resetting target\r\n',
+ 'stream': 'stdout',
+ 'type': 'target'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'target', 'message': None, 'payload': 'Resetting target\r\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': None,
+ 'stream': 'stdout',
+ 'token': 34,
+ 'type': 'result'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': None, 'token': 34, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received matched response for token 34: {'type': 'result', 'message': 'done', 'payload': None, 'token': 34, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:18 - root - DEBUG - Queueing GDB command: monitor halt with token 35
+2025-03-11 07:42:18 - root - DEBUG - Sending GDB command: 35monitor halt
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - writing: 35monitor halt
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'monitor halt\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'monitor halt\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'done',
+ 'payload': None,
+ 'stream': 'stdout',
+ 'token': 35,
+ 'type': 'result'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'done', 'payload': None, 'token': 35, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received matched response for token 35: {'type': 'result', 'message': 'done', 'payload': None, 'token': 35, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:18 - root - DEBUG - Queueing GDB command: -exec-continue --all with token 36
+2025-03-11 07:42:18 - root - DEBUG - Sending GDB command: 36-exec-continue --all
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - writing: 36-exec-continue --all
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'running',
+ 'payload': None,
+ 'stream': 'stdout',
+ 'token': 36,
+ 'type': 'result'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'running',
+ 'payload': {'thread-id': 'all'},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'result', 'message': 'running', 'payload': None, 'token': 36, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'running', 'payload': {'thread-id': 'all'}, 'token': None, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received matched response for token 36: {'type': 'result', 'message': 'running', 'payload': None, 'token': 36, 'stream': 'stdout', 'console_data': []}
+2025-03-11 07:42:18 - root - INFO - [DEF chunk attempt] => will wait for 'input request'
+2025-03-11 07:42:18 - root - INFO - Child requested input => provide. sending b'{"test": 123, "valid": true}'.
+2025-03-11 07:42:18 - root - DEBUG - Sending fuzz input of length 28.
+2025-03-11 07:42:18 - root - INFO - Sent 28 bytes to SUT.
+2025-03-11 07:42:18 - root - DEBUG - Received chunk: b'A'
+2025-03-11 07:42:18 - root - INFO - Received request (A) from the board.
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'breakpoint-modified',
+ 'payload': {'bkpt': {'addr': '0x00080cda',
+                      'disp': 'keep',
+                      'enabled': 'y',
+                      'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp',
+                      'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp',
+                      'func': 'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeInteger<unsigned '
+                              'long>',
+                      'line': '127',
+                      'number': '3',
+                      'original-location': '*0x80cdb',
+                      'thread-groups': ['i1'],
+                      'times': '1',
+                      'type': 'breakpoint'}},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'breakpoint-modified', 'payload': {'bkpt': {'number': '3', 'type': 'breakpoint', 'disp': 'keep', 'enabled': 'y', 'addr': '0x00080cda', 'func': 'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeInteger<unsigned long>', 'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'line': '127', 'thread-groups': ['i1'], 'times': '1', 'original-location': '*0x80cdb'}}, 'token': None, 'stream': 'stdout'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'warning: Breakpoint 3 address previously adjusted from 0x00080cdb '
+            'to 0x00080cda.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'warning: Breakpoint 3 address previously adjusted from 0x00080cdb '
+            'to 0x00080cda.\n',
+ 'stream': 'stdout',
+ 'type': 'log'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None, 'payload': '\n', 'stream': 'stdout', 'type': 'console'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': 'Thread 2 hit Breakpoint 3, '
+            'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeInteger<unsigned '
+            'long> (value=1, this=<optimised out>) at '
+            '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp:127\n',
+ 'stream': 'stdout',
+ 'type': 'console'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': None,
+ 'payload': "127\t      *--begin = char(value % 10 + '0');\n",
+ 'stream': 'stdout',
+ 'type': 'console'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'warning: Breakpoint 3 address previously adjusted from 0x00080cdb to 0x00080cda.\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'log', 'message': None, 'payload': 'warning: Breakpoint 3 address previously adjusted from 0x00080cdb to 0x00080cda.\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'console', 'message': None, 'payload': '\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'console', 'message': None, 'payload': 'Thread 2 hit Breakpoint 3, ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeInteger<unsigned long> (value=1, this=<optimised out>) at /home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp:127\n', 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'console', 'message': None, 'payload': "127\t      *--begin = char(value % 10 + '0');\n", 'stream': 'stdout'}
+2025-03-11 07:42:18 - pygdbmi.IoManager - DEBUG - {'message': 'stopped',
+ 'payload': {'bkptno': '3',
+             'disp': 'keep',
+             'frame': {'addr': '0x00080cda',
+                       'arch': 'armv7',
+                       'args': [{'name': 'value', 'value': '1'},
+                                {'name': 'this', 'value': '<optimised out>'}],
+                       'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp',
+                       'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp',
+                       'func': 'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeInteger<unsigned '
+                               'long>',
+                       'line': '127'},
+             'reason': 'breakpoint-hit',
+             'stopped-threads': 'all',
+             'thread-id': '2'},
+ 'stream': 'stdout',
+ 'token': None,
+ 'type': 'notify'}
+2025-03-11 07:42:18 - root - DEBUG - Received GDB response: {'type': 'notify', 'message': 'stopped', 'payload': {'reason': 'breakpoint-hit', 'disp': 'keep', 'bkptno': '3', 'frame': {'addr': '0x00080cda', 'func': 'ArduinoJson::V721PB22::detail::TextFormatter<ArduinoJson::V721PB22::detail::StaticStringWriter>::writeInteger<unsigned long>', 'args': [{'name': 'value', 'value': '1'}, {'name': 'this', 'value': '<optimised out>'}], 'file': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'fullname': '/home/kai/Arduino/libraries/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp', 'line': '127', 'arch': 'armv7'}, 'thread-id': '2', 'stopped-threads': 'all'}, 'token': None, 'stream': 'stdout'}
+2025-03-11 07:42:18 - root - DEBUG - Wait_for_stop received stop event: ('breakpoint hit', '3')
+2025-03-11 07:42:18 - root - INFO - GDB => reason=breakpoint hit, payload=3
+2025-03-11 07:42:18 - root - INFO - Closed serial port connection.
+2025-03-11 07:42:18 - fuzzing.coverage_manager - DEBUG - Closing shared memory.
+2025-03-11 07:42:18 - fuzzing.coverage_manager - DEBUG - Shared memory unlinked successfully.
+2025-03-11 07:42:18 - fuzzing.coverage_manager - INFO - CoverageManager SHM removed.
+2025-03-11 07:42:18 - root - DEBUG - Stopping GDB...

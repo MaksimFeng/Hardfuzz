@@ -230,7 +230,7 @@ class GDB:
     def connect(self, path) -> None:
         log.debug("Connecting to GDB server...")
         self.send('-gdb-set mi-async on')
-        self.send('set architecture thumb')
+        self.send('set architecture armv7-m')
         elf_path = ELF_PATH
         self.send(f'file {path}')
         self.send(f'-target-select extended-remote {self.gdb_server_address}')
@@ -241,6 +241,8 @@ class GDB:
 
     def continue_execution(self, retries: int = 3) -> None:
         log.debug("Continuing execution...")
+        self.send('monitor reset')
+        self.send('monitor halt')
         gdb_response = self.send('-exec-continue --all')
         if gdb_response['message'] == 'error' and retries > 0:
             log.warning(
@@ -249,9 +251,13 @@ class GDB:
             time.sleep(0.5)
             self.continue_execution(retries - 1)
 
+#why do I want to interrupt?
     def interrupt(self) -> None:
         log.debug("Interrupting execution...")
         self.send('-exec-interrupt --all')
+        self.send('monitor reset')
+        self.send('monitor halt')
+        # self.send('-exec-interrupt --all')
         # mayber there are some bugs here
         # After interrupt, wait for a stop event
         reason, payload = self.wait_for_stop(timeout=5)
