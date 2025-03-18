@@ -14,12 +14,40 @@ import matplotlib.pyplot as plt
 from utils.file_parsing import parse_def_use_file
 import os
 from config.settings import DEF_USE_FILE, LOG_FILE
+from collections import defaultdict
 
-PLOT_DIR = 'plots'
+PLOT_DIR = 'plots1'
 os.makedirs(PLOT_DIR, exist_ok=True)
 
+# def parse_def_use_file(filename):
+#     def_dict = {}
+#     try:
+#         with open(filename, 'r', encoding='utf-8') as f:
+#             lines = [l.strip() for l in f if l.strip()]
+#     except FileNotFoundError:
+#         log.error(f"Definition-Use file '{filename}' not found.")
+#         return []
+
+#     i = 0
+#     while i < len(lines):
+#         if lines[i].startswith("Definition:"):
+#             def_line = lines[i]
+#             use_line = lines[i+1] if i+1 < len(lines) and lines[i+1].startswith("Use:") else None
+#             if use_line:
+#                 def_addr_str = def_line.split()[-1]
+#                 use_addr_str = use_line.split()[-1]
+#                 if def_addr_str not in def_dict:
+#                     def_dict[def_addr_str] = []
+#                 def_dict[def_addr_str].append(use_addr_str)
+#                 i += 2
+#             else:
+#                 i += 1
+#         else:
+#             i += 1
+#     sorted_defs = sorted(def_dict.items(), key=lambda x: len(x[1]), reverse=True)
+#     return sorted_defs
 def parse_def_use_file(filename):
-    def_dict = {}
+    def_dict = defaultdict(set)  # 使用集合自动去重
     try:
         with open(filename, 'r', encoding='utf-8') as f:
             lines = [l.strip() for l in f if l.strip()]
@@ -35,17 +63,20 @@ def parse_def_use_file(filename):
             if use_line:
                 def_addr_str = def_line.split()[-1]
                 use_addr_str = use_line.split()[-1]
-                if def_addr_str not in def_dict:
-                    def_dict[def_addr_str] = []
-                def_dict[def_addr_str].append(use_addr_str)
+                def_dict[def_addr_str].add(use_addr_str)  # 集合去重
                 i += 2
             else:
                 i += 1
         else:
             i += 1
-    sorted_defs = sorted(def_dict.items(), key=lambda x: len(x[1]), reverse=True)
-    return sorted_defs
 
+    # 转换为列表并按使用数量排序
+    sorted_defs = sorted(
+        {k: list(v) for k, v in def_dict.items()}.items(), 
+        key=lambda x: len(x[1]), 
+        reverse=True
+    )
+    return sorted_defs
 def count_total_def_use_edges(def_list):
     total_edges = 0
     for _, uses in def_list:
@@ -59,6 +90,7 @@ DEF_TRIGGER_PATTERN = re.compile(r'(.*?) - root - INFO - Def triggered => (0x[0-
 USE_TRIGGER_PATTERN = re.compile(r'(.*?) - root - INFO - Use triggered => (0x[0-9A-Fa-f]+)')
 DEFUSE_COV_PATTERN  = re.compile(r'Updating def-use coverage => def=(0x[0-9A-Fa-f]+), use=(0x[0-9A-Fa-f]+), idx=\d+')
 DEF_COV_PATTERN     = re.compile(r'Updating def coverage for def_addr=0x([0-9A-Fa-f]+), idx=\d+')
+# DEF_COV_PATTERN = re.compile(r'')
 
 def parse_logfile(log_path, total_def_use_edges):
     bp_timestamps = []      # all breakpoints (time-based)
@@ -329,6 +361,69 @@ def plot_unique_breakpoints_vs_round(unique_bp_round):
     plt.show(block=False)
     plt.close(fig)
 
+def plot_coverage_num_vs_round(cov_per_round):
+    """
+    cov_per_round is a dict: { round_num: coverage_count }
+    We plot coverage_count vs. round_num.
+    """
+    if not cov_per_round:
+        print("No round-based coverage => skipping coverage_line_round.png")
+        return
+
+    rounds_sorted = sorted(cov_per_round.keys())
+    xvals = rounds_sorted
+    yvals = [cov_per_round[r] for r in rounds_sorted]
+
+    fig4 = plt.figure(figsize=(8,4))
+    plt.plot(xvals, yvals, marker='o', color='green', label='Coverage Count')
+    plt.title("Coverage vs. Round")
+    plt.xlabel("Round #")
+    plt.ylabel("Coverage Count")
+
+    y_max = max(yvals) if yvals else 1
+    plt.ylim([0, y_max * 1.05])
+
+    plt.grid(True)
+    plt.legend()
+
+    plot_path = os.path.join(PLOT_DIR, 'coverage_line_round.png')
+    plt.savefig(plot_path)
+    print(f"Saved {plot_path}")
+    plt.show(block=False)
+    plt.close(fig4)
+
+def plot_coverage_num_over_time(coverage_events):
+    """
+    coverage_events is a list of (time_in_seconds, coverage_count).
+    We plot coverage_count vs. time_in_seconds.
+    """
+    if not coverage_events:
+        print("No coverage events => skipping coverage_line_time.png")
+        return
+
+    coverage_events.sort(key=lambda x: x[0])  # sort by time
+    times = [x[0] for x in coverage_events]       # x-values
+    coverage_counts = [x[1] for x in coverage_events]  # y-values
+
+    fig2 = plt.figure(figsize=(8,4))
+    plt.plot(times, coverage_counts, marker='o', color='green', label='Coverage Count')
+    plt.title("Def-Use Coverage Over Time")
+    plt.xlabel("Time (seconds)")
+    plt.ylabel("Coverage Count")
+
+    # If you want a bit of padding at the top, do something like:
+    y_max = max(coverage_counts) if coverage_counts else 1
+    plt.ylim([0, y_max * 1.05])
+
+    plt.grid(True)
+    plt.legend()
+
+    plot_path = os.path.join(PLOT_DIR, 'coverage_line_time.png')
+    plt.savefig(plot_path)
+    print(f"Saved {plot_path}")
+    plt.show(block=False)
+    plt.close(fig2)
+
 
 def main():
     def_use_list = parse_def_use_file(DEF_USE_FILE)
@@ -352,6 +447,8 @@ def main():
     plot_breakpoints_vs_round(bp_per_round)
     plot_coverage_vs_round(cov_per_round)
     plot_unique_breakpoints_vs_round(unique_bp_round)
+    plot_coverage_num_over_time(coverage_events)
+    plot_coverage_num_vs_round(cov_per_round)
 
 if __name__ == "__main__":
     main()

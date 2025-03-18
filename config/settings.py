@@ -37,6 +37,7 @@ MAX_INPUT_LENGTH = 10240
 # DEF_USE_FILE = 'def_use1.txt'
 # DEF_USE_FILE = 'new_all.txt'
 DEF_USE_FILE = 'block.txt'
+# DEF_USE_FILE = 'block_def_use.txt'
 # DEF_USE_FILE = 'blocks.txt' # blocks before change
 # DEF_USE_FILE = 'external1.txt'
 # DEF_USE_FILE = '/home/kai/Arduino/program2_buggy/build/arduino.sam.arduino_due_x_dbg/def_use1.txt'

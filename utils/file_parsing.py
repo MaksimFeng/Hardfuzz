@@ -1,5 +1,6 @@
 import logging as log
 import re
+
 def parse_def_use_file(filename='block.txt'):
     def_dict = {}
     try:
@@ -83,16 +84,108 @@ def parse_external(filename='external1.txt'):
     groups.sort(key=lambda x: len(x[1]), reverse=True)
     return groups
 
-# if __name__ == "__main__":
-#     # Parse def-use file
-#     # defs = parse_def_use_file()
-#     # print(defs)
-    
-#     # Parse external file
-#     externals = parse_external()
-#     print(externals)
+def parse_block_with_full_details(filename='block_def_use.txt'):
+    """
+    Reads a file in the format:
+        block: 0xBLOCK_ADDR
+          def: 0xDEF_ADDR
+            use: 0xUSE_ADDR, 0xUSE_ADDR
+            use_block: 0xBLOCK_ADDR, 0xBLOCK_ADDR
+          def: 0xDEF_ADDR
+            use: ...
+            use_block: ...
+        block: 0xANOTHER_BLOCK
+        ...
+
+    Returns a dict of:
+  
+      "<block_addr>": [
+        {
+          "def_addr": "<def_addr>",
+          "use_addrs": [<list of addresses>],
+          "use_block_addrs": [<list of block addresses>]
+        },
+        ...
+   
+    """
+    data = {}
+    try:
+        with open(filename, 'r') as f:
+            lines = [line.strip() for line in f if line.strip()]
+    except FileNotFoundError:
+        log.error(f"File '{filename}' not found.")
+        return {}
+
+    current_block = None
+    current_def_dict = None  # Will be a dict with keys 'def_addr', 'use_addrs', 'use_block_addrs'
+
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+
+        if line.startswith("block:"):
+            # Example: "block: 0x1234"
+            _, block_addr = line.split("block:", 1)
+            block_addr = block_addr.strip()  # e.g. "0x1234"
+            current_block = block_addr
+            # Ensure we have an empty list for this block
+            if current_block not in data:
+                data[current_block] = []
+            i += 1
+
+        elif line.startswith("def:"):
+            # Example: "def: 0x5678"
+            _, def_addr = line.split("def:", 1)
+            def_addr = def_addr.strip()
+            # Create a new structure for the current definition
+            current_def_dict = {
+                'def_addr': def_addr,
+                'use_addrs': [],
+                'use_block_addrs': []
+            }
+            # Add this def to the current block’s list
+            if current_block is not None:
+                data[current_block].append(current_def_dict)
+            i += 1
+
+        elif line.startswith("use:"):
+            # Example: "use: 0x1240, 0x1244"
+            _, use_str = line.split("use:", 1)
+            use_str = use_str.strip()
+            # Split by comma
+            uses = [u.strip() for u in use_str.split(",")]
+            if current_def_dict is not None:
+                current_def_dict['use_addrs'].extend(uses)
+            i += 1
+
+        elif line.startswith("use_block:"):
+            # Example: "use_block: 0x1240, 0x1244"
+            _, use_block_str = line.split("use_block:", 1)
+            use_block_str = use_block_str.strip()
+            # Split by comma
+            use_blocks = [u.strip() for u in use_block_str.split(",")]
+            if current_def_dict is not None:
+                current_def_dict['use_block_addrs'].extend(use_blocks)
+            i += 1
+
+        else:
+            # Unrecognized line => skip or handle differently as needed
+            i += 1
+
+    return data
+
 
 def parse_block(filename = 'block.txt'):
     with open(filename, 'r') as f:
         block = [line.strip() for line in f]
     return block
+
+# if __name__ == "__main__":  # 修正双下划线
+#     result = parse_block_with_full_details("../block_def_use.txt")
+#     for block, def_list in result.items():
+#         print(f"BLOCK {block}")
+#         print(len(def_list))
+#         # for d in def_list:
+        #     print(f"    Def {d['def_addr']}")  # 修正字典访问
+        #     print(f"        uses: {d['use_addrs']}")
+        #     print(f"        use_block: {d['use_block_addrs']}")

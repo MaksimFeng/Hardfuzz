@@ -9,7 +9,6 @@ import multiprocessing as mp
 
 #change the breakpoint to hardware breakpoint
 
-# Import your coverage manager, GDB, etc.
 from fuzzing.coverage_manager import CoverageManager
 from config.settings import (
     LOG_LEVEL, LOG_FORMAT, LOG_DATEFMT, LOG_FILE,
@@ -22,7 +21,8 @@ from fuzzing.input_generation import InputGeneration
 from utils.file_parsing import parse_def_use_file
 from utils.file_parsing import parse_external
 from utils.file_parsing import parse_block
-# Import the new snippet-based connection classes:
+from utils.file_parsing import parse_block_with_full_details
+
 from communication.serial_comm import SerialConnection
 
 HW_BREAKPOINT_LIMIT = 6
@@ -55,8 +55,32 @@ logger = setup_logging()
 def increment_bp_hit_count(d_str):
     global_hit_counts[d_str] = global_hit_counts.get(d_str, 0) + 1
 
+def convert_parsed_to_blocklist(parsed_data: dict) -> list[tuple[str, list[str]]]:
+    flattened = []
+    for block_addr, defs_uses_in_block in parsed_data.items():
+        # dicts like:
+        # {
+        #   "def_addr": "0x1008",
+        #   "use_addrs": ["0x1010", "0x1014"],
+        #   "use_block_addrs": ["0x1010", "0x1014"]
+        # }
+        combined_use_blocks = []
+
+        for entry in defs_uses_in_block:
+            flitered = [
+                x for x in entry["use_block_addrs"]
+                if x.lower() not in ("(none)", "(not in cfg)")
+            ]
+            combined_use_blocks.extend(flitered)
+
+        combined_use_blocks = sorted(set(combined_use_blocks))
+
+        flattened.append((block_addr, combined_use_blocks))
+
+    return flattened
+
 def get_defs_in_weighted_random_order(all_defs):
-    # Same code as your original
+    
     weighted_list = []
     local_usage_count = {}
     for d_str, u_list in all_defs:
@@ -289,7 +313,7 @@ def _handle_uses_for_def(gdb, stop_responses, inputs, test_data, def_addr_str, u
                 gdb.continue_execution()
 
         timestamp = int(time.time())
-        input_gen.report_address_reached(test_data, address=0, timestamp=timestamp)
+        # input_gen.report_address_reached(test_data, address=0, timestamp=timestamp)
 
         if coverage_mgr.check_new_coverage():
             any_use_triggered = True
@@ -298,6 +322,7 @@ def _handle_uses_for_def(gdb, stop_responses, inputs, test_data, def_addr_str, u
             input_gen.choose_new_baseline_input()
 
         force_halt_if_running(gdb)
+        #here's a problem
         if uses_bp_map:
             remove_breakpoints(gdb, list(uses_bp_map.keys()))
             uses_bp_map.clear()
@@ -334,6 +359,116 @@ def create_serial_connection():
     )
     return conn, stop_responses, inputs
 
+
+def build_lookup_for_chunk(chunk: list[tuple[str, list[str]]], all_block_info: dict) -> dict[str, dict]:
+
+    lookup = {}
+
+    # For each (definition, uses_list) in the chunk...
+    for def_addr, uses_list in chunk:
+        found_block = None
+        found_def_entry = None
+
+        # 1) Find which block has that def_addr
+        for block_hex, definitions in all_block_info.items():
+            for d in definitions:
+                if d["def_addr"] == def_addr:
+                    found_block = block_hex
+                    found_def_entry = d
+                    break
+            if found_block is not None:
+                break
+
+        if found_block is None:
+           
+            lookup[def_addr] = {
+                "def_block": None,
+                "uses": []
+            }
+            continue
+
+       
+        uses_data = []
+        for use_addr in uses_list:
+            if use_addr in found_def_entry["use_addrs"]:
+                i = found_def_entry["use_addrs"].index(use_addr)
+                if i < len(found_def_entry["use_block_addrs"]):
+                    block_hex_for_use = found_def_entry["use_block_addrs"][i]
+                    uses_data.append({
+                        "use_addr": use_addr,
+                        "use_block": block_hex_for_use
+                    })
+                else:
+                    uses_data.append({
+                        "use_addr": use_addr,
+                        "use_block": None
+                    })
+            else:
+                uses_data.append({
+                    "use_addr": use_addr,
+                    "use_block": None
+                })
+
+        lookup[def_addr] = {
+            "def_block": found_block,
+            "uses": uses_data
+        }
+
+    return lookup
+
+def build_block_lookup_for_coverage(parsed_data: dict) -> dict[str, dict]:
+    coverage_lookup: dict[str, dict] = {}
+
+    def get_or_create_block_info(block_hex: str) -> dict:
+        """Helper: ensure coverage_lookup[block_hex] has two lists."""
+        if block_hex not in coverage_lookup:
+            coverage_lookup[block_hex] = {
+                "def_block_addrs": [],   # definitions in this block
+                "def_use_pairs": []      # (def_addr, use_addr) pairs that get covered if we hit this block
+            }
+        return coverage_lookup[block_hex]
+
+    # Traverse every definition-block in the parsed data
+    for block_addr, defs_list in parsed_data.items():
+        # block_addr is e.g. "0x1000"
+        # defs_list is a list of dicts: { "def_addr": "...", "use_addrs": [...], "use_block_addrs": [...] }
+
+        # For the block where the definitions live:
+        block_info = get_or_create_block_info(block_addr)
+
+        for def_item in defs_list:
+            # e.g. def_item = {
+            #   "def_addr": "0x1008",
+            #   "use_addrs": ["0x1010", "0x1014"],
+            #   "use_block_addrs": ["0x1010", "0x1014"]
+            # }
+            def_a = def_item["def_addr"]
+            block_info["def_block_addrs"].append(def_a)
+
+            # Pair up each use_block with each use_addr
+            for use_block_hex, use_addr_hex in zip(
+                    def_item["use_block_addrs"],
+                    def_item["use_addrs"]
+            ):
+                # If we hit 'use_block_hex', that means coverage for (def_a, use_addr_hex)
+                use_block_info = get_or_create_block_info(use_block_hex)
+                use_block_info["def_use_pairs"].append((def_a, use_addr_hex))
+
+    return coverage_lookup
+
+def on_block_hit(block_hex: str, coverage_mgr, coverage_lookup):
+    # 1) Mark coverage for the block itself
+    coverage_mgr.update_coverage_for_def(block_hex)
+
+    # 2) Mark coverage for every definition in that block
+    block_info = coverage_lookup.get(block_hex)
+    if not block_info:
+        return
+    for def_addr_str in block_info["def_block_addrs"]:
+        coverage_mgr.update_coverage_for_def(def_addr_str)
+        logger.info("new coverage for def-use chain in basic block level")
+
+
 def main():
     logger.info("=== Starting main with snippet-based SerialConnection ===")
 
@@ -344,9 +479,13 @@ def main():
 
     # Load def-use
     # for testing, we'll just parse the file here
-    all_defs = parse_def_use_file(DEF_USE_FILE)
+    # all_defs = parse_def_use_file(DEF_USE_FILE)
     # all_defs = parse_external(DEF_USE_FILE)
     all_block = parse_block(DEF_USE_FILE)
+    all_block_with_information = parse_block_with_full_details(DEF_USE_FILE)
+    coverage_lookup = build_block_lookup_for_coverage(all_block_with_information)
+
+    all_defs = convert_parsed_to_blocklist(all_block_with_information)
 
 # 45000 
 # 160 days 7.5 hours 45/260/7.5
@@ -495,6 +634,9 @@ def main():
                             logger.info(f"Def triggered => {def_addr_str}")
                             coverage_mgr.update_coverage_for_def(def_addr_str)
 
+                            on_block_hit(def_addr_str, coverage_mgr, coverage_lookup)
+
+
                             remove_breakpoints(gdb, [payloadC])
                             del def_bp_map[payloadC]
 
@@ -546,7 +688,7 @@ def main():
 
                 # Coverage check
                 timestamp = int(time.time())
-                input_gen.report_address_reached(test_data, address=0, timestamp=timestamp)
+                # input_gen.report_address_reached(test_data, address=0, timestamp=timestamp)
 
                 if coverage_mgr.check_new_coverage():
                     coverage_changed = True

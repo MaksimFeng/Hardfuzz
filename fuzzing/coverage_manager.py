@@ -74,7 +74,9 @@ class CoverageManager:
         idx = def_addr & 0xFFFF
         logger.info(f"Updating def coverage for def_addr=0x{def_addr:08X}, idx={idx}")
         self.trace_bits_defs[idx] = 1
-
+    def update_def_use_block(self, def_addr_str:str, use_addr_str:str):
+        
+        return
     def update_coverage_for_defuse(self, def_addr_str: str, use_addr_str: str):
         """
         For def-use coverage, we do:

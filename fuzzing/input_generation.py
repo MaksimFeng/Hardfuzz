@@ -2,7 +2,7 @@
 import os
 import random
 import logging as log
-from typing import List
+from typing import List, Set
 
 from .corpus import CorpusEntry
 import _pylibfuzzer
@@ -25,6 +25,7 @@ class InputGeneration:
             raise Exception(f'{seeds_directory=} does not exist.')
 
         self.corpus: List[CorpusEntry] = []
+        self.corpus_contents: Set[bytes] = set()
         self.current_base_input_index: int = -1
         self.retry_corpus_input_index: int = 0
         self.total_hit_blocks = 0
@@ -54,6 +55,8 @@ class InputGeneration:
                     self.add_corpus_entry(seed, 0, 0)
 
     def add_corpus_entry(self, input: bytes, address: int, timestamp: int) -> CorpusEntry:
+        if input in self.corpus_contents:
+            return None
         filepath = os.path.join(
             self.corpus_directory,
             f'id:{str(len(self.corpus))},orig:{self.current_base_input_index},addr:{hex(address)},time:{timestamp}'
@@ -72,6 +75,7 @@ class InputGeneration:
         entry.burn_in = 5
         
         self.corpus.append(entry)
+        self.corpus_contents.add(input)
         return entry
 
     def choose_new_baseline_input(self):
@@ -95,8 +99,10 @@ class InputGeneration:
         if self.retry_corpus_input_index < len(self.corpus):
             input_data = self.corpus[self.retry_corpus_input_index].content
             self.retry_corpus_input_index += 1
+            log.info('no mutation')
             return input_data
         generated_inp = _pylibfuzzer.mutate(self.corpus[self.current_base_input_index].content)
+        log.info('after mutation')
         return generated_inp
 
     def report_address_reached(self, current_input: bytes, address: int, timestamp: int) -> None:
