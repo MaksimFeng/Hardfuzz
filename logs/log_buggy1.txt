@@ -118,7 +118,7 @@
 2025-02-12 00:11:43 - root - INFO - Sent 18 bytes of data: b'1E 00 00 00 62 75\n'
 2025-02-12 00:11:43 - root - INFO - Received data: b'test\r\nA'
 2025-02-12 00:11:43 - root - ERROR - Received error code: 116
-2025-02-12 00:11:43 - root - WARNING - Target exited => treat as crash, restarting.
+2025-02-12 00:11:43 - root - WARNING - Target exited => treat as Exhausted, restarting.
 2025-02-12 00:11:43 - root - WARNING - === Target crash detected ===
 2025-02-12 00:11:43 - root - WARNING - Saving crash testcase as: output_buggy/crashes/1739319103_no_stacktrace
 2025-02-12 00:11:43 - root - INFO - Restarting program from scratch...

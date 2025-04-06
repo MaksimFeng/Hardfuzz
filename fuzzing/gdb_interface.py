@@ -184,18 +184,75 @@ class GDB:
         self.gdb_server_address = gdb_server_address
         self.message_id: int = 0
 
-    def stop(self) -> None:
+    def stop_discard(self) -> None:
         log.debug("Stopping GDB...")
         if self.gdb_communicator and self.gdb_communicator.pid:
             os.kill(self.gdb_communicator.pid, signal.SIGUSR1)
             self.gdb_communicator.join(timeout=10)
             exitcode = self.gdb_communicator.exitcode
+            if exitcode is None:
+                log.warning("GDB did not exit after SIGUSR1, sending SIGKILL")
+                try: 
+                    os.kill(self.gdb_communicator.pid, signal.SIGKILL)
+                except ProcessLookupError:
+                    pass
+                self.gdb_communicator.join(timeout=5)
+                exitcode = self.gdb_communicator.exitcode
+            if exitcode is None:
+                log.error("GDB is still alive after SIGKILL, something is wrong.")
+            
             if exitcode != 0:
                 if self.gdb_communicator.gdbmi and self.gdb_communicator.gdbmi.gdb_process:
                     os.kill(self.gdb_communicator.gdbmi.gdb_process.pid, signal.SIGKILL)
                 os.kill(self.gdb_communicator.pid, signal.SIGKILL)
                 time.sleep(5)
                 raise Exception(f'gdb_manager process exited with {exitcode=}.')
+    def stop(self) -> None:
+        """
+        Cleanly stop the GDBCommunicator subprocess and the underlying gdb.
+        """
+        log.debug("Stopping GDB...")
+
+        # 1) Attempt a graceful detach from the remote server first:
+        try:
+            # This helps avoid leaving the J-Link server stuck with a stale connection
+            self.send('-target-disconnect', timeout=3)
+        except Exception as e:
+            log.debug(f"No target to disconnect or ignoring error: {e}")
+
+        # 2) If there's an active communicator process, signal it to exit
+        if self.gdb_communicator and self.gdb_communicator.pid:
+            log.debug("Sending SIGUSR1 to GDBCommunicator...")
+            os.kill(self.gdb_communicator.pid, signal.SIGUSR1)
+
+            # Wait for the communicator to stop
+            self.gdb_communicator.join(timeout=10)
+            exitcode = self.gdb_communicator.exitcode
+
+            # If still alive, force-kill
+            if exitcode is None:
+                log.warning("GDBCommunicator did not exit after SIGUSR1, sending SIGKILL.")
+                try:
+                    os.kill(self.gdb_communicator.pid, signal.SIGKILL)
+                except ProcessLookupError:
+                    pass
+                self.gdb_communicator.join(timeout=5)
+                exitcode = self.gdb_communicator.exitcode
+
+            if exitcode is None:
+                log.error("GDBCommunicator is still alive after SIGKILL. Something is wrong.")
+
+            # If the communicator exited but with a nonzero code, forcibly kill the raw gdb
+            if exitcode not in (0, None):
+                log.error(f"GDBCommunicator exited with code {exitcode}, killing raw gdb.")
+                if self.gdb_communicator.gdbmi and self.gdb_communicator.gdbmi.gdb_process:
+                    os.kill(self.gdb_communicator.gdbmi.gdb_process.pid, signal.SIGKILL)
+                os.kill(self.gdb_communicator.pid, signal.SIGKILL)
+                time.sleep(1)
+                raise Exception(f"GDBCommunicator process exited with {exitcode=}.")
+        else:
+            log.debug("No active GDBCommunicator to stop.")
+
     
     def send(self, message: str, timeout: int = 10) -> Dict[str, Any]:
         message_id = self.generate_message_id()
@@ -218,7 +275,7 @@ class GDB:
                 log.debug(f"Received matched response for token {message_id}: {response}")
                 return response
 
-    def wait_for_stop(self, timeout: float = 5) -> Tuple[str, Any]:
+    def wait_for_stop(self, timeout: float = 360000) -> Tuple[str, Any]:
         try:
             msg = self.stop_responses.get(block=True, timeout=timeout)
             log.debug(f"Wait_for_stop received stop event: {msg}")
@@ -255,17 +312,175 @@ class GDB:
     def interrupt(self) -> None:
         log.debug("Interrupting execution...")
         self.send('-exec-interrupt --all')
-        self.send('monitor reset')
-        self.send('monitor halt')
-        # self.send('-exec-interrupt --all')
-        # mayber there are some bugs here
-        # After interrupt, wait for a stop event
         reason, payload = self.wait_for_stop(timeout=5)
         if reason.startswith('timed out'):
             log.warning("Interrupt timed out, target may not have halted.")
+            # Try again (some boards need multiple attempts):
+            self.send('-exec-interrupt --all')
+            reason, _ = self.wait_for_stop(timeout=5)
+            if reason.startswith('timed out'):
+                log.error("Second interrupt also timed out.")
+                # Possibly do a heavier reset or even kill GDB if necessary
+                self.kill_and_reinit_gdb(ELF_PATH)
+                return
         else:
-            log.debug("Target halted after interrupt.")
+            log.debug(f"Target halted after interrupt (reason={reason}).")
+        # Then do the monitor commands
+        self.send('monitor halt')
+        self.send('monitor reset')
 
+        
+        # self.send('-exec-interrupt --all')
+        # mayber there are some bugs here
+        # After interrupt, wait for a stop event
+        # reason, payload = self.wait_for_stop(timeout=5)
+        # if reason.startswith('timed out'):
+        #     log.warning("Interrupt timed out, target may not have halted.")
+        # else:
+        #     log.debug("Target halted after interrupt.")
+    def force_interrupt_or_kill(self, timeout = 5) -> bool:
+        """
+        Tries '-exec-interrupt --all', waits for a stop event up to 'timeout'.
+        If still not stopped, kills GDB process. Returns True if halted.
+        """
+        self.send('-exec-interrupt --all')
+        self.send('monitor halt')
+        self.send('monitor reset')
+        reason, payload = self.wait_for_stop(timeout=timeout)
+        if reason.startswith('timed out'):
+            log.warning("Interrupt timed out. Killing GDB process.")
+            self.stop()  # triggers GDBCommunicator on_exit() => but might not do anything if gdb is unresponsive
+            # Optionally SIGKILL if it is still alive:
+            if self.gdb_communicator and self.gdb_communicator.pid:
+                try:
+                    os.kill(self.gdb_communicator.pid, signal.SIGKILL)
+                except OSError as e:
+                    log.warning(f"Could not SIGKILL GDB process: {e}")
+            return False
+        else:
+            log.debug(f"Target halted after interrupt (reason={reason}).")
+            return True
+
+    def kill_and_reinit_gdb(old_gdb, elf_path, server_address='localhost:2331'):
+        """
+        Completely kills the old GDB instance (including the underlying gdb process),
+        waits until it is definitely gone, then creates a fresh GDB instance and
+        reconnects to the remote target (e.g., J-Link on localhost:2331).
+        """
+        logger.warning("Killing existing GDB process ...")
+        old_gdb.stop()
+
+        # Wait up to 5 seconds for the old communicator to vanish
+        end_time = time.time() + 5
+        while old_gdb.gdb_communicator.is_alive() and time.time() < end_time:
+            time.sleep(0.2)
+        if old_gdb.gdb_communicator.is_alive():
+            logger.error("Old GDBCommunicator is still alive after forced kill. Proceeding anyway...")
+
+        # Optional: A short extra sleep to let OS clean up any child processes
+        time.sleep(0.5)
+
+        logger.info("Starting fresh GDB instance ...")
+        from .gdb_interface import GDB  # import here to avoid circular import
+        new_gdb = GDB(
+            gdb_path='gdb-multiarch',   
+            gdb_server_address=server_address,
+            software_breakpoint_addresses=[],
+            consider_sw_breakpoint_as_error=False
+        )
+
+        # Reconnect and do initial setup
+        new_gdb.connect(elf_path)
+
+        # For a J-Link or other remote target, explicitly select the remote:
+        # (If your GDB class doesn't do this internally, do it here.)
+        new_gdb.send(f'-target-select extended-remote {server_address}')
+
+        # Typical reset/halt for an ARM board via J-Link
+        new_gdb.send('monitor reset')
+        new_gdb.send('monitor halt')
+
+        # Load symbols and set a main breakpoint
+        new_gdb.send(f'-file-exec-and-symbols {elf_path}')
+        new_gdb.send('-break-insert main')
+        run_resp = new_gdb.send('-exec-run')
+        if run_resp['message'] == 'error':
+            logger.warning("Could not run after reinit; attempting a manual continue.")
+            new_gdb.continue_execution()
+
+        # Wait to see if we hit main or some stop
+        reason, payload = new_gdb.wait_for_stop(timeout=10)
+        logger.info(f"New GDB init => reason={reason}, payload={payload}")
+        if reason in ("breakpoint hit", "stopped, no reason given"):
+            logger.debug("Main breakpoint reached. Good to go.")
+        else:
+            logger.warning("Target did not hit main as expected; continuing anyway.")
+            new_gdb.continue_execution()
+
+        return new_gdb
+
+
+
+
+    def kill_and_reinit_gdb_discord(old_gdb, elf_path, server_address='localhost:2331'):
+        """
+        Completely kills the old GDB (if it's still alive), then creates a fresh 
+        GDB instance, loads the ELF, does a monitor reset/halt, etc.
+        
+        :param old_gdb: The existing GDB instance to kill.
+        :param elf_path: Path to the ELF file used for debugging.
+        :param server_address: GDB server address (localhost:2331, etc.)
+        :return: a new GDB instance (freshly started).
+        """
+        logger.warning("Killing existing GDB process ...")
+        old_gdb.stop()  # This calls gdb_communicator.on_exit (SIGUSR1) from your existing code
+        
+        # If stop() doesn't fully terminate, do a SIGKILL:
+        # if old_gdb.gdb_communicator and old_gdb.gdb_communicator.pid:
+        #     try:
+        #         os.kill(old_gdb.gdb_communicator.pid, signal.SIGKILL)
+        #     except ProcessLookupError:
+        #         logger.debug("Old GDB communicator already gone.")
+        #     except Exception as e:
+        #         logger.warning(f"Could not SIGKILL old GDB process: {e}")
+        
+        # Wait a bit for the old process to vanish
+        time.sleep(1)
+        
+        # Now create a brand-new GDB instance using your constructor
+        logger.info("Starting fresh GDB instance ...")
+        from .gdb_interface import GDB  # import here to avoid circular import
+        new_gdb = GDB(
+            gdb_path='gdb-multiarch',   
+            gdb_server_address=server_address,
+            software_breakpoint_addresses=[],
+            consider_sw_breakpoint_as_error=False
+        )
+        
+        # Reconnect and do initial setup:
+        new_gdb.connect(elf_path)
+        new_gdb.send('monitor reset')
+        new_gdb.send('monitor halt')
+        
+        # Load symbols and set a main breakpoint, if desired
+        new_gdb.send(f'-file-exec-and-symbols {elf_path}')
+        new_gdb.send('-break-insert main')
+        run_resp = new_gdb.send('-exec-run')
+        if run_resp['message'] == 'error':
+            logger.warning("Could not run after reinit; continuing.")
+            new_gdb.continue_execution()
+
+        # Optionally wait for main to be hit
+        reason, payload = new_gdb.wait_for_stop(timeout=10)
+        logger.info(f"New GDB init => reason={reason}, payload={payload}")
+        if reason in ("breakpoint hit", "stopped, no reason given"):
+            logger.debug("Main breakpoint reached. Good to go.")
+        else:
+            logger.warning("Target did not hit main as expected; continuing anyway.")
+            new_gdb.continue_execution()
+
+        return new_gdb
+    
     def set_breakpoint(self, address_hex_str: str) -> str:
         address = int(address_hex_str, 16)
         log.info(f"Setting breakpoint at {hex(address)}")

@@ -130,6 +130,97 @@ def force_halt_if_running(gdb: GDB, max_attempts=3, wait_timeout=5):
                     break
     raise Exception("Could not force CPU to halt after multiple attempts.")
 
+# kill process but problem occure
+# def force_halt_if_running(gdb: GDB, max_attempts=3, wait_timeout=5):
+#     """
+#     Tries to confirm the CPU is halted by reading registers. If not halted,
+#     we call interrupt() and wait_for_stop() repeatedly. If everything fails,
+#     we kill GDB and re-init.
+    
+#     Returns a (bool, GDB) tuple: 
+#         (True, same_gdb) if it was able to halt without reinit
+#         (True, new_gdb)  if it had to kill + reinit
+#         (False, same_gdb) if it couldn’t halt for some reason, with no reinit done
+#     """
+#     for attempt in range(max_attempts):
+#         # Try reading registers to see if GDB thinks it's halted:
+#         try:
+#             resp = gdb.send('-data-list-register-values x', timeout=2)
+#         except Exception as e:
+#             logger.warning(f"GDB command failed: {e}")
+#             break
+
+#         if resp.get('message') == 'done':
+#             # Means the target was already halted
+#             logger.debug("CPU is already halted.")
+#             # return (True, gdb)
+#             break
+#         else:
+#             # Not halted => send interrupt
+#             logger.debug(f"CPU not halted => attempt={attempt+1}, sending interrupt.")
+#             gdb.interrupt()
+#             reason, payload = gdb.wait_for_stop(timeout=wait_timeout)
+#             if reason == 'timed out':
+#                 logger.warning("Interrupt timed out, the target may not have halted.")
+#                 break
+#             else:
+#                 logger.debug(f"Got stop event => reason={reason}")
+#                 if reason in ('breakpoint hit','interrupt','exited','crashed','stopped, no reason given'):
+#                     # return (True, gdb)
+#                     break
+    
+#     # If we get here, we tried everything max_attempts times and it's still not halted.
+#     logger.error("Could not force CPU to halt after multiple attempts. Killing GDB.")
+#     # new_gdb = gdb.kill_and_reinit_gdb(gdb, ELF_PATH)  # Re-init
+#     # The new GDB is presumably halted at main or after reset, so we consider it halted.
+#     # return (True, new_gdb)
+#     return True
+
+# def force_halt_if_running(gdb: GDB, max_attempts=3, wait_timeout=5):
+#     # same code as original
+#     for attempt in range(max_attempts):
+#         resp = gdb.send('-data-list-register-values x', timeout=3)
+#         if resp['message'] == 'done':
+#             logger.debug("CPU is halted.")
+#             return
+#         else:
+#             logger.debug(f"CPU not halted => attempt={attempt+1}, sending interrupt.")
+#             gdb.interrupt()
+#             while True:
+#                 resp = gdb.send('-data-list-register-values x', timeout = 3)
+#                 if resp['message'] == 'done':
+#                     break
+#                 reason, payload = gdb.wait_for_stop(timeout=wait_timeout)
+#                 if reason == 'timed out':
+#                     break
+#                 if reason in ('breakpoint hit','interrupt','exited','crashed','stopped, no reason given'):
+#                     break
+#     halted = gdb.force_interrupt_or_kill(timeout=5)
+#     raise Exception("Could not force CPU to halt after multiple attempts.")
+
+
+
+# def force_halt_if_running(gdb: GDB, max_attempts=3):
+#     for attempt in range(max_attempts):
+        
+#         # Check if GDB says it is already halted:
+#         resp = gdb.send('-data-list-register-values x', timeout=3)
+#         if resp['message'] == 'done':
+#             logging.debug("CPU is halted, returning.")
+#             return
+#         # else try an interrupt
+#         else:
+#             gdb.interrupt()
+#             reason, payload = gdb.wait_for_stop(timeout=5)
+#             if reason.startswith("timed out"):
+#                 halted = gdb.force_interrupt_or_kill(timeout=5)
+#                 if halted:
+#                     return
+#     logging.error("Board not halting => re-initialize GDB from scratch.")
+
+#     raise Exception("Could not halt CPU after multiple attempts, even after kill.")
+
+
 def delete_all_breakpoints(gdb: GDB):
     # same code as original
     logger.debug("Deleting all existing breakpoints.")
@@ -191,7 +282,7 @@ def on_timeout(test_input: bytes, gdb, crash_dir: str) -> None:
     timestamp_str = str(int(time.time()))
     stacktrace_str = re.sub(r'[^a-zA-Z0-9_]', '', stacktrace_str)
     filename = f"timeout_{timestamp_str}_{stacktrace_str}"
-    # If you want to store timeouts, do:
+    # If want to store timeouts, do:
     # write_crashing_input(test_input, crash_dir, filename)
 
 def on_crash(gdb: GDB, test_data: bytes, crash_dir: str) -> None:
@@ -262,9 +353,10 @@ def _handle_uses_for_def(gdb, stop_responses, inputs, test_data, def_addr_str, u
 
                 # Also check if GDB has stopped
             reason2, payload2 = gdb.wait_for_stop(timeout=0.2)
-            if reason2 not in (None, 'timed out'):
-                    # Means GDB actually reported something
-                    break
+            # if reason2 not in (None, 'timed out'):
+            #         # Means GDB actually reported something
+            # why do I need break here?
+            #         break
 
             # if child_ready is False:
             #     logger.info("Never got 'input request' from child within 5s. Possibly board didn't send 'A'.")
@@ -681,7 +773,8 @@ def main():
                         coverage_changed = True
                         if reasonC == 'interrupt':
                             logger.warning("Interrupt => treat as crash.")
-                        gdb.continue_execution()
+                        break
+                        # gdb.continue_execution()
 
                     if not def_bp_map:
                         break

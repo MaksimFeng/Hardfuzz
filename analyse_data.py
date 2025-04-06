@@ -16,7 +16,7 @@ import os
 from config.settings import DEF_USE_FILE, LOG_FILE
 from collections import defaultdict
 
-PLOT_DIR = 'plots1'
+PLOT_DIR = 'plots2'
 os.makedirs(PLOT_DIR, exist_ok=True)
 
 # def parse_def_use_file(filename):
