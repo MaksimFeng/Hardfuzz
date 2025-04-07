@@ -208,50 +208,59 @@ class GDB:
                 time.sleep(5)
                 raise Exception(f'gdb_manager process exited with {exitcode=}.')
     def stop(self) -> None:
-        """
-        Cleanly stop the GDBCommunicator subprocess and the underlying gdb.
-        """
         log.debug("Stopping GDB...")
 
-        # 1) Attempt a graceful detach from the remote server first:
         try:
-            # This helps avoid leaving the J-Link server stuck with a stale connection
+            # Attempt a graceful disconnect
             self.send('-target-disconnect', timeout=3)
         except Exception as e:
             log.debug(f"No target to disconnect or ignoring error: {e}")
 
-        # 2) If there's an active communicator process, signal it to exit
         if self.gdb_communicator and self.gdb_communicator.pid:
             log.debug("Sending SIGUSR1 to GDBCommunicator...")
             os.kill(self.gdb_communicator.pid, signal.SIGUSR1)
 
-            # Wait for the communicator to stop
             self.gdb_communicator.join(timeout=10)
             exitcode = self.gdb_communicator.exitcode
 
-            # If still alive, force-kill
+            # If still alive => force-kill
             if exitcode is None:
                 log.warning("GDBCommunicator did not exit after SIGUSR1, sending SIGKILL.")
                 try:
                     os.kill(self.gdb_communicator.pid, signal.SIGKILL)
                 except ProcessLookupError:
-                    pass
+                    pass  # Probably it died in the meantime
+
                 self.gdb_communicator.join(timeout=5)
                 exitcode = self.gdb_communicator.exitcode
 
             if exitcode is None:
                 log.error("GDBCommunicator is still alive after SIGKILL. Something is wrong.")
 
-            # If the communicator exited but with a nonzero code, forcibly kill the raw gdb
+            # If the communicator has a nonzero exit code, also kill raw gdb
             if exitcode not in (0, None):
                 log.error(f"GDBCommunicator exited with code {exitcode}, killing raw gdb.")
+
+                # Kill the real gdb process
                 if self.gdb_communicator.gdbmi and self.gdb_communicator.gdbmi.gdb_process:
-                    os.kill(self.gdb_communicator.gdbmi.gdb_process.pid, signal.SIGKILL)
-                os.kill(self.gdb_communicator.pid, signal.SIGKILL)
+                    try:
+                        os.kill(self.gdb_communicator.gdbmi.gdb_process.pid, signal.SIGKILL)
+                    except ProcessLookupError:
+                        pass
+
+                # Only call os.kill() on the communicator again if exitcode != -9
+                # i.e., we haven't already SIGKILL'd it and reaped it
+                if exitcode != -9:
+                    try:
+                        os.kill(self.gdb_communicator.pid, signal.SIGKILL)
+                    except ProcessLookupError:
+                        pass
+
                 time.sleep(1)
-                raise Exception(f"GDBCommunicator process exited with {exitcode=}.")
+                # raise Exception(f"GDBCommunicator process exited with {exitcode=}.")
         else:
             log.debug("No active GDBCommunicator to stop.")
+
 
     
     def send(self, message: str, timeout: int = 10) -> Dict[str, Any]:
@@ -309,25 +318,46 @@ class GDB:
             self.continue_execution(retries - 1)
 
 #why do I want to interrupt?
-    def interrupt(self) -> None:
+    def interrupt(self) -> 'GDB | None':
         log.debug("Interrupting execution...")
         self.send('-exec-interrupt --all')
+        self.send('monitor halt')
+        self.send('monitor reset')
         reason, payload = self.wait_for_stop(timeout=5)
         if reason.startswith('timed out'):
             log.warning("Interrupt timed out, target may not have halted.")
-            # Try again (some boards need multiple attempts):
+            # Try again
             self.send('-exec-interrupt --all')
             reason, _ = self.wait_for_stop(timeout=5)
             if reason.startswith('timed out'):
                 log.error("Second interrupt also timed out.")
-                # Possibly do a heavier reset or even kill GDB if necessary
-                self.kill_and_reinit_gdb(ELF_PATH)
-                return
+                # Possibly do a heavier reset or kill GDB
+                new_gdb = self.kill_and_reinit_gdb(ELF_PATH)
+                return new_gdb  # <-- Return the new GDB object
+                # return None
         else:
             log.debug(f"Target halted after interrupt (reason={reason}).")
+
         # Then do the monitor commands
         self.send('monitor halt')
         self.send('monitor reset')
+
+        # If we did NOT kill GDB, just return None so caller knows we kept the same GDB
+        return None
+    # def interrupt(self) -> None:
+    #     log.debug("Interrupting execution...")
+    #     self.send('-exec-interrupt --all')
+    #     self.send('monitor reset')
+    #     self.send('monitor halt')
+    #     # self.send('-exec-interrupt --all')
+    #     # mayber there are some bugs here
+    #     # After interrupt, wait for a stop event
+    #     reason, payload = self.wait_for_stop(timeout=5)
+    #     if reason.startswith('timed out'):
+    #         log.warning("Interrupt timed out, target may not have halted.")
+    #     else:
+    #         log.debug("Target halted after interrupt.")
+
 
         
         # self.send('-exec-interrupt --all')
@@ -434,7 +464,7 @@ class GDB:
         """
         logger.warning("Killing existing GDB process ...")
         old_gdb.stop()  # This calls gdb_communicator.on_exit (SIGUSR1) from your existing code
-        
+        # I've done this in the stop function
         # If stop() doesn't fully terminate, do a SIGKILL:
         # if old_gdb.gdb_communicator and old_gdb.gdb_communicator.pid:
         #     try:
@@ -443,7 +473,17 @@ class GDB:
         #         logger.debug("Old GDB communicator already gone.")
         #     except Exception as e:
         #         logger.warning(f"Could not SIGKILL old GDB process: {e}")
-        
+        end_time = time.time() + 5
+
+        while old_gdb.gdb_communicator.is_alive() and time.time() < end_time:
+            time.sleep(0.2)
+
+        # If it's still alive after 5s, log an error but continue anyway
+        if old_gdb.gdb_communicator.is_alive():
+            logger.error("Old GDBCommunicator is still alive even after SIGKILL. Proceeding anyway.")
+
+        # A small extra delay so the OS can fully reap child processes
+        time.sleep(0.5)
         # Wait a bit for the old process to vanish
         time.sleep(1)
         

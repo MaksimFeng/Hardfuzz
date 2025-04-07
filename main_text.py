@@ -17,6 +17,7 @@ from config.settings import (
     NO_TRIGGER_THRESHOLD
 )
 from fuzzing.gdb_interface import GDB
+# from fuzzing.gdb_interface
 from fuzzing.input_generation import InputGeneration
 from utils.file_parsing import parse_def_use_file
 from utils.file_parsing import parse_external
@@ -112,23 +113,27 @@ def get_closest_uses(def_addr_str, uses_list):
     def_addr = int(def_addr_str, 16)
     return sorted(uses_list, key=lambda u: abs(int(u, 16) - def_addr))
 
-def force_halt_if_running(gdb: GDB, max_attempts=3, wait_timeout=5):
+def force_halt_if_running(gdb: GDB, max_attempts=3, wait_timeout=5) -> GDB:
     # same code as original
     for attempt in range(max_attempts):
         resp = gdb.send('-data-list-register-values x', timeout=3)
         if resp['message'] == 'done':
             logger.debug("CPU is halted.")
-            return
+            return gdb
         else:
             logger.debug(f"CPU not halted => attempt={attempt+1}, sending interrupt.")
-            gdb.interrupt()
+            maybe_new_gdb = gdb.interrupt()
+            if maybe_new_gdb is not None:
+                gdb = maybe_new_gdb
+                logger.info("GDB re-initialized after interrupt.")
             while True:
                 reason, payload = gdb.wait_for_stop(timeout=wait_timeout)
                 if reason == 'timed out':
                     break
                 if reason in ('breakpoint hit','interrupt','exited','crashed','stopped, no reason given'):
                     break
-    raise Exception("Could not force CPU to halt after multiple attempts.")
+    return gdb
+    # raise Exception("Could not force CPU to halt after multiple attempts.")
 
 # kill process but problem occure
 # def force_halt_if_running(gdb: GDB, max_attempts=3, wait_timeout=5):
@@ -316,7 +321,7 @@ def _handle_uses_for_def(gdb, stop_responses, inputs, test_data, def_addr_str, u
         uses_chunk = uses_sorted[uses_idx : uses_idx + HW_BREAKPOINT_LIMIT]
         uses_idx += HW_BREAKPOINT_LIMIT
 
-        force_halt_if_running(gdb)
+        gdb = force_halt_if_running(gdb)
 
         uses_bp_map = {}
         for use_addr_str in uses_chunk:
@@ -413,7 +418,7 @@ def _handle_uses_for_def(gdb, stop_responses, inputs, test_data, def_addr_str, u
             input_gen.add_corpus_entry(test_data, address=0, timestamp=timestamp)
             input_gen.choose_new_baseline_input()
 
-        force_halt_if_running(gdb)
+        gdb = force_halt_if_running(gdb)
         #here's a problem
         if uses_bp_map:
             remove_breakpoints(gdb, list(uses_bp_map.keys()))
@@ -624,6 +629,9 @@ def main():
     logger.info(f"Initial stop => reason={reason}, payload={payload}")
     if reason in ("breakpoint hit", "stopped, no reason given"):
         gdb.continue_execution()
+    
+    # gdb = gdb.kill_and_reinit_gdb(gdb, ELF_PATH)
+
     try:
         round_count = 0
         coverage_changed = True
@@ -667,7 +675,7 @@ def main():
                     logger.info("Exhausted all defs => new test next round.")
                     break
 
-                force_halt_if_running(gdb)
+                gdb = force_halt_if_running(gdb)
                 delete_all_breakpoints(gdb)
 
                 def_bp_map = {}
@@ -734,7 +742,7 @@ def main():
 
                             no_trigger_count = 0
 
-                            force_halt_if_running(gdb)
+                            gdb = force_halt_if_running(gdb)
                             if uses_list:
                                 use_status = _handle_uses_for_def(
                                     gdb, stop_responses, inputs,
@@ -802,15 +810,15 @@ def main():
 
     except KeyboardInterrupt:
         logger.info("Stopped by user.")
-    finally:
-        # Kill the child process for the serial connection
-        import signal
-        os.kill(conn.pid, signal.SIGUSR1)
-        conn.join()
+    # finally:
+    #     # Kill the child process for the serial connection
+    #     import signal
+    #     os.kill(conn.pid, signal.SIGUSR1)
+    #     conn.join()
 
-        coverage_mgr.close()
-        gdb.stop()
-        logger.info("Clean exit from main().")
+    #     coverage_mgr.close()
+    #     gdb.stop()
+    #     logger.info("Clean exit from main().")
 
 if __name__ == '__main__':
     main()
