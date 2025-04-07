@@ -116,6 +116,7 @@ def get_closest_uses(def_addr_str, uses_list):
 def force_halt_if_running(gdb: GDB, max_attempts=3, wait_timeout=5) -> GDB:
     # same code as original
     for attempt in range(max_attempts):
+        logger.info(f"Attempting to force halt CPU, attempt {attempt + 1} of {max_attempts}.")
         resp = gdb.send('-data-list-register-values x', timeout=3)
         if resp['message'] == 'done':
             logger.debug("CPU is halted.")
@@ -417,8 +418,9 @@ def _handle_uses_for_def(gdb, stop_responses, inputs, test_data, def_addr_str, u
             logger.info("New coverage from uses => add input to corpus.")
             input_gen.add_corpus_entry(test_data, address=0, timestamp=timestamp)
             input_gen.choose_new_baseline_input()
-
+        #this sentence. 
         gdb = force_halt_if_running(gdb)
+        time.sleep(1)
         #here's a problem
         if uses_bp_map:
             remove_breakpoints(gdb, list(uses_bp_map.keys()))
@@ -630,6 +632,14 @@ def main():
     if reason in ("breakpoint hit", "stopped, no reason given"):
         gdb.continue_execution()
     
+    # for k in range(10):
+    #     gdb.continue_execution()
+    #     gdb = gdb.kill_and_reinit_gdb(gdb, ELF_PATH)
+    #     gdb.wait_for_stop(timeout=3)
+    #     if not gdb.gdb_communicator.is_alive():
+    #         logger.error("New GDB communicator is not alive. Something went wrong.")    
+    #     logger.info("testing")
+    
     # gdb = gdb.kill_and_reinit_gdb(gdb, ELF_PATH)
 
     try:
@@ -797,7 +807,7 @@ def main():
                     input_gen.add_corpus_entry(test_data, address=0, timestamp=timestamp)
                     input_gen.choose_new_baseline_input()
 
-                force_halt_if_running(gdb)
+                gdb = force_halt_if_running(gdb)
                 if def_bp_map:
                     remove_breakpoints(gdb, list(def_bp_map.keys()))
                     def_bp_map.clear()

@@ -433,11 +433,12 @@ class GDB:
         # Load symbols and set a main breakpoint
         new_gdb.send(f'-file-exec-and-symbols {elf_path}')
         new_gdb.send('-break-insert main')
-        run_resp = new_gdb.send('-exec-run')
-        if run_resp['message'] == 'error':
-            logger.warning("Could not run after reinit; attempting a manual continue.")
-            new_gdb.continue_execution()
-
+        # run_resp = new_gdb.send('-exec-run')
+        # if run_resp['message'] == 'error':
+        #     logger.warning("Could not run after reinit; attempting a manual continue.")
+            # new_gdb.continue_execution()
+        if not new_gdb.gdb_communicator.is_alive():
+            logger.error("in stopNew GDBCommunicator is not alive after reinit. Something went wrong.")
         # Wait to see if we hit main or some stop
         reason, payload = new_gdb.wait_for_stop(timeout=10)
         logger.info(f"New GDB init => reason={reason}, payload={payload}")

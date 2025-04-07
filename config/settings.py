@@ -9,7 +9,7 @@ LOG_DATEFMT = '%Y-%m-%d %H:%M:%S'
 # LOG_FILE = os.path.join(os.path.dirname(__file__), '..', 'logs', 'log_buggy2.txt')
 # LOG_FILE = os.path.join(os.path.dirname(__file__), '..', 'logs', 'log_buggy3.txt')
 
-LOG_FILE = os.path.join(os.path.dirname(__file__), '..', 'logs', 'log.txt')
+LOG_FILE = os.path.join(os.path.dirname(__file__), '..', 'logs_04/07', 'log1.txt')
 0
 os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
 
