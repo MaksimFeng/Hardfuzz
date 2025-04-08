@@ -318,7 +318,7 @@ class GDB:
             self.continue_execution(retries - 1)
 
 #why do I want to interrupt?
-    def interrupt(self) -> 'GDB | None':
+    def interrupt_ignore(self, gdb) -> 'GDB | None':
         log.debug("Interrupting execution...")
         self.send('-exec-interrupt --all')
         self.send('monitor halt')
@@ -335,15 +335,88 @@ class GDB:
                 new_gdb = self.kill_and_reinit_gdb(ELF_PATH)
                 return new_gdb  # <-- Return the new GDB object
                 # return None
+            else:
+                return gdb
         else:
             log.debug(f"Target halted after interrupt (reason={reason}).")
 
         # Then do the monitor commands
-        self.send('monitor halt')
-        self.send('monitor reset')
+            self.send('monitor halt')
+            self.send('monitor reset')
+            return gdb
+    def interrupt(self) -> 'GDB | None':
+        """
+        Attempt to interrupt the target. If we fail twice, kill and reinit GDB.
+        Return a new GDB instance if we had to kill/reinit, otherwise None.
+        """
+        log.debug("Interrupting execution...")
+        self.send('-exec-interrupt --all')
 
-        # If we did NOT kill GDB, just return None so caller knows we kept the same GDB
+        # Wait up to 5s for a stop event
+        reason, payload = self.wait_for_stop(timeout=5)
+        if reason.startswith('timed out'):
+            log.warning("Interrupt timed out, target may not have halted.")
+            # Try again
+            self.send('-exec-interrupt --all')
+            reason, _ = self.wait_for_stop(timeout=5)
+            if reason.startswith('timed out'):
+                log.error("Second interrupt also timed out. Killing/Reinit GDB.")
+                new_gdb = self.kill_and_reinit_gdb(ELF_PATH)
+                return new_gdb  # Return the brand-new GDB instance
+            else:
+                log.debug(f"Target halted on second try => reason={reason}.")
+        else:
+            log.debug(f"Target halted after interrupt => reason={reason}.")
+
+        # If we get here, we have a halted CPU and didn't kill GDB
+        # We can do extra commands if we want, but typically you'd do them in the caller
         return None
+
+    def kill_and_reinit_gdb(old_gdb, elf_path, server_address='localhost:2331'):
+        """
+        Kill old GDB, wait, create new GDB, connect, do reset/halt, load symbols, etc.
+        """
+        logger.warning("Killing existing GDB process ...")
+        old_gdb.stop()
+
+        # Wait up to 5 seconds for old communicator to vanish
+        end_time = time.time() + 5
+        while old_gdb.gdb_communicator.is_alive() and time.time() < end_time:
+            time.sleep(0.2)
+
+        if old_gdb.gdb_communicator.is_alive():
+            logger.error("Old GDBCommunicator is still alive after forced kill. Proceeding anyway.")
+
+        time.sleep(0.5)  # let OS reap
+
+        logger.info("Starting fresh GDB instance ...")
+        from .gdb_interface import GDB
+        new_gdb = GDB(
+            gdb_path='gdb-multiarch',
+            gdb_server_address=server_address,
+            software_breakpoint_addresses=[],
+            consider_sw_breakpoint_as_error=False
+        )
+
+        # Reconnect & setup
+        new_gdb.connect(elf_path)
+        new_gdb.send(f'-target-select extended-remote {server_address}')
+        new_gdb.send('monitor reset')
+        new_gdb.send('monitor halt')
+
+        new_gdb.send(f'-file-exec-and-symbols {elf_path}')
+        new_gdb.send('-break-insert main')
+        reason, payload = new_gdb.wait_for_stop(timeout=10)
+        logger.info(f"New GDB init => reason={reason}, payload={payload}")
+        if reason in ("breakpoint hit", "stopped, no reason given"):
+            logger.debug("Main breakpoint reached. Good to go.")
+        else:
+            logger.warning("Target did not hit main as expected => continuing anyway.")
+            new_gdb.continue_execution()
+
+        return new_gdb
+
+    
     # def interrupt(self) -> None:
     #     log.debug("Interrupting execution...")
     #     self.send('-exec-interrupt --all')
@@ -368,7 +441,7 @@ class GDB:
         #     log.warning("Interrupt timed out, target may not have halted.")
         # else:
         #     log.debug("Target halted after interrupt.")
-    def force_interrupt_or_kill(self, timeout = 5) -> bool:
+    def force_interrupt_or_kill_ignore(self, timeout = 5) -> bool:
         """
         Tries '-exec-interrupt --all', waits for a stop event up to 'timeout'.
         If still not stopped, kills GDB process. Returns True if halted.
@@ -391,7 +464,7 @@ class GDB:
             log.debug(f"Target halted after interrupt (reason={reason}).")
             return True
 
-    def kill_and_reinit_gdb(old_gdb, elf_path, server_address='localhost:2331'):
+    def kill_and_reinit_gdb_test(old_gdb, elf_path, server_address='localhost:2331'):
         """
         Completely kills the old GDB instance (including the underlying gdb process),
         waits until it is definitely gone, then creates a fresh GDB instance and

@@ -113,17 +113,18 @@ def get_closest_uses(def_addr_str, uses_list):
     def_addr = int(def_addr_str, 16)
     return sorted(uses_list, key=lambda u: abs(int(u, 16) - def_addr))
 
-def force_halt_if_running(gdb: GDB, max_attempts=3, wait_timeout=5) -> GDB:
+def force_halt_if_running_test(gdb: GDB, max_attempts=5, wait_timeout=5) -> GDB:
     # same code as original
     for attempt in range(max_attempts):
+        # this part can be deleted
         logger.info(f"Attempting to force halt CPU, attempt {attempt + 1} of {max_attempts}.")
         resp = gdb.send('-data-list-register-values x', timeout=3)
         if resp['message'] == 'done':
-            logger.debug("CPU is halted.")
+            logger.info("CPU is halted.")
             return gdb
         else:
-            logger.debug(f"CPU not halted => attempt={attempt+1}, sending interrupt.")
-            maybe_new_gdb = gdb.interrupt()
+            logger.info(f"CPU not halted => attempt={attempt+1}, sending interrupt.")
+            maybe_new_gdb = gdb.interrupt(gdb)
             if maybe_new_gdb is not None:
                 gdb = maybe_new_gdb
                 logger.info("GDB re-initialized after interrupt.")
@@ -133,8 +134,40 @@ def force_halt_if_running(gdb: GDB, max_attempts=3, wait_timeout=5) -> GDB:
                     break
                 if reason in ('breakpoint hit','interrupt','exited','crashed','stopped, no reason given'):
                     break
-    return gdb
+            return gdb
     # raise Exception("Could not force CPU to halt after multiple attempts.")
+def force_halt_if_running(gdb: GDB, max_attempts=5, wait_timeout=5) -> GDB:
+    """
+    Attempt up to max_attempts times to confirm the CPU is halted 
+    by reading registers. If not halted, do an interrupt. If that fails 
+    twice in interrupt(), we reinit GDB. If we do reinit, we reassign gdb.
+    """
+    for attempt in range(max_attempts):
+        logger.info(f"Attempting to force halt CPU, attempt {attempt + 1} of {max_attempts}.")
+        resp = gdb.send('-data-list-register-values x', timeout=3)
+        if resp['message'] == 'done':
+            logger.info("CPU is halted.")
+            return gdb
+        else:
+            logger.info(f"CPU not halted => sending interrupt (attempt {attempt+1}).")
+            maybe_new_gdb = gdb.interrupt()
+            if maybe_new_gdb is not None:
+                gdb = maybe_new_gdb
+                logger.info("GDB re-initialized after interrupt.")
+
+            # Now let's see if we actually got a stop event. We'll do a short loop:
+            reason, payload = gdb.wait_for_stop(timeout=wait_timeout)
+            if reason.startswith('timed out'):
+                logger.warning("After interrupt, still no stop => keep looping.")
+                # We'll keep going in the for-loop => next attempt
+            else:
+                if reason in ('breakpoint hit','interrupt','exited','crashed','stopped, no reason given'):
+                    logger.info(f"Stopped => reason={reason}. We'll check regs again on next loop.")
+                # No break => we do the next attempt anyway
+
+    logger.error("Could not force CPU to halt after multiple attempts. Returning anyway.")
+    return gdb
+
 
 # kill process but problem occure
 # def force_halt_if_running(gdb: GDB, max_attempts=3, wait_timeout=5):
