@@ -136,7 +136,7 @@ def force_halt_if_running_test(gdb: GDB, max_attempts=5, wait_timeout=5) -> GDB:
                     break
             return gdb
     # raise Exception("Could not force CPU to halt after multiple attempts.")
-def force_halt_if_running(gdb: GDB, max_attempts=5, wait_timeout=5) -> GDB:
+def force_halt_if_running(gdb: GDB, max_attempts=5, wait_timeout=10) -> GDB:
     """
     Attempt up to max_attempts times to confirm the CPU is halted 
     by reading registers. If not halted, do an interrupt. If that fails 
@@ -144,6 +144,8 @@ def force_halt_if_running(gdb: GDB, max_attempts=5, wait_timeout=5) -> GDB:
     """
     for attempt in range(max_attempts):
         logger.info(f"Attempting to force halt CPU, attempt {attempt + 1} of {max_attempts}.")
+        # gdb.send('monitor halt')
+        gdb.send('monitor reset')
         resp = gdb.send('-data-list-register-values x', timeout=3)
         if resp['message'] == 'done':
             logger.info("CPU is halted.")
@@ -309,9 +311,9 @@ def on_timeout(test_input: bytes, gdb, crash_dir: str) -> None:
     try:
         # gdb.interrupt()
         gdb.send('monitor halt')
-        time.sleep(1)
+        time.sleep(10)
         resp = gdb.send('-stack-list-frames')
-        if 'payload' in resp and 'stack' in resp['payload']:
+        if 'payload' in resp and 'stack' in  resp['payload']:
             frames = resp['payload']['stack']
             addresses = [frame['addr'] for frame in frames]
             stacktrace_str = "_".join(addresses[:4])
@@ -391,7 +393,7 @@ def _handle_uses_for_def(gdb, stop_responses, inputs, test_data, def_addr_str, u
             #             logger.info(f"Got an unexpected child message: {reason_m}, {payload_m}")
 
                 # Also check if GDB has stopped
-            reason2, payload2 = gdb.wait_for_stop(timeout=0.2)
+            reason2, payload2 = gdb.wait_for_stop(timeout=5)
             # if reason2 not in (None, 'timed out'):
             #         # Means GDB actually reported something
             # why do I need break here?
@@ -740,7 +742,7 @@ def main():
                     # WAIT for child process or GDB stop:
                     child_ready = False
                     reasonC, payloadC = None, None
-                    poll_timeout = time.time() + 5
+                    poll_timeout = time.time() + 10  # 10 second poll for 'input request'
 
                     while time.time() < poll_timeout and not child_ready:
                         # Check if child says 'input request'
@@ -848,8 +850,8 @@ def main():
                 gdb.continue_execution()
                 done_with_round = True
 
-            coverage_mgr.reset_coverage()
-            logger.info(f"End of round #{round_count}, coverage reset.\n")
+            # coverage_mgr.reset_coverage()
+            logger.info(f"End of round #{round_count}, coverage not been reset.\n")
 
     except KeyboardInterrupt:
         logger.info("Stopped by user.")

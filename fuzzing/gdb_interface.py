@@ -307,8 +307,9 @@ class GDB:
 
     def continue_execution(self, retries: int = 3) -> None:
         log.debug("Continuing execution...")
-        self.send('monitor reset')
-        self.send('monitor halt')
+        # only change this part. 
+        # self.send('monitor reset')
+        # self.send('monitor halt')
         gdb_response = self.send('-exec-continue --all')
         if gdb_response['message'] == 'error' and retries > 0:
             log.warning(
@@ -362,6 +363,9 @@ class GDB:
             if reason.startswith('timed out'):
                 log.error("Second interrupt also timed out. Killing/Reinit GDB.")
                 new_gdb = self.kill_and_reinit_gdb(ELF_PATH)
+                if not new_gdb.gdb_communicator.is_alive():
+                    log.error("New GDB died immediately")
+                time.sleep(1)  # Give it a moment to settle
                 return new_gdb  # Return the brand-new GDB instance
             else:
                 log.debug(f"Target halted on second try => reason={reason}.")
@@ -401,8 +405,9 @@ class GDB:
         # Reconnect & setup
         new_gdb.connect(elf_path)
         new_gdb.send(f'-target-select extended-remote {server_address}')
-        new_gdb.send('monitor reset')
         new_gdb.send('monitor halt')
+        new_gdb.send('monitor reset')
+        
 
         new_gdb.send(f'-file-exec-and-symbols {elf_path}')
         new_gdb.send('-break-insert main')
