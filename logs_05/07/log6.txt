@@ -1194,3 +1194,14 @@
 2025-05-06 07:57:05 - __main__ - INFO - Round 7 – len=8
 2025-05-06 07:57:05 - __main__ - DEBUG - QEMU exited or communication error
 2025-05-06 07:57:10 - __main__ - INFO - Interrupted – exiting.
+2025-05-06 10:07:39 - fuzzer - INFO - Parsed 511 definition blocks
+2025-05-06 10:07:39 - fuzzer - INFO - Round 1 – len=11
+2025-05-06 10:08:23 - fuzzer - INFO - Parsed 511 definition blocks
+2025-05-06 10:08:23 - fuzzer - INFO - Round 1 – len=11
+2025-05-06 10:08:50 - fuzzer - INFO - Parsed 511 definition blocks
+2025-05-06 10:08:50 - fuzzer - INFO - Round 1 – len=11
+2025-05-06 10:09:02 - fuzzer - INFO - Round 2 – len=12
+2025-05-06 10:09:13 - fuzzer - INFO - Round 3 – len=11
+2025-05-06 10:09:25 - fuzzer - INFO - Round 4 – len=11
+2025-05-06 10:09:37 - fuzzer - INFO - Round 5 – len=13
+2025-05-06 10:09:43 - fuzzer - INFO - Interrupted – exiting.

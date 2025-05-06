@@ -1,12 +1,3 @@
-#!/usr/bin/env python3
-"""Fuzzer driver for objdump under user‑mode QEMU with a fixed GDB port.
-
-Each fuzz iteration launches a fresh QEMU + GDB pair, feeds a test‑case via
-stdin, steers execution with break‑points, records coverage, and then tears
-both processes down.  All log output (DEBUG and above) goes into a single
-rotating file plus the console.
-"""
-
 from __future__ import annotations
 
 import logging
@@ -31,34 +22,34 @@ from config.settings import (
 
 QEMU_USER   = "qemu-x86_64-static"
 TARGET_BIN  = "/usr/bin/x86_64-linux-gnu-objdump"
-TARGET_ARGS = ["-D", "-"]          # passed to the target; 
+# TARGET_BIN = "/project/new_test"
+# TARGET_ARGS = ["-D", "-"]          # passed to the target; 
+TARGET_ARGS = ["-D", "-"]          # passed to the target;
 GDB_PATH    = "gdb-multiarch"
 SYSROOT     = "/"
 FIXED_PORT  = 2331
 HW_BP_LIMIT = 6
 
-# ─ logging setup (put this once, before the fuzz loop) ───────────────
-root = logging.getLogger()          # ← root logger, not __name__
-root.setLevel(logging.DEBUG)
+logger = logging.getLogger(__name__)
+logger.setLevel(LOG_LEVEL)
+_fmt = logging.Formatter(LOG_FORMAT, datefmt=LOG_DATEFMT)
 
-console = logging.StreamHandler()   # stdout / stderr
-console.setLevel(logging.DEBUG)     # show everything on screen
-console.setFormatter(_fmt)
-root.addHandler(console)
+_ch = logging.StreamHandler()
+_ch.setFormatter(_fmt)
+logger.addHandler(_ch)
 
-log_path = Path(OUTPUT_DIRECTORY, "fuzzer.log")
-file_hdl = logging.handlers.RotatingFileHandler(
-    log_path, maxBytes=20 * 1024 * 1024, backupCount=3, encoding="utf-8"
+_fh = logging.handlers.RotatingFileHandler(
+    Path(OUTPUT_DIRECTORY, "fuzzer.log"),
+    maxBytes=20 * 1024 * 1024,
+    backupCount=3,
+    encoding="utf-8",
 )
-file_hdl.setLevel(logging.DEBUG)    # mirror everything to disk
-file_hdl.setFormatter(_fmt)
-root.addHandler(file_hdl)
-
+_fh.setFormatter(_fmt)
+logger.addHandler(_fh)
 
 import pygdbmi.gdbcontroller  # noqa: E402
-pygdbmi.gdbcontroller.logger.setLevel(logging.WARNING)
+pygdbmi.gdbcontroller.logger.setLevel(logging.DEBUG)
 
-# ────────────────────────────── Helper functions ─────────────────────────────
 
 def _flatten_def_use() -> list[tuple[str, list[str]]]:
     parsed = parse_block_with_full_details(DEF_USE_FILE)
@@ -102,13 +93,15 @@ def _run_one_case(
     """Execute a single fuzz iteration inside *qemu*."""
 
     # feed the testcase
-    qemu.process.stdin.write(stdin_data)
-    qemu.process.stdin.close()
+    # logger.debug("Feeding %d bytes to QEMU", str(stdin_data))
+    
 
     gdb = qemu.gdb
     def_gen = _weighted_generator(def_use_list, global_hits)
 
     alive = True
+    qemu.process.stdin.write(stdin_data)
+    qemu.process.stdin.flush()
     while alive:
         chunk = [next(def_gen) for _ in range(HW_BP_LIMIT)]
         if not chunk:
@@ -118,7 +111,8 @@ def _run_one_case(
         bp_map = {gdb.set_breakpoint(d): d for d, _ in chunk}
 
         gdb.continue_execution()
-
+        # qemu.process.stdin.write(stdin_data)
+        # qemu.process.stdin.flush()
         while bp_map and alive:
             reason, payload = gdb.wait_for_stop(timeout=5)
 
@@ -133,6 +127,7 @@ def _run_one_case(
                 break
 
             if reason.startswith(("exited", "communication error")):
+                qemu.process.stdin.close()
                 logger.debug("QEMU exited or communication error")
                 alive = False
                 break
@@ -147,7 +142,6 @@ def _run_one_case(
     return got_new
 
 
-# ─────────────────────────────────── Main ────────────────────────────────────
 
 def main() -> None:
     Path(OUTPUT_DIRECTORY).mkdir(parents=True, exist_ok=True)
@@ -161,6 +155,7 @@ def main() -> None:
 
     def_use = _flatten_def_use()
     global_hits: dict[str, int] = {}
+    
 
     for rnd in range(1, 1_000_000):
         corpus.choose_new_baseline_input()
@@ -172,8 +167,8 @@ def main() -> None:
             qemu_path  = QEMU_USER,
             gdb_path   = GDB_PATH,
             gdb_port   = FIXED_PORT,
-            qemu_args  = ["-L", SYSROOT],   # QEMU options
-            target_args= TARGET_ARGS,        # objdump arguments
+            qemu_args  = ["-L", SYSROOT],   
+            target_args= TARGET_ARGS,       
             stderr_dir = OUTPUT_DIRECTORY,
             pause_at_entry=True,
         )

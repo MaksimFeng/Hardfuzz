@@ -11,13 +11,7 @@ from fuzzing.gdb_qemu import GDB_QEMU
 
 __all__ = ["QEMUInstance"]
 
-
 class QEMUInstance:
-    """Launch a *user‑mode* QEMU plus a GDB stub on a **fixed port**.
-
-    The constructor connects GDB, guarantees that the guest is halted, and
-    leaves the instance ready for break‑point manipulation / execution control.
-    """
 
     def __init__(
         self,
@@ -25,7 +19,7 @@ class QEMUInstance:
         elf_path: str,
         qemu_path: str = "qemu-x86_64-static",
         gdb_path: str = "gdb-multiarch",
-        gdb_port: int = 2331,               # ← fixed port
+        gdb_port: int = 2331,               
         # extra_qemu_args: List[str] | None = None,
         qemu_args: List[str] | None = None,
         target_args: List[str] | None = None,
@@ -35,7 +29,7 @@ class QEMUInstance:
         self.elf_path = Path(elf_path).resolve(strict=True)
         self._gdb_port = gdb_port
 
-        # ─────────────────────────────── Spawn QEMU ────────────────────────────
+  
         gflag = f"{self._gdb_port},brk" if pause_at_entry else str(self._gdb_port)
         qemu_cmd = [qemu_path, "-g", gflag,  *(qemu_args or []), self.elf_path.as_posix(), *(target_args or [])]
 
@@ -56,12 +50,11 @@ class QEMUInstance:
             stderr=stderr_target,
         )
 
-        # give the stub a moment to start listening
         time.sleep(0.5)
         if self._qemu_proc.poll() is not None:
             raise RuntimeError("QEMU exited immediately – check qemu_stderr.log")
 
-        # ──────────────────────────────── Attach GDB ───────────────────────────
+  
         self.gdb = GDB_QEMU(
             qemu_process=self._qemu_proc,
             gdb_path=gdb_path,
@@ -95,7 +88,7 @@ class QEMUInstance:
         if getattr(self, "gdb", None):
             self.gdb.stop()
 
-    # expose the underlying Popen for stdin write in the fuzzer
+
     @property
     def process(self) -> subprocess.Popen[Any]:  # noqa: D401
         return self._qemu_proc

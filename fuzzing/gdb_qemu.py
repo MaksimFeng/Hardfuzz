@@ -7,7 +7,6 @@ import logging as log
 #similary to gdbfuzz
 
 class GDB_QEMU(GDB):
-   
 
     def __init__(
         self,
