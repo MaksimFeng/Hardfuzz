@@ -145,6 +145,7 @@ def force_halt_if_running(gdb: GDB, max_attempts=5, wait_timeout=10) -> GDB:
     for attempt in range(max_attempts):
         logger.info(f"Attempting to force halt CPU, attempt {attempt + 1} of {max_attempts}.")
         # gdb.send('monitor halt')
+        gdb.send('-exec-interrupt --all')
         gdb.send('monitor reset')
         resp = gdb.send('-data-list-register-values x', timeout=3)
         if resp['message'] == 'done':
@@ -169,6 +170,41 @@ def force_halt_if_running(gdb: GDB, max_attempts=5, wait_timeout=10) -> GDB:
 
     logger.error("Could not force CPU to halt after multiple attempts. Returning anyway.")
     return gdb
+def _really_hatled(gdb:GDB) -> bool:
+    """helper: check if the CPU is halted"""
+    resp = gdb.send('-data-list-register-values x', timeout=3)
+    return resp['message'] == 'done'
+# def force_halt_if_running(gdb: GDB, max_attempts:int=5, wait_timeout:int=5) -> GDB:
+#     """
+#     Robustly stop the core **without resetting it**.
+#     A loop of:
+#     1) read regs → if 'done' → halted
+#     2) ^C interrupt + wait
+#     3) monitor halt + wait
+#     after each step we *verify* with `_really_halted()`.
+#     """
+#     for attempt in range(max_attempts):
+#         # gdb.send('')
+#         if _really_hatled(gdb):
+#             return gdb;
+#         maybe_new = gdb.interrupt()
+#         if maybe_new:
+#             gdb = maybe_new
+#         gdb.wait_for_stop(timeout=wait_timeout)
+#         if _really_hatled(gdb):
+#             return gdb
+        
+#         # interrupt didn't succeed->try jlink hard halt
+#         gdb.send('monitor halt')
+#         gdb.send('monitor reset')
+#         gdb.wait_for_stop(timeout=wait_timeout)
+#         if _really_hatled(gdb):
+#             return gdb
+#     logger.error("Could not halt CPU -> giving up")
+#     # inside force_halt_if_running() after the loop
+#     if not _really_hatled(gdb):
+#         return GDB.kill_and_reinit_gdb(gdb, ELF_PATH)
+#     return gdb
 
 
 # kill process but problem occure
@@ -864,6 +900,15 @@ def main():
     #     coverage_mgr.close()
     #     gdb.stop()
     #     logger.info("Clean exit from main().")
+    finally:
+        import signal
+        logger.info("Cleaning up...")
+        os.kill(conn.pid, signal.SIGUSR1)
+        conn.join()
+        logger.info("Serial connection closed.")
+        coverage_mgr.close()
+        gdb.stop()
+        logger.info("GDB connection closed.")
 
 if __name__ == '__main__':
     main()

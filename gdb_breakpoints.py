@@ -112,7 +112,7 @@ def main():
                 responses = []
 
             for response in responses:
-                if response['type'] == 'notify' and response['message'] == 'stopped':
+                if response['type'] == ('notify','exec') and response['message'] == 'stopped':
                     reason = response['payload'].get('reason', '')
                     bkptno = response['payload'].get('bkptno', '')
                     if reason == 'watchpoint-trigger':

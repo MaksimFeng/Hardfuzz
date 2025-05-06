@@ -1,6 +1,6 @@
 import os
 import signal
-import time
+import time, socket
 import logging as log
 import multiprocessing as mp
 from typing import Any, NoReturn, Tuple, Dict
@@ -82,7 +82,7 @@ class GDBCommunicator(mp.Process):
     def on_stop_response(self, response: dict[str, Any]) -> None:
         # Handle stop events
         if (
-                response['type'] == 'notify' and
+                response['type'] == ('notify','exec') and
                 response['message'] == 'stopped' and
                 isinstance(response['payload'], dict) and
                 'reason' in response['payload'] and
@@ -93,7 +93,7 @@ class GDBCommunicator(mp.Process):
                 ('breakpoint hit', response['payload']['bkptno'])
             )
         elif (
-                response['type'] == 'notify' and
+                response['type'] == ('notify','exec') and
                 response['message'] == 'stopped' and
                 isinstance(response['payload'], dict) and
                 'reason' in response['payload'] and
@@ -103,7 +103,7 @@ class GDBCommunicator(mp.Process):
                 ('step instruction done', response['payload'])
             )
         elif (
-                response['type'] == 'notify' and
+                response['type'] == ('notify','exec') and
                 response['message'] == 'thread-group-exited'
         ):
             self.stop_responses.put(('exited', ''))
@@ -114,7 +114,7 @@ class GDBCommunicator(mp.Process):
         ):
             self.stop_responses.put(('communication error', response['payload']))
         elif (
-                response['type'] == 'notify' and
+                response['type'] == ('notify','exec') and
                 response['message'] == 'stopped' and
                 isinstance(response['payload'], dict) and
                 'signal-meaning' in response['payload'] and
@@ -129,7 +129,7 @@ class GDBCommunicator(mp.Process):
                     ('interrupt', pc)
                 )
         elif (
-                response['type'] == 'notify' and
+                response['type'] == ('notify','exec') and
                 response['message'] == 'stopped' and
                 isinstance(response['payload'], dict) and
                 'signal-meaning' in response['payload'] and
@@ -137,7 +137,7 @@ class GDBCommunicator(mp.Process):
         ):
             self.stop_responses.put(('crashed', str(response['payload'])))
         elif (
-                response['type'] == 'notify' and
+                response['type'] == ('notify','exec') and
                 response['message'] == 'stopped'
         ):
             self.stop_responses.put(('stopped, no reason given', str(response)))
@@ -296,11 +296,53 @@ class GDB:
     def connect(self, path) -> None:
         log.debug("Connecting to GDB server...")
         self.send('-gdb-set mi-async on')
-        self.send('set architecture armv7-m')
+        self.send('set architecture arm')
         elf_path = ELF_PATH
         self.send(f'file {path}')
         self.send(f'-target-select extended-remote {self.gdb_server_address}')
 
+    def connect_qemu(
+        self,
+        elf_path: str,
+        *,
+        architecture: str | None = None,
+        remote_first: bool = False,
+        max_tries: int = 8,
+        delay: float = 0.5,
+        gdb_server_address: str = 'localhost:2331'
+    ) -> None:
+        """Robustly attach to a live qemu-stub (already listening)."""
+        self.send('-gdb-set mi-async on')
+        # if architecture:
+        #     self.send(f'set architecture {architecture}')
+
+        # wait until port is reachable
+        import socket, time
+        host, port = gdb_server_address.split(":")
+        port = int(port)
+        end = time.time() + max_tries * delay
+        # while time.time() < end:
+        #     with socket.socket() as s:
+        #         s.settimeout(0.2)
+        #         if s.connect_ex((host, port)) == 0:
+        #             # s.sendall(b'$D#44') 
+        #             # s.close() 
+        #             try:
+        #                 s.sendall(b'$D#44')
+        #             except OSError:
+        #                 pass
+        #             break
+        #     time.sleep(delay)
+        # else:
+        #     raise TimeoutError(f"GDB port {self.gdb_server_address} not open")
+
+        # now MI attach
+        if remote_first:
+            self.send(f'-target-select extended-remote {gdb_server_address}')
+            self.send(f'-file-exec-and-symbols {elf_path}')
+        else:
+            self.send(f'-file-exec-and-symbols {elf_path}')
+            self.send(f'-target-select extended-remote {gdb_server_address}')
     def disconnect(self) -> None:
         log.debug("Disconnecting from GDB server...")
         self.send('-target-disconnect')
@@ -421,7 +463,58 @@ class GDB:
 
         return new_gdb
 
-    
+    # def interrupt(self) -> 'GDB | None':
+    #     """
+    #     Attempt to interrupt the target. If we fail twice, kill and reinit GDB.
+    #     Return a new GDB instance if we had to kill/reinit, otherwise None.
+    #     """
+    #     log.debug("Interrupting execution...")
+    #     self.send('-exec-interrupt --all')
+
+    #     # Wait up to 5s for a stop event
+    #     reason, payload = self.wait_for_stop(timeout=5)
+    #     if reason.startswith('timed out'):
+    #         log.warning("Interrupt timed out -> fall back to monitor halt.")
+    #         # log.warning("Interrupt timed out, target may not have halted.")
+    #         # Try again
+    #         self.send('monitor halt')
+    #         # self.send('-exec-interrupt --all')
+    #         reason, _ = self.wait_for_stop(timeout=5)
+    #         if reason.startswith('timed out'):
+    #             log.error("Still running → kill & re-init GDB.")
+    #             new_gdb = self.kill_and_reinit_gdb(ELF_PATH)
+    #             if not new_gdb.gdb_communicator.is_alive():
+    #                 log.error("New GDB died immediately")
+    #             time.sleep(1)  # Give it a moment to settle
+    #             return new_gdb  # Return the brand-new GDB instance
+    #         else:
+    #             log.debug(f"Target halted on second try => reason={reason}.")
+    #     else:
+    #         log.debug(f"Target halted after interrupt => reason={reason}.")
+
+    #     # If we get here, we have a halted CPU and didn't kill GDB
+    #     # We can do extra commands if we want, but typically we'd do them in the caller
+    #     return None
+
+    # def kill_and_reinit_gdb(old_gdb, elf_path, server_address='localhost:2331'):
+    #     """
+    #     Kill old GDB, wait, create new GDB, connect, do reset/halt, load symbols, etc.
+    #     """
+    #     logger.warning("Killing existing GDB process ...")
+    #     old_gdb.stop()
+    #     time.sleep(0.5)
+    #     from .gdb_interface import GDB  # import here to avoid circular import
+    #     new_gdb = GDB(gdb_path='gdb-multiarch', gdb_server_address=server_address)
+    #     new_gdb.connect(elf_path)
+    #     new_gdb.send(f'-target-select extended-remote {server_address}')
+    #     new_gdb.send('monitor halt')
+    #     new_gdb.send(f'-file-exec-and-symbols {elf_path}')
+    #     new_gdb.send('-break-insert main')
+    #     new_gdb.continue_execution()
+    #     # new_gdb.wait_for_stop(timeout=10)
+    #     reason, payload = new_gdb.wait_for_stop(timeout=10)
+    #     logger.info(f"New GDB init => reason={reason}, payload={payload}")
+    #     return new_gdb   
     # def interrupt(self) -> None:
     #     log.debug("Interrupting execution...")
     #     self.send('-exec-interrupt --all')
@@ -600,10 +693,13 @@ class GDB:
 
         return new_gdb
     
-    def set_breakpoint(self, address_hex_str: str) -> str:
-        address = int(address_hex_str, 16)
+    def set_breakpoint(self, address_hex_str: str, hw: bool= False) -> str:
+        # address = int(address_hex_str, 16)
+        address = int(address_hex_str, 16) & ~1
         log.info(f"Setting breakpoint at {hex(address)}")
         gdb_response = self.send(f'-break-insert *{hex(address)}')
+        # flag = '-h' if hw else ''
+        # gdb_response = self.send(f'-break-insert {flag} *{hex(address)}')
         if gdb_response['message'] != 'done':
             raise Exception(
                 f'Failed to set breakpoint at address {hex(address)}: {gdb_response}'

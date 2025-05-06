@@ -9,7 +9,7 @@ LOG_DATEFMT = '%Y-%m-%d %H:%M:%S'
 # LOG_FILE = os.path.join(os.path.dirname(__file__), '..', 'logs', 'log_buggy2.txt')
 # LOG_FILE = os.path.join(os.path.dirname(__file__), '..', 'logs', 'log_buggy3.txt')
 
-LOG_FILE = os.path.join(os.path.dirname(__file__), '..', 'logs_05/07', 'log5.txt')
+LOG_FILE = os.path.join(os.path.dirname(__file__), '..', 'logs_05/07', 'log6.txt')
 
 os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
 
@@ -20,7 +20,8 @@ GDB_SERVER_ADDRESS = 'localhost:2331'
 # ELF_PATH = '/home/kai/project/Hardfuzz/example/sketch_nov5a.ino.elf'
 # ELF_PATH = '/home/kai/Arduino/program2_buggy/build/arduino.sam.arduino_due_x_dbg/program2_buggy.ino.elf'
 # ELF_PATH = '/home/kai/Arduino/program3/build/arduino.sam.arduino_due_x_dbg/program3.ino.elf'
-ELF_PATH = '/home/kai/Arduino/programbuggynochange/build/arduino.sam.arduino_due_x_dbg/programbuggynochange.ino.elf'
+# ELF_PATH = '/home/kai/Arduino/programbuggynochange/build/arduino.sam.arduino_due_x_dbg/programbuggynochange.ino.elf'
+ELF_PATH = '/usr/bin/objdump'
 # Serial Configuration
 SERIAL_PORT = '/dev/ttyACM1'
 BAUD_RATE = 38400
@@ -28,7 +29,7 @@ SERIAL_TIMEOUT = 1
 
 # Fuzzing Configuration
 OUTPUT_DIRECTORY = 'output'
-
+OUTPUT_DIRECTORY_QEMU = 'output_qemu'
 # OUTPUT_DIRECTORY = 'output_buggy'
 SEEDS_DIRECTORY = 'seeds'
 # SEEDS_DIRECTORY = 'seed_buggy'

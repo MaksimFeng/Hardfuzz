@@ -1,0 +1,1196 @@
+2025-04-28 23:10:58 - root - INFO - === Starting main with snippet-based SerialConnection ===
+2025-04-28 23:10:58 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-04-28 23:10:58 - root - INFO - Established connection on /dev/ttyACM1 at 38400 baud.
+2025-04-28 23:10:58 - root - INFO - Received request (A) from the board.
+2025-04-28 23:10:59 - root - INFO - GDB & SerialConnection initialized.
+2025-04-28 23:10:59 - root - INFO - Initial stop => reason=stopped, no reason given, payload={'type': 'notify', 'message': 'stopped', 'payload': {'frame': {'addr': '0x000808d2', 'func': 'UARTClass::available', 'args': [{'name': 'this', 'value': '<optimised out>'}], 'file': '/home/kai/.arduino15/packages/arduino/hardware/sam/1.6.12/cores/arduino/UARTClass.cpp', 'fullname': '/home/kai/.arduino15/packages/arduino/hardware/sam/1.6.12/cores/arduino/UARTClass.cpp', 'line': '107', 'arch': 'armv7'}, 'thread-id': '1', 'stopped-threads': 'all'}, 'token': None, 'stream': 'stdout'}
+2025-04-28 23:10:59 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-04-28 23:11:00 - root - INFO - === Starting Round #1 ===
+2025-04-28 23:11:00 - root - INFO - no mutation
+2025-04-28 23:11:00 - root - INFO - Round #1 => test_data=b'b"bug!1234"'
+2025-04-28 23:11:00 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:11:00 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:11:00 - root - INFO - Stopped => reason=breakpoint hit. We'll check regs again on next loop.
+2025-04-28 23:11:00 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:11:00 - root - INFO - CPU not halted => sending interrupt (attempt 2).
+2025-04-28 23:11:05 - root - WARNING - Interrupt timed out, target may not have halted.
+2025-04-28 23:11:15 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:11:15 - root - INFO - Attempting to force halt CPU, attempt 3 of 5.
+2025-04-28 23:11:15 - root - INFO - CPU is halted.
+2025-04-28 23:11:15 - root - INFO - Deleted all breakpoints.
+2025-04-28 23:11:15 - root - INFO - Setting breakpoint at 0x8266a
+2025-04-28 23:11:15 - root - INFO - Breakpoint set at 0x8266a, bkptno=2
+2025-04-28 23:11:15 - root - INFO - Setting breakpoint at 0x80620
+2025-04-28 23:11:15 - root - INFO - Breakpoint set at 0x80620, bkptno=3
+2025-04-28 23:11:15 - root - INFO - Setting breakpoint at 0x81fbc
+2025-04-28 23:11:15 - root - INFO - Breakpoint set at 0x81fbc, bkptno=4
+2025-04-28 23:11:15 - root - INFO - Setting breakpoint at 0x802c2
+2025-04-28 23:11:15 - root - INFO - Breakpoint set at 0x802c2, bkptno=5
+2025-04-28 23:11:15 - root - INFO - Setting breakpoint at 0x81e26
+2025-04-28 23:11:15 - root - INFO - Breakpoint set at 0x81e26, bkptno=6
+2025-04-28 23:11:15 - root - INFO - Setting breakpoint at 0x80000
+2025-04-28 23:11:15 - root - INFO - Breakpoint set at 0x80000, bkptno=7
+2025-04-28 23:11:15 - root - INFO - [DEF chunk attempt] => will wait for 'input request'
+2025-04-28 23:11:15 - root - INFO - Child requested input => provide. sending b'b"bug!1234"'.
+2025-04-28 23:11:15 - root - INFO - Sent 11 bytes to SUT.
+2025-04-28 23:11:15 - root - INFO - Received request (A) from the board.
+2025-04-28 23:11:15 - root - INFO - GDB => reason=breakpoint hit, payload=5
+2025-04-28 23:11:15 - root - INFO - Def triggered => 0x802c3
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802C3, idx=707
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802C3, idx=707
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802C5, idx=709
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802C5, idx=709
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802DD, idx=733
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D9, idx=729
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802E3, idx=739
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802C9, idx=713
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802DD, idx=733
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D7, idx=727
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D1, idx=721
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D1, idx=721
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802DF, idx=735
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802DF, idx=735
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802C9, idx=713
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D1, idx=721
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802DD, idx=733
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802CF, idx=719
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802E1, idx=737
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D1, idx=721
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802E1, idx=737
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802E3, idx=739
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D9, idx=729
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D3, idx=723
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D5, idx=725
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D1, idx=721
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D7, idx=727
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802CD, idx=717
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802DD, idx=733
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802DD, idx=733
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802E1, idx=737
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802CD, idx=717
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D1, idx=721
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D9, idx=729
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D9, idx=729
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802CF, idx=719
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D3, idx=723
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802C3, idx=707
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802C9, idx=713
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802CD, idx=717
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802C9, idx=713
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802C9, idx=713
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802C3, idx=707
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D1, idx=721
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802DD, idx=733
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802E3, idx=739
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802E3, idx=739
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D9, idx=729
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802C3, idx=707
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D5, idx=725
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D3, idx=723
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802CD, idx=717
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802C3, idx=707
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802DF, idx=735
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D3, idx=723
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802CF, idx=719
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802DF, idx=735
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802C9, idx=713
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802DF, idx=735
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D1, idx=721
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802E1, idx=737
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D9, idx=729
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D5, idx=725
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000802D3, idx=723
+2025-04-28 23:11:15 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:11:15 - root - INFO - Removed breakpoint id=5
+2025-04-28 23:11:15 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:11:15 - root - INFO - CPU is halted.
+2025-04-28 23:11:15 - root - INFO - Handling uses for def=0x802c3. Found 2 uses.
+2025-04-28 23:11:15 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:11:15 - root - INFO - CPU is halted.
+2025-04-28 23:11:15 - root - INFO - Setting breakpoint at 0x802c2
+2025-04-28 23:11:15 - root - INFO - Breakpoint set at 0x802c2, bkptno=8
+2025-04-28 23:11:15 - root - INFO - Setting breakpoint at 0x802e8
+2025-04-28 23:11:15 - root - INFO - Breakpoint set at 0x802e8, bkptno=9
+2025-04-28 23:11:15 - root - INFO - Sent 11 bytes to SUT.
+2025-04-28 23:11:15 - root - INFO - Unknown breakpoint => 3, continuing.
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080620, idx=1568
+2025-04-28 23:11:15 - root - INFO - Removed breakpoint id=3
+2025-04-28 23:11:15 - root - INFO - Use triggered => 0x802e9
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def-use coverage => def=0x000802C3, use=0x000802E9, idx=42
+2025-04-28 23:11:15 - root - INFO - Removed breakpoint id=9
+2025-04-28 23:11:15 - root - INFO - Unknown breakpoint => 4, continuing.
+2025-04-28 23:11:15 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081FBC, idx=8124
+2025-04-28 23:11:15 - root - INFO - Removed breakpoint id=4
+2025-04-28 23:11:15 - root - INFO - Received request (A) from the board.
+2025-04-28 23:11:15 - root - INFO - Sent 11 bytes to SUT.
+2025-04-28 23:11:15 - root - INFO - Received request (A) from the board.
+2025-04-28 23:11:15 - root - INFO - Sent 11 bytes to SUT.
+2025-04-28 23:11:15 - root - INFO - Received request (A) from the board.
+2025-04-28 23:11:15 - root - INFO - Sent 11 bytes to SUT.
+2025-04-28 23:11:15 - root - INFO - Received request (A) from the board.
+2025-04-28 23:11:20 - root - INFO - No use triggered this attempt.
+2025-04-28 23:11:20 - fuzzing.coverage_manager - INFO - New def coverage found => index 707
+2025-04-28 23:11:20 - fuzzing.coverage_manager - INFO - New def coverage found => index 709
+2025-04-28 23:11:20 - fuzzing.coverage_manager - INFO - New def coverage found => index 713
+2025-04-28 23:11:20 - fuzzing.coverage_manager - INFO - New def coverage found => index 717
+2025-04-28 23:11:20 - fuzzing.coverage_manager - INFO - New def coverage found => index 719
+2025-04-28 23:11:20 - fuzzing.coverage_manager - INFO - New def coverage found => index 721
+2025-04-28 23:11:20 - fuzzing.coverage_manager - INFO - New def coverage found => index 723
+2025-04-28 23:11:20 - fuzzing.coverage_manager - INFO - New def coverage found => index 725
+2025-04-28 23:11:20 - fuzzing.coverage_manager - INFO - New def coverage found => index 727
+2025-04-28 23:11:20 - fuzzing.coverage_manager - INFO - New def coverage found => index 729
+2025-04-28 23:11:20 - fuzzing.coverage_manager - INFO - New def coverage found => index 733
+2025-04-28 23:11:20 - fuzzing.coverage_manager - INFO - New def coverage found => index 735
+2025-04-28 23:11:20 - fuzzing.coverage_manager - INFO - New def coverage found => index 737
+2025-04-28 23:11:20 - fuzzing.coverage_manager - INFO - New def coverage found => index 739
+2025-04-28 23:11:20 - fuzzing.coverage_manager - INFO - New def coverage found => index 1568
+2025-04-28 23:11:20 - fuzzing.coverage_manager - INFO - New def coverage found => index 8124
+2025-04-28 23:11:20 - fuzzing.coverage_manager - INFO - New coverage detected.
+2025-04-28 23:11:20 - root - INFO - New coverage from uses => add input to corpus.
+2025-04-28 23:11:20 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:11:20 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:11:30 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:11:30 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:11:30 - root - INFO - CPU is halted.
+2025-04-28 23:11:31 - root - INFO - Removed breakpoint id=8
+2025-04-28 23:11:31 - root - INFO - End of use chunk, continuing to next chunk.
+2025-04-28 23:11:31 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-04-28 23:11:32 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-04-28 23:11:32 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-04-28 23:11:33 - root - INFO - [DEF chunk attempt] => will wait for 'input request'
+2025-04-28 23:11:33 - root - INFO - Child requested input => provide. sending b'b"bug!1234"'.
+2025-04-28 23:11:33 - root - INFO - Sent 11 bytes to SUT.
+2025-04-28 23:11:33 - root - INFO - Received request (A) from the board.
+2025-04-28 23:11:33 - root - INFO - GDB => reason=timed out, payload=None
+2025-04-28 23:11:33 - root - WARNING - === Timeout / Stuck detected ===
+2025-04-28 23:11:43 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-04-28 23:11:43 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:11:43 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:11:53 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:11:53 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:11:53 - root - INFO - CPU is halted.
+2025-04-28 23:11:53 - root - INFO - Removed breakpoint id=2
+2025-04-28 23:11:53 - root - INFO - Removed breakpoint id=3
+2025-04-28 23:11:53 - root - INFO - Removed breakpoint id=4
+2025-04-28 23:11:53 - root - INFO - Removed breakpoint id=6
+2025-04-28 23:11:53 - root - INFO - Removed breakpoint id=7
+2025-04-28 23:11:53 - root - INFO - End of round #1, coverage not been reset.
+
+2025-04-28 23:11:53 - root - INFO - === Starting Round #2 ===
+2025-04-28 23:11:53 - root - INFO - after mutation
+2025-04-28 23:11:53 - root - INFO - Round #2 => test_data=b'b"b!12333"'
+2025-04-28 23:11:53 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:11:53 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:12:03 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:12:03 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:12:03 - root - INFO - CPU is halted.
+2025-04-28 23:12:03 - root - INFO - Deleted all breakpoints.
+2025-04-28 23:12:03 - root - INFO - Setting breakpoint at 0x81dc8
+2025-04-28 23:12:03 - root - INFO - Breakpoint set at 0x81dc8, bkptno=10
+2025-04-28 23:12:03 - root - INFO - Setting breakpoint at 0x80cc8
+2025-04-28 23:12:03 - root - INFO - Breakpoint set at 0x80cc8, bkptno=11
+2025-04-28 23:12:03 - root - INFO - Setting breakpoint at 0x81f76
+2025-04-28 23:12:03 - root - INFO - Breakpoint set at 0x81f76, bkptno=12
+2025-04-28 23:12:03 - root - INFO - Setting breakpoint at 0x81d98
+2025-04-28 23:12:03 - root - INFO - Breakpoint set at 0x81d98, bkptno=13
+2025-04-28 23:12:03 - root - INFO - Setting breakpoint at 0x81cf4
+2025-04-28 23:12:03 - root - INFO - Breakpoint set at 0x81cf4, bkptno=14
+2025-04-28 23:12:03 - root - INFO - Setting breakpoint at 0x81e10
+2025-04-28 23:12:03 - root - INFO - Breakpoint set at 0x81e10, bkptno=15
+2025-04-28 23:12:03 - root - INFO - [DEF chunk attempt] => will wait for 'input request'
+2025-04-28 23:12:03 - root - INFO - Child requested input => provide. sending b'b"b!12333"'.
+2025-04-28 23:12:03 - root - INFO - Sent 10 bytes to SUT.
+2025-04-28 23:12:03 - root - INFO - Received request (A) from the board.
+2025-04-28 23:12:03 - root - INFO - GDB => reason=breakpoint hit, payload=11
+2025-04-28 23:12:03 - root - INFO - Def triggered => 0x80cc9
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080CC9, idx=3273
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080CC9, idx=3273
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080CC9, idx=3273
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080CC9, idx=3273
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080CC9, idx=3273
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - root - INFO - Removed breakpoint id=11
+2025-04-28 23:12:03 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:12:03 - root - INFO - CPU is halted.
+2025-04-28 23:12:03 - root - INFO - [DEF chunk attempt] => will wait for 'input request'
+2025-04-28 23:12:03 - root - INFO - Child requested input => provide. sending b'b"b!12333"'.
+2025-04-28 23:12:03 - root - INFO - Sent 10 bytes to SUT.
+2025-04-28 23:12:03 - root - INFO - GDB => reason=breakpoint hit, payload=14
+2025-04-28 23:12:03 - root - INFO - Def triggered => 0x81cf5
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF5, idx=7413
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF5, idx=7413
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF5, idx=7413
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF9, idx=7417
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF9, idx=7417
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF9, idx=7417
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF5, idx=7413
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF5, idx=7413
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF9, idx=7417
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF5, idx=7413
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF5, idx=7413
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF9, idx=7417
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF5, idx=7413
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF9, idx=7417
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF5, idx=7413
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF5, idx=7413
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF5, idx=7413
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF5, idx=7413
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF5, idx=7413
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF5, idx=7413
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF5, idx=7413
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CF5, idx=7413
+2025-04-28 23:12:03 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:12:03 - root - INFO - Removed breakpoint id=14
+2025-04-28 23:12:03 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:12:03 - root - INFO - CPU is halted.
+2025-04-28 23:12:03 - root - INFO - Handling uses for def=0x81cf5. Found 20 uses.
+2025-04-28 23:12:03 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:12:03 - root - INFO - CPU is halted.
+2025-04-28 23:12:03 - root - INFO - Setting breakpoint at 0x81cf4
+2025-04-28 23:12:03 - root - INFO - Breakpoint set at 0x81cf4, bkptno=16
+2025-04-28 23:12:03 - root - INFO - Setting breakpoint at 0x81cfa
+2025-04-28 23:12:03 - root - INFO - Breakpoint set at 0x81cfa, bkptno=17
+2025-04-28 23:12:03 - root - INFO - Setting breakpoint at 0x81d04
+2025-04-28 23:12:03 - root - INFO - Breakpoint set at 0x81d04, bkptno=18
+2025-04-28 23:12:03 - root - INFO - Setting breakpoint at 0x81d0a
+2025-04-28 23:12:03 - root - INFO - Breakpoint set at 0x81d0a, bkptno=19
+2025-04-28 23:12:03 - root - INFO - Setting breakpoint at 0x81d4a
+2025-04-28 23:12:03 - root - INFO - Breakpoint set at 0x81d4a, bkptno=20
+2025-04-28 23:12:03 - root - INFO - Setting breakpoint at 0x81d58
+2025-04-28 23:12:03 - root - INFO - Breakpoint set at 0x81d58, bkptno=21
+2025-04-28 23:12:04 - root - INFO - Use triggered => 0x81cfb
+2025-04-28 23:12:04 - fuzzing.coverage_manager - INFO - Updating def-use coverage => def=0x00081CF5, use=0x00081CFB, idx=14
+2025-04-28 23:12:04 - root - INFO - Removed breakpoint id=17
+2025-04-28 23:12:04 - root - INFO - Use triggered => 0x81d05
+2025-04-28 23:12:04 - fuzzing.coverage_manager - INFO - Updating def-use coverage => def=0x00081CF5, use=0x00081D05, idx=496
+2025-04-28 23:12:04 - root - INFO - Removed breakpoint id=18
+2025-04-28 23:12:04 - root - INFO - Use triggered => 0x81d59
+2025-04-28 23:12:04 - fuzzing.coverage_manager - INFO - Updating def-use coverage => def=0x00081CF5, use=0x00081D59, idx=428
+2025-04-28 23:12:04 - root - INFO - Removed breakpoint id=21
+2025-04-28 23:12:04 - root - INFO - Unknown breakpoint => 12, continuing.
+2025-04-28 23:12:04 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081F76, idx=8054
+2025-04-28 23:12:04 - root - INFO - Removed breakpoint id=12
+2025-04-28 23:12:04 - root - INFO - Received request (A) from the board.
+2025-04-28 23:12:04 - root - INFO - Sent 10 bytes to SUT.
+2025-04-28 23:12:04 - root - INFO - Received request (A) from the board.
+2025-04-28 23:12:04 - root - INFO - Sent 10 bytes to SUT.
+2025-04-28 23:12:04 - root - INFO - Received request (A) from the board.
+2025-04-28 23:12:04 - root - INFO - Sent 10 bytes to SUT.
+2025-04-28 23:12:04 - root - INFO - Received request (A) from the board.
+2025-04-28 23:12:04 - root - INFO - Sent 10 bytes to SUT.
+2025-04-28 23:12:04 - root - INFO - Received request (A) from the board.
+2025-04-28 23:12:04 - root - INFO - Sent 10 bytes to SUT.
+2025-04-28 23:12:04 - root - INFO - Received request (A) from the board.
+2025-04-28 23:12:09 - root - INFO - No use triggered this attempt.
+2025-04-28 23:12:09 - fuzzing.coverage_manager - INFO - New def coverage found => index 3273
+2025-04-28 23:12:09 - fuzzing.coverage_manager - INFO - New def coverage found => index 7413
+2025-04-28 23:12:09 - fuzzing.coverage_manager - INFO - New def coverage found => index 7417
+2025-04-28 23:12:09 - fuzzing.coverage_manager - INFO - New def coverage found => index 8054
+2025-04-28 23:12:09 - fuzzing.coverage_manager - INFO - New coverage detected.
+2025-04-28 23:12:09 - root - INFO - New coverage from uses => add input to corpus.
+2025-04-28 23:12:09 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:12:09 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:12:19 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:12:19 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:12:19 - root - INFO - CPU is halted.
+2025-04-28 23:12:20 - root - INFO - Removed breakpoint id=16
+2025-04-28 23:12:20 - root - INFO - Removed breakpoint id=19
+2025-04-28 23:12:20 - root - INFO - Removed breakpoint id=20
+2025-04-28 23:12:20 - root - INFO - End of use chunk, continuing to next chunk.
+2025-04-28 23:12:20 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:12:20 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:12:30 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:12:30 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:12:30 - root - INFO - CPU is halted.
+2025-04-28 23:12:30 - root - INFO - Setting breakpoint at 0x81d68
+2025-04-28 23:12:30 - root - INFO - Breakpoint set at 0x81d68, bkptno=22
+2025-04-28 23:12:30 - root - INFO - Setting breakpoint at 0x81d8c
+2025-04-28 23:12:30 - root - INFO - Breakpoint set at 0x81d8c, bkptno=23
+2025-04-28 23:12:30 - root - INFO - Setting breakpoint at 0x81dae
+2025-04-28 23:12:30 - root - INFO - Breakpoint set at 0x81dae, bkptno=24
+2025-04-28 23:12:30 - root - INFO - Setting breakpoint at 0x81e2e
+2025-04-28 23:12:30 - root - INFO - Breakpoint set at 0x81e2e, bkptno=25
+2025-04-28 23:12:30 - root - INFO - Setting breakpoint at 0x81e3a
+2025-04-28 23:12:30 - root - INFO - Breakpoint set at 0x81e3a, bkptno=26
+2025-04-28 23:12:30 - root - INFO - Setting breakpoint at 0x81eb6
+2025-04-28 23:12:30 - root - INFO - Breakpoint set at 0x81eb6, bkptno=27
+2025-04-28 23:12:30 - root - INFO - Sent 10 bytes to SUT.
+2025-04-28 23:12:30 - root - INFO - Use triggered => 0x81d69
+2025-04-28 23:12:30 - fuzzing.coverage_manager - INFO - Updating def-use coverage => def=0x00081CF5, use=0x00081D69, idx=412
+2025-04-28 23:12:30 - root - INFO - Removed breakpoint id=22
+2025-04-28 23:12:30 - root - INFO - Use triggered => 0x81eb7
+2025-04-28 23:12:30 - fuzzing.coverage_manager - INFO - Updating def-use coverage => def=0x00081CF5, use=0x00081EB7, idx=578
+2025-04-28 23:12:30 - root - INFO - Removed breakpoint id=27
+2025-04-28 23:12:30 - root - INFO - Received request (A) from the board.
+2025-04-28 23:12:30 - root - INFO - Sent 10 bytes to SUT.
+2025-04-28 23:12:30 - root - INFO - Received request (A) from the board.
+2025-04-28 23:12:30 - root - INFO - Sent 10 bytes to SUT.
+2025-04-28 23:12:30 - root - INFO - Received request (A) from the board.
+2025-04-28 23:12:35 - root - INFO - No use triggered this attempt.
+2025-04-28 23:12:35 - fuzzing.coverage_manager - INFO - New coverage detected.
+2025-04-28 23:12:35 - root - INFO - New coverage from uses => add input to corpus.
+2025-04-28 23:12:35 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:12:35 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:12:45 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:12:45 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:12:46 - root - INFO - CPU is halted.
+2025-04-28 23:12:47 - root - INFO - Removed breakpoint id=23
+2025-04-28 23:12:47 - root - INFO - Removed breakpoint id=24
+2025-04-28 23:12:47 - root - INFO - Removed breakpoint id=25
+2025-04-28 23:12:47 - root - INFO - Removed breakpoint id=26
+2025-04-28 23:12:47 - root - INFO - End of use chunk, continuing to next chunk.
+2025-04-28 23:12:47 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:12:47 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:12:57 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:12:57 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:12:57 - root - INFO - CPU is halted.
+2025-04-28 23:12:57 - root - INFO - Setting breakpoint at 0x81ec2
+2025-04-28 23:12:57 - root - INFO - Breakpoint set at 0x81ec2, bkptno=28
+2025-04-28 23:12:57 - root - INFO - Setting breakpoint at 0x81ecc
+2025-04-28 23:12:57 - root - INFO - Breakpoint set at 0x81ecc, bkptno=29
+2025-04-28 23:12:57 - root - INFO - Setting breakpoint at 0x81fd8
+2025-04-28 23:12:57 - root - INFO - Breakpoint set at 0x81fd8, bkptno=30
+2025-04-28 23:12:57 - root - INFO - Setting breakpoint at 0x81fee
+2025-04-28 23:12:57 - root - INFO - Breakpoint set at 0x81fee, bkptno=31
+2025-04-28 23:12:57 - root - INFO - Setting breakpoint at 0x82036
+2025-04-28 23:12:57 - root - INFO - Breakpoint set at 0x82036, bkptno=32
+2025-04-28 23:12:57 - root - INFO - Setting breakpoint at 0x82084
+2025-04-28 23:12:57 - root - INFO - Breakpoint set at 0x82084, bkptno=33
+2025-04-28 23:12:57 - root - INFO - Sent 10 bytes to SUT.
+2025-04-28 23:12:57 - root - INFO - Use triggered => 0x81ecd
+2025-04-28 23:12:57 - fuzzing.coverage_manager - INFO - Updating def-use coverage => def=0x00081CF5, use=0x00081ECD, idx=568
+2025-04-28 23:12:57 - root - INFO - Removed breakpoint id=29
+2025-04-28 23:12:57 - root - INFO - Use triggered => 0x81fd9
+2025-04-28 23:12:57 - fuzzing.coverage_manager - INFO - Updating def-use coverage => def=0x00081CF5, use=0x00081FD9, idx=812
+2025-04-28 23:12:57 - root - INFO - Removed breakpoint id=30
+2025-04-28 23:12:57 - root - INFO - Use triggered => 0x81fef
+2025-04-28 23:12:57 - fuzzing.coverage_manager - INFO - Updating def-use coverage => def=0x00081CF5, use=0x00081FEF, idx=794
+2025-04-28 23:12:57 - root - INFO - Removed breakpoint id=31
+2025-04-28 23:12:57 - root - INFO - Received request (A) from the board.
+2025-04-28 23:12:57 - root - INFO - Sent 10 bytes to SUT.
+2025-04-28 23:12:57 - root - INFO - Received request (A) from the board.
+2025-04-28 23:12:57 - root - INFO - Sent 10 bytes to SUT.
+2025-04-28 23:12:57 - root - INFO - Received request (A) from the board.
+2025-04-28 23:12:57 - root - INFO - Sent 10 bytes to SUT.
+2025-04-28 23:12:57 - root - INFO - Received request (A) from the board.
+2025-04-28 23:13:02 - root - INFO - No use triggered this attempt.
+2025-04-28 23:13:02 - fuzzing.coverage_manager - INFO - New coverage detected.
+2025-04-28 23:13:02 - root - INFO - New coverage from uses => add input to corpus.
+2025-04-28 23:13:02 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:13:02 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:13:12 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:13:12 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:13:12 - root - INFO - CPU is halted.
+2025-04-28 23:13:13 - root - INFO - Removed breakpoint id=28
+2025-04-28 23:13:13 - root - INFO - Removed breakpoint id=32
+2025-04-28 23:13:13 - root - INFO - Removed breakpoint id=33
+2025-04-28 23:13:13 - root - INFO - End of use chunk, continuing to next chunk.
+2025-04-28 23:13:13 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:13:13 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:13:23 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:13:23 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:13:23 - root - INFO - CPU is halted.
+2025-04-28 23:13:23 - root - INFO - Setting breakpoint at 0x8215a
+2025-04-28 23:13:23 - root - INFO - Breakpoint set at 0x8215a, bkptno=34
+2025-04-28 23:13:23 - root - INFO - Setting breakpoint at 0x82196
+2025-04-28 23:13:23 - root - INFO - Breakpoint set at 0x82196, bkptno=35
+2025-04-28 23:13:23 - root - INFO - Sent 10 bytes to SUT.
+2025-04-28 23:13:23 - root - INFO - Received request (A) from the board.
+2025-04-28 23:13:28 - root - INFO - No use triggered this attempt.
+2025-04-28 23:13:28 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-04-28 23:13:28 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:13:28 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:13:38 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:13:38 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:13:38 - root - INFO - CPU is halted.
+2025-04-28 23:13:39 - root - INFO - Removed breakpoint id=34
+2025-04-28 23:13:39 - root - INFO - Removed breakpoint id=35
+2025-04-28 23:13:39 - root - INFO - End of use chunk, continuing to next chunk.
+2025-04-28 23:13:39 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-04-28 23:13:40 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-04-28 23:13:40 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-04-28 23:13:41 - root - INFO - [DEF chunk attempt] => will wait for 'input request'
+2025-04-28 23:13:41 - root - INFO - Child requested input => provide. sending b'b"b!12333"'.
+2025-04-28 23:13:41 - root - INFO - Sent 10 bytes to SUT.
+2025-04-28 23:13:41 - root - INFO - Received request (A) from the board.
+2025-04-28 23:13:41 - root - INFO - GDB => reason=timed out, payload=None
+2025-04-28 23:13:41 - root - WARNING - === Timeout / Stuck detected ===
+2025-04-28 23:13:51 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-04-28 23:13:51 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:13:51 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:14:01 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:14:01 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:14:01 - root - INFO - CPU is halted.
+2025-04-28 23:14:01 - root - INFO - Removed breakpoint id=10
+2025-04-28 23:14:01 - root - INFO - Removed breakpoint id=12
+2025-04-28 23:14:01 - root - INFO - Removed breakpoint id=13
+2025-04-28 23:14:01 - root - INFO - Removed breakpoint id=15
+2025-04-28 23:14:01 - root - INFO - End of round #2, coverage not been reset.
+
+2025-04-28 23:14:01 - root - INFO - === Starting Round #3 ===
+2025-04-28 23:14:01 - root - INFO - no mutation
+2025-04-28 23:14:01 - root - INFO - Round #3 => test_data=b'b"b!12333"'
+2025-04-28 23:14:01 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:14:01 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:14:11 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:14:11 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:14:11 - root - INFO - CPU is halted.
+2025-04-28 23:14:11 - root - INFO - Deleted all breakpoints.
+2025-04-28 23:14:11 - root - INFO - Setting breakpoint at 0x80e9a
+2025-04-28 23:14:11 - root - INFO - Breakpoint set at 0x80e9a, bkptno=36
+2025-04-28 23:14:11 - root - INFO - Setting breakpoint at 0x82590
+2025-04-28 23:14:11 - root - INFO - Breakpoint set at 0x82590, bkptno=37
+2025-04-28 23:14:11 - root - INFO - Setting breakpoint at 0x8256e
+2025-04-28 23:14:11 - root - INFO - Breakpoint set at 0x8256e, bkptno=38
+2025-04-28 23:14:11 - root - INFO - Setting breakpoint at 0x8258a
+2025-04-28 23:14:11 - root - INFO - Breakpoint set at 0x8258a, bkptno=39
+2025-04-28 23:14:11 - root - INFO - Setting breakpoint at 0x82534
+2025-04-28 23:14:11 - root - INFO - Breakpoint set at 0x82534, bkptno=40
+2025-04-28 23:14:11 - root - INFO - Setting breakpoint at 0x8063c
+2025-04-28 23:14:11 - root - INFO - Breakpoint set at 0x8063c, bkptno=41
+2025-04-28 23:14:11 - root - INFO - [DEF chunk attempt] => will wait for 'input request'
+2025-04-28 23:14:11 - root - INFO - Child requested input => provide. sending b'b"b!12333"'.
+2025-04-28 23:14:11 - root - INFO - Sent 10 bytes to SUT.
+2025-04-28 23:14:11 - root - INFO - Received request (A) from the board.
+2025-04-28 23:14:11 - root - INFO - GDB => reason=breakpoint hit, payload=41
+2025-04-28 23:14:11 - root - INFO - Def triggered => 0x8063d
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063F, idx=1599
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063F, idx=1599
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063F, idx=1599
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063F, idx=1599
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063F, idx=1599
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063F, idx=1599
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008063D, idx=1597
+2025-04-28 23:14:11 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:14:11 - root - INFO - Removed breakpoint id=41
+2025-04-28 23:14:11 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:14:11 - root - INFO - CPU is halted.
+2025-04-28 23:14:11 - root - INFO - Handling uses for def=0x8063d. Found 2 uses.
+2025-04-28 23:14:11 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:14:11 - root - INFO - CPU is halted.
+2025-04-28 23:14:11 - root - INFO - Setting breakpoint at 0x8063c
+2025-04-28 23:14:11 - root - INFO - Breakpoint set at 0x8063c, bkptno=42
+2025-04-28 23:14:11 - root - INFO - Setting breakpoint at 0x80640
+2025-04-28 23:14:11 - root - INFO - Breakpoint set at 0x80640, bkptno=43
+2025-04-28 23:14:11 - root - INFO - Sent 10 bytes to SUT.
+2025-04-28 23:14:16 - root - INFO - No use triggered this attempt.
+2025-04-28 23:14:16 - fuzzing.coverage_manager - INFO - New def coverage found => index 1597
+2025-04-28 23:14:16 - fuzzing.coverage_manager - INFO - New def coverage found => index 1599
+2025-04-28 23:14:16 - fuzzing.coverage_manager - INFO - New coverage detected.
+2025-04-28 23:14:16 - root - INFO - New coverage from uses => add input to corpus.
+2025-04-28 23:14:16 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:14:16 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:14:26 - root - INFO - Stopped by user.
+2025-04-28 23:20:09 - root - INFO - === Starting main with snippet-based SerialConnection ===
+2025-04-28 23:20:09 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-04-28 23:20:09 - root - INFO - Established connection on /dev/ttyACM1 at 38400 baud.
+2025-04-28 23:20:10 - root - INFO - GDB & SerialConnection initialized.
+2025-04-28 23:20:14 - root - INFO - Initial stop => reason=stopped, no reason given, payload={'type': 'notify', 'message': 'stopped', 'payload': {'frame': {'addr': '0x00080bcc', 'func': '__halt', 'args': [], 'file': '/home/kai/.arduino15/packages/arduino/hardware/sam/1.6.12/cores/arduino/cortex_handlers.c', 'fullname': '/home/kai/.arduino15/packages/arduino/hardware/sam/1.6.12/cores/arduino/cortex_handlers.c', 'line': '26', 'arch': 'armv7'}, 'thread-id': '1', 'stopped-threads': 'all'}, 'token': None, 'stream': 'stdout'}
+2025-04-28 23:20:14 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-04-28 23:20:14 - root - INFO - === Starting Round #1 ===
+2025-04-28 23:20:14 - root - INFO - no mutation
+2025-04-28 23:20:14 - root - INFO - Round #1 => test_data=b'b"bug!1234"'
+2025-04-28 23:20:14 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:20:14 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:20:14 - root - INFO - Stopped => reason=breakpoint hit. We'll check regs again on next loop.
+2025-04-28 23:20:14 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:20:14 - root - INFO - CPU is halted.
+2025-04-28 23:20:14 - root - INFO - Deleted all breakpoints.
+2025-04-28 23:20:14 - root - INFO - Setting breakpoint at 0x80cf6
+2025-04-28 23:20:14 - root - INFO - Breakpoint set at 0x80cf6, bkptno=2
+2025-04-28 23:20:14 - root - INFO - Setting breakpoint at 0x82488
+2025-04-28 23:20:14 - root - INFO - Breakpoint set at 0x82488, bkptno=3
+2025-04-28 23:20:14 - root - INFO - Setting breakpoint at 0x8081a
+2025-04-28 23:20:14 - root - INFO - Breakpoint set at 0x8081a, bkptno=4
+2025-04-28 23:20:14 - root - INFO - Setting breakpoint at 0x82574
+2025-04-28 23:20:14 - root - INFO - Breakpoint set at 0x82574, bkptno=5
+2025-04-28 23:20:14 - root - INFO - Setting breakpoint at 0x80eae
+2025-04-28 23:20:14 - root - INFO - Breakpoint set at 0x80eae, bkptno=6
+2025-04-28 23:20:14 - root - INFO - Setting breakpoint at 0x80cca
+2025-04-28 23:20:14 - root - INFO - Breakpoint set at 0x80cca, bkptno=7
+2025-04-28 23:20:14 - root - INFO - [DEF chunk attempt] => will wait for 'input request'
+2025-04-28 23:20:14 - root - INFO - GDB => reason=interrupt, payload=526022
+2025-04-28 23:20:14 - root - WARNING - Unexpected stop => reason=interrupt, payload=526022
+2025-04-28 23:20:14 - root - WARNING - Interrupt => treat as crash.
+2025-04-28 23:20:14 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-04-28 23:20:14 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:20:14 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:20:24 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:20:24 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:20:24 - root - INFO - CPU is halted.
+2025-04-28 23:20:24 - root - INFO - Removed breakpoint id=2
+2025-04-28 23:20:24 - root - INFO - Removed breakpoint id=3
+2025-04-28 23:20:24 - root - INFO - Removed breakpoint id=4
+2025-04-28 23:20:24 - root - INFO - Removed breakpoint id=5
+2025-04-28 23:20:24 - root - INFO - Removed breakpoint id=6
+2025-04-28 23:20:24 - root - INFO - Removed breakpoint id=7
+2025-04-28 23:20:24 - root - INFO - End of round #1, coverage not been reset.
+
+2025-04-28 23:20:24 - root - INFO - === Starting Round #2 ===
+2025-04-28 23:20:24 - root - INFO - after mutation
+2025-04-28 23:20:24 - root - INFO - Round #2 => test_data=b'b"buw!1g233"'
+2025-04-28 23:20:24 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:20:24 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:20:34 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:20:34 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:20:34 - root - INFO - CPU is halted.
+2025-04-28 23:20:34 - root - INFO - Deleted all breakpoints.
+2025-04-28 23:20:34 - root - INFO - Setting breakpoint at 0x801b4
+2025-04-28 23:20:34 - root - INFO - Breakpoint set at 0x801b4, bkptno=8
+2025-04-28 23:20:34 - root - INFO - Setting breakpoint at 0x82778
+2025-04-28 23:20:34 - root - INFO - Breakpoint set at 0x82778, bkptno=9
+2025-04-28 23:20:34 - root - INFO - Setting breakpoint at 0x820c0
+2025-04-28 23:20:34 - root - INFO - Breakpoint set at 0x820c0, bkptno=10
+2025-04-28 23:20:34 - root - INFO - Setting breakpoint at 0x8055c
+2025-04-28 23:20:34 - root - INFO - Breakpoint set at 0x8055c, bkptno=11
+2025-04-28 23:20:34 - root - INFO - Setting breakpoint at 0x80cca
+2025-04-28 23:20:34 - root - INFO - Breakpoint set at 0x80cca, bkptno=12
+2025-04-28 23:20:34 - root - INFO - Setting breakpoint at 0x82534
+2025-04-28 23:20:34 - root - INFO - Breakpoint set at 0x82534, bkptno=13
+2025-04-28 23:20:34 - root - INFO - [DEF chunk attempt] => will wait for 'input request'
+2025-04-28 23:20:34 - root - INFO - GDB => reason=breakpoint hit, payload=11
+2025-04-28 23:20:34 - root - INFO - Def triggered => 0x8055d
+2025-04-28 23:20:34 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008055D, idx=1373
+2025-04-28 23:20:34 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008055D, idx=1373
+2025-04-28 23:20:34 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080561, idx=1377
+2025-04-28 23:20:34 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:34 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080561, idx=1377
+2025-04-28 23:20:34 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:34 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008055F, idx=1375
+2025-04-28 23:20:34 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:34 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008055F, idx=1375
+2025-04-28 23:20:34 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:34 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008055D, idx=1373
+2025-04-28 23:20:34 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:34 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008055D, idx=1373
+2025-04-28 23:20:34 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:34 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008055D, idx=1373
+2025-04-28 23:20:34 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:34 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008055D, idx=1373
+2025-04-28 23:20:34 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:34 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008055D, idx=1373
+2025-04-28 23:20:34 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:34 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008055F, idx=1375
+2025-04-28 23:20:34 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:34 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008055F, idx=1375
+2025-04-28 23:20:34 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:34 - root - INFO - Removed breakpoint id=11
+2025-04-28 23:20:34 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:20:35 - root - INFO - CPU is halted.
+2025-04-28 23:20:35 - root - INFO - Handling uses for def=0x8055d. Found 1 uses.
+2025-04-28 23:20:35 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:20:35 - root - INFO - CPU is halted.
+2025-04-28 23:20:35 - root - INFO - Setting breakpoint at 0x8055c
+2025-04-28 23:20:35 - root - INFO - Breakpoint set at 0x8055c, bkptno=14
+2025-04-28 23:20:35 - root - INFO - Use triggered => 0x8055d
+2025-04-28 23:20:35 - fuzzing.coverage_manager - INFO - Updating def-use coverage => def=0x0008055D, use=0x0008055D, idx=0
+2025-04-28 23:20:35 - root - INFO - Removed breakpoint id=14
+2025-04-28 23:20:35 - fuzzing.coverage_manager - INFO - New def coverage found => index 1373
+2025-04-28 23:20:35 - fuzzing.coverage_manager - INFO - New def coverage found => index 1375
+2025-04-28 23:20:35 - fuzzing.coverage_manager - INFO - New def coverage found => index 1377
+2025-04-28 23:20:35 - fuzzing.coverage_manager - INFO - New coverage detected.
+2025-04-28 23:20:35 - root - INFO - New coverage from uses => add input to corpus.
+2025-04-28 23:20:35 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:20:35 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:20:35 - root - INFO - Received request (A) from the board.
+2025-04-28 23:20:35 - root - INFO - Sent 12 bytes to SUT.
+2025-04-28 23:20:45 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:20:45 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:20:45 - root - INFO - CPU is halted.
+2025-04-28 23:20:46 - root - INFO - End of use chunk, continuing to next chunk.
+2025-04-28 23:20:46 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-04-28 23:20:46 - root - INFO - Received request (A) from the board.
+2025-04-28 23:20:46 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-04-28 23:20:47 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-04-28 23:20:47 - root - INFO - [DEF chunk attempt] => will wait for 'input request'
+2025-04-28 23:20:47 - root - INFO - Child requested input => provide. sending b'b"buw!1g233"'.
+2025-04-28 23:20:47 - root - INFO - Sent 12 bytes to SUT.
+2025-04-28 23:20:47 - root - INFO - GDB => reason=breakpoint hit, payload=8
+2025-04-28 23:20:47 - root - INFO - Def triggered => 0x801b5
+2025-04-28 23:20:47 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000801B5, idx=437
+2025-04-28 23:20:47 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000801B5, idx=437
+2025-04-28 23:20:47 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000801B5, idx=437
+2025-04-28 23:20:47 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:47 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000801B7, idx=439
+2025-04-28 23:20:47 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:47 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000801B7, idx=439
+2025-04-28 23:20:47 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:47 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000801B7, idx=439
+2025-04-28 23:20:47 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:47 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000801B5, idx=437
+2025-04-28 23:20:47 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:47 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000801B7, idx=439
+2025-04-28 23:20:47 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:47 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000801B5, idx=437
+2025-04-28 23:20:47 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:47 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000801B7, idx=439
+2025-04-28 23:20:47 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:47 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000801B7, idx=439
+2025-04-28 23:20:47 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:47 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000801B5, idx=437
+2025-04-28 23:20:47 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:47 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000801B7, idx=439
+2025-04-28 23:20:47 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:47 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000801B5, idx=437
+2025-04-28 23:20:47 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:47 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000801B7, idx=439
+2025-04-28 23:20:47 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:47 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000801B5, idx=437
+2025-04-28 23:20:47 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:20:47 - root - INFO - Removed breakpoint id=8
+2025-04-28 23:20:47 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:20:48 - root - INFO - CPU is halted.
+2025-04-28 23:20:48 - root - INFO - Handling uses for def=0x801b5. Found 2 uses.
+2025-04-28 23:20:48 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:20:48 - root - INFO - CPU is halted.
+2025-04-28 23:20:48 - root - INFO - Setting breakpoint at 0x801b4
+2025-04-28 23:20:48 - root - INFO - Breakpoint set at 0x801b4, bkptno=15
+2025-04-28 23:20:48 - root - INFO - Setting breakpoint at 0x801ba
+2025-04-28 23:20:48 - root - INFO - Breakpoint set at 0x801ba, bkptno=16
+2025-04-28 23:20:48 - root - INFO - Received request (A) from the board.
+2025-04-28 23:20:48 - root - INFO - Sent 12 bytes to SUT.
+2025-04-28 23:20:48 - root - INFO - Use triggered => 0x801bb
+2025-04-28 23:20:48 - fuzzing.coverage_manager - INFO - Updating def-use coverage => def=0x000801B5, use=0x000801BB, idx=14
+2025-04-28 23:20:48 - root - INFO - Removed breakpoint id=16
+2025-04-28 23:20:48 - root - INFO - Use triggered => 0x801b5
+2025-04-28 23:20:48 - fuzzing.coverage_manager - INFO - Updating def-use coverage => def=0x000801B5, use=0x000801B5, idx=0
+2025-04-28 23:20:48 - root - INFO - Removed breakpoint id=15
+2025-04-28 23:20:48 - fuzzing.coverage_manager - INFO - New def coverage found => index 437
+2025-04-28 23:20:48 - fuzzing.coverage_manager - INFO - New def coverage found => index 439
+2025-04-28 23:20:48 - fuzzing.coverage_manager - INFO - New coverage detected.
+2025-04-28 23:20:48 - root - INFO - New coverage from uses => add input to corpus.
+2025-04-28 23:20:48 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:20:48 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:20:58 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:20:58 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:20:58 - root - INFO - CPU is halted.
+2025-04-28 23:20:59 - root - INFO - End of use chunk, continuing to next chunk.
+2025-04-28 23:20:59 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-04-28 23:20:59 - root - INFO - Received request (A) from the board.
+2025-04-28 23:20:59 - root - INFO - Sent 12 bytes to SUT.
+2025-04-28 23:20:59 - root - INFO - Received request (A) from the board.
+2025-04-28 23:20:59 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-04-28 23:21:00 - root - WARNING - continue_execution() error: Cannot execute this command while the selected thread is running., Trying continue_execution() again in 0.5 seconds
+2025-04-28 23:21:00 - root - INFO - [DEF chunk attempt] => will wait for 'input request'
+2025-04-28 23:21:00 - root - INFO - Child requested input => provide. sending b'b"buw!1g233"'.
+2025-04-28 23:21:00 - root - INFO - Sent 12 bytes to SUT.
+2025-04-28 23:21:00 - root - INFO - Received request (A) from the board.
+2025-04-28 23:21:01 - root - INFO - GDB => reason=timed out, payload=None
+2025-04-28 23:21:01 - root - WARNING - === Timeout / Stuck detected ===
+2025-04-28 23:21:11 - fuzzing.coverage_manager - INFO - No new coverage found.
+2025-04-28 23:21:11 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:21:11 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:21:21 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:21:21 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:21:21 - root - INFO - CPU is halted.
+2025-04-28 23:21:21 - root - INFO - Removed breakpoint id=9
+2025-04-28 23:21:21 - root - INFO - Removed breakpoint id=10
+2025-04-28 23:21:21 - root - INFO - Removed breakpoint id=12
+2025-04-28 23:21:21 - root - INFO - Removed breakpoint id=13
+2025-04-28 23:21:21 - root - INFO - End of round #2, coverage not been reset.
+
+2025-04-28 23:21:21 - root - INFO - === Starting Round #3 ===
+2025-04-28 23:21:21 - root - INFO - no mutation
+2025-04-28 23:21:21 - root - INFO - Round #3 => test_data=b'b"buw!1g233"'
+2025-04-28 23:21:21 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:21:21 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:21:31 - root - WARNING - After interrupt, still no stop => keep looping.
+2025-04-28 23:21:31 - root - INFO - Attempting to force halt CPU, attempt 2 of 5.
+2025-04-28 23:21:31 - root - INFO - CPU is halted.
+2025-04-28 23:21:31 - root - INFO - Deleted all breakpoints.
+2025-04-28 23:21:31 - root - INFO - Setting breakpoint at 0x803b2
+2025-04-28 23:21:31 - root - INFO - Breakpoint set at 0x803b2, bkptno=17
+2025-04-28 23:21:31 - root - INFO - Setting breakpoint at 0x81d80
+2025-04-28 23:21:31 - root - INFO - Breakpoint set at 0x81d80, bkptno=18
+2025-04-28 23:21:31 - root - INFO - Setting breakpoint at 0x8060e
+2025-04-28 23:21:31 - root - INFO - Breakpoint set at 0x8060e, bkptno=19
+2025-04-28 23:21:31 - root - INFO - Setting breakpoint at 0x81ce4
+2025-04-28 23:21:31 - root - INFO - Breakpoint set at 0x81ce4, bkptno=20
+2025-04-28 23:21:31 - root - INFO - Setting breakpoint at 0x80328
+2025-04-28 23:21:31 - root - INFO - Breakpoint set at 0x80328, bkptno=21
+2025-04-28 23:21:31 - root - INFO - Setting breakpoint at 0x81d74
+2025-04-28 23:21:31 - root - INFO - Breakpoint set at 0x81d74, bkptno=22
+2025-04-28 23:21:31 - root - INFO - [DEF chunk attempt] => will wait for 'input request'
+2025-04-28 23:21:31 - root - INFO - Child requested input => provide. sending b'b"buw!1g233"'.
+2025-04-28 23:21:31 - root - INFO - Sent 12 bytes to SUT.
+2025-04-28 23:21:31 - root - INFO - GDB => reason=breakpoint hit, payload=21
+2025-04-28 23:21:31 - root - INFO - Def triggered => 0x80329
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080329, idx=809
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080329, idx=809
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080331, idx=817
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008032B, idx=811
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080333, idx=819
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008032D, idx=813
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008032B, idx=811
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080333, idx=819
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008032D, idx=813
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080331, idx=817
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080329, idx=809
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008032B, idx=811
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008032B, idx=811
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080329, idx=809
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008032B, idx=811
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008032B, idx=811
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008032B, idx=811
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080331, idx=817
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080331, idx=817
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080333, idx=819
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008032B, idx=811
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080333, idx=819
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080331, idx=817
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080329, idx=809
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00080331, idx=817
+2025-04-28 23:21:31 - root - INFO - new coverage for def-use chain in basic block level
+2025-04-28 23:21:31 - root - INFO - Removed breakpoint id=21
+2025-04-28 23:21:31 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:21:31 - root - INFO - CPU is halted.
+2025-04-28 23:21:31 - root - INFO - Handling uses for def=0x80329. Found 2 uses.
+2025-04-28 23:21:31 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:21:31 - root - INFO - CPU is halted.
+2025-04-28 23:21:31 - root - INFO - Setting breakpoint at 0x80328
+2025-04-28 23:21:31 - root - INFO - Breakpoint set at 0x80328, bkptno=23
+2025-04-28 23:21:31 - root - INFO - Setting breakpoint at 0x80336
+2025-04-28 23:21:31 - root - INFO - Breakpoint set at 0x80336, bkptno=24
+2025-04-28 23:21:31 - root - INFO - Use triggered => 0x80337
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def-use coverage => def=0x00080329, use=0x00080337, idx=30
+2025-04-28 23:21:31 - root - INFO - Removed breakpoint id=24
+2025-04-28 23:21:31 - root - INFO - Unknown breakpoint => 17, continuing.
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x000803B2, idx=946
+2025-04-28 23:21:31 - root - INFO - Removed breakpoint id=17
+2025-04-28 23:21:31 - root - INFO - Unknown breakpoint => 19, continuing.
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x0008060E, idx=1550
+2025-04-28 23:21:31 - root - INFO - Removed breakpoint id=19
+2025-04-28 23:21:31 - root - INFO - Unknown breakpoint => 20, continuing.
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081CE4, idx=7396
+2025-04-28 23:21:31 - root - INFO - Removed breakpoint id=20
+2025-04-28 23:21:31 - root - INFO - Unknown breakpoint => 22, continuing.
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081D74, idx=7540
+2025-04-28 23:21:31 - root - INFO - Removed breakpoint id=22
+2025-04-28 23:21:31 - root - INFO - Unknown breakpoint => 18, continuing.
+2025-04-28 23:21:31 - fuzzing.coverage_manager - INFO - Updating def coverage for def_addr=0x00081D80, idx=7552
+2025-04-28 23:21:31 - root - INFO - Removed breakpoint id=18
+2025-04-28 23:21:31 - root - INFO - Received request (A) from the board.
+2025-04-28 23:21:31 - root - INFO - Sent 12 bytes to SUT.
+2025-04-28 23:21:31 - root - INFO - Received request (A) from the board.
+2025-04-28 23:21:31 - root - INFO - Sent 12 bytes to SUT.
+2025-04-28 23:21:31 - root - INFO - Received request (A) from the board.
+2025-04-28 23:21:31 - root - INFO - Sent 12 bytes to SUT.
+2025-04-28 23:21:31 - root - INFO - Received request (A) from the board.
+2025-04-28 23:21:31 - root - INFO - Sent 12 bytes to SUT.
+2025-04-28 23:21:31 - root - INFO - Received request (A) from the board.
+2025-04-28 23:21:31 - root - INFO - Sent 12 bytes to SUT.
+2025-04-28 23:21:31 - root - INFO - Received request (A) from the board.
+2025-04-28 23:21:31 - root - INFO - Sent 12 bytes to SUT.
+2025-04-28 23:21:31 - root - INFO - Received request (A) from the board.
+2025-04-28 23:21:31 - root - INFO - Sent 12 bytes to SUT.
+2025-04-28 23:21:31 - root - INFO - Received request (A) from the board.
+2025-04-28 23:21:36 - root - INFO - No use triggered this attempt.
+2025-04-28 23:21:36 - fuzzing.coverage_manager - INFO - New def coverage found => index 809
+2025-04-28 23:21:36 - fuzzing.coverage_manager - INFO - New def coverage found => index 811
+2025-04-28 23:21:36 - fuzzing.coverage_manager - INFO - New def coverage found => index 813
+2025-04-28 23:21:36 - fuzzing.coverage_manager - INFO - New def coverage found => index 817
+2025-04-28 23:21:36 - fuzzing.coverage_manager - INFO - New def coverage found => index 819
+2025-04-28 23:21:36 - fuzzing.coverage_manager - INFO - New def coverage found => index 946
+2025-04-28 23:21:36 - fuzzing.coverage_manager - INFO - New def coverage found => index 1550
+2025-04-28 23:21:36 - fuzzing.coverage_manager - INFO - New def coverage found => index 7396
+2025-04-28 23:21:36 - fuzzing.coverage_manager - INFO - New def coverage found => index 7540
+2025-04-28 23:21:36 - fuzzing.coverage_manager - INFO - New def coverage found => index 7552
+2025-04-28 23:21:36 - fuzzing.coverage_manager - INFO - New coverage detected.
+2025-04-28 23:21:36 - root - INFO - New coverage from uses => add input to corpus.
+2025-04-28 23:21:36 - root - INFO - Attempting to force halt CPU, attempt 1 of 5.
+2025-04-28 23:21:36 - root - INFO - CPU not halted => sending interrupt (attempt 1).
+2025-04-28 23:21:39 - root - INFO - Stopped by user.
+2025-04-28 23:21:39 - root - INFO - Cleaning up...
+2025-04-28 23:21:39 - root - INFO - Closed serial port connection.
+2025-04-28 23:21:39 - root - INFO - Serial connection closed.
+2025-04-28 23:21:39 - fuzzing.coverage_manager - INFO - CoverageManager SHM removed.
+2025-04-28 23:21:42 - root - ERROR - GDBCommunicator exited with code 1, killing raw gdb.
+2025-04-28 23:21:43 - root - INFO - GDB connection closed.
+2025-04-29 01:01:13 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-04-29 01:01:13 - root - INFO - Parsed 511 definition blocks
+2025-04-29 01:01:13 - root - INFO - no mutation
+2025-04-29 01:01:13 - root - INFO - Round 1 – len=11
+2025-04-29 01:07:12 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-04-29 01:07:36 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-04-29 01:08:26 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-04-29 01:08:26 - root - INFO - Parsed 511 definition blocks
+2025-04-29 01:08:26 - root - INFO - no mutation
+2025-04-29 01:08:26 - root - INFO - Round 1 – len=11
+2025-04-29 01:09:02 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-04-29 01:09:02 - root - INFO - Parsed 511 definition blocks
+2025-04-29 01:09:02 - root - INFO - no mutation
+2025-04-29 01:09:02 - root - INFO - Round 1 – len=11
+2025-04-29 06:16:45 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-04-29 06:16:45 - root - INFO - Parsed 511 definition blocks
+2025-04-29 06:16:45 - root - INFO - no mutation
+2025-04-29 06:16:45 - root - INFO - Round 1 – len=11
+2025-04-29 06:30:24 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-04-29 06:30:25 - root - INFO - Parsed 511 definition blocks
+2025-04-29 06:30:25 - root - INFO - no mutation
+2025-04-29 06:30:25 - root - INFO - Round 1 – len=11
+2025-04-29 06:37:02 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-04-29 06:37:02 - root - INFO - Parsed 511 definition blocks
+2025-04-29 06:37:02 - root - INFO - no mutation
+2025-04-29 06:37:02 - root - INFO - Round 1 – len=11
+2025-04-29 06:44:57 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-04-29 06:44:57 - root - INFO - Parsed 511 definition blocks
+2025-04-29 06:44:57 - root - INFO - no mutation
+2025-04-29 06:44:57 - root - INFO - Round 1 – len=11
+2025-04-29 06:48:56 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-04-29 06:48:57 - root - INFO - Parsed 511 definition blocks
+2025-04-29 06:48:57 - root - INFO - no mutation
+2025-04-29 06:48:57 - root - INFO - Round 1 – len=11
+2025-04-29 06:49:07 - root - WARNING - Attempt 1 failed to connect to GDB server. Retrying in 1.0 seconds...
+2025-04-29 06:49:18 - root - WARNING - Attempt 2 failed to connect to GDB server. Retrying in 1.0 seconds...
+2025-04-29 06:49:25 - root - INFO - Interrupted – exiting.
+2025-04-29 06:50:42 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-04-29 06:50:42 - root - INFO - Parsed 511 definition blocks
+2025-04-29 06:50:42 - root - INFO - no mutation
+2025-04-29 06:50:42 - root - INFO - Round 1 – len=11
+2025-04-29 06:50:42 - pygdbmi.gdbcontroller - DEBUG - Launching gdb: gdb-multiarch --nx --quiet --interpreter=mi3
+2025-04-29 06:50:52 - root - WARNING - Attempt 1 failed to connect to GDB server. Retrying in 1.0 seconds...
+2025-04-29 06:51:03 - root - WARNING - Attempt 2 failed to connect to GDB server. Retrying in 1.0 seconds...
+2025-04-29 06:51:14 - root - WARNING - Attempt 3 failed to connect to GDB server. Retrying in 1.0 seconds...
+2025-04-29 06:51:25 - root - WARNING - Attempt 4 failed to connect to GDB server. Retrying in 1.0 seconds...
+2025-04-29 06:51:36 - root - WARNING - Attempt 5 failed to connect to GDB server. Retrying in 1.0 seconds...
+2025-04-29 06:56:54 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-04-29 06:56:54 - root - INFO - Parsed 511 definition blocks
+2025-04-29 06:56:54 - root - INFO - no mutation
+2025-04-29 06:56:54 - root - INFO - Round 1 – len=11
+2025-04-29 06:56:54 - pygdbmi.gdbcontroller - DEBUG - Launching gdb: gdb-multiarch --nx --quiet --interpreter=mi3
+2025-04-29 07:06:36 - fuzzing.coverage_manager - INFO - CoverageManager initialized with MAP_SIZE=65536 x 2 coverage arrays.
+2025-04-29 07:06:36 - root - INFO - Parsed 511 definition blocks
+2025-04-29 07:06:36 - root - INFO - no mutation
+2025-04-29 07:06:36 - root - INFO - Round 1 – len=11
+2025-04-29 07:06:36 - pygdbmi.gdbcontroller - DEBUG - Launching gdb: gdb-multiarch --nx --quiet --interpreter=mi3
+2025-04-29 07:21:33 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 07:21:33 - __main__ - INFO - Round 1 – len=11
+2025-04-29 07:22:46 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 07:22:46 - __main__ - INFO - Round 1 – len=11
+2025-04-29 07:35:09 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 07:35:09 - __main__ - INFO - Round 1 – len=11
+2025-04-29 07:36:57 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 07:36:57 - __main__ - INFO - Round 1 – len=11
+2025-04-29 07:39:53 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 07:39:53 - __main__ - INFO - Round 1 – len=11
+2025-04-29 07:42:10 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 07:42:10 - __main__ - INFO - Round 1 – len=11
+2025-04-29 07:43:45 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 07:43:45 - __main__ - INFO - Round 1 – len=11
+2025-04-29 07:44:27 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 07:44:27 - __main__ - INFO - Round 1 – len=11
+2025-04-29 07:47:45 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 07:47:45 - __main__ - INFO - Round 1 – len=11
+2025-04-29 07:48:58 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 07:48:58 - __main__ - INFO - Round 1 – len=11
+2025-04-29 07:52:39 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 07:52:39 - __main__ - INFO - Round 1 – len=11
+2025-04-29 08:06:00 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 08:06:00 - __main__ - INFO - Round 1 – len=11
+2025-04-29 08:13:41 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 08:13:41 - __main__ - INFO - Round 1 – len=11
+2025-04-29 08:16:31 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 08:16:31 - __main__ - INFO - Round 1 – len=11
+2025-04-29 08:20:34 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 08:20:34 - __main__ - INFO - Round 1 – len=11
+2025-04-29 08:22:03 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 08:22:03 - __main__ - INFO - Round 1 – len=11
+2025-04-29 08:24:35 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 08:24:36 - __main__ - INFO - Round 1 – len=11
+2025-04-29 09:26:08 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 09:26:08 - __main__ - INFO - Round 1 – len=11
+2025-04-29 09:59:22 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 09:59:22 - __main__ - INFO - Round 1 – len=11
+2025-04-29 10:13:13 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 10:13:13 - __main__ - INFO - Round 1 – len=11
+2025-04-29 10:22:40 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 10:22:40 - __main__ - INFO - Round 1 – len=11
+2025-04-29 10:22:53 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 10:22:53 - __main__ - INFO - Round 1 – len=11
+2025-04-29 10:43:37 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 10:43:37 - __main__ - INFO - Round 1 – len=11
+2025-04-29 10:44:58 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 10:44:58 - __main__ - INFO - Round 1 – len=11
+2025-04-29 10:46:56 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 10:46:56 - __main__ - INFO - Round 1 – len=11
+2025-04-29 10:49:24 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 10:49:24 - __main__ - INFO - Round 1 – len=11
+2025-04-29 10:49:54 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 10:49:54 - __main__ - INFO - Round 1 – len=11
+2025-04-29 10:52:06 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 10:52:06 - __main__ - INFO - Round 1 – len=11
+2025-04-29 10:54:29 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 10:54:29 - __main__ - INFO - Round 1 – len=11
+2025-04-29 11:00:08 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 11:00:08 - __main__ - INFO - Round 1 – len=11
+2025-04-29 11:03:10 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 11:03:10 - __main__ - INFO - Round 1 – len=11
+2025-04-29 11:03:28 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 11:03:28 - __main__ - INFO - Round 1 – len=11
+2025-04-29 11:08:08 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 11:08:08 - __main__ - INFO - Round 1 – len=11
+2025-04-29 11:08:28 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 11:08:28 - __main__ - INFO - Round 1 – len=11
+2025-04-29 11:17:22 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 11:17:22 - __main__ - INFO - Round 1 – len=11
+2025-04-29 11:17:57 - __main__ - INFO - Parsed 511 definition blocks
+2025-04-29 11:17:57 - __main__ - INFO - Round 1 – len=11
+2025-05-05 21:32:31 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-05 21:32:31 - __main__ - INFO - Round 1 – len=11
+2025-05-05 22:04:13 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-05 22:04:13 - __main__ - INFO - Round 1 – len=11
+2025-05-05 22:40:53 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-05 22:40:53 - __main__ - INFO - Round 1 – len=11
+2025-05-05 23:20:30 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-05 23:20:30 - __main__ - INFO - Round 1 – len=11
+2025-05-05 23:39:36 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-05 23:39:36 - __main__ - INFO - Round 1 – len=11
+2025-05-05 23:41:16 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-05 23:41:16 - __main__ - INFO - Round 1 – len=11
+2025-05-05 23:42:28 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-05 23:42:28 - __main__ - INFO - Round 1 – len=11
+2025-05-05 23:43:40 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-05 23:43:40 - __main__ - INFO - Round 1 – len=11
+2025-05-05 23:44:03 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-05 23:44:03 - __main__ - INFO - Round 1 – len=11
+2025-05-06 05:19:37 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-06 05:19:37 - __main__ - INFO - Round 1 – len=11
+2025-05-06 05:23:24 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-06 05:23:24 - __main__ - INFO - Round 1 – len=11
+2025-05-06 05:24:09 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-06 05:24:09 - __main__ - INFO - Round 1 – len=11
+2025-05-06 05:29:46 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-06 05:29:46 - __main__ - INFO - Round 1 – len=11
+2025-05-06 05:36:07 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-06 05:36:07 - __main__ - INFO - Round 1 – len=11
+2025-05-06 05:46:55 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-06 05:46:55 - __main__ - INFO - Round 1 – len=11
+2025-05-06 05:47:58 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-06 05:47:58 - __main__ - INFO - Round 1 – len=11
+2025-05-06 05:54:52 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-06 05:54:52 - __main__ - INFO - Round 1 – len=11
+2025-05-06 06:10:03 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-06 06:10:03 - __main__ - INFO - Round 1 – len=11
+2025-05-06 06:10:52 - __main__ - INFO - Interrupted – exiting.
+2025-05-06 06:16:15 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-06 06:16:15 - __main__ - INFO - Round 1 – len=11
+2025-05-06 06:16:27 - __main__ - INFO - Interrupted – exiting.
+2025-05-06 06:48:23 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-06 06:48:23 - __main__ - INFO - Round 1 – len=11
+2025-05-06 06:48:23 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-06 06:48:27 - __main__ - INFO - Interrupted – exiting.
+2025-05-06 06:56:53 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-06 06:56:53 - __main__ - INFO - Round 1 – len=11
+2025-05-06 06:56:54 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-06 06:56:55 - __main__ - INFO - Interrupted – exiting.
+2025-05-06 07:09:26 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-06 07:09:26 - __main__ - INFO - Round 1 – len=11
+2025-05-06 07:09:27 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-06 07:09:33 - __main__ - DEBUG - Unhandled stop reason timed out – aborting this case.
+2025-05-06 07:09:40 - __main__ - DEBUG - Unhandled stop reason timed out – aborting this case.
+2025-05-06 07:09:44 - __main__ - INFO - Interrupted – exiting.
+2025-05-06 07:45:18 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-06 07:45:18 - __main__ - INFO - Round 1 done
+2025-05-06 07:45:18 - __main__ - INFO - Round 1 – len=11
+2025-05-06 07:45:19 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-06 07:45:26 - __main__ - DEBUG - Unhandled stop reason timed out – aborting this case.
+2025-05-06 07:45:27 - __main__ - INFO - Interrupted – exiting.
+2025-05-06 07:48:29 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-06 07:48:29 - __main__ - INFO - Round 1 done
+2025-05-06 07:48:29 - __main__ - INFO - Round 1 – len=11
+2025-05-06 07:48:29 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-06 07:48:36 - __main__ - DEBUG - Unhandled stop reason timed out – aborting this case.
+2025-05-06 07:48:42 - __main__ - DEBUG - Unhandled stop reason timed out – aborting this case.
+2025-05-06 07:48:47 - __main__ - INFO - Interrupted – exiting.
+2025-05-06 07:53:02 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-06 07:53:02 - __main__ - INFO - Round 1 done
+2025-05-06 07:53:02 - __main__ - INFO - Round 1 – len=11
+2025-05-06 07:53:02 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-06 07:53:09 - __main__ - DEBUG - Unhandled stop reason timed out – aborting this case.
+2025-05-06 07:53:15 - __main__ - DEBUG - Unhandled stop reason timed out – aborting this case.
+2025-05-06 07:53:21 - __main__ - INFO - Interrupted – exiting.
+2025-05-06 07:55:19 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-06 07:55:19 - __main__ - INFO - Round 1 done
+2025-05-06 07:55:19 - __main__ - INFO - Round 1 – len=11
+2025-05-06 07:55:20 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-06 07:55:55 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-06 07:55:55 - __main__ - INFO - Round 1 done
+2025-05-06 07:55:55 - __main__ - INFO - Round 1 – len=11
+2025-05-06 07:55:55 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-06 07:56:06 - __main__ - INFO - Round 2 done
+2025-05-06 07:56:06 - __main__ - INFO - Round 2 – len=12
+2025-05-06 07:56:07 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-06 07:56:18 - __main__ - INFO - Round 3 done
+2025-05-06 07:56:18 - __main__ - INFO - Round 3 – len=11
+2025-05-06 07:56:19 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-06 07:56:30 - __main__ - INFO - Round 4 done
+2025-05-06 07:56:30 - __main__ - INFO - Round 4 – len=6
+2025-05-06 07:56:30 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-06 07:56:41 - __main__ - INFO - Round 5 done
+2025-05-06 07:56:41 - __main__ - INFO - Round 5 – len=22
+2025-05-06 07:56:42 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-06 07:56:53 - __main__ - INFO - Round 6 done
+2025-05-06 07:56:53 - __main__ - INFO - Round 6 – len=10
+2025-05-06 07:56:54 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-06 07:57:05 - __main__ - INFO - Round 7 done
+2025-05-06 07:57:05 - __main__ - INFO - Round 7 – len=8
+2025-05-06 07:57:05 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-06 07:57:10 - __main__ - INFO - Interrupted – exiting.
