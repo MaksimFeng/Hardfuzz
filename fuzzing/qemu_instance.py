@@ -6,7 +6,7 @@ import subprocess
 import time
 from pathlib import Path
 from typing import Any, List
-
+import os
 from fuzzing.gdb_qemu import GDB_QEMU
 
 __all__ = ["QEMUInstance"]
@@ -17,7 +17,7 @@ class QEMUInstance:
         self,
         *,
         elf_path: str,
-        qemu_path: str = "qemu-x86_64-static",
+        qemu_path: str = "qemu-x86_64",
         gdb_path: str = "gdb-multiarch",
         gdb_port: int = 2331,               
         # extra_qemu_args: List[str] | None = None,
@@ -30,10 +30,12 @@ class QEMUInstance:
         self._gdb_port = gdb_port
 
   
-        gflag = f"{self._gdb_port},brk" if pause_at_entry else str(self._gdb_port)
-        qemu_cmd = [qemu_path, "-g", gflag,  *(qemu_args or []), self.elf_path.as_posix(), *(target_args or [])]
+        # gflag = f"{self._gdb_port},suspend=y" if pause_at_entry else str(self._gdb_port)
+        gflag = f"{self._gdb_port},suspend=y" if pause_at_entry else str(self._gdb_port)
+        coverage_plugin_path = os.path.join(os.path.dirname(__file__), '../../qemu_new_11_05/qemu-plugins/libbbtrace.so')
+        qemu_cmd = [qemu_path,"-plugin", coverage_plugin_path, "-d", "plugin", "-g", gflag,  *(qemu_args or []), self.elf_path.as_posix(), *(target_args or [])]
 
-        log.debug("Launching QEMU: %s", " ".join(qemu_cmd))
+        log.info("Launching QEMU: %s", " ".join(qemu_cmd))
         stderr_target: Any
         if stderr_dir:
             Path(stderr_dir).mkdir(parents=True, exist_ok=True)

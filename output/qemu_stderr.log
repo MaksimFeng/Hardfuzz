@@ -1,0 +1,5 @@
+qemu: unknown option 'plugin'
+qemu: unknown option 'plugin'
+qemu: unknown option 'plugin'
+qemu-x86_64: gdbstub: unknown option "brk"
+Usage: -g {port|path}[,suspend={y|n}]

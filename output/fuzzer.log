@@ -31,3 +31,43 @@
 2025-05-06 17:14:37 - __main__ - INFO - Round 2 – len=78
 2025-05-06 17:14:38 - __main__ - DEBUG - QEMU exited or communication error
 2025-05-06 17:14:40 - __main__ - INFO - Interrupted – exiting.
+2025-05-09 11:18:20 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-09 11:18:20 - __main__ - INFO - Round 1 – len=11
+2025-05-09 11:18:21 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-09 11:18:32 - __main__ - INFO - Round 2 – len=80
+2025-05-09 11:18:33 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-09 11:18:34 - __main__ - INFO - Interrupted – exiting.
+2025-05-12 23:42:12 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-12 23:42:12 - __main__ - INFO - Round 1 – len=11
+2025-05-12 23:43:02 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-12 23:43:02 - __main__ - INFO - Round 1 – len=11
+2025-05-12 23:50:23 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-12 23:50:23 - __main__ - INFO - Round 1 – len=11
+2025-05-12 23:55:15 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-12 23:55:15 - __main__ - INFO - Round 1 – len=11
+2025-05-13 00:02:30 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-13 00:02:30 - __main__ - INFO - Round 1 – len=11
+2025-05-13 00:02:31 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-13 00:02:42 - __main__ - INFO - Round 2 – len=63
+2025-05-13 00:02:43 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-13 00:02:54 - __main__ - INFO - Round 3 – len=51
+2025-05-13 00:02:55 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-13 00:03:06 - __main__ - INFO - Round 4 – len=12
+2025-05-13 00:03:07 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-13 00:03:18 - __main__ - INFO - Round 5 – len=11
+2025-05-13 00:03:19 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-13 00:03:30 - __main__ - INFO - Round 6 – len=10
+2025-05-13 00:03:31 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-13 00:03:42 - __main__ - INFO - Round 7 – len=8
+2025-05-13 00:03:43 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-13 00:03:51 - __main__ - INFO - Interrupted – exiting.
+2025-05-13 00:07:33 - __main__ - INFO - Parsed 511 definition blocks
+2025-05-13 00:07:33 - __main__ - INFO - Round 1 – len=11
+2025-05-13 00:07:34 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-13 00:07:45 - __main__ - INFO - Round 2 – len=10
+2025-05-13 00:07:46 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-13 00:07:57 - __main__ - INFO - Round 3 – len=12
+2025-05-13 00:07:58 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-13 00:08:09 - __main__ - INFO - Round 4 – len=11
+2025-05-13 00:08:10 - __main__ - DEBUG - QEMU exited or communication error
+2025-05-13 00:08:11 - __main__ - INFO - Interrupted – exiting.

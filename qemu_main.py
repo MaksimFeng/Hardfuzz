@@ -20,7 +20,7 @@ from config.settings import (
     DEF_USE_FILE,
 )
 
-QEMU_USER   = "qemu-x86_64-static"
+QEMU_USER   = "qemu-x86_64"
 TARGET_BIN  = "/usr/bin/x86_64-linux-gnu-objdump"
 # TARGET_BIN = "/project/new_test"
 # TARGET_ARGS = ["-D", "-"]          # passed to the target; 
